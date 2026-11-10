@@ -1,1 +1,0 @@
-검토용입니다. 직접 적재하지 마세요. 02_areas.json은 필수 version/effective_on을, 04_population.json은 필수 unit을 생략했습니다. CRS도 미확인입니다. 원본 수치를 확인하고 추후 메타데이터를 확정하기 위한 자료이며 정상 적재 호환 파일이 아닙니다. 모든 geometry 좌표는 숫자이고 verified는 false입니다.

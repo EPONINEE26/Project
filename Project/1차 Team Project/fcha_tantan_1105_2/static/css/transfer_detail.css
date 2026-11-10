@@ -1,9 +1,0 @@
-.transfer-detail-layout > .panel{margin:0;min-width:0}
-.button.outline.transfer-delete-button{color:#b34b54;border-color:#e6bec3;background:#fff}
-.button.outline.transfer-delete-button:hover{background:#fff3f4}
-.transfer-detail-layout > .panel + .panel:not(.map-panel){margin-top:0}
-.transfer-inquiry-list{list-style:none;margin:14px 0 0;padding:0;max-height:440px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
-.transfer-inquiry-list li + li{margin-top:4px}
-.transfer-inquiry-row{position:relative;display:grid;gap:3px;padding:14px 48px 14px 12px;border-radius:12px;color:#10234b;min-width:0}
-.transfer-inquiry-row:hover,.transfer-inquiry-row:focus-visible,.transfer-inquiry-row.is-unread{background:#f3f8ff}
-.transfer-inquiry-row .inquiry-new{position:absolute;right:10px;top:50%;transform:translateY(-50%);margin:0;font-size:10px}
