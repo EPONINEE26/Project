@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{# extends: 기존 공통 화면 틀 상속 #}
+{# block: 공통 화면에서 지정한 영역에 현재 파일 내용 삽입 #}
+
+{% block title %}로그인·회원가입 안내 | 폐점주 커뮤니티{% endblock %}
+
+{% block content %}
+<div class="container narrow-page">
+    <section class="panel">
+        <h1>폐업 점주들의 경험과 조언을 만나보세요</h1>
+
+        <p>
+            폐업 점주들의 경험과 조언은
+            로그인 또는 회원가입 후 확인하실 수 있습니다.
+        </p>
+        <p>
+            매장 운영과 폐업 과정에서 겪은 어려움,
+            창업 전에 알았으면 좋았을 점,
+            예비창업자를 위한 현실적인 조언을 나누는 공간입니다.
+        </p>
+
+        {# url: 이름으로 실제 로그인 주소 생성 #}
+        {# urlencode: 원래 요청 주소를 URL 인수로 전달할 수 있도록 인코딩 #}
+        <p>이미 회원이신가요? 로그인 후 게시글을 확인해주세요.</p>
+        <a
+            class="button"
+            href="{% url 'accounts:login' %}?next={{ next_url|urlencode }}"
+        >로그인</a>
+
+        <p>아직 회원이 아니신가요? 회원가입 후 이용해주세요.</p>
+        <a
+            class="button outline"
+            href="{% url 'accounts:signup' %}?next={{ next_url|urlencode }}"
+        >회원가입</a>
+
+        <p class="data-note">
+            게시글 목록과 내용은 로그인한 회원에게 공개됩니다.
+            글 작성은 폐업 인증을 승인받은 회원만 가능합니다.
+        </p>
+    </section>
+</div>
+{% endblock %}

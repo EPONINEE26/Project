@@ -1,0 +1,5 @@
+<form class="save-form" method="post" action="{% url 'brands:saved_toggle' brand.slug %}">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+    <button class="save-btn {% if brand.slug in saved_ids %}on{% endif %}" aria-label="{{ brand.name }} 관심 브랜드 {% if brand.slug in saved_ids %}해제{% else %}저장{% endif %}" aria-pressed="{% if brand.slug in saved_ids %}true{% else %}false{% endif %}">{% if brand.slug in saved_ids %}♥{% else %}♡{% endif %}</button>
+</form>

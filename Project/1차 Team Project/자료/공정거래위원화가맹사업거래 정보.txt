@@ -1,0 +1,38 @@
+가맹비, 교육비, 보증금, 인테리어, 설비,기타 
+
+매장수, 개점, 폐점, 연매출 ,지역 
+
+1. 하기 사이트에 있는 자료 (창업비용, 개점수, 폐점수, 서울&경기권 매장수, 연매출) 찾아서  2024년, 2025년 자로만 확인해 웹스크래핑 코드 생성하고
+2. 엑셀파일애 인텍스, 컬럼으로 나누어서 각각 5개의 엑셀파일에 정확한 상호명으로 이름을 지정해 엑셀파일 5개 생성해줘!!! 
+3. 웹스크래핑 코드 및 엑셀 파일 저장 코드 모두 생성해줘! 
+
+1. 에이바헤어
+(1) 공정거래위원회 가맹사업거래  https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=m6cLyZkQpxNcoxzeCLZBkQ%3D%3D
+
+2. 블루클럽
+(1) 공정거래위원회 가맹사업거래 https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=0jA7scs7wuABP16%2B48r8mQ%3D%3D
+
+3.제오헤어 
+(1) 공정거래위원회 가맹사업거래 https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=pNdkNfn4xox%2BzOLRnH53Ag%3D%3D
+
+4. 로이드밤 
+(1) 공정거래위원회 가맹사업거래 https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=R%2FJiamYt%2FvLM0Up1THERzA%3D%3D
+
+5 토리헤어 
+(1) 공정거래위원회 가맹사업거래 https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=TDZ86QnReTlSUmcX%2FHhOMA%3D%3D
+
+
+6. 이철헤어커커
+(1) 공정거래위원회 가맹사업거래  https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=ZtBWjnoyACd%2FjmNOnQr19A%3D%3D
+
+7. 박승철헤어스투디오
+(1) 공정거래위원회 가맹사업거래  https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=shBksEjR57DZQ6oI1H%2BMUQ%3D%3D
+
+
+
+
+가맹비, 교육비, 보증금, 인테리어, 설비,기타 로 인덱스 / 컬럼으로 나누어서 아래 업무까지 해놓은 엑셀파일 만들어줘!!! 
+1. 지역 업종 브랜드별 집계, 매출 비교, 운영 이익, 계산식 구현, 분석 결과 검증, API에 사용할 분석 함수 작성 
+2. 업종별 평균 매출을 계산하고 입력한 비용으로 예산 운영이익 계산
+
+

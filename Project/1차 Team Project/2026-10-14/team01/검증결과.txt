@@ -1,0 +1,8 @@
+﻿Django 5.2.18 / Python 3.12
+Django check: 정상
+기능 테스트 10개: 통과
+새 경로 적용 후 화면 7개: HTTP 200
+static/images, css, js 파일 검색: 정상
+01 데이터베이스 원본 유지
+직접 만든 앱: home, brands 두 개
+브라우저 시각 검수는 수행하지 않음

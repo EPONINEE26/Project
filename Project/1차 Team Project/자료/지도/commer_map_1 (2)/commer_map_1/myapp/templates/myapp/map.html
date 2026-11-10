@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>서울시 상권 및 점포 분석 지도</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; display: flex; height: 100vh; overflow: hidden; }
+        #map { flex: 1; height: 100%; }
+        
+        /* 우측 정보 패널 스타일 */
+        #sidebar { width: 400px; background: #fff; border-left: 1px solid #ddd; display: flex; flex-direction: column; box-shadow: -2px 0 5px rgba(0,0,0,0.1); z-index: 1000; }
+        .sidebar-header { background: #1e293b; color: #fff; padding: 18px 20px; font-weight: bold; font-size: 18px; }
+        .sidebar-content { padding: 20px; overflow-y: auto; flex: 1; font-size: 15px; }
+        
+        /* 업종 필터 영역 스타일 */
+        .filter-box { background: #f1f5f9; padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #cbd5e1; }
+        .filter-box h4 { margin: 0 0 10px 0; color: #1e293b; font-size: 15px; font-weight: bold; }
+        .filter-box select { width: 100%; padding: 8px; margin-bottom: 8px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 14px; background: #fff; }
+        .filter-btn { width: 100%; padding: 10px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px; }
+        .filter-btn:hover { background: #1d4ed8; }
+
+        /* 정보 카드 스타일 */
+        .info-card { background: #f8f9fa; padding: 16px 18px; border-radius: 10px; margin-bottom: 16px; border-left: 5px solid #3b82f6; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .info-card h4 { margin: 0 0 8px 0; color: #1e293b; font-size: 16px; font-weight: bold; }
+        .info-card p { margin: 0; color: #334155; font-size: 15px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+    <!-- 지도 영역 -->
+    <div id="map"></div>
+
+    <!-- 우측 정보 패널 -->
+    <div id="sidebar">
+        <div class="sidebar-header" id="sidebar-title">상권 정보 분석</div>
+        <div class="sidebar-content" id="right-panel-content">
+            
+            <!-- 대·중·소분류 업종 선택 필터 박스 -->
+            <div class="filter-box">
+                <h4>🔍 업종별 점포 필터</h4>
+                <select id="select-large" onchange="onLargeCategoryChange()">
+                    <option value="">-- 대분류 선택 --</option>
+                </select>
+                <select id="select-middle" onchange="onMiddleCategoryChange()">
+                    <option value="">-- 중분류 선택 --</option>
+                </select>
+                <select id="select-small">
+                    <option value="">-- 소분류 선택 --</option>
+                </select>
+                <button class="filter-btn" onclick="applyStoreFilter()">업종 필터 적용</button>
+            </div>
+
+            <!-- 상세 정보 표시 영역 -->
+            <div id="dynamic-info-area">
+                <p style="color: #888; text-align: center; margin-top: 30px; font-size: 15px;">지도의 상권을 클릭하거나 점포를 선택하세요.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // 1. 백엔드(Django) 데이터 받아오기
+        const commercialData = {{ commercial_data|safe }};
+        const storeData = {{ store_data|safe }};
+
+        // 2. 지도 초기화 (서울 중심점 설정)
+        const map = L.map('map').setView([37.5665, 126.9780], 12);
+
+        // 3. 인증키 불필요한 공개 지도 타일 서버 연결
+        L.tileLayer('https://tile.openstreetmap.de/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // 마커들을 관리할 LayerGroup 생성 (필터링 시 기존 마커 삭제용)
+        let markerLayerGroup = L.layerGroup().addTo(map);
+
+        // 4. 상권 폴리곤 표시 및 클릭 이벤트
+        commercialData.forEach(item => {
+            if (item.polygon && item.polygon.coordinates) {
+                try {
+                    let ring = item.polygon.coordinates[0];
+                    let latlngs = ring.map(coord => [coord[1], coord[0]]);
+                    
+                    let polygon = L.polygon(latlngs, {
+                        color: '#3b82f6',
+                        weight: 1.5,
+                        fillColor: '#60a5fa',
+                        fillOpacity: 0.25
+                    }).addTo(map);
+
+                    polygon.on('click', () => {
+                        updateRightPanel(item);
+                    });
+                } catch (e) {
+                    console.error("폴리곤 렌더링 오류:", e);
+                }
+            }
+        });
+
+        // 5. 점포 마커 렌더링 함수 (전체 또는 필터된 목록 표시)
+        function renderMarkers(targetStores) {
+            markerLayerGroup.clearLayers(); // 기존 마커 초기화
+            targetStores.forEach(store => {
+                if (store.lat && store.lng) {
+                    let marker = L.marker([store.lat, store.lng]);
+                    marker.on('click', () => {
+                        handleStoreClick(store);
+                    });
+                    markerLayerGroup.addLayer(marker);
+                }
+            });
+        }
+
+        // 초기 실행 시 전체 점포 마커 표시
+        renderMarkers(storeData);
+
+        // 6. 업종 셀렉박스 초기화 및 연동 로직
+        function initCategoryFilters() {
+            const largeSelect = document.getElementById('select-large');
+            const largeCategories = [...new Set(storeData.map(s => s.large))].filter(Boolean).sort();
+            
+            largeCategories.forEach(cat => {
+                let opt = document.createElement('option');
+                opt.value = cat;
+                opt.textContent = cat;
+                largeSelect.appendChild(opt);
+            });
+        }
+
+        function onLargeCategoryChange() {
+            const selectedLarge = document.getElementById('select-large').value;
+            const middleSelect = document.getElementById('select-middle');
+            const smallSelect = document.getElementById('select-small');
+            
+            middleSelect.innerHTML = '<option value="">-- 중분류 선택 --</option>';
+            smallSelect.innerHTML = '<option value="">-- 소분류 선택 --</option>';
+
+            if (!selectedLarge) return;
+
+            const middleCategories = [...new Set(storeData.filter(s => s.large === selectedLarge).map(s => s.middle))].filter(Boolean).sort();
+            middleCategories.forEach(cat => {
+                let opt = document.createElement('option');
+                opt.value = cat;
+                opt.textContent = cat;
+                middleSelect.appendChild(opt);
+            });
+        }
+
+        function onMiddleCategoryChange() {
+            const selectedLarge = document.getElementById('select-large').value;
+            const selectedMiddle = document.getElementById('select-middle').value;
+            const smallSelect = document.getElementById('select-small');
+            
+            smallSelect.innerHTML = '<option value="">-- 소분류 선택 --</option>';
+
+            if (!selectedMiddle) return;
+
+            const smallCategories = [...new Set(storeData.filter(s => s.large === selectedLarge && s.middle === selectedMiddle).map(s => s.small))].filter(Boolean).sort();
+            smallCategories.forEach(cat => {
+                let opt = document.createElement('option');
+                opt.value = cat;
+                opt.textContent = cat;
+                smallSelect.appendChild(opt);
+            });
+        }
+
+        // 업종 필터 적용 버튼 클릭 시
+        function applyStoreFilter() {
+            const selectedLarge = document.getElementById('select-large').value;
+            const selectedMiddle = document.getElementById('select-middle').value;
+            const selectedSmall = document.getElementById('select-small').value;
+
+            let filtered = storeData;
+            if (selectedLarge) filtered = filtered.filter(s => s.large === selectedLarge);
+            if (selectedMiddle) filtered = filtered.filter(s => s.middle === selectedMiddle);
+            if (selectedSmall) filtered = filtered.filter(s => s.small === selectedSmall);
+
+            renderMarkers(filtered);
+            alert(`필터링된 점포 수: ${filtered.length}개`);
+        }
+
+        // 우측 패널: 상권 정보 렌더링 함수
+        function updateRightPanel(item) {
+            document.getElementById('sidebar-title').innerText = item.name;
+            const panel = document.getElementById('dynamic-info-area');
+            
+            panel.innerHTML = `
+                <div style="margin-bottom: 18px; font-size: 14px; color: #475569; font-weight: 500;">
+                    <strong>지역:</strong> ${item.district} ${item.dong} (${item.area_type})
+                </div>
+                <div class="info-card">
+                    <h4>👥 총 유동인구</h4>
+                    <p>${item.details.floating_pop}</p>
+                </div>
+                <div class="info-card">
+                    <h4>📊 주요 성별 / 연령대</h4>
+                    <p><strong>성별:</strong> ${item.details.gender_ratio}<br><strong>연령대:</strong> ${item.details.age_group}</p>
+                </div>
+                <div class="info-card">
+                    <h4>⏰ 주중/주말 & 주요 시간대</h4>
+                    <p><strong>주중/주말:</strong> ${item.details.day_ratio}<br><strong>시간대:</strong> ${item.details.time_slot}</p>
+                </div>
+                <div class="info-card">
+                    <h4>🎯 추천 타깃층</h4>
+                    <p>${item.details.target_audience}</p>
+                </div>
+                <div class="info-card">
+                    <h4>🏢 상권 특성</h4>
+                    <p>${item.details.description}</p>
+                </div>
+            `;
+        }
+
+        // 우측 패널: 점포 클릭 시 자치구 내 동일 업종 개수 계산 및 표출
+        function handleStoreClick(store) {
+            const targetDistrict = store.district;
+            const targetSmallCat = store.small;
+
+            const sameCategoryCount = storeData.filter(s => 
+                s.district === targetDistrict && s.small === targetSmallCat
+            ).length;
+
+            document.getElementById('sidebar-title').innerText = store.name;
+            const panel = document.getElementById('dynamic-info-area');
+            
+            panel.innerHTML = `
+                <div style="background: #eff6ff; padding: 18px; border-radius: 10px; border-left: 5px solid #2563eb; margin-bottom: 18px;">
+                    <h3 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 17px;">🏪 ${store.name}</h3>
+                    <p style="margin: 6px 0; font-size: 14px; color: #334155;"><strong>대분류:</strong> ${store.large}</p>
+                    <p style="margin: 6px 0; font-size: 14px; color: #334155;"><strong>중분류:</strong> ${store.middle}</p>
+                    <p style="margin: 6px 0; font-size: 14px; color: #334155;"><strong>소분류:</strong> ${store.small}</p>
+                    <p style="margin: 6px 0; font-size: 14px; color: #334155;"><strong>위치:</strong> ${store.district} ${store.dong}</p>
+                </div>
+                <div style="background: #fdf2f8; padding: 18px; border-radius: 10px; border-left: 5px solid #db2777;">
+                    <h4 style="margin: 0 0 8px 0; color: #831843; font-size: 15px;">📍 지역 업종 비교 통계</h4>
+                    <p style="color: #be185d; font-weight: bold; font-size: 15px; margin: 0; line-height: 1.5;">
+                        ${targetDistrict} 내 동일 업종(${targetSmallCat}): ${sameCategoryCount}개
+                    </p>
+                </div>
+            `;
+        }
+
+        // 7. 페이지 최초 로딩 시 필터 초기화 및 기본 상권 자동 표출
+        window.addEventListener('DOMContentLoaded', () => {
+            initCategoryFilters();
+            if (commercialData && commercialData.length > 0) {
+                let defaultItem = commercialData.find(item => item.district && item.district.includes('강남구'));
+                if (!defaultItem) {
+                    defaultItem = commercialData[0];
+                }
+                updateRightPanel(defaultItem);
+            }
+        });
+    </script>
+</body>
+</html>

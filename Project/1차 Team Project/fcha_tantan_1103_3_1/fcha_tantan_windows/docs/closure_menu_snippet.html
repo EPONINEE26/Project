@@ -1,0 +1,9 @@
+{# 대상 파일: brands/templates/base.html #}
+{# 확인 시점 기준 위치: 21번째 줄 #}
+{# 삽입 지점: 기존 '점주 커뮤니티' 링크의 </a> 다음, </nav> 직전 #}
+{# 기존 링크와 </nav> 유지, 아래 링크만 추가 #}
+{# 사전 조건: community/urls.py에 closure_list 이름의 URL 등록 #}
+{# 이 파일 자체는 안내용 코드 조각이며 실제 메뉴에는 자동 반영되지 않음 #}
+
+{# 폐점주 커뮤니티 메뉴 추가 #}
+<a href="{% url 'community:closure_list' %}">폐점주 커뮤니티</a>

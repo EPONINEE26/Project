@@ -1,0 +1,59 @@
+{
+  "rows": 542448,
+  "years": {
+    "2024": 179154,
+    "2025": 200394,
+    "2026": 162900
+  },
+  "unique_brands": 13378,
+  "areas": {
+    "전남": 30136,
+    "경북": 30136,
+    "경남": 30136,
+    "제주": 30136,
+    "세종": 30136,
+    "전체": 30136,
+    "전북": 30136,
+    "충남": 30136,
+    "충북": 30136,
+    "강원": 30136,
+    "경기": 30136,
+    "울산": 30136,
+    "서울": 30136,
+    "부산": 30136,
+    "대구": 30136,
+    "인천": 30136,
+    "광주": 30136,
+    "대전": 30136
+  },
+  "major_categories": {
+    "서비스": 85320,
+    "도소매": 24534,
+    "외식": 432594
+  },
+  "null_counts": {
+    "allFrcsDmsCnt": 23163,
+    "frcsCnt": 23154,
+    "dmsCnt": 23219
+  },
+  "zero_counts": {
+    "dmsCnt": 489889,
+    "frcsCnt": 398305,
+    "allFrcsDmsCnt": 386821
+  },
+  "issues": {
+    "total_mismatch": 94
+  },
+  "fields": [
+    "jngBizCrtraYr",
+    "brandMnno",
+    "jnghdqrtrsMnno",
+    "acntgYr",
+    "indutyLclasNm",
+    "indutyMlsfcNm",
+    "areaNm",
+    "frcsCnt",
+    "dmsCnt",
+    "allFrcsDmsCnt"
+  ]
+}

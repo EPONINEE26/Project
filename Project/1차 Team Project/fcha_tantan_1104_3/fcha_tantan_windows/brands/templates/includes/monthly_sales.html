@@ -1,0 +1,9 @@
+{% load brand_format %}
+{% if row.monthly != None %}
+    {{ row.monthly|number }}
+    <small>만원</small>
+{% elif row.monthly_min != None %}
+    <span class="range-value">{{ row.monthly_min|number }}~{{ row.monthly_max|number }}<small>만원</small></span>
+{% else %}
+    미제공
+{% endif %}

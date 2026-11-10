@@ -1,0 +1,127 @@
+openapi: 3.0.3
+info:
+  title: FCHA TANTAN API
+  version: 1.0.0
+  description: Current Django JSON read-only API; 2024/2025 demo data unless verified
+    imported.
+servers:
+- url: /api/v1
+paths:
+  /brands/:
+    get:
+      summary: 브랜드 목록
+      responses:
+        '200':
+          description: 브랜드 목록 및 메타데이터
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BrandCollection'
+  /brands/{slug}/:
+    get:
+      summary: 브랜드 상세
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: 브랜드 단건
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Brand'
+        '404':
+          description: 미존재 브랜드
+components:
+  schemas:
+    AnnualStat:
+      type: object
+      properties:
+        year:
+          type: integer
+        stores:
+          type: integer
+          nullable: true
+        opened:
+          type: integer
+          nullable: true
+        closed:
+          type: integer
+          nullable: true
+        annual_sales_krw:
+          type: integer
+          format: int64
+          nullable: true
+        source_label:
+          type: string
+        source_url:
+          type: string
+        regions:
+          type: object
+          additionalProperties:
+            type: integer
+            nullable: true
+    Brand:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        category:
+          type: string
+          enum:
+          - 카페
+          - 치킨
+          - 편의점
+          - 미용실
+        tagline:
+          type: string
+        english_name:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+        color:
+          type: string
+        initial_cost_krw:
+          type: integer
+          format: int64
+          nullable: true
+        costs:
+          type: object
+          additionalProperties:
+            type: integer
+        area_sqm:
+          type: number
+        stats:
+          type: array
+          items:
+            $ref: '#/components/schemas/AnnualStat'
+    BrandCollection:
+      type: object
+      properties:
+        schema_version:
+          type: string
+        is_demo:
+          type: boolean
+        source_label:
+          type: string
+        updated_at:
+          type: string
+        years:
+          type: array
+          items:
+            type: integer
+        regions:
+          type: array
+          items:
+            type: string
+        brands:
+          type: array
+          items:
+            $ref: '#/components/schemas/Brand'

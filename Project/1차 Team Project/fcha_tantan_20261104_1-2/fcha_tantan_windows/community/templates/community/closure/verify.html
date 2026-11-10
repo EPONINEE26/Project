@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}폐업 인증 신청·내역 | 프차 탄탄{% endblock %}
+{% block content %}
+<div class="container"></div>
+<div class="container narrow-page">
+    <a class="back-link" href="{% url 'community:closure_list' %}">← 폐점주 커뮤니티</a>
+    <div class="page-header">
+        <h1>폐업 인증 신청</h1>
+        <p>게시글은 폐업 사실과 해당 브랜드의 운영 이력을 관리자가 확인하고 승인한 회원만 작성할 수 있습니다.</p>
+        <p>서류 제출만으로 자동 승인되지 않습니다. 신청자와 사업체의 관계, 운영 브랜드, 폐업 사실을 확인하며 확인이 어려운 경우 반려될 수 있습니다.</p>
+        <p class="data-note">폐업사실증명 등 폐업 사실 확인 서류와 가맹계약서 등 브랜드 운영 이력 확인 서류를 제출해주세요. 심사에 필요한 정보는 남기되 주민등록번호 뒷자리·계좌번호 등 불필요한 개인정보는 가려주세요. 제출 서류와 사업자등록번호는 게시글에 공개하지 않습니다.</p>
+    </div>
+    <section class="panel">
+        {# multipart/form-data: 일반 입력값과 파일을 함께 전송할 인코딩 방식 #}
+        <form method="post" enctype="multipart/form-data" class="form-stack">
+            {# csrf_token: 외부 사이트의 위조된 제출 요청을 방어할 토큰 삽입 #}
+            {% csrf_token %}
+            {# include: 입력칸·오류 출력용 공통 템플릿 포함 #}
+            {% include "community/closure/_fields.html" %}
+            <button class="button" type="submit">폐업 인증 신청</button>
+        </form>
+    </section>
+    <section class="panel">
+        <h2>내 인증 신청 내역</h2>
+        {% for item in verifications %}
+        <article>
+            <h3>{{ item.brand.name }} / {{ item.store_name }}</h3>
+            {# date: 날짜 표시 형식 지정, get_status_display: choices 표시값 출력 #}
+            <p>신청일: {{ item.submitted_at|date:"Y.m.d H:i" }}</p>
+            <p>심사 상태: {{ item.get_status_display }}</p>
+            {% if item.decision_reason %}
+                <strong>반려·철회 사유</strong>
+                {# linebreaks: 입력된 줄바꿈을 HTML 문단·줄바꿈으로 변환 #}
+                {{ item.decision_reason|linebreaks }}
+            {% endif %}
+            {% if item.status == "approved" %}
+                <a href="{% url 'community:closure_write' %}">승인된 인증으로 글쓰기</a>
+            {% elif item.status == "pending" %}
+                <p>관리자가 검토 중입니다. 승인 후 글을 작성할 수 있습니다.</p>
+            {% else %}
+                <p>사유를 확인하고 필요한 내용을 보완하여 위 신청 폼으로 다시 신청해주세요.</p>
+            {% endif %}
+            <hr>
+        </article>
+        {% empty %}
+            {# empty: 반복 대상이 없을 때 표시할 내용 #}
+            <p>아직 신청한 폐업 인증이 없습니다.</p>
+        {% endfor %}
+    </section>
+    <section class="panel">
+        <h2>내가 작성한 게시글</h2>
+        {% for item in my_reviews %}
+            {# pk: 상세 경로에 전달할 게시글 기본키 #}
+            <p><a href="{% url 'community:closure_detail' item.pk %}">{{ item.public_title }}</a></p>
+        {% empty %}<p>아직 작성한 게시글이 없습니다.</p>{% endfor %}
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+2026-10-30 feature update
+75 Django tests passed.
+Django system check: no issues.
+Migration check: no changes detected.
+All seven JavaScript files: node --check passed.
+411,967 original rows retain identical common-field values.
+Browser: Django-rendered snapshots inspected at desktop and 390px widths.
+Actual Windows BAT/PowerShell and live Kakao map not tested here.
+
+Follow-up QA: all 12,479 real brands in 45 groups; 메가 matches 12 brands.
+Clearing search restores all options and preserves chosen slug.
+10-brand table, chart values and CSV retain selection order.
+Desktop table scroll moves 774px with metric column fixed.
+Hamburger ends with community, help center. Desktop and 390px layout checked.

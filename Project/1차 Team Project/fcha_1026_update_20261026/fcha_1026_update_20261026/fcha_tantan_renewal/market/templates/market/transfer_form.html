@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}양도양수 매물 {% if listing %}수정{% else %}등록{% endif %} | 프차 탄탄{% endblock %}
+{% block content %}
+<div class="container narrow-page">
+    <div class="page-header"><a class="back-link" href="{% url 'market:transfer_list' %}">← 양도양수 목록</a><span class="eyebrow">TRANSFER LISTING</span><h1>양도양수 매물 {% if listing %}수정{% else %}등록{% endif %}</h1><p>금액은 만원 단위 정수로 입력하세요. 정확한 주소·연락처는 문의한 사람에게 따로 알려주세요.</p></div>
+    <section class="panel"><form method="post" class="form-stack">{% csrf_token %}{% include 'includes/form_fields.html' %}<button class="button" type="submit">저장</button></form></section>
+</div>
+{% endblock %}

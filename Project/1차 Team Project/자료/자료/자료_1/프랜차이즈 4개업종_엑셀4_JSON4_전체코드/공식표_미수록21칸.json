@@ -1,0 +1,338 @@
+[
+  {
+    "filename": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "C9",
+    "brand": "컴포즈커피",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=AHKRQtk1ydfIFog9cijl5A%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 서울 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "서울",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2024
+  },
+  {
+    "filename": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "D9",
+    "brand": "컴포즈커피",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=AHKRQtk1ydfIFog9cijl5A%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 경기 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "경기",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2024
+  },
+  {
+    "filename": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "E9",
+    "brand": "컴포즈커피",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=AHKRQtk1ydfIFog9cijl5A%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 전체 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "전국",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2024
+  },
+  {
+    "filename": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "C10",
+    "brand": "이디야커피",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=dPZqY%2BzpuPRUntD7EKuR9A%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 서울 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "서울",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2025
+  },
+  {
+    "filename": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "D10",
+    "brand": "이디야커피",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=dPZqY%2BzpuPRUntD7EKuR9A%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 경기 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "경기",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2025
+  },
+  {
+    "filename": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "E10",
+    "brand": "이디야커피",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=dPZqY%2BzpuPRUntD7EKuR9A%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 전체 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "전국",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2025
+  },
+  {
+    "filename": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "C11",
+    "brand": "빽다방",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=tg2JPi7z4yJIW5dnFnGodQ%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 서울 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "서울",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2024
+  },
+  {
+    "filename": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "D11",
+    "brand": "빽다방",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=tg2JPi7z4yJIW5dnFnGodQ%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 경기 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "경기",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2024
+  },
+  {
+    "filename": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "E11",
+    "brand": "빽다방",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=tg2JPi7z4yJIW5dnFnGodQ%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 전체 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "전국",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2024
+  },
+  {
+    "filename": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "C12",
+    "brand": "투썸플레이스",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=HV2XeDC%2Bo1jhfZkGLu2HXg%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 서울 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "서울",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2024
+  },
+  {
+    "filename": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "D12",
+    "brand": "투썸플레이스",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=HV2XeDC%2Bo1jhfZkGLu2HXg%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 경기 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "경기",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2024
+  },
+  {
+    "filename": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "E12",
+    "brand": "투썸플레이스",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=HV2XeDC%2Bo1jhfZkGLu2HXg%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 전체 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "전국",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2024
+  },
+  {
+    "filename": "프랜차이즈_편의점_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "C7",
+    "brand": "CU",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=Hq7OdHz%2B6ROLgZxbpfOyZA%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 서울 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "서울",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2025
+  },
+  {
+    "filename": "프랜차이즈_편의점_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "D7",
+    "brand": "CU",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=Hq7OdHz%2B6ROLgZxbpfOyZA%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 경기 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "경기",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2025
+  },
+  {
+    "filename": "프랜차이즈_편의점_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "E7",
+    "brand": "CU",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=Hq7OdHz%2B6ROLgZxbpfOyZA%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 전체 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "전국",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2025
+  },
+  {
+    "filename": "프랜차이즈_편의점_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "C9",
+    "brand": "세븐일레븐",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=4pJjz60coXrdk12p2yUr9Q%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 서울 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "서울",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2024
+  },
+  {
+    "filename": "프랜차이즈_편의점_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "D9",
+    "brand": "세븐일레븐",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=4pJjz60coXrdk12p2yUr9Q%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 경기 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "경기",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2024
+  },
+  {
+    "filename": "프랜차이즈_편의점_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "E9",
+    "brand": "세븐일레븐",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=4pJjz60coXrdk12p2yUr9Q%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 전체 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "전국",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2024
+  },
+  {
+    "filename": "프랜차이즈_편의점_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "C10",
+    "brand": "이마트24",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=8d%2FC%2FKf8AV%2F3mcEz2uTBdg%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 서울 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "서울",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2025
+  },
+  {
+    "filename": "프랜차이즈_편의점_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "D10",
+    "brand": "이마트24",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=8d%2FC%2FKf8AV%2F3mcEz2uTBdg%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 경기 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "경기",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2025
+  },
+  {
+    "filename": "프랜차이즈_편의점_창업비용_매출_분석.xlsx",
+    "sheet": "03_지역집계",
+    "cell": "E10",
+    "brand": "이마트24",
+    "year": 2025,
+    "source": {
+      "publisher": "공정거래위원회",
+      "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=8d%2FC%2FKf8AV%2F3mcEz2uTBdg%3D%3D",
+      "section": "가맹점 및 직영점 현황 / 2025년 / 전체 / 가맹점수",
+      "retrieved_date": "2026-10-22"
+    },
+    "region": "전국",
+    "reason": "확인한 최신 공시의 2025년 가맹점수 표가 없거나 해당 값이 비어 있음. 직영 포함 현재 매장 수·2024 수치로 대체하지 않음",
+    "latest_store_table_year": 2025
+  }
+]

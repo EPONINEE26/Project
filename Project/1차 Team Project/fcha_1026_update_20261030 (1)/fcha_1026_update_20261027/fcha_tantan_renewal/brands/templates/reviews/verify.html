@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}점주 계약서 인증 | 프차 탄탄{% endblock %}
+{% block content %}
+<div class="container narrow-page">
+    <div class="page-header"><a class="back-link" href="{% url 'brands:bview' brand.slug %}#reviews">← {{ brand.name }}로 돌아가기</a><span class="eyebrow">OWNER VERIFICATION</span><h1>{{ brand.name }} 점주 인증</h1><p>가맹계약서 사본으로 점주 여부를 확인합니다. 승인 후, 계약 시작일로부터 6개월이 지나면 후기를 쓸 수 있어요.</p></div>
+    {% if verifications %}<section class="panel"><h2>내 인증 내역</h2><ul class="plain-list">{% for v in verifications %}<li><b>{{ v.store_name }}</b> · 계약 시작 {{ v.contract_start_date|date:'Y.m.d' }} · <span class="status-tag status-{{ v.status }}">{{ v.get_status_display }}</span>{% if v.reject_reason %} · {{ v.reject_reason }}{% endif %}</li>{% endfor %}</ul></section>{% endif %}
+    <section class="panel">
+        <h2>계약서 제출</h2>
+        <form method="post" enctype="multipart/form-data" class="form-stack">{% csrf_token %}{% include 'includes/form_fields.html' %}<button class="button" type="submit">인증 요청</button></form>
+        <p class="data-note">계약서 사본은 공개되지 않으며 관리자 확인에만 사용합니다. 주민등록번호 뒷자리·계좌번호 등 불필요한 정보는 가려서 올려주세요.</p>
+    </section>
+</div>
+{% endblock %}

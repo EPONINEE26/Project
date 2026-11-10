@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load brand_format %}
+
+{% block title %}맞춤 브랜드 추천 | 프차 탄탄{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <span class="eyebrow">MATCHED FOR YOU</span>
+        <div class="page-title-row">
+            <div><h1>내 조건에 맞는 브랜드</h1><p>회원가입 때 입력한 창업 조건으로 {{ year }}년 공시 자료를 비교했어요.</p></div>
+            <form class="page-tools year-form" method="get">{% include 'includes/year_select.html' %}<button class="button small">조회</button></form>
+        </div>
+    </div>
+    {% if not profile %}
+        <section class="panel empty"><h2>창업 조건을 먼저 입력해주세요</h2><p>내 정보에서 ‘창업을 목적으로 가입’을 ‘예’로 바꾸고 예산·목표 매출·희망 지역·업종을 알려주시면 맞는 브랜드를 골라드려요.</p><a class="button" href="{% url 'accounts:profile' %}">창업 조건 입력하기</a></section>
+    {% else %}
+        <section class="panel condition-panel">
+            <dl class="condition-list">
+                <div><dt>창업 목적</dt><dd>{{ profile.get_startup_purpose_display|default:'미입력' }}</dd></div>
+                <div><dt>예산</dt><dd>{% if profile.budget_manwon != None %}{{ profile.budget_manwon|number }}만원{% else %}미입력{% endif %}</dd></div>
+                <div><dt>목표 월 매출</dt><dd>{% if profile.target_monthly_sales_manwon != None %}{{ profile.target_monthly_sales_manwon|number }}만원{% else %}미입력{% endif %}</dd></div>
+                <div><dt>희망 지역</dt><dd>{{ profile.desired_region|default:'미입력' }}</dd></div>
+                <div><dt>희망 업종</dt><dd>{{ profile.desired_category|default:'전체' }}</dd></div>
+            </dl>
+            <a class="button small outline" href="{% url 'accounts:profile' %}">조건 수정</a>
+        </section>
+        <ol class="recommend-list">
+            {% for item in results %}
+                <li class="recommend-item">
+                    <span class="rank">{{ forloop.counter }}</span>
+                    <div class="recommend-body">
+                        <a class="recommend-name" href="{% url 'brands:bview' item.brand.slug %}?year={{ year }}">{{ item.brand.name|clean_brand_name  }}</a><span class="category-tag">{{ item.brand.category }}</span>
+                        <ul class="reason-list">{% for reason in item.reasons %}<li>{{ reason }}</li>{% endfor %}</ul>
+                    </div>
+                    <div class="score"><strong>{{ item.score }}</strong><small>/100</small></div>
+                </li>
+            {% empty %}
+                <li class="panel empty"><h2>조건에 맞는 브랜드가 없어요</h2><p>예산을 늘리거나 업종을 ‘전체’로 바꿔보세요. 창업 부담금이 예산을 넘는 브랜드는 제외합니다.</p></li>
+            {% endfor %}
+        </ol>
+        <section class="calculation-notes"><h3>추천 점수 기준</h3>
+            <p>예산 적합(창업 부담금 ≤ 예산, 미공개는 일부 점수) · 목표 매출 달성률(가맹점 평균 월매출, 범위 자료는 하한) · 희망 지역 가맹점 수(30개 이상 만점) · 안정성(계약종료·해지 ÷ 가맹점 수, 20% 이상이면 0점, 전국 가맹점 10개 미만은 절반만 반영)을 창업 목적별 가중치로 합산합니다.</p>
+            <p>공개 통계 기반 참고 점수이며 신규 매장의 매출·수익을 보장하지 않습니다. 계약 전 정보공개서와 본사 상담을 꼭 확인하세요.</p></section>
+    {% endif %}
+</div>
+{% endblock %}

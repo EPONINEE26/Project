@@ -1,0 +1,16 @@
+{
+  "mode": "api",
+  "source_url": "https://apis.data.go.kr/1130000/FftcAreaIndutyAvrStatsService/getAreaIndutyAvrOutStats",
+  "query": {
+    "pageNo": "1",
+    "numOfRows": "100",
+    "yr": "2024"
+  },
+  "started_at": "2026-10-24T20:34:10+09:00",
+  "complete": true,
+  "row_count": 255,
+  "expected_total": 255,
+  "pages_saved": 3,
+  "is_dummy": false,
+  "finished_at": "2026-10-24T20:34:14+09:00"
+}

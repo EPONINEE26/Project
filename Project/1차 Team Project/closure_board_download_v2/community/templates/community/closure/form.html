@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}폐업 경험 작성·수정 | 프차 탄탄{% endblock %}
+{% block content %}
+<div class="container narrow-page">
+    <a href="{% url 'community:closure_list' %}">← 목록</a>
+    <div class="page-header">
+        {# review 존재 여부로 신규 작성과 기존 글 수정 구분 #}
+        <h1>{% if review %}폐업 경험 수정{% else %}폐업 경험 작성{% endif %}</h1>
+        {% if review %}
+            <p>브랜드: {{ review.brand.name }}</p>
+            <p>연결된 폐업 인증과 작성자는 변경할 수 없습니다.</p>
+        {% else %}<p>본인의 승인된 폐업 인증을 선택한 후 작성해주세요.</p>{% endif %}
+    </div>
+    {% include "community/closure/_rules.html" %}
+    <section class="panel">
+        {# action 생략: 현재 작성 또는 수정 URL로 폼 제출 #}
+        <form method="post" class="form-stack">
+            {% csrf_token %}
+            {% include "community/closure/_fields.html" %}
+            <p class="data-note">욕설·비하 발언·인신공격이 포함된 게시글은 관리자 검토 후 블라인드 처리되거나 게시판에서 삭제될 수 있습니다. 검수 중인 글은 수정 후에도 관리자 확인 전까지 공개되지 않습니다.</p>
+            <button class="button" type="submit">저장</button>
+            {% if review %}<a href="{% url 'community:closure_detail' review.pk %}">취소</a>
+            {% else %}<a href="{% url 'community:closure_list' %}">취소</a>{% endif %}
+        </form>
+    </section>
+</div>
+{% endblock %}

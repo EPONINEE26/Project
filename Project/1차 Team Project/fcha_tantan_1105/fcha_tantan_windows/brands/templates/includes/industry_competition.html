@@ -1,0 +1,44 @@
+{% load brand_format %}
+<div class="industry-competition">
+    <section class="focus-industry unfavorable data-industry">
+        <div class="industry-head"><b>⊗ 경쟁 과밀 업종</b><small>상권 내 매장 비중이 서울 평균의 {{ comp.crowded_lq|default:'1.5' }}배 이상 · 매장 5곳 이상</small></div>
+        {% if comp %}
+            <ul class="industry-list">
+                {% for row in comp.crowded %}
+                    <li><b>{{ row.name }}</b><span>{{ row.count|number }}곳 · 상권 {{ row.local_share }}% / 서울 {{ row.seoul_share }}%</span><em>서울 평균의 {{ row.lq }}배</em></li>
+                {% empty %}
+                    <li class="industry-empty">기준을 넘는 업종이 없습니다.</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="industry-empty">위치를 저장해 상권이 선택되면 매장 수로 계산합니다.</p>
+        {% endif %}
+    </section>
+    <section class="focus-industry favorable data-industry">
+        <div class="industry-head"><b>✓ 공급이 적은 업종</b><small>서울에서 흔한 업종(비중 {{ comp.common_share|default:'1.0' }}% 이상)인데 이 상권 비중이 서울 평균의 {{ comp.scarce_lq|default:'0.5' }}배 이하</small></div>
+        {% if comp and comp.enough %}
+            <ul class="industry-list">
+                {% for row in comp.scarce %}
+                    <li><b>{{ row.name }}</b><span>{{ row.count|number }}곳 · 상권 {{ row.local_share }}% / 서울 {{ row.seoul_share }}%</span><em>{% if row.count %}서울 평균의 {{ row.lq }}배{% else %}상권 내 없음{% endif %}</em></li>
+                {% empty %}
+                    <li class="industry-empty">기준에 해당하는 업종이 없습니다.</li>
+                {% endfor %}
+            </ul>
+        {% elif comp %}
+            <p class="industry-empty">비교 대상 매장이 {{ comp.total|number }}곳뿐이라 판단하지 않습니다. ({{ comp.min_area_stores }}곳 이상일 때 계산)</p>
+        {% else %}
+            <p class="industry-empty">위치를 저장해 상권이 선택되면 매장 수로 계산합니다.</p>
+        {% endif %}
+    </section>
+    <p class="industry-note">
+        {% if comp %}공공 상가정보 {{ comp.reference_on|date:'Y-m-d' }} 스냅샷 · 이 상권 비교 대상 매장 {{ comp.total|number }}곳 · {% endif %}
+        소매·음식·교육·여가·개인서비스 업종만 비교(숙박·전문직·병원·부동산 제외) · 매출·폐업이 아닌 <b>매장 수 기준 경쟁 정도</b>이며 창업 유불리를 판단한 결과가 아닙니다.
+    </p>
+    {% if analysis_area.unfavorable_industries or analysis_area.favorable_industries %}
+        <details class="industry-original">
+            <summary>원문 참고 (검증 전 해석 자료)</summary>
+            <p><b>불리한 업종</b> {{ analysis_area.unfavorable_industries|default:'자료 없음' }}</p>
+            <p><b>창업 검토 업종</b> {{ analysis_area.favorable_industries|default:'자료 없음' }}</p>
+        </details>
+    {% endif %}
+</div>

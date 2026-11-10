@@ -1,0 +1,112 @@
+[
+  {
+    "filename": "프랜차이즈_이미용_창업비용_매출_분석.xlsx",
+    "formula_cache_updates": [
+      {
+        "cell": "G3",
+        "formula": "=IFERROR(C3/E3,\"\")",
+        "seoul_count": 130,
+        "national_count": 320,
+        "ratio": 0.40625,
+        "display_percent": "40.6%"
+      },
+      {
+        "cell": "G4",
+        "formula": "=",
+        "seoul_count": 116,
+        "national_count": 323,
+        "ratio": 0.3591331269349845,
+        "display_percent": "35.9%"
+      },
+      {
+        "cell": "G5",
+        "formula": "=",
+        "seoul_count": 35,
+        "national_count": 47,
+        "ratio": 0.7446808510638298,
+        "display_percent": "74.5%"
+      },
+      {
+        "cell": "G6",
+        "formula": "=",
+        "seoul_count": 33,
+        "national_count": 191,
+        "ratio": 0.17277486910994763,
+        "display_percent": "17.3%"
+      },
+      {
+        "cell": "G7",
+        "formula": "=",
+        "seoul_count": 16,
+        "national_count": 166,
+        "ratio": 0.0963855421686747,
+        "display_percent": "9.6%"
+      }
+    ],
+    "original_constants_changed": 0,
+    "formula_text_changed": 0,
+    "format_changed": 0
+  },
+  {
+    "filename": "프랜차이즈_치킨_창업비용_매출_분석.xlsx",
+    "formula_cache_updates": [],
+    "original_constants_changed": 0,
+    "formula_text_changed": 0,
+    "format_changed": 0
+  },
+  {
+    "filename": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "formula_cache_updates": [],
+    "original_constants_changed": 0,
+    "formula_text_changed": 0,
+    "format_changed": 0
+  },
+  {
+    "filename": "프랜차이즈_편의점_창업비용_매출_분석.xlsx",
+    "formula_cache_updates": [
+      {
+        "cell": "G3",
+        "formula": "=IFERROR(C3/E3,\"\")",
+        "seoul_count": 2861,
+        "national_count": 18255,
+        "ratio": 0.15672418515475212,
+        "display_percent": "15.7%"
+      },
+      {
+        "cell": "G4",
+        "formula": "=",
+        "seoul_count": 3152,
+        "national_count": 17989,
+        "ratio": 0.17521818889321253,
+        "display_percent": "17.5%"
+      },
+      {
+        "cell": "G5",
+        "formula": "=",
+        "seoul_count": 1973,
+        "national_count": 12081,
+        "ratio": 0.16331429517424054,
+        "display_percent": "16.3%"
+      },
+      {
+        "cell": "G6",
+        "formula": "=",
+        "seoul_count": 766,
+        "national_count": 5895,
+        "ratio": 0.1299406276505513,
+        "display_percent": "13.0%"
+      },
+      {
+        "cell": "G8",
+        "formula": "=",
+        "seoul_count": 3128,
+        "national_count": 17888,
+        "ratio": 0.17486583184257604,
+        "display_percent": "17.5%"
+      }
+    ],
+    "original_constants_changed": 0,
+    "formula_text_changed": 0,
+    "format_changed": 0
+  }
+]

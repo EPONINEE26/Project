@@ -1,0 +1,34 @@
+[
+  {
+    "file": "프랜차이즈_이미용_창업비용_매출_분석.xlsx",
+    "sheets": 11,
+    "cells": 830,
+    "formulas": 159,
+    "all_cells_verified": true,
+    "original_changed": false
+  },
+  {
+    "file": "프랜차이즈_치킨_창업비용_매출_분석.xlsx",
+    "sheets": 11,
+    "cells": 869,
+    "formulas": 162,
+    "all_cells_verified": true,
+    "original_changed": false
+  },
+  {
+    "file": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "sheets": 11,
+    "cells": 1073,
+    "formulas": 172,
+    "all_cells_verified": true,
+    "original_changed": false
+  },
+  {
+    "file": "프랜차이즈_편의점_창업비용_매출_분석.xlsx",
+    "sheets": 11,
+    "cells": 876,
+    "formulas": 145,
+    "all_cells_verified": true,
+    "original_changed": false
+  }
+]

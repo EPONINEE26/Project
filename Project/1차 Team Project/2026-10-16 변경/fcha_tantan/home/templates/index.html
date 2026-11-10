@@ -1,0 +1,29 @@
+{# {% extends 'base.html' %} : brands폴더->templates폴더->base.html #}
+{# 각 페이지 상단 메뉴 #}
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-copy">
+            <span class="eyebrow">FCHA TANTAN · {% for y in years %}{{ y }}{% if not forloop.last %} / {% endif %}{% empty %}DATA{% endfor %}</span>
+            <h1>시작의 기준을,<br><em>탄탄하게.</em></h1>
+            <p>내게 맞는 프랜차이즈, 데이터로 비교하세요.</p>
+            <a class="button lemon" href="#brands">브랜드 둘러보기 <span>↗</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+            <div class="art-orbit"></div>
+            <div class="art-block block-one"></div>
+            <div class="art-block block-two"></div>
+            <div class="art-block block-three"></div>
+            <span class="art-caption">BUILD YOUR NEXT.</span>
+        </div>
+    </div>
+</section>
+{% include 'includes/list_section.html' %}
+<section class="insight-band">
+    <div class="container insight-grid">
+        <a class="insight-card" href="{% url 'brands:bregion' %}"><div><span class="eyebrow">LOCATION</span><h3>지역에서 기회를 찾다.</h3></div><span class="insight-arrow">↗</span></a>
+        <a class="insight-card" href="{% url 'brands:guide' %}"><div><span class="eyebrow">DATA GUIDE</span><h3>숫자의 기준을 읽다.</h3></div><span class="insight-arrow">↗</span></a>
+    </div>
+</section>
+{% endblock %}

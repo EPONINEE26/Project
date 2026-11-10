@@ -1,0 +1,9 @@
+# 비밀값·로컬 실행 파일
+.env
+.venv/
+__pycache__/
+*.pyc
+db.sqlite3
+backups/
+private_media/
+.vscode/

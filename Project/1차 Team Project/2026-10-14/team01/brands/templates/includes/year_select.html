@@ -1,0 +1,12 @@
+<label>
+    <span class="sr-only">기준연도</span>
+    <select name="year" aria-label="기준연도">
+        {% for y in years %}
+            <option value="{{ y }}" {% if y == year %}selected{% endif %}>{{ y }}년 기준</option>
+        {% empty %}
+            <option value="{{ year }}">{{ year }}년 기준</option>
+        {% endfor %}
+    </select>
+</label>
+
+{# 공통 HTML 조각. 버튼 동작과 사용 화면은 HTML_버튼이동안내.txt의 해당 파일 항목 참고. #}

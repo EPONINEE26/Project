@@ -1,0 +1,60 @@
+{% load brand_format %}
+<div class="container">
+    <section class="section" id="brands">
+        <form method="get" action="{{ request.path }}" id="filter-form">
+            <div class="search-panel"><div class="section-head">
+                <div>
+                    <span class="eyebrow">{% if saved_only %}MY COLLECTION{% else %}FIND YOUR BRAND{% endif %}</span>
+                    <h2>{% if saved_only %}마음에 담아둔 브랜드{% else %}어떤 시작을 찾고 있나요?{% endif %}</h2>
+                </div>
+                <div class="search-form">
+                    <span aria-hidden="true">⌕</span>
+                    <input name="query" value="{{ query }}" aria-label="브랜드명 검색" placeholder="브랜드명 검색">
+                    <button aria-label="검색" type="submit">↵</button>
+                </div>
+            </div>
+            <div class="filter-panel">
+                <div class="filter-row">
+                    <div class="chips">
+                        {% for c in categories %}
+                            <label class="chip {% if category == c %}active{% endif %}">
+                                <input type="radio" name="category" value="{{ c }}" {% if category == c %}checked{% endif %}>
+                                {{ c }}
+                            </label>
+                        {% endfor %}
+                    </div>
+                    <div class="selects">
+                        <select name="region" aria-label="지역 선택">
+                            <option value="전국">전국</option>
+                            {% for r in regions %}<option {% if r == region %}selected{% endif %}>{{ r }}</option>{% endfor %}
+                        </select>
+                        {% include 'includes/year_select.html' %}
+                        <button class="button small" type="submit">조회</button>
+                    </div>
+                </div>
+                <div class="filter-meta">
+                    <span>{% include 'includes/badge.html' %} <span class="filter-scope">매출·개폐업: 전국 · 매장: 선택 지역</span></span>
+                    <a class="reset" href="{{ request.path }}">↻ 초기화</a>
+                </div>
+            </div>
+            </div><div class="result-toolbar">
+                <span>총 <strong>{{ rows|length }}개</strong> 브랜드</span>
+                <select name="sort" aria-label="정렬 방식">
+                    {% for value,label in sorts %}<option value="{{ value }}" {% if sort == value %}selected{% endif %}>{{ label }}</option>{% endfor %}
+                </select>
+            </div>
+        </form>
+        <div class="cards">
+            {% for row in rows %}
+                {% include 'includes/brand_card.html' %}
+            {% empty %}
+                <div class="empty">
+                    <h2>{% if saved_only %}관심 브랜드가 없어요{% else %}조건에 맞는 브랜드가 없어요{% endif %}</h2>
+                    <p>{% if saved_only %}브랜드 카드의 하트를 눌러 관심 브랜드를 모아보세요.{% else %}검색어나 지역·업종 필터를 바꿔보세요.{% endif %}</p>
+                    <a class="button" href="{% url 'brands:blist' %}">모든 브랜드 둘러보기</a>
+                </div>
+            {% endfor %}
+        </div>
+        <p class="data-note">ⓘ {{ year }}년 기준 · 평균 월 매출은 가맹점 평균 연매출을 12개월로 나눈 값이며, 신규 창업점의 예상 매출이나 순이익이 아닙니다.<br>{% if is_demo %}모든 수치와 브랜드는 가상이며, 사진은 업종을 표현한 참고 이미지입니다.{% else %}출처: {{ source_label }}{% endif %}</p>
+    </section>
+</div>

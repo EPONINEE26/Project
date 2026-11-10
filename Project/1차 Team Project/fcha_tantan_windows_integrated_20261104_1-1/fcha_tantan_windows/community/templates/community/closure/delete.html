@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}폐업 경험 삭제 | 프차 탄탄{% endblock %}
+{% block content %}
+<div class="container"></div>
+<div class="container narrow-page"><section class="panel">
+    <h1>작성한 폐업 경험을 삭제하시겠습니까?</h1>
+    <p>나눠주신 경험은 예비창업자가 현실을 이해하고 창업을 준비하는 데 도움이 될 수 있습니다. 내용을 보완하고 싶으시다면 게시글의 수정 기능을 이용해주세요.</p>
+    <p class="data-note">삭제하면 게시글은 게시판에서 사라지며 복구할 수 없습니다. 삭제를 원하시면 아래 ‘게시글 삭제’ 버튼을 눌러주세요. 게시글을 삭제해도 폐업 인증 신청 내역은 유지됩니다.</p>
+    {# GET 접속만으로 삭제하지 않도록 최종 확인은 POST 제출로 처리 #}
+    <form method="post">
+        {% csrf_token %}
+        <button class="button" type="submit">게시글 삭제</button>
+        <a href="{% url 'community:closure_detail' review.pk %}">취소하고 돌아가기</a>
+    </form>
+</section></div>
+{% endblock %}

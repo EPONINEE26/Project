@@ -1,0 +1,389 @@
+priority_brands.json 영어 항목명·ID 설명
+============================================================
+대상: 카페 841개 / 치킨 632개 / 편의점 37개 / 미용실 311개
+합계: 1,821개 브랜드
+
+읽는 순서
+브랜드 기본정보 → history(연도별 통계) → regions(지역별 통계)
+
+예시 경로
+브랜드.id                              → 브랜드 구분 ID
+브랜드.history[0].year                 → 첫 번째 연도 항목의 기준연도
+브랜드.history[0].stores               → 그 연도의 전국 가맹점 수
+브랜드.history[0].regions.서울.stores   → 그 연도의 서울 가맹점 수
+
+※ 위 '브랜드'는 설명용 이름이다. 실제 파일의 최상위 구조는 브랜드 배열 [ ... ]이다.
+※ history는 연도별 배열이므로 화면에서는 year 값으로 원하는 연도를 찾는다.
+
+
+1. ID가 뜻하는 것
+============================================================
+id = 우리 사이트에서 브랜드를 구별하는 고유한 이름표
+
+예시: coffee_20160628
+      coffee   → 카페 업종
+      20160628 → 공식 브랜드관리번호 BRD_20160628에서 가져온 번호
+
+업종별 접두어
+coffee      = 카페
+chicken     = 치킨
+convenience = 편의점
+beauty      = 미용실
+
+예를 들어 같은 카페라도 뒤의 공식 번호가 달라서 id가 중복되지 않는다.
+뒤의 숫자를 날짜로 해석하지 않는다. 여기서는 공식 식별번호로만 사용한다.
+한 브랜드의 2024·2025 통계는 같은 id 안의 history에 함께 들어 있다.
+
+official_brand_id = 공공데이터의 공식 브랜드관리번호
+예시: BRD_20160628
+BRD_는 공식 브랜드 식별번호에 붙는 접두어다.
+
+id와 official_brand_id의 관계
+id                : coffee_20160628  → 사이트에서 사용
+official_brand_id : BRD_20160628     → 공공데이터와 연결할 때 사용
+
+두 ID를 단순히 브랜드명으로 바꾸면 동명 브랜드를 구분하기 어려워질 수 있다.
+
+
+2. 브랜드 기본정보 — 배열 안의 각 브랜드 객체
+============================================================
+id
+  사이트용 고유 ID. 예: coffee_20160628
+
+name
+  브랜드 이름. 예: 메가엠지씨커피(MEGA MGC COFFEE)
+
+category
+  사이트에 표시할 업종. 카페 / 치킨 / 편의점 / 미용실
+
+tagline
+  브랜드를 한 줄로 소개하는 문구.
+  원본에 없어서 현재 null이다.
+
+english_name
+  브랜드의 영문 이름.
+  공식 브랜드명 괄호 안에 영문이 명시된 경우만 가져왔다.
+  예: MEGA MGC COFFEE
+  확인되지 않은 경우 null이다.
+
+image
+  대표 이미지나 로고 파일 경로를 넣을 자리.
+  이미지가 수집되지 않았으므로 현재 null이다.
+
+official_brand_id
+  공공데이터의 공식 브랜드관리번호. 예: BRD_20160628
+
+company
+  해당 브랜드를 운영하는 가맹본부 회사명.
+  예: (주)앤하우스
+  연도별 회사명이 다르면 아래 history의 company도 확인한다.
+
+source_category
+  공공데이터에 적힌 원래 업종 중분류.
+  예: 커피 / 치킨 / 편의점 / 이미용
+  사이트에서는 커피를 카페로, 이미용을 미용실로 분류했다.
+  원본 '이미용'에는 미용 관련 업종이 포함될 수 있다.
+
+source_category_major
+  원래 업종 대분류. 예: 외식 / 도소매 / 서비스
+
+priority_category
+  우선 제작할 4개 업종에 속하는지 여부.
+  이 파일은 우선 업종만 모았으므로 true다.
+
+is_displayable
+  브랜드명이 확인되어 화면 목록에 표시할 수 있는지 여부.
+  이 파일에는 true인 브랜드만 넣었다.
+  통계 항목이 전부 채워졌다는 뜻은 아니다.
+
+is_dummy
+  더미데이터인지 여부. false = 실제 수집자료 기반.
+  계산해서 만든 월평균 환산값도 실제 원자료를 바탕으로 하며 더미는 아니다.
+
+history
+  해당 브랜드의 연도별 통계 배열. 아래 3번 참고.
+
+name_variants
+  수집자료에서 확인된 다른 브랜드명 표기 목록.
+  명칭 변경이나 표기 차이가 있는 일부 브랜드에만 존재한다.
+
+
+3. history — 연도별 전국 통계
+============================================================
+year
+  화면에서 사용할 기준연도. 2024 또는 2025.
+  요청한 방식대로 2024년 공시자료는 2024, 2025년 공시자료는 2025로 넣었다.
+
+source_accounting_year
+  원본 지역통계에 적힌 회계연도. 원본 확인용으로 별도 보관했다.
+  현재 자료에서는 year=2024일 때 2023, year=2025일 때 2024다.
+  원본 회계연도를 확인할 수 없는 경우 null이다.
+
+name / company
+  해당 연도 자료의 브랜드명 / 운영회사명.
+  바깥쪽 name·company는 최신 확인값이고, 여기에는 연도별 값이 들어간다.
+
+stores
+  전국 가맹점 수. 직영점은 제외.
+
+direct_stores
+  전국 직영점 수. 본사가 직접 운영하는 매장 수.
+
+total_stores
+  전국 가맹점과 직영점을 합친 매장 수.
+  일반적인 관계: stores + direct_stores = total_stores
+  원본 합계가 다르면 검증 표시가 붙는다.
+
+opened
+  전국 신규 가맹점 등록 수.
+  특정 시도의 신규 개업 수를 뜻하지 않는다.
+
+closed
+  전국 계약종료 수 + 계약해지 수를 더한 값.
+  계산식: contract_ended + contract_terminated
+  실제 폐업이 확정된 매장 수와는 다르다.
+  화면 명칭은 '계약종료·해지'로 표시하는 것이 정확하다.
+
+contract_ended
+  원본의 계약종료 수.
+
+contract_terminated
+  원본의 계약해지 수.
+
+ownership_changed
+  원본의 가맹점 명의변경 수.
+  신규등록이나 계약종료·해지와 따로 보관한 항목이다.
+
+annual_sales_krw
+  전국 가맹점 1곳당 연간 평균매출액. 단위: 원.
+  브랜드 전체 매출이나 점주의 순이익이 아니다.
+
+monthly_sales_krw
+  전국 가맹점 1곳당 월평균 환산매출액. 단위: 원.
+  annual_sales_krw ÷ 12를 원 단위로 반올림했다.
+  실제로 매달 측정한 월별 매출은 아니다.
+
+annual_sales_per_3_3sqm_krw
+  매장면적 3.3㎡당 연간 평균매출액. 단위: 원.
+  3.3㎡는 약 1평이다.
+
+annual_sales_status
+  전국 평균매출 값의 상태.
+  reported           = 원본에 0보다 큰 매출금액이 있음
+  zero_or_unreported = 원본이 0이어서 실제 0원인지 미공개인지 확인 불가
+  missing            = 자료가 없거나 브랜드 연결을 확정할 수 없음
+
+startup_cost_krw
+  해당 공시연도에 공개된 가맹점 창업 부담금 합계. 단위: 원.
+  가맹비·교육비·계약보증금·기타비용 등의 공개 합계다.
+  임대보증금·권리금까지 포함한 실제 총 창업예산을 뜻하지는 않는다.
+
+startup_cost_breakdown
+  창업 부담금의 세부내역 객체. 아래 4번 참고.
+
+national_reference
+  지역별 매출·점포 API에서 받은 '전체' 지역의 전국 참고통계.
+  구조는 아래 regions의 지역통계와 같다.
+  history.annual_sales_krw는 전국 요약 API의 단일금액이고,
+  national_reference의 매출은 지역통계 API가 제공한 범위값이다.
+  출처가 달라 수치가 일치하지 않는 경우에는 검증 표시가 붙는다.
+
+regions
+  지역명별 통계 객체. 서울·부산·경기 등 17개 시도 자료.
+  전체 합계는 national_reference에 따로 두었으므로 합산 시 중복되지 않는다.
+
+quality_flags
+  누락·연결 불확실·자료 간 차이 등의 검증 표시 목록.
+  []이면 현재 변환 규칙에서 기록된 경고가 없다는 뜻이다.
+  각 표시의 의미는 아래 7번 참고.
+
+source_ids
+  어떤 원본 자료를 연결했는지 알려주는 출처 ID 목록.
+  각 ID의 의미는 아래 8번 참고.
+
+source_annual_sales_value
+  원본 전국 평균매출이 0이었을 때 그 사실을 보존하는 보조 항목.
+  일부 연도 항목에만 나타난다.
+  annual_sales_krw는 이때 null일 수 있다.
+
+source_startup_total_value
+  원본 창업비용 합계가 0이었을 때 그 사실을 보존하는 보조 항목.
+  일부 연도 항목에만 나타난다.
+  startup_cost_krw는 이때 null일 수 있다.
+
+
+4. startup_cost_breakdown — 창업 부담금 세부내역
+============================================================
+franchise_fee_krw     = 가맹비(가입비), 원
+education_fee_krw     = 교육비, 원
+guarantee_deposit_krw = 가맹계약 관련 보증금, 원
+other_cost_krw        = 원본에 적힌 기타비용, 원
+
+※ guarantee_deposit_krw를 상가 임대보증금으로 해석하지 않는다.
+※ other_cost_krw를 인테리어 비용 하나로 단정하지 않는다.
+※ 개별 항목의 0은 원본 숫자 0을 유지했다. null과 구분한다.
+
+
+5. regions — 각 지역의 통계
+============================================================
+예시: history 안의 regions → 서울 → stores
+뜻: 해당 연도 서울의 가맹점 수
+
+stores        = 해당 지역 가맹점 수
+direct_stores = 해당 지역 직영점 수
+total_stores  = 해당 지역 가맹점+직영점 수
+
+annual_sales_krw
+  해당 지역의 단일 연간 평균매출을 넣을 자리.
+  이 자료의 지역 매출은 범위로 제공되므로 현재 null이다.
+  아래 min/max 값을 사용해야 한다.
+
+annual_sales_min_krw = 해당 지역 연간 평균매출 범위의 하한, 원
+annual_sales_max_krw = 해당 지역 연간 평균매출 범위의 상한, 원
+
+monthly_sales_min_krw = 위 연간매출 하한 ÷ 12의 월평균 환산값, 원
+monthly_sales_max_krw = 위 연간매출 상한 ÷ 12의 월평균 환산값, 원
+
+annual_sales_per_3_3sqm_min_krw
+  해당 지역의 3.3㎡당 연간 평균매출 범위 하한, 원
+
+annual_sales_per_3_3sqm_max_krw
+  해당 지역의 3.3㎡당 연간 평균매출 범위 상한, 원
+
+sales_status
+  range              = 유효한 매출 하한·상한이 있음
+  zero_or_unreported = 원본이 0이므로 실제 0원인지 미공개인지 확인 불가
+  missing            = 원본 매출 값이 없음
+  invalid_range      = 원본 문자열을 유효한 금액 범위로 해석할 수 없음
+
+is_dummy
+  false = 실제 수집자료 기반의 지역통계.
+
+source_sales_range
+  변환 전 원본 연간 평균매출 범위 문자열. 원본 단위: 천원.
+  예: "420000~470000" → 420,000,000~470,000,000원
+
+source_sales_per_3_3sqm_range
+  변환 전 원본 3.3㎡당 연간 평균매출 범위 문자열. 단위: 천원.
+
+sales_source_stores
+  지역 매출 API에 적힌 가맹점 수.
+  점포 API의 가맹점 수와 다를 때 비교할 수 있도록 추가되는 항목이다.
+
+store_count_conflict
+  true = 매출 API와 점포 API의 가맹점 수가 다름.
+  이때 stores에는 점포 API의 값을 우선 사용했다.
+
+store_sum_conflict
+  true = 원본 total_stores가 stores+direct_stores와 다름.
+  원본 합계를 임의로 고치지 않고 차이를 표시했다.
+
+※ sales_source_stores·store_count_conflict·store_sum_conflict는
+   차이가 발견된 일부 항목에만 나타난다.
+※ 지역별 opened·closed는 원본에 없으므로 전국 값을 나눠 넣지 않았다.
+
+
+6. 실제 데이터로 읽어보기 — 메가엠지씨커피, year=2025
+============================================================
+id               : coffee_20160628
+english_name     : MEGA MGC COFFEE
+stores           : 3,325개      → 전국 가맹점
+direct_stores    : 35개         → 전국 직영점
+total_stores     : 3,360개      → 전국 가맹점+직영점
+opened           : 657개        → 전국 신규등록
+closed           : 13개         → 전국 계약종료+계약해지
+annual_sales_krw : 388,443,000원 → 전국 가맹점당 연간 평균매출
+monthly_sales_krw: 32,370,250원  → 위 연매출÷12의 환산값
+
+regions.서울.stores                : 796개
+regions.서울.direct_stores         : 30개
+regions.서울.total_stores          : 826개
+regions.서울.annual_sales_min_krw  : 420,000,000원
+regions.서울.annual_sales_max_krw  : 470,000,000원
+
+서울 평균매출은 '연 4억 2천만~4억 7천만원'처럼 범위로 표시한다.
+서울 매출을 전국 매출 388,443,000원으로 대신 채우지 않는다.
+
+
+7. quality_flags에 들어가는 영어 표시
+============================================================
+national_summary_unavailable_or_unmatched
+  전국 브랜드 요약통계가 없거나 같은 브랜드라고 확정하여 연결하지 못함.
+
+startup_cost_unavailable_or_unmatched
+  창업비용 자료가 없거나 같은 브랜드라고 확정하여 연결하지 못함.
+
+national_regional_table_unavailable
+  지역별 API에 해당 브랜드의 '전체' 행이 없음.
+
+multiple_catalog_variants_preserved_in_quality_report
+  같은 브랜드ID·연도에 회사명 등 기본정보 후보가 여러 개 있어
+  검증 보고서에 후보를 보존함.
+
+national_store_counts_differ_between_sources
+  전국 요약 API와 지역별 API의 전국 가맹점 수가 서로 다름.
+  stores는 공식 브랜드ID가 있는 지역별 점포 자료를 우선 사용함.
+
+national_reported_sales_outside_regional_api_range
+  전국 요약 API의 단일 매출금액이 지역별 API '전체' 행의 매출 범위 밖임.
+  두 자료를 같은 숫자로 맞추지 않고 각각 보존함. 비교 전 확인 필요.
+
+
+8. source_ids — 출처 ID 읽는 법
+============================================================
+예시: catalog_2025
+      catalog = 자료 종류 / 2025 = 조회·공시기준연도
+
+catalog_2024 / catalog_2025 = 브랜드목록
+stats_2024   / stats_2025   = 전국 브랜드별 가맹점 현황·매출·변동통계
+costs_2024   / costs_2025   = 브랜드별 창업 부담금
+sales_2024   / sales_2025   = 브랜드별 지역·면적당 매출 범위
+stores_2024  / stores_2025  = 브랜드별 지역 가맹점·직영점 현황
+
+원본 파일 경로·출처 URL 등 자세한 정보는
+전체 압축파일의 data_quality.json → sources에서 ID로 찾을 수 있다.
+
+
+9. 자주 나오는 영어와 JSON 표시
+============================================================
+annual     = 연간
+monthly    = 월간
+sales      = 매출
+stores     = 매장 수
+direct     = 직영
+franchise  = 가맹
+region     = 지역
+national   = 전국
+history    = 연도별 내역
+source     = 원본·출처
+status     = 상태
+min / max  = 최소값 / 최대값
+krw        = 대한민국 원화. 이 이름이 붙은 변환 금액의 단위는 원.
+sqm        = 제곱미터(㎡)
+3_3sqm     = 3.3㎡
+
+null  = 값을 모름 / 미공개 / 연결 불확실. 숫자 0으로 표시하면 안 됨.
+0     = 숫자 0. 매장 수는 0개이며, 원본 매출 0은 별도 상태를 확인.
+true  = 해당함
+false = 해당하지 않음
+[]    = 배열(목록). quality_flags가 []이면 기록된 검증 표시가 없음.
+{}    = 객체. 항목명과 값을 짝으로 묶는 구조.
+
+
+10. 페이지별로 주로 사용하는 항목
+============================================================
+메인페이지
+  id / name / category / image / history의 원하는 year
+  전국 카드: history.stores / history.monthly_sales_krw
+  지역 카드: history.regions[선택지역]의 stores와 매출 min/max
+
+브랜드 상세 bview
+  기본정보 + history + startup_cost_breakdown + regions
+
+브랜드 비교 bcompare
+  같은 year·같은 지역범위의 stores / opened / closed / 매출 / 창업비용
+  opened·closed는 전국 값만 있으므로 지역별 개폐업 비교에는 사용하지 않음.
+  지역 매출은 단일금액 대신 min/max 범위를 사용.
+
+※ 위 history.stores 등은 경로 설명이다. 실제 history는 배열이므로
+   year로 연도 객체를 선택한 뒤 stores 등을 읽으면 된다.

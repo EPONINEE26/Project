@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    맞춤 브랜드 추천 | 프차 탄탄
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/analysis.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container analysis-page">
+        <div class="page-header">
+            <span class="eyebrow">MATCHED FOR YOU</span>
+            <h1>내 조건에 맞는 창업 후보</h1>
+            <p>조건을 바꾸면 지역상권분석에도 함께 반영됩니다.</p>
+            <form method="get">
+                {% include 'includes/year_select.html' %}
+                <button class="button small">공시연도 적용</button>
+            </form>
+        </div>
+        {% include 'includes/condition_editor.html' %}
+        {% include 'includes/analysis_candidates.html' %}
+    </div>
+{% endblock %}
+{% block scripts %}
+    {% include 'includes/postcode_script.html' %}
+    {% if kakao_js_key %}
+        <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey={{ kakao_js_key|urlencode }}&libraries=services&autoload=false"></script>
+    {% endif %}
+    <script src="{% static 'js/analysis.js' %}"></script>
+{% endblock %}

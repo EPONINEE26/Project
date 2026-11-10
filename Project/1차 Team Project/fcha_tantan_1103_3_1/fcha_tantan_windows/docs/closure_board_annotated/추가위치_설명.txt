@@ -1,0 +1,161 @@
+폐점주 커뮤니티 추가 코드 묶음
+============================
+
+1. ZIP 구성
+새 Python 5개 + 새 HTML 8개 + 본 설명서 1개 = 총 14개 파일.
+기존 프로젝트 전체, 기존 models.py/admin.py/urls.py/base.html, DB, 증빙 원본은 미포함.
+각 코드 파일의 주석에 새 문법의 의미·필요 이유·동작 설명 포함.
+주석은 지정·검사·제외·저장·반환 등 명사형 사용.
+
+2. 적용 전 확인
+이 폴더는 별도 제공용 사본이며 프로젝트에 자동 적용되지 않음.
+기존 원본 코드 삭제·교체 금지. 기존 데이터 초기화·기존 마이그레이션 삭제 불필요.
+아래 신규 파일을 이미 입력했다면 같은 모델·함수·연결 import의 중복 추가 금지.
+기존 신규 파일에 작업 내용이 있다면 이 묶음으로 무조건 덮어쓰지 말고 내용 비교 필요.
+
+3. 새 파일 13개와 복사 대상
+ZIP 내부 community/ 이하의 상대 경로와 실제 프로젝트의 상대 경로 동일.
+
+community/closure_files.py
+  역할: 비공개 저장소·임의 파일명 정의.
+community/closure_models.py
+  역할: 폐업 인증·경험 게시글의 신규 DB 모델 정의.
+community/closure_forms.py
+  역할: 인증 신청·작성·수정 입력 폼과 검증.
+community/closure_views.py
+  역할: 회원 안내·인증·목록·상세·작성·수정·삭제·관리자 다운로드.
+community/closure_admin.py
+  역할: 폐업 인증 심사 및 게시글 검수 관리자 등록.
+community/templates/community/closure/access.html
+  역할: 비로그인 사용자의 로그인·회원가입 안내. 실제 글 노출 제외.
+community/templates/community/closure/_rules.html
+  역할: 게시판 취지·욕설 및 비하 금지·삭제 방침의 공통 안내.
+community/templates/community/closure/_fields.html
+  역할: 폼 입력칸·도움말·오류의 공통 출력.
+community/templates/community/closure/verify.html
+  역할: 인증 신청·본인 신청 내역·본인 작성 글.
+community/templates/community/closure/list.html
+  역할: 로그인 회원 전용 목록·검색·페이지 이동.
+community/templates/community/closure/form.html
+  역할: 승인 회원의 게시글 작성·본인 글 수정.
+community/templates/community/closure/detail.html
+  역할: 회원 전용 본문·작성자 관리 버튼.
+community/templates/community/closure/delete.html
+  역할: 본인 게시글의 삭제 확인과 POST 제출.
+
+4. 기존 community/models.py 맨 아래 추가
+기존 모든 모델 정의가 끝난 뒤 다음 코드 한 번만 추가.
+중간이나 파일 맨 위에 추가하면 모델 초기화 순서 문제 발생 가능.
+
+# 별도 파일의 신규 모델을 Django가 발견하도록 연결
+from .closure_models import ClosureVerification, ClosureReview
+
+5. 기존 community/admin.py 맨 아래 추가
+기존 ModeratedAdmin 클래스와 기존 관리자 등록 코드가 모두 끝난 뒤 한 번만 추가.
+
+# 신규 폐업 인증·게시글 관리자 등록 코드 실행
+from . import closure_admin
+
+6. 기존 community/urls.py 맨 아래 추가
+기존 urlpatterns 유지. 아래 코드만 한 번 추가.
+원본의 path import와 app_name='community' 재사용.
+
+# 기존 뷰와 구분되는 폐업 게시판 전용 뷰 가져오기
+from . import closure_views
+
+# +=: 기존 URL 목록을 유지하면서 새 경로 추가
+# path: 요청 주소와 처리 함수를 연결하는 URL 등록 함수
+# name: 템플릿 url 태그와 redirect에서 사용할 경로 식별자
+# <int:pk>: 정수형 기본키 수신, <str:kind>: 증빙 종류 문자열 수신
+urlpatterns += [
+    path('closure/', closure_views.closure_list, name='closure_list'),
+    path('closure/verify/', closure_views.closure_verify, name='closure_verify'),
+    path('closure/write/', closure_views.closure_write, name='closure_write'),
+    path('closure/documents/<int:pk>/<str:kind>/', closure_views.closure_document, name='closure_document'),
+    path('closure/<int:pk>/', closure_views.closure_detail, name='closure_detail'),
+    path('closure/<int:pk>/edit/', closure_views.closure_edit, name='closure_edit'),
+    path('closure/<int:pk>/delete/', closure_views.closure_delete, name='closure_delete'),
+]
+
+7. 상단 메뉴 링크 추가 위치
+대상: brands/templates/base.html
+앞서 확인한 파일 기준 21번째 줄. 파일 편집에 따라 줄 번호 변동 가능.
+기존 '점주 커뮤니티' 링크의 닫는 </a> 다음, 같은 메뉴의 </nav> 직전 위치.
+기존 링크와 </nav> 유지. 다음 링크만 추가.
+단, 위 6번 URL 등록 완료 후 해당 메뉴 사용.
+
+{# 기존 메뉴 유지 상태에서 폐점주 커뮤니티 링크 추가 #}
+<a href="{% url 'community:closure_list' %}">폐점주 커뮤니티</a>
+
+화면 순서: 점주 커뮤니티 | 폐점주 커뮤니티
+기존 page='community' 표시 재사용으로 기존 메뉴의 활성 표시 유지.
+두 메뉴의 활성 표시 분리 기능은 본 묶음에 미포함.
+
+8. 프로젝트 설정
+현재 확인한 프로젝트는 INSTALLED_APPS에 community가 이미 등록된 상태.
+프로젝트 urls.py에도 path('community/', include('community.urls'))가 이미 존재.
+TEMPLATES의 APP_DIRS=True 및 MEDIA_ROOT 설정 재사용.
+따라서 프로젝트 settings.py/urls.py의 변경 불필요.
+기존 community/views.py, community/forms.py, 기존 점주 커뮤니티 템플릿 변경 불필요.
+private_media 및 그 하위 증빙 폴더의 공개 웹 경로 연결 금지.
+
+9. 권한과 심사
+비로그인: 실제 목록·제목·본문 대신 로그인 및 회원가입 안내 표시.
+로그인: 승인된 인증에 연결된 공개 게시글 열람 가능.
+폐업 인증 미승인: 글쓰기 요청 시 인증 신청·내역으로 이동.
+폐업 인증 승인: 본인의 승인 인증을 선택하여 글 작성.
+작성자: 본인 글만 수정·삭제, 인증 철회 시 수정 중지·삭제 허용.
+인증 철회: 해당 인증의 글은 공개 목록과 타인 상세 접근에서 제외.
+관리자: change_closureverification 권한이 있는 staff만 증빙 다운로드.
+관리자 심사: 신청자와 사업체 관계·폐업 사실·브랜드 관계의 실제 확인 필요.
+파일 업로드·체크박스 자체는 서류 진위의 자동 인증이 아님.
+관리자 승인 저장 시 세 확인 항목 모두 체크 필요.
+반려·철회 시 사유 필수, 보완 신청은 새 신청 폼으로 제출.
+동일 승인 건으로 여러 게시글 작성 가능, 인증 건당 1건 제한은 미적용.
+
+10. 욕설·비하 처리
+공통 안내문과 저장 버튼 위 안내에 관리자 검토 후 블라인드·삭제 가능 문구 포함.
+자동 검사는 기존 core.moderation 정책과 단어 목록 기준.
+모든 비하 표현의 자동 의미 판별 기능은 아님.
+기존 관리자 액션의 '삭제 안내'는 검수 상태 변경이며 물리적 DB 삭제와 구분.
+공개 목록은 visible 상태만 조회하므로 블라인드·삭제 안내 글 제외.
+실제 삭제는 본인 삭제 또는 새 폐업 게시글 관리자 화면의 기본 삭제 기능 사용.
+
+11. 등록 후 검사와 DB 적용 순서
+이 묶음 생성 과정에서 원본 소스 수정·마이그레이션 실행·기존 DB 변경은 미수행.
+Python 문법·템플릿 구문 검사는 별도 제공 폴더의 파일에 대해 수행 가능.
+기존 앱과 연결한 통합 실행·권한·업로드 검증은 적용 후 별도 필요.
+기존 DB 백업 후 다음 순서로 확인.
+
+python manage.py check
+python manage.py makemigrations community --dry-run --verbosity 3
+
+예정 내용은 새 ClosureVerification·ClosureReview 테이블 및 해당 제약조건 추가.
+기존 모델의 AlterField/DeleteModel/RemoveField 등 의도하지 않은 작업이 보이면 진행 중지.
+
+python manage.py makemigrations community --name add_closure_board
+python manage.py migrate community --plan
+
+생성 파일과 계획이 새 기능 추가에만 해당하는지 검토 후 실행.
+다른 미적용 마이그레이션이 섞인 경우 먼저 원인 확인.
+
+python manage.py migrate community
+python manage.py runserver
+
+12. 접속 주소
+게시판: http://127.0.0.1:8000/community/closure/
+인증 신청·내역: http://127.0.0.1:8000/community/closure/verify/
+관리자: http://127.0.0.1:8000/admin/
+관리자 내부 '폐업 인증'에서 심사, '폐업 경험 게시글'에서 검수.
+로그인·회원가입 링크의 next 인수는 기존 accounts 뷰의 처리 방식에 따라 적용.
+회원가입 이후 원래 페이지 복귀까지 이 묶음에서 기존 회원 기능을 변경하지 않음.
+
+13. 확인 항목
+로그아웃 상태에서 목록·상세·작성 주소 모두 가입·로그인 안내 표시 확인.
+일반 회원의 목록·본문 열람 및 인증 없을 때 글쓰기 차단 확인.
+다른 회원의 인증 번호 조작 시 작성 실패 확인.
+본인 외 수정·삭제 차단 확인.
+일반 회원·권한 없는 직원의 증빙 다운로드 403 확인.
+인증 철회 후 타인에게 글 숨김 및 작성자 수정 중지 확인.
+잘못된 날짜·1~5 이외 점수·잘못된 파일 업로드 거부 확인.
+블라인드 처리된 글 수정으로 자동 공개 복원되지 않는지 확인.

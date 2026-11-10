@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}내 정보·창업 조건 | 프차 탄탄{% endblock %}
+{% block content %}
+<div class="container narrow-page">
+    <div class="page-header"><span class="eyebrow">MY PROFILE</span><h1>{% if completing %}추가 정보를 입력해주세요{% else %}내 정보·창업 조건{% endif %}</h1><p>{% if completing %}간편로그인으로 가입하셨어요. 서비스 이용을 위해 아래 정보와 동의가 필요합니다.{% else %}창업 조건을 바꾸면 맞춤 추천도 함께 바뀌어요.{% endif %}</p></div>
+    <section class="panel">
+        <form method="post" class="form-stack signup-form">{% csrf_token %}{% include 'accounts/member_fields.html' %}<button class="button" type="submit">저장</button></form>
+    </section>
+</div>
+{% endblock %}
+{% block scripts %}{% include 'includes/postcode_script.html' %}{% endblock %}

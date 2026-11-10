@@ -1,0 +1,109 @@
+{
+  "source_rows": 1671975,
+  "result_rows": 1671975,
+  "source_files_in_processing_order": [
+    {
+      "source_file": "소상공인시장진흥공단/소상공인시장진흥공단_상가(상권)정보_경기_202606.csv",
+      "rows": 672680
+    },
+    {
+      "source_file": "소상공인시장진흥공단/소상공인시장진흥공단_상가(상권)정보_대전_202606.csv",
+      "rows": 80704
+    },
+    {
+      "source_file": "소상공인시장진흥공단/소상공인시장진흥공단_상가(상권)정보_부산_202606.csv",
+      "rows": 159689
+    },
+    {
+      "source_file": "소상공인시장진흥공단/소상공인시장진흥공단_상가(상권)정보_세종_202606.csv",
+      "rows": 15816
+    },
+    {
+      "source_file": "소상공인시장진흥공단/소상공인시장진흥공단_상가(상권)정보_울산_202606.csv",
+      "rows": 54737
+    },
+    {
+      "source_file": "소상공인시장진흥공단/소상공인시장진흥공단_상가(상권)정보_인천_202606.csv",
+      "rows": 136995
+    },
+    {
+      "source_file": "소상공인시장진흥공단/소상공인시장진흥공단_상가(상권)정보_전남광주_202606.csv",
+      "rows": 175276
+    },
+    {
+      "source_file": "소상공인시장진흥공단/소상공인시장진흥공단_상가(상권)정보_전북_202606.csv",
+      "rows": 98749
+    },
+    {
+      "source_file": "소상공인시장진흥공단/소상공인시장진흥공단_상가(상권)정보_제주_202606.csv",
+      "rows": 59009
+    },
+    {
+      "source_file": "소상공인시장진흥공단/소상공인시장진흥공단_상가(상권)정보_충남_202606.csv",
+      "rows": 124589
+    },
+    {
+      "source_file": "소상공인시장진흥공단/소상공인시장진흥공단_상가(상권)정보_충북_202606.csv",
+      "rows": 93731
+    }
+  ],
+  "columns": [
+    "owner_id",
+    "brand_id",
+    "store_name",
+    "status",
+    "postcode",
+    "address",
+    "address_detail",
+    "sido",
+    "sigungu",
+    "dong",
+    "latitude",
+    "longitude",
+    "area_pyeong",
+    "is_public",
+    "opened_on",
+    "memo",
+    "created_at",
+    "updated_at"
+  ],
+  "reference_header_matches": true,
+  "output_header_matches": true,
+  "all_field_comparison_mismatches": 0,
+  "coordinate_string_mismatches": 0,
+  "source_order_and_provenance_verified": true,
+  "maximum_decimal_places": {
+    "latitude": 13,
+    "longitude": 12
+  },
+  "issue_counts": {
+    "sido_unmapped": 175276,
+    "postcode_corrected": 0,
+    "postcode_abnormal": 0,
+    "duplicate_store_id": 0,
+    "missing_store_id": 0,
+    "length_exceeded": 0,
+    "missing_address": 0,
+    "missing_store_name": 0,
+    "missing_source_name": 0,
+    "invalid_coordinate": 0,
+    "zero_coordinate": 0
+  },
+  "source_zip_sha256": "0f070f78cde6e1e1279311ff44e17e133ce4705fc8e7c0bb2c9621fb3e720789",
+  "source_zip_unchanged": true,
+  "encoding": "UTF-8 BOM",
+  "delimiter": ",",
+  "db_registration_performed": false,
+  "db_registration_ready": false,
+  "notes": [
+    "원본 ZIP 내 CSV 항목 순서대로 연결. 각 파일 내 모든 업종과 모든 데이터 행 유지. 기존 store_locations(1).csv는 헤더 확인용이며 결과에 합치지 않음.",
+    "source_data_row와 result_data_row는 헤더를 제외한 1부터 시작하는 CSV 논리 데이터 행 번호. 물리 텍스트 줄 번호가 아님.",
+    "빈 문자열만 결측으로 취급. 0 및 null/NULL 등의 원본 문자열은 그대로 유지. 공백 제거하지 않음.",
+    "상가업소번호 중복 목록은 두 번째 출현부터 기록하며 first result_data_row로 최초 행 연결. source_rows.csv에서 모든 출현 확인 가능. 삭제 없음.",
+    "좌표는 문자열 그대로 복사. Decimal은 유효성 검사용으로만 사용. 비정상 좌표는 빈값/비수치/비유한/세계 범위 초과로 판정. 0 좌표는 별도 검토 항목.",
+    "최대 소수 자릿수는 일반 소수 표기의 소수점 아래 원본 문자 개수.",
+    "동/층/호 접미사는 값이 있는 원본에 규칙대로 각각 부착하며 원본 접미사를 추측하여 제거하지 않음.",
+    "owner_id와 status 미확정. brand_id 등 지정 필드는 빈칸. DB 등록 가능 여부는 확정할 수 없으며 등록하지 않음.",
+    "모델에 옮기지 않은 컬럼은 원본 ZIP에 그대로 보존. 원본 ZIP은 변경하지 않았으며 용량 중복을 피하기 위해 결과 ZIP에는 포함하지 않음."
+  ]
+}

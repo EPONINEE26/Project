@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load brand_format %}
+{% block title %}
+    {{ store.store_name }} | 프차 탄탄
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="page-header">
+            <a class="back-link" href="{% url 'market:store_list' %}">← 내 매장 위치</a>
+            <span class="eyebrow">LOCATION DETAIL</span>
+            <div class="page-title-row">
+                <div>
+                    <h1>{{ store.store_name }}</h1>
+                    <p>{{ store.address }} {{ store.address_detail }}</p>
+                </div>
+                <div class="page-tools">
+                    <a class="button small outline" href="{% url 'market:store_edit' store.pk %}">위치 수정</a>
+                    {% if store.brand %}
+                        <a class="button small" href="{% url 'market:transfer_new' %}">양도 매물로 등록</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="store-form-layout">
+            <section class="panel">
+                <h2>매장 정보</h2>
+                <dl class="info-list">
+                    <div>
+                        <dt>상태</dt>
+                        <dd>{{ store.get_status_display }}</dd>
+                    </div>
+                    <div>
+                        <dt>브랜드</dt>
+                        <dd>{% if store.brand %}<a href="{% url 'brands:bview' store.brand.slug %}">{{ store.brand.name }}</a>{% else %}미정{% endif %}</dd>
+                    </div>
+                    <div>
+                        <dt>행정구역</dt>
+                        <dd>{{ store.sido }} {{ store.sigungu }} {{ store.dong }}</dd>
+                    </div>
+                    <div>
+                        <dt>좌표</dt>
+                        <dd>{% if store.latitude != None %}{{ store.latitude }}, {{ store.longitude }}{% else %}미설정{% endif %}</dd>
+                    </div>
+                    <div>
+                        <dt>면적</dt>
+                        <dd>{% if store.area_pyeong != None %}{{ store.area_pyeong }}평{% else %}미입력{% endif %}</dd>
+                    </div>
+                    <div>
+                        <dt>오픈(예정)일</dt>
+                        <dd>{{ store.opened_on|date:'Y.m.d'|default:'미입력' }}</dd>
+                    </div>
+                </dl>
+                {% if store.memo %}
+                    <p class="notice">{{ store.memo|linebreaksbr }}</p>
+                {% endif %}
+            </section>
+            <aside class="panel map-panel">
+                {% if kakao_js_key and store.latitude != None %}
+                    <div class="store-map" data-kakao-map data-lat="{{ store.latitude }}" data-lng="{{ store.longitude }}">
+                    </div>
+                {% else %}
+                    <div class="map-placeholder">
+                        <span aria-hidden="true">⌖</span>
+                        <p>{% if not kakao_js_key %}카카오 지도 키가 없어 지도를 숨겼습니다.{% else %}좌표가 없어 지도를 표시할 수 없어요. 위치 수정에서 지도를 클릭해 설정하세요.{% endif %}</p>
+                    </div>
+                {% endif %}
+            </aside>
+        </div>
+        <section class="panel" id="population">
+            <span class="eyebrow">FLOATING POPULATION</span>
+            <h2>유동인구 기록</h2>
+            <p class="subtitle">직접 계측·공공데이터 등 출처를 함께 남겨주세요. 입력값은 본인만 볼 수 있습니다.</p>
+            {% if summary_rows %}
+                <div class="metrics population-summary">
+                    {% for s in summary_rows %}
+                        <article class="metric">
+                            <span class="label">{{ s.label }} 평균</span>
+                            <strong>{{ s.avg|number }}<small>명</small></strong>
+                            <p>기록 {{ s.n }}건</p>
+                        </article>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="population-layout">
+                <form method="post" class="form-stack population-form">
+                    {% csrf_token %}
+                    {% include 'includes/form_fields.html' %}
+                    <button class="button" type="submit">기록 추가</button>
+                </form>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>측정일</th>
+                                <th>구분</th>
+                                <th>시간대</th>
+                                <th>유동인구</th>
+                                <th>방법·출처</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for p in populations %}
+                                <tr>
+                                    <td>{{ p.measured_on|date:'Y.m.d' }}</td>
+                                    <td>{{ p.get_day_type_display }}</td>
+                                    <td>{{ p.get_time_slot_display }}</td>
+                                    <td><b>{{ p.count|number }}명</b></td>
+                                    <td>{{ p.get_method_display }}{% if p.source_note %} · {{ p.source_note }}{% endif %}</td>
+                                    <td><form method="post" action="{% url 'market:population_delete' p.pk %}">{% csrf_token %}<button class="link-button" type="submit" aria-label="{{ p.measured_on }} 기록 삭제">삭제</button></form></td>
+                                </tr>
+                            {% empty %}
+                                <tr>
+                                    <td colspan="6">아직 기록이 없어요.</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {% if kakao_js_key %}
+        <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey={{ kakao_js_key|urlencode }}&libraries=services&autoload=false" defer></script>
+    {% endif %}
+{% endblock %}

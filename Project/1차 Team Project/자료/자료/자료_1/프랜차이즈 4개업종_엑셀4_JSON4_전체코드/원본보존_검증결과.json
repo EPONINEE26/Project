@@ -1,0 +1,38 @@
+[
+  {
+    "filename": "프랜차이즈_치킨_창업비용_매출_분석.xlsx",
+    "existing_nonblank_cells_changed": 0,
+    "existing_formulas_changed": 0,
+    "style_or_native_parts_changed": 0,
+    "filled_cells": 0,
+    "source_sha256": "320e654bfba60ca3c4aadc2d8c24b7c633ddb553b4fcad6a3214981add25d3bb",
+    "output_sha256": "320e654bfba60ca3c4aadc2d8c24b7c633ddb553b4fcad6a3214981add25d3bb"
+  },
+  {
+    "filename": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "existing_nonblank_cells_changed": 0,
+    "existing_formulas_changed": 0,
+    "style_or_native_parts_changed": 0,
+    "filled_cells": 0,
+    "source_sha256": "82f7a4a4aa619c3009aaef3bda180a109613ff747d50637acedb3c935b1ce037",
+    "output_sha256": "82f7a4a4aa619c3009aaef3bda180a109613ff747d50637acedb3c935b1ce037"
+  },
+  {
+    "filename": "프랜차이즈_이미용_창업비용_매출_분석.xlsx",
+    "existing_nonblank_cells_changed": 0,
+    "existing_formulas_changed": 0,
+    "style_or_native_parts_changed": 0,
+    "filled_cells": 15,
+    "source_sha256": "7310857875ae9ca830452afc3f57e952ae67cf4e87c9ca3bd7c08d3834117903",
+    "output_sha256": "c21cdd7d70cd02d047ae9ab86a5d75aae46f2ba362663b16148f5101e7fcb983"
+  },
+  {
+    "filename": "프랜차이즈_편의점_창업비용_매출_분석.xlsx",
+    "existing_nonblank_cells_changed": 0,
+    "existing_formulas_changed": 0,
+    "style_or_native_parts_changed": 0,
+    "filled_cells": 15,
+    "source_sha256": "740bae655a4227732689852dfdd6f83f652d74a4bcb756d8338acc6d18c2acdc",
+    "output_sha256": "64aef908fce7f2fee50dbd6cb7af89014919631feb45bc9cff736bbc8e185a89"
+  }
+]

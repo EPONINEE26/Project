@@ -1,0 +1,2994 @@
+[
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "강원",
+    "frcsCnt": 34611,
+    "arUnitAvrgSlsAmt": 1921,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "경기",
+    "frcsCnt": 297558,
+    "arUnitAvrgSlsAmt": 5300,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "울산",
+    "frcsCnt": 50954,
+    "arUnitAvrgSlsAmt": 3633,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "대전",
+    "frcsCnt": 113849,
+    "arUnitAvrgSlsAmt": 3489,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "광주",
+    "frcsCnt": 73340,
+    "arUnitAvrgSlsAmt": 3614,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "인천",
+    "frcsCnt": 164269,
+    "arUnitAvrgSlsAmt": 3851,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "대구",
+    "frcsCnt": 85869,
+    "arUnitAvrgSlsAmt": 3328,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "부산",
+    "frcsCnt": 168362,
+    "arUnitAvrgSlsAmt": 3820,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "서울",
+    "frcsCnt": 254288,
+    "arUnitAvrgSlsAmt": 4747,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "세종",
+    "frcsCnt": 39956,
+    "arUnitAvrgSlsAmt": 3687,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "제주",
+    "frcsCnt": 57530,
+    "arUnitAvrgSlsAmt": 3438,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "경남",
+    "frcsCnt": 92333,
+    "arUnitAvrgSlsAmt": 2921,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "경북",
+    "frcsCnt": 62510,
+    "arUnitAvrgSlsAmt": 2793,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "전남",
+    "frcsCnt": 44837,
+    "arUnitAvrgSlsAmt": 2488,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "전북",
+    "frcsCnt": 37275,
+    "arUnitAvrgSlsAmt": 2796,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "충남",
+    "frcsCnt": 100607,
+    "arUnitAvrgSlsAmt": 3628,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (교과)",
+    "areaNm": "충북",
+    "frcsCnt": 83894,
+    "arUnitAvrgSlsAmt": 3388,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "세종",
+    "frcsCnt": 272080,
+    "arUnitAvrgSlsAmt": 3990,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "제주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "경남",
+    "frcsCnt": 119774,
+    "arUnitAvrgSlsAmt": 2293,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "경북",
+    "frcsCnt": 90903,
+    "arUnitAvrgSlsAmt": 2800,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "전남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "전북",
+    "frcsCnt": 64631,
+    "arUnitAvrgSlsAmt": 1672,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "충남",
+    "frcsCnt": 55913,
+    "arUnitAvrgSlsAmt": 1650,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "충북",
+    "frcsCnt": 50829,
+    "arUnitAvrgSlsAmt": 1507,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "강원",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "경기",
+    "frcsCnt": 156875,
+    "arUnitAvrgSlsAmt": 3806,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "울산",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "대전",
+    "frcsCnt": 112866,
+    "arUnitAvrgSlsAmt": 2824,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "광주",
+    "frcsCnt": 114319,
+    "arUnitAvrgSlsAmt": 1585,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "인천",
+    "frcsCnt": 278991,
+    "arUnitAvrgSlsAmt": 4144,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "대구",
+    "frcsCnt": 210038,
+    "arUnitAvrgSlsAmt": 3057,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "부산",
+    "frcsCnt": 128660,
+    "arUnitAvrgSlsAmt": 1636,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아 관련 (교육 외)",
+    "areaNm": "서울",
+    "frcsCnt": 177700,
+    "arUnitAvrgSlsAmt": 3949,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "경북",
+    "frcsCnt": 98234,
+    "arUnitAvrgSlsAmt": 2174,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "전남",
+    "frcsCnt": 81492,
+    "arUnitAvrgSlsAmt": 1984,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "전북",
+    "frcsCnt": 61204,
+    "arUnitAvrgSlsAmt": 1589,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "충남",
+    "frcsCnt": 117199,
+    "arUnitAvrgSlsAmt": 2248,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "충북",
+    "frcsCnt": 81351,
+    "arUnitAvrgSlsAmt": 1937,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "강원",
+    "frcsCnt": 76155,
+    "arUnitAvrgSlsAmt": 1922,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "경기",
+    "frcsCnt": 335915,
+    "arUnitAvrgSlsAmt": 4076,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "울산",
+    "frcsCnt": 95797,
+    "arUnitAvrgSlsAmt": 2025,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "대전",
+    "frcsCnt": 120038,
+    "arUnitAvrgSlsAmt": 2786,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "광주",
+    "frcsCnt": 81391,
+    "arUnitAvrgSlsAmt": 1972,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "인천",
+    "frcsCnt": 271605,
+    "arUnitAvrgSlsAmt": 3057,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "대구",
+    "frcsCnt": 218707,
+    "arUnitAvrgSlsAmt": 3161,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "부산",
+    "frcsCnt": 169284,
+    "arUnitAvrgSlsAmt": 2895,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "서울",
+    "frcsCnt": 354746,
+    "arUnitAvrgSlsAmt": 4314,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "세종",
+    "frcsCnt": 99155,
+    "arUnitAvrgSlsAmt": 3020,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "제주",
+    "frcsCnt": 61606,
+    "arUnitAvrgSlsAmt": 1958,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "교육 (외국어)",
+    "areaNm": "경남",
+    "frcsCnt": 88634,
+    "arUnitAvrgSlsAmt": 1751,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "세종",
+    "frcsCnt": 94342,
+    "arUnitAvrgSlsAmt": 6121,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "제주",
+    "frcsCnt": 93269,
+    "arUnitAvrgSlsAmt": 3444,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "경남",
+    "frcsCnt": 111465,
+    "arUnitAvrgSlsAmt": 3559,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "경북",
+    "frcsCnt": 76133,
+    "arUnitAvrgSlsAmt": 2594,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "전남",
+    "frcsCnt": 87130,
+    "arUnitAvrgSlsAmt": 2855,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "전북",
+    "frcsCnt": 86612,
+    "arUnitAvrgSlsAmt": 5568,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "충남",
+    "frcsCnt": 75594,
+    "arUnitAvrgSlsAmt": 4307,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "충북",
+    "frcsCnt": 77551,
+    "arUnitAvrgSlsAmt": 3486,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "강원",
+    "frcsCnt": 94287,
+    "arUnitAvrgSlsAmt": 3932,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "경기",
+    "frcsCnt": 144529,
+    "arUnitAvrgSlsAmt": 4448,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "울산",
+    "frcsCnt": 109997,
+    "arUnitAvrgSlsAmt": 5364,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "대전",
+    "frcsCnt": 109012,
+    "arUnitAvrgSlsAmt": 2738,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "광주",
+    "frcsCnt": 124143,
+    "arUnitAvrgSlsAmt": 3179,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "인천",
+    "frcsCnt": 112047,
+    "arUnitAvrgSlsAmt": 3998,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "대구",
+    "frcsCnt": 124941,
+    "arUnitAvrgSlsAmt": 3158,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "부산",
+    "frcsCnt": 108438,
+    "arUnitAvrgSlsAmt": 4004,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 교육",
+    "areaNm": "서울",
+    "frcsCnt": 161007,
+    "arUnitAvrgSlsAmt": 5487,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "대구",
+    "frcsCnt": 74187,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "부산",
+    "frcsCnt": 124235,
+    "arUnitAvrgSlsAmt": 1429,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "서울",
+    "frcsCnt": 252525,
+    "arUnitAvrgSlsAmt": 6787,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "세종",
+    "frcsCnt": 554163,
+    "arUnitAvrgSlsAmt": 13766,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "제주",
+    "frcsCnt": 659175,
+    "arUnitAvrgSlsAmt": 12402,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "경남",
+    "frcsCnt": 309458,
+    "arUnitAvrgSlsAmt": 11126,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "경북",
+    "frcsCnt": 380424,
+    "arUnitAvrgSlsAmt": 10945,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "전남",
+    "frcsCnt": 354073,
+    "arUnitAvrgSlsAmt": 8913,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "제주",
+    "frcsCnt": 340468,
+    "arUnitAvrgSlsAmt": 2300,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "경남",
+    "frcsCnt": 217592,
+    "arUnitAvrgSlsAmt": 3644,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "경북",
+    "frcsCnt": 156806,
+    "arUnitAvrgSlsAmt": 1481,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "서울",
+    "frcsCnt": 244707,
+    "arUnitAvrgSlsAmt": 3657,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "강원",
+    "frcsCnt": 418359,
+    "arUnitAvrgSlsAmt": 5663,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "경기",
+    "frcsCnt": 398290,
+    "arUnitAvrgSlsAmt": 6917,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "울산",
+    "frcsCnt": 346433,
+    "arUnitAvrgSlsAmt": 5596,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "대전",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "광주",
+    "frcsCnt": 460532,
+    "arUnitAvrgSlsAmt": 7714,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "인천",
+    "frcsCnt": 426758,
+    "arUnitAvrgSlsAmt": 7179,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "대구",
+    "frcsCnt": 647687,
+    "arUnitAvrgSlsAmt": 7093,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "부산",
+    "frcsCnt": 422029,
+    "arUnitAvrgSlsAmt": 5724,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "서울",
+    "frcsCnt": 447790,
+    "arUnitAvrgSlsAmt": 5643,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "세종",
+    "frcsCnt": 338249,
+    "arUnitAvrgSlsAmt": 8926,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "제주",
+    "frcsCnt": 535442,
+    "arUnitAvrgSlsAmt": 1193,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "경남",
+    "frcsCnt": 216357,
+    "arUnitAvrgSlsAmt": 3502,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "경북",
+    "frcsCnt": 268995,
+    "arUnitAvrgSlsAmt": 2383,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "전남",
+    "frcsCnt": 186339,
+    "arUnitAvrgSlsAmt": 1797,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "전북",
+    "frcsCnt": 225347,
+    "arUnitAvrgSlsAmt": 2405,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "충남",
+    "frcsCnt": 275203,
+    "arUnitAvrgSlsAmt": 2673,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "충북",
+    "frcsCnt": 338834,
+    "arUnitAvrgSlsAmt": 3067,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "강원",
+    "frcsCnt": 228920,
+    "arUnitAvrgSlsAmt": 1892,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "경기",
+    "frcsCnt": 284707,
+    "arUnitAvrgSlsAmt": 3865,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "울산",
+    "frcsCnt": 328032,
+    "arUnitAvrgSlsAmt": 3173,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "대전",
+    "frcsCnt": 461264,
+    "arUnitAvrgSlsAmt": 3718,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "광주",
+    "frcsCnt": 377131,
+    "arUnitAvrgSlsAmt": 2804,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "인천",
+    "frcsCnt": 312970,
+    "arUnitAvrgSlsAmt": 4182,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "대구",
+    "frcsCnt": 363881,
+    "arUnitAvrgSlsAmt": 3401,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "자동차 관련",
+    "areaNm": "부산",
+    "frcsCnt": 209985,
+    "arUnitAvrgSlsAmt": 2846,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "세종",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "제주",
+    "frcsCnt": 353980,
+    "arUnitAvrgSlsAmt": 4015,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "경남",
+    "frcsCnt": 423204,
+    "arUnitAvrgSlsAmt": 6035,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "경북",
+    "frcsCnt": 602605,
+    "arUnitAvrgSlsAmt": 8105,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "전남",
+    "frcsCnt": 416689,
+    "arUnitAvrgSlsAmt": 4950,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "전북",
+    "frcsCnt": 454832,
+    "arUnitAvrgSlsAmt": 6826,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "충남",
+    "frcsCnt": 446702,
+    "arUnitAvrgSlsAmt": 6156,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "PC방",
+    "areaNm": "충북",
+    "frcsCnt": 448204,
+    "arUnitAvrgSlsAmt": 6891,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "세종",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "제주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "경남",
+    "frcsCnt": 278470,
+    "arUnitAvrgSlsAmt": 4163,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "경북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "전남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "전북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "충남",
+    "frcsCnt": 153990,
+    "arUnitAvrgSlsAmt": 4131,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "충북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "강원",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "경기",
+    "frcsCnt": 257690,
+    "arUnitAvrgSlsAmt": 3895,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "울산",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "대전",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "광주",
+    "frcsCnt": 628315,
+    "arUnitAvrgSlsAmt": 7480,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "인천",
+    "frcsCnt": 333514,
+    "arUnitAvrgSlsAmt": 4436,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "대구",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "부산",
+    "frcsCnt": 466564,
+    "arUnitAvrgSlsAmt": 5155,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "오락",
+    "areaNm": "서울",
+    "frcsCnt": 335662,
+    "arUnitAvrgSlsAmt": 5241,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "충북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "강원",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "경기",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "울산",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "대전",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "광주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "인천",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "대구",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "부산",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "서울",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "충남",
+    "frcsCnt": 88830,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "충북",
+    "frcsCnt": 272668,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "울산",
+    "frcsCnt": 15813,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "강원",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "경기",
+    "frcsCnt": 194109,
+    "arUnitAvrgSlsAmt": 13896,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "울산",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "대전",
+    "frcsCnt": 113386,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "광주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "인천",
+    "frcsCnt": 237298,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "대구",
+    "frcsCnt": 39728,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "부산",
+    "frcsCnt": 182947,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "서울",
+    "frcsCnt": 259985,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "세종",
+    "frcsCnt": 103308,
+    "arUnitAvrgSlsAmt": 9949,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "제주",
+    "frcsCnt": 55615,
+    "arUnitAvrgSlsAmt": 3294,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "경남",
+    "frcsCnt": 86372,
+    "arUnitAvrgSlsAmt": 6143,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "경북",
+    "frcsCnt": 83641,
+    "arUnitAvrgSlsAmt": 6897,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "전남",
+    "frcsCnt": 112188,
+    "arUnitAvrgSlsAmt": 8397,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "전북",
+    "frcsCnt": 121202,
+    "arUnitAvrgSlsAmt": 9126,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "충남",
+    "frcsCnt": 61657,
+    "arUnitAvrgSlsAmt": 3999,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "충북",
+    "frcsCnt": 86521,
+    "arUnitAvrgSlsAmt": 6465,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "강원",
+    "frcsCnt": 60668,
+    "arUnitAvrgSlsAmt": 4220,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "경기",
+    "frcsCnt": 54812,
+    "arUnitAvrgSlsAmt": 7756,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "대구",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "부산",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "서울",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "세종",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "제주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "경남",
+    "frcsCnt": 232569,
+    "arUnitAvrgSlsAmt": 6506,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "경북",
+    "frcsCnt": 295501,
+    "arUnitAvrgSlsAmt": 5596,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "전남",
+    "frcsCnt": 249007,
+    "arUnitAvrgSlsAmt": 8611,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "전북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "충남",
+    "frcsCnt": 347676,
+    "arUnitAvrgSlsAmt": 9233,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "충북",
+    "frcsCnt": 300848,
+    "arUnitAvrgSlsAmt": 6422,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "강원",
+    "frcsCnt": 345445,
+    "arUnitAvrgSlsAmt": 11070,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "경기",
+    "frcsCnt": 181830,
+    "arUnitAvrgSlsAmt": 5648,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "울산",
+    "frcsCnt": 300260,
+    "arUnitAvrgSlsAmt": 5887,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "대전",
+    "frcsCnt": 119334,
+    "arUnitAvrgSlsAmt": 8744,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "광주",
+    "frcsCnt": 330755,
+    "arUnitAvrgSlsAmt": 8479,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "인천",
+    "frcsCnt": 155624,
+    "arUnitAvrgSlsAmt": 9735,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "전북",
+    "frcsCnt": 263316,
+    "arUnitAvrgSlsAmt": 8594,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "충남",
+    "frcsCnt": 459068,
+    "arUnitAvrgSlsAmt": 13845,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "충북",
+    "frcsCnt": 368581,
+    "arUnitAvrgSlsAmt": 13301,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "강원",
+    "frcsCnt": 504920,
+    "arUnitAvrgSlsAmt": 13019,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "경기",
+    "frcsCnt": 366683,
+    "arUnitAvrgSlsAmt": 14884,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "울산",
+    "frcsCnt": 477413,
+    "arUnitAvrgSlsAmt": 14699,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "대전",
+    "frcsCnt": 477289,
+    "arUnitAvrgSlsAmt": 18202,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "광주",
+    "frcsCnt": 389865,
+    "arUnitAvrgSlsAmt": 12357,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "인천",
+    "frcsCnt": 337391,
+    "arUnitAvrgSlsAmt": 12203,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "대구",
+    "frcsCnt": 342336,
+    "arUnitAvrgSlsAmt": 11883,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "부산",
+    "frcsCnt": 369016,
+    "arUnitAvrgSlsAmt": 12864,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "안경",
+    "areaNm": "서울",
+    "frcsCnt": 343881,
+    "arUnitAvrgSlsAmt": 16310,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "세종",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "제주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "경남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "경북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "전남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "전북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "배달",
+    "areaNm": "충남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "세종",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "제주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "경남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "경북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "전남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "전북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "충남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "충북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "강원",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "경기",
+    "frcsCnt": 268550,
+    "arUnitAvrgSlsAmt": 6793,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "울산",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "대전",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "광주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "유아관련",
+    "areaNm": "인천",
+    "frcsCnt": 72317,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "세종",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "제주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "경남",
+    "frcsCnt": 34055,
+    "arUnitAvrgSlsAmt": 1514,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "경북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "전남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "전북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "충남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "충북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "강원",
+    "frcsCnt": 33000,
+    "arUnitAvrgSlsAmt": 2260,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "경기",
+    "frcsCnt": 48014,
+    "arUnitAvrgSlsAmt": 2789,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "울산",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "대전",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "광주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "인천",
+    "frcsCnt": 112075,
+    "arUnitAvrgSlsAmt": 7982,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "대구",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "부산",
+    "frcsCnt": 34599,
+    "arUnitAvrgSlsAmt": 1722,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "부동산 중개 ",
+    "areaNm": "서울",
+    "frcsCnt": 264235,
+    "arUnitAvrgSlsAmt": 9401,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "세종",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "제주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "경남",
+    "frcsCnt": 85089,
+    "arUnitAvrgSlsAmt": 1560,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "경북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "전남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "전북",
+    "frcsCnt": 781365,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "충남",
+    "frcsCnt": 565666,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "충북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "강원",
+    "frcsCnt": 62182,
+    "arUnitAvrgSlsAmt": 1063,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "경기",
+    "frcsCnt": 162294,
+    "arUnitAvrgSlsAmt": 1068,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "울산",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "대전",
+    "frcsCnt": 60007,
+    "arUnitAvrgSlsAmt": 8617,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "광주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "인천",
+    "frcsCnt": 359851,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "대구",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "부산",
+    "frcsCnt": 60042,
+    "arUnitAvrgSlsAmt": 1287,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "임대",
+    "areaNm": "서울",
+    "frcsCnt": 73602,
+    "arUnitAvrgSlsAmt": 1229,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "세종",
+    "frcsCnt": 544239,
+    "arUnitAvrgSlsAmt": 9052,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "제주",
+    "frcsCnt": 191566,
+    "arUnitAvrgSlsAmt": 5416,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "경남",
+    "frcsCnt": 223131,
+    "arUnitAvrgSlsAmt": 5891,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "경북",
+    "frcsCnt": 351044,
+    "arUnitAvrgSlsAmt": 8075,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "전남",
+    "frcsCnt": 226088,
+    "arUnitAvrgSlsAmt": 4292,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "전북",
+    "frcsCnt": 297390,
+    "arUnitAvrgSlsAmt": 5459,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "충남",
+    "frcsCnt": 387487,
+    "arUnitAvrgSlsAmt": 7357,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "충북",
+    "frcsCnt": 336072,
+    "arUnitAvrgSlsAmt": 7467,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "강원",
+    "frcsCnt": 331882,
+    "arUnitAvrgSlsAmt": 8739,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "경기",
+    "frcsCnt": 360988,
+    "arUnitAvrgSlsAmt": 9423,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "울산",
+    "frcsCnt": 404481,
+    "arUnitAvrgSlsAmt": 7826,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "대전",
+    "frcsCnt": 125005,
+    "arUnitAvrgSlsAmt": 6541,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "광주",
+    "frcsCnt": 199379,
+    "arUnitAvrgSlsAmt": 7751,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "인천",
+    "frcsCnt": 368686,
+    "arUnitAvrgSlsAmt": 8762,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "대구",
+    "frcsCnt": 273537,
+    "arUnitAvrgSlsAmt": 7594,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "부산",
+    "frcsCnt": 357693,
+    "arUnitAvrgSlsAmt": 7617,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이미용",
+    "areaNm": "서울",
+    "frcsCnt": 404446,
+    "arUnitAvrgSlsAmt": 17471,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "세종",
+    "frcsCnt": 454831,
+    "arUnitAvrgSlsAmt": 2316,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "울산",
+    "frcsCnt": 109588,
+    "arUnitAvrgSlsAmt": 8100,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "대전",
+    "frcsCnt": 120072,
+    "arUnitAvrgSlsAmt": 8403,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "광주",
+    "frcsCnt": 99937,
+    "arUnitAvrgSlsAmt": 7596,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "인천",
+    "frcsCnt": 62540,
+    "arUnitAvrgSlsAmt": 4458,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "대구",
+    "frcsCnt": 74633,
+    "arUnitAvrgSlsAmt": 6041,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "부산",
+    "frcsCnt": 68537,
+    "arUnitAvrgSlsAmt": 8337,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "세탁",
+    "areaNm": "서울",
+    "frcsCnt": 58939,
+    "arUnitAvrgSlsAmt": 6504,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "대전",
+    "frcsCnt": 3397,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "광주",
+    "frcsCnt": 1437,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "인천",
+    "frcsCnt": 15327,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "대구",
+    "frcsCnt": 4633,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "부산",
+    "frcsCnt": 903047,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "서울",
+    "frcsCnt": 291179,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "세종",
+    "frcsCnt": 234800,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "제주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "경남",
+    "frcsCnt": 66837,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "경북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "전남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "이사",
+    "areaNm": "전북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "세종",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "제주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "경남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "경북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "전남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "전북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "충남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "충북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "강원",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "경기",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "울산",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "대전",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "광주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "약국",
+    "areaNm": "인천",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "대구",
+    "frcsCnt": 259766,
+    "arUnitAvrgSlsAmt": 5018,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "부산",
+    "frcsCnt": 199850,
+    "arUnitAvrgSlsAmt": 7329,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "반려동물 관련",
+    "areaNm": "서울",
+    "frcsCnt": 141398,
+    "arUnitAvrgSlsAmt": 7387,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "세종",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "제주",
+    "frcsCnt": 4975,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "경남",
+    "frcsCnt": 205448,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "경북",
+    "frcsCnt": 1979,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "전남",
+    "frcsCnt": 3724,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "전북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "충남",
+    "frcsCnt": 1174,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "충북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "강원",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "운송",
+    "areaNm": "경기",
+    "frcsCnt": 15790,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "전남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "전북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "충남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "충북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "강원",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "경기",
+    "frcsCnt": 332152,
+    "arUnitAvrgSlsAmt": 55705,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "울산",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "대전",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "광주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "인천",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "대구",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "부산",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "서울",
+    "frcsCnt": 228967,
+    "arUnitAvrgSlsAmt": 33110,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "서울",
+    "frcsCnt": 343914,
+    "arUnitAvrgSlsAmt": 4157,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "세종",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "제주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "경남",
+    "frcsCnt": 71777,
+    "arUnitAvrgSlsAmt": 698,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "경북",
+    "frcsCnt": 230040,
+    "arUnitAvrgSlsAmt": 801,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "전남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "전북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "충남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "충북",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "강원",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "경기",
+    "frcsCnt": 509681,
+    "arUnitAvrgSlsAmt": 886,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "울산",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "대전",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "광주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "인천",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "대구",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "부산",
+    "frcsCnt": 300511,
+    "arUnitAvrgSlsAmt": 564,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "숙박",
+    "areaNm": "서울",
+    "frcsCnt": 418462,
+    "arUnitAvrgSlsAmt": 1712,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "전남",
+    "frcsCnt": 190591,
+    "arUnitAvrgSlsAmt": 1526,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "전북",
+    "frcsCnt": 261993,
+    "arUnitAvrgSlsAmt": 1887,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "충남",
+    "frcsCnt": 238401,
+    "arUnitAvrgSlsAmt": 1481,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "충북",
+    "frcsCnt": 165710,
+    "arUnitAvrgSlsAmt": 1326,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "강원",
+    "frcsCnt": 193487,
+    "arUnitAvrgSlsAmt": 1830,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "경기",
+    "frcsCnt": 216977,
+    "arUnitAvrgSlsAmt": 2715,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "울산",
+    "frcsCnt": 146091,
+    "arUnitAvrgSlsAmt": 1644,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "대전",
+    "frcsCnt": 186519,
+    "arUnitAvrgSlsAmt": 1525,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "광주",
+    "frcsCnt": 449462,
+    "arUnitAvrgSlsAmt": 2771,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "인천",
+    "frcsCnt": 308450,
+    "arUnitAvrgSlsAmt": 3203,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "대구",
+    "frcsCnt": 240645,
+    "arUnitAvrgSlsAmt": 1973,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "스포츠 관련",
+    "areaNm": "부산",
+    "frcsCnt": 225767,
+    "arUnitAvrgSlsAmt": 2515,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "세종",
+    "frcsCnt": 621281,
+    "arUnitAvrgSlsAmt": 11796,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "제주",
+    "frcsCnt": 197471,
+    "arUnitAvrgSlsAmt": 6638,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "경남",
+    "frcsCnt": 108411,
+    "arUnitAvrgSlsAmt": 4330,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "경북",
+    "frcsCnt": 100597,
+    "arUnitAvrgSlsAmt": 3501,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "전남",
+    "frcsCnt": 128828,
+    "arUnitAvrgSlsAmt": 4627,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "전북",
+    "frcsCnt": 99400,
+    "arUnitAvrgSlsAmt": 3794,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "충남",
+    "frcsCnt": 126653,
+    "arUnitAvrgSlsAmt": 5353,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "충북",
+    "frcsCnt": 97475,
+    "arUnitAvrgSlsAmt": 5001,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "강원",
+    "frcsCnt": 116042,
+    "arUnitAvrgSlsAmt": 5827,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "경기",
+    "frcsCnt": 151393,
+    "arUnitAvrgSlsAmt": 7332,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "울산",
+    "frcsCnt": 112305,
+    "arUnitAvrgSlsAmt": 4359,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "대전",
+    "frcsCnt": 145392,
+    "arUnitAvrgSlsAmt": 6624,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "광주",
+    "frcsCnt": 100304,
+    "arUnitAvrgSlsAmt": 5330,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "인천",
+    "frcsCnt": 142348,
+    "arUnitAvrgSlsAmt": 6362,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "대구",
+    "frcsCnt": 116640,
+    "arUnitAvrgSlsAmt": 6163,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "부산",
+    "frcsCnt": 151316,
+    "arUnitAvrgSlsAmt": 5980,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "기타 서비스",
+    "areaNm": "서울",
+    "frcsCnt": 245351,
+    "arUnitAvrgSlsAmt": 9594,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "세종",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "제주",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "경남",
+    "frcsCnt": 0,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  },
+  {
+    "yr": "2025",
+    "indutyMlsfcNm": "인력 파견",
+    "areaNm": "경북",
+    "frcsCnt": 669393,
+    "arUnitAvrgSlsAmt": 0,
+    "crrncyUnitCdNm": "(단위 :천원)"
+  }
+]

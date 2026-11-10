@@ -1,0 +1,9 @@
+{% load brand_format %}
+<div class="community-author" data-no-translate>
+    <span class="owner-avatar" aria-hidden="true">{{ item.author.first_name|default:item.author.username|slice:':1' }}</span>
+    <div>
+        <!-- 브랜드가 있으면 브랜드 이름 + 점주, 브랜드가 없으면 일반회원 -->
+        <small class="owner-brand">{% if item.brand_id %}{{ item.brand.name|clean_brand_name }} 점주{% else %}일반회원{% endif %}{% if item.is_demo %} · 예시{% endif %}</small>
+        <b>{{ item.author.first_name|default:item.author.username }}</b>
+    </div>
+</div>

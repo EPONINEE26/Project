@@ -1,0 +1,71 @@
+[
+  {
+    "topic": "CU·GS25·GS더프레시·이마트24 별칭/공식 안내",
+    "links": [
+      "https://cu.bgfretail.com/",
+      "https://cs.bgfretail.com/",
+      "https://gs25.gsretail.com/gscvs/ko/main",
+      "https://gs25.gsretail.com/gscvs/ko/membership-services/gs-retail",
+      "https://m.emart24.co.kr/store"
+    ],
+    "finding": "공식 브랜드 표기와 안내 경로 확인. 브랜드별칭 점검이며 개별 점포 전수 검증은 아님."
+  },
+  {
+    "topic": "깊은생각 같은 주소 다층 후보",
+    "links": [
+      "https://play.google.com/store/apps/details?id=com.dailystudy.dailystudy2",
+      "https://www.gangmom.kr/institute/65b7af56b8368381372efea4",
+      "https://bizsurfing.com/p/424953/깊은생각필연의길1관보습학원"
+    ],
+    "records": [
+      3037,
+      3714,
+      67847,
+      77113
+    ],
+    "source": "교육서비스업",
+    "finding": "공식 앱 개발자 주소는 도곡로457 5층. 공개 학원 안내에 같은 주소의 1층 상담센터와 3층 학원도 나타남. 복수 층을 사용하는 같은 학원인지 별도 등록 단위인지 확정 불가. 전부 보류, 삭제/병합 없음."
+  },
+  {
+    "topic": "에듀코치 신갈 동일명/주소",
+    "links": [
+      "https://www.localview.co.kr/store/detail.asp?seq=102469307",
+      "https://edu-coach.kr/"
+    ],
+    "records": [
+      567,
+      76592
+    ],
+    "source": "교육서비스업",
+    "finding": "공개 에듀코치 안내와 이름이 같은 별도 교육 컨설팅 사이트도 검색됨. 신갈의 두 CSV행 관계를 공식 자료로 확인하지 못함. 브랜드 이름 검색 결과만으로 동일 사업체라 단정하지 않고 보류."
+  },
+  {
+    "topic": "튼튼영어 평화",
+    "links": [
+      "https://place.udanax.org/p/1435070/찬스실용음악학원"
+    ],
+    "records": [
+      3166,
+      44088
+    ],
+    "source": "교육서비스업",
+    "finding": "공개 장소의 인근 업체 안내에 소대배기로18 3층 평화어학원 표기. 두 CSV 상가ID가 하나인지 여부는 확인 불가. 모두 보류."
+  },
+  {
+    "topic": "크린토피아·리챠드프로헤어 공식 확인 경로",
+    "links": [
+      "https://www.cleantopia.com/kr/useInfo/cleanApp.do",
+      "https://leechstyle.com/index.php",
+      "https://leechstyle.com/bbs/store.php?idx=10"
+    ],
+    "finding": "공식 매장정보/위치 확인 경로를 확인. 리챠드 단독 등 약칭을 이 근거만으로 일괄 승격하지 않음."
+  },
+  {
+    "topic": "숙박·교육의 공개 확인 경로",
+    "links": [
+      "https://access.visitkorea.or.kr/acm/detail.do?cotId=ac103fba-0b83-473c-b595-7c2266150df5",
+      "https://cdto.creverse.com/cdi/dongdaemun/cs/faq/list"
+    ],
+    "finding": "한국관광공사 넘버25호텔 사례와 청담어학원 공식 브랜치 페이지 확인. 전체 매장의 현재 영업이나 브랜드 연결 검증 아님."
+  }
+]

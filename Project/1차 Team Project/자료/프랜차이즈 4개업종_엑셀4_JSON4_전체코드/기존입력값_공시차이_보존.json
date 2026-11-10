@@ -1,0 +1,32 @@
+[
+  {
+    "file": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "cell": "C3",
+    "year": 2024,
+    "brand": "메가커피",
+    "original_value": 931,
+    "official_value": 795,
+    "action": "기존값 보존, 수정 안 함",
+    "source_url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=Yuo6AbOIMq2B9GQuK8EoWQ%3D%3D"
+  },
+  {
+    "file": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "cell": "D3",
+    "year": 2024,
+    "brand": "메가커피",
+    "original_value": 1327,
+    "official_value": 1110,
+    "action": "기존값 보존, 수정 안 함",
+    "source_url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=Yuo6AbOIMq2B9GQuK8EoWQ%3D%3D"
+  },
+  {
+    "file": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "cell": "E3",
+    "year": 2024,
+    "brand": "메가커피",
+    "original_value": 3969,
+    "official_value": 3325,
+    "action": "기존값 보존, 수정 안 함",
+    "source_url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=Yuo6AbOIMq2B9GQuK8EoWQ%3D%3D"
+  }
+]

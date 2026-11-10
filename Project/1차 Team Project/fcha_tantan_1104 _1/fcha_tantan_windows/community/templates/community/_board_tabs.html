@@ -1,0 +1,4 @@
+<nav class="topic-tabs" aria-label="커뮤니티 게시판">
+    <a href="{% url 'community:index' %}" {% if community_board != 'closure' %}class="active" aria-current="page"{% endif %}>점주 이야기</a>
+    <a href="{% url 'community:closure_list' %}" {% if community_board == 'closure' %}class="active" aria-current="page"{% endif %}>폐점주 커뮤니티</a>
+</nav>

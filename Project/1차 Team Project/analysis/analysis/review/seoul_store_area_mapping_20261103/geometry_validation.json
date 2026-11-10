@@ -1,0 +1,9 @@
+{
+  "areas": 1643,
+  "errors": [],
+  "types": {
+    "Polygon": 1554,
+    "MultiPolygon": 89
+  },
+  "interior_rings": 41
+}

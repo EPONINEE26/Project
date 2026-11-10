@@ -1,0 +1,11 @@
+test_actual_values (test_regions.RegionTests.test_actual_values) ... ok
+test_all_cells_json_match (test_regions.RegionTests.test_all_cells_json_match) ... ok
+test_counts_and_years (test_regions.RegionTests.test_counts_and_years) ... ok
+test_preservation (test_regions.RegionTests.test_preservation) ... ok
+test_ratio_cache_matches_inputs (test_regions.RegionTests.test_ratio_cache_matches_inputs) ... ok
+test_unchanged_workbooks (test_regions.RegionTests.test_unchanged_workbooks) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.160s
+
+OK

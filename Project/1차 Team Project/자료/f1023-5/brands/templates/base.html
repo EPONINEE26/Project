@@ -1,0 +1,26 @@
+{% load static %}<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="프랜차이즈 브랜드와 지역별 창업 데이터를 비교하세요.">
+<title>{% block title %}프차 탄탄 — 탄탄한 선택의 기준{% endblock %}</title>
+<link rel="icon" href="{% static 'images/brand-symbol.svg' %}" type="image/svg+xml">
+<link rel="stylesheet" href="{% static 'css/style.css' %}"><link rel="stylesheet" href="{% static 'css/django.css' %}"><link rel="stylesheet" href="{% static 'css/renewal.css' %}?v=20261021-3">
+<script src="{% static 'js/common.js' %}?v=20261021-3" defer></script>{% block head %}{% endblock %}</head><body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="header"><div class="nav-wrap">
+<a href="{% url 'home:index' %}" class="logo" aria-label="프차 탄탄 홈">{% include 'includes/logo.html' %}</a>
+<nav class="gnb" aria-label="주 메뉴">
+<a href="{% url 'brands:blist' %}?year={{ year }}" {% if page == 'home' or page == 'list' or page == 'detail' %}class="active" aria-current="page"{% endif %}>브랜드 탐색</a>
+<a href="{% url 'brands:bregion' %}?year={{ year }}" {% if page == 'regions' %}class="active" aria-current="page"{% endif %}>지역 살펴보기</a>
+<a href="{% url 'brands:bcompare' %}?year={{ year }}" {% if page == 'compare' %}class="active" aria-current="page"{% endif %}>브랜드 비교 <span id="compare-count">{{ compare_ids|length }}</span></a>
+<a href="{% url 'brands:guide' %}" {% if page == 'guide' %}class="active" aria-current="page"{% endif %}>데이터 안내</a>
+<a href="{% url 'brands:calculator' %}?year={{ year }}" {% if page == 'calculator' %}class="active" aria-current="page"{% endif %}>회수 계산기</a>
+</nav>
+<div class="account-menu" data-account-menu>{% if request.user.is_authenticated %}<span class="header-nickname"><b>{{ request.user.first_name|default:request.user.username }}</b><span>님</span></span>{% endif %}<button class="menu-trigger" type="button" aria-label="회원 메뉴 열기" aria-controls="account-panel" aria-expanded="false"><span></span><span></span><span></span></button>
+<div id="account-panel" class="account-panel" inert>
+{% if request.user.is_authenticated %}<p class="member-name">{{ request.user.first_name|default:request.user.username }}님</p><a href="{% url 'brands:bsaved' %}"><span aria-hidden="true">♡</span>관심 브랜드</a><a href="{% url 'brands:calculator' %}"><span aria-hidden="true">▦</span>투자금 회수 계산기</a><form method="post" action="{% url 'accounts:logout' %}">{% csrf_token %}<button type="submit">로그아웃</button></form>
+{% else %}<a href="{% url 'accounts:login' %}?next={{ request.get_full_path|urlencode }}"><span aria-hidden="true">♙</span>로그인</a><a href="{% url 'accounts:signup' %}?next={{ request.get_full_path|urlencode }}"><span aria-hidden="true">＋</span>회원가입</a><a href="{% url 'brands:bsaved' %}"><span aria-hidden="true">♡</span>관심 브랜드</a>{% endif %}
+</div></div></div></header>
+<main id="main" tabindex="-1">{% if messages %}<div class="container" role="status">{% for message in messages %}<p class="notice">{{ message }}</p>{% endfor %}</div>{% endif %}{% block content %}{% endblock %}</main>
+<footer><div class="footer-inner"><a class="logo" href="{% url 'home:index' %}">{% include 'includes/logo.html' %}</a><p>고민하는 당신에게, 탄탄한 선택의 기준.<br><small>{% if is_demo %}현재 모든 브랜드·통계는 화면 시연을 위한 가상 데이터입니다.{% else %}데이터 출처: {{ source_label }}{% endif %}</small></p><a href="{% url 'brands:guide' %}">데이터 기준 및 이용 안내 ↗</a></div><div class="copyright">© 2026 FCHA TANTAN. YOUR NEXT CHAPTER, BUILT ON DATA.</div></footer>
+{% if compare_brands and page != 'compare' %}<aside class="compare-bar" aria-label="브랜드 비교함"><strong>브랜드 비교 {{ compare_ids|length }}/2</strong><div class="tray-items">{% for brand in compare_brands %}<span class="tray-item">{{ brand.name }}<form method="post" action="{% url 'brands:compare_toggle' brand.slug %}">{% csrf_token %}<input type="hidden" name="next" value="{{ request.get_full_path }}"><button aria-label="{{ brand.name }} 비교함에서 제거">×</button></form></span>{% endfor %}</div><form method="post" action="{% url 'brands:compare_clear' %}">{% csrf_token %}<input type="hidden" name="next" value="{{ request.get_full_path }}"><button class="tray-clear">비우기</button></form><a class="button" href="{% url 'brands:bcompare' %}?year={{ year }}">비교하기 ↗</a></aside>{% endif %}
+{% block scripts %}{% endblock %}</body></html>

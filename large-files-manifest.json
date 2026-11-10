@@ -1,0 +1,24 @@
+[
+  {
+    "path": "Project/1차 Team Project/fcha_tantan_1104 _1/fcha_tantan_windows/artifacts/db_snapshot_20261104_122455.sqlite3",
+    "bytes": 2417647616,
+    "sha256": "785f9f2ab525222265870499815bc32679f2229be192de86b32c3a97469f109f",
+    "parts": [
+      {
+        "path": ".large-file-parts/5cc8ef5eb4cd5263a4458949d0a037b901a0992a/part-0000",
+        "bytes": 1073741824,
+        "sha256": "ac389174c13bf9fcb66b53c57e8f24cfa74f42b6d174c7e3cc76795b0a18f725"
+      },
+      {
+        "path": ".large-file-parts/5cc8ef5eb4cd5263a4458949d0a037b901a0992a/part-0001",
+        "bytes": 1073741824,
+        "sha256": "9cbfebed2020a689e8fc6688bbad4f2aeef2404d97f7e2455772915e6413c970"
+      },
+      {
+        "path": ".large-file-parts/5cc8ef5eb4cd5263a4458949d0a037b901a0992a/part-0002",
+        "bytes": 270163968,
+        "sha256": "e90890a039168f79d5afe5f51e7e7c01138cfdae0ee852ef8427fed84deeac5d"
+      }
+    ]
+  }
+]

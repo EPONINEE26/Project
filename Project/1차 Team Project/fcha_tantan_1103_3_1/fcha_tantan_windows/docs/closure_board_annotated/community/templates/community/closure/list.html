@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}폐점주 커뮤니티 | 프차 탄탄{% endblock %}
+{% block content %}
+<div class="container narrow-page">
+    <div class="page-header">
+        <h1>폐점주 커뮤니티</h1>
+        <p>운영의 경험과 시행착오를 다음 창업자를 위한 현실적인 조언으로 나눕니다.</p>
+        <a class="button" href="{% url 'community:closure_write' %}">경험과 조언 작성</a>
+        <a class="button outline" href="{% url 'community:closure_verify' %}">폐업 인증 신청·내역 / 내 글</a>
+    </div>
+    {% include "community/closure/_rules.html" %}
+    {# GET: 검색어를 query 문자열 인수로 전달, DB 변경 없는 검색 요청 #}
+    <form method="get" class="community-search">
+        <input type="search" name="query" value="{{ query }}" maxlength="100" placeholder="제목, 내용, 조언, 브랜드 검색" aria-label="폐업 경험 검색">
+        <button class="button" type="submit">검색</button>
+    </form>
+    {# page_obj: 뷰에서 페이지당 10건으로 나눈 현재 페이지 객체 #}
+    {% for review in page_obj %}
+    <article class="panel">
+        <span>폐업 인증 승인 회원의 게시글</span>
+        <h2><a href="{% url 'community:closure_detail' review.pk %}">{{ review.public_title }}</a></h2>
+        <p>{{ review.brand.name }} · {{ review.author.get_username }} · {{ review.created_at|date:"Y.m.d" }}</p>
+        {# truncatechars: 지정 글자 수를 넘는 부분을 말줄임으로 표시 #}
+        <p>{{ review.advice|truncatechars:140 }}</p>
+        <p>브랜드 평가 {{ review.brand_rating }}/5</p>
+    </article>
+    {% empty %}<section class="panel"><p>등록된 공개 게시글이 없거나 검색 결과가 없습니다.</p></section>{% endfor %}
+    <nav aria-label="게시글 페이지">
+        {# has_previous·has_next: 이동 가능한 페이지 존재 여부 검사 #}
+        {# urlencode: 검색어를 URL 인수로 인코딩하여 페이지 이동 중 유지 #}
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}&amp;query={{ query|urlencode }}">이전</a>
+        {% endif %}
+        <span>{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}&amp;query={{ query|urlencode }}">다음</a>
+        {% endif %}
+    </nav>
+</div>
+{% endblock %}

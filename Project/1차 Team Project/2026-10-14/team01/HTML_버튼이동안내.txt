@@ -1,0 +1,147 @@
+﻿HTML별 버튼·링크 이동 안내
+
+직접 만든 앱은 home, brands 두 개뿐입니다.
+team01은 프로젝트 설정 폴더이며 앱이 아닙니다.
+Django 기본 admin/auth 등은 관리자·인증 기능에 필요한 기본 구성입니다.
+
+1. 폴더 구성
+- home/templates/index.html : 메인 화면
+- brands/templates/blist.html : 브랜드 목록
+- brands/templates/bview.html : 브랜드 상세
+- brands/templates/bcompare.html : 브랜드 비교
+- brands/templates/bregion.html : 지역별 브랜드
+- brands/templates/bsaved.html : 관심 브랜드
+- brands/templates/guide.html : 데이터 안내
+- brands/templates/base.html : 모든 화면의 공통 메뉴·하단 영역
+- brands/templates/includes/ : 여러 화면에서 불러오는 HTML 조각
+- static/images/ : 이미지
+- static/css/ : 스타일
+- static/js/ : 자바스크립트
+
+base.html과 includes의 HTML은 독립 페이지가 아닙니다.
+home의 index.html도 brands/templates/base.html을 사용할 수 있습니다.
+두 앱이 INSTALLED_APPS에 등록되고 APP_DIRS=True이면 Django가 모두 검색합니다.
+현재 render(request, 'index.html')처럼 파일 이름으로 연결합니다.
+
+2. 모든 화면의 공통 메뉴 (base.html)
+누르는 항목 / 이동 주소 / 표시되는 HTML
+- 로고 프차 탄탄 → / → home/templates/index.html
+- 브랜드 탐색 → /brands/blist/ → brands/templates/blist.html
+- 지역 살펴보기 → /brands/bregion/ → brands/templates/bregion.html
+- 브랜드 비교 → /brands/bcompare/ → brands/templates/bcompare.html
+- 데이터 안내 → /brands/guide/ → brands/templates/guide.html
+- 관심 브랜드 → /brands/bsaved/ → brands/templates/bsaved.html
+- 하단 로고 → / → index.html
+- 하단 데이터 기준 및 이용 안내 → /brands/guide/ → guide.html
+- 본문으로 건너뛰기 → 같은 화면의 #main으로 이동
+
+비교함에 브랜드가 있으면 하단 비교 바가 표시됩니다(비교 화면 제외).
+- × → 해당 브랜드를 비교함에서 제거하고 현재 화면으로 돌아옴
+- 비우기 → 비교함 전체를 비우고 현재 화면으로 돌아옴
+- 비교하기 → /brands/bcompare/ → bcompare.html
+
+3. index.html (메인 화면, /)
+- 브랜드 둘러보기 → 같은 화면의 #brands 목록 위치로 스크롤
+- 지역에서 기회를 찾다 → /brands/bregion/ → bregion.html
+- 숫자의 기준을 읽다 → /brands/guide/ → guide.html
+- 검색·필터·브랜드 카드 → 아래 10~12번 공통 조각 설명 참고
+
+4. blist.html (브랜드 목록, /brands/blist/)
+- 검색 ↵ / 조회 → 현재 목록에서 검색·필터 조건을 적용
+- 업종 / 지역 / 연도 / 정렬 선택 → JavaScript가 현재 목록을 자동 조회
+- 초기화 → /brands/blist/로 이동하여 검색 조건 초기화
+- 브랜드 사진 / 이름 / 자세히 보기 → /brands/bview/브랜드식별자/ → bview.html
+- 비교 담기 / 비교함에서 빼기 → 선택 변경 후 현재 목록으로 복귀
+- 하트 ♡ / ♥ → 관심 저장·해제 후 현재 목록으로 복귀
+- 모든 브랜드 둘러보기 → /brands/blist/ → blist.html
+실제 목록 내용과 버튼은 includes/list_section.html, brand_card.html에 있습니다.
+
+5. bview.html (상세, /brands/bview/브랜드식별자/)
+브랜드식별자 예시: tantan. 실제 URL 예시: /brands/bview/tantan/
+- 상단 브랜드 탐색 → /brands/blist/ → blist.html
+- ← 브랜드 목록으로 → /brands/blist/?year=선택연도 → blist.html
+- 연도 선택 / 조회 → 같은 브랜드 상세에서 해당 연도 조회
+- 비교 담기 / 비교함에서 빼기 → 선택 변경 후 현재 상세로 복귀
+- 하트 ♡ / ♥ → 관심 저장·해제 후 현재 상세로 복귀
+- 브랜드 한눈에 → 같은 페이지의 #overview
+- 개·폐업 현황 → 같은 페이지의 #trend
+- 지역별 매장 → 같은 페이지의 #distribution
+- 창업비용 → 같은 페이지의 #cost
+- 전체 지역 브랜드 비교하기 → /brands/bregion/?year=선택연도 → bregion.html
+- 전체 17개 지역 매장 수 확인 → 같은 화면의 접이식 영역을 펼침·접음
+- 지표 정의 자세히 보기 → /brands/guide/ → guide.html
+
+6. bcompare.html (비교, /brands/bcompare/)
+- 연도 선택 / 조회 → 같은 비교 화면에서 연도 변경
+- CSV 내려받기 → /brands/compare/csv/?year=선택연도 → 파일 다운로드
+  HTML 페이지로 이동하는 버튼이 아닙니다.
+- 브랜드 추가 + → /brands/blist/?year=선택연도 → blist.html
+- 비교 표의 브랜드 이름 ↗ → /brands/bview/브랜드식별자/?year=선택연도 → bview.html
+- 비교함에서 빼기 → 비교 대상 제거 후 비교 화면으로 복귀
+- 브랜드 선택하러 가기 → /brands/blist/ → blist.html (비교 대상이 없을 때 표시)
+비교는 최대 3개 브랜드까지 가능합니다.
+
+7. bregion.html (지역, /brands/bregion/)
+- 연도 선택 / 조회 → 같은 화면에서 현재 지역의 연도 변경
+- 서울·경기 등 지역 타일 → /brands/bregion/?region=지역명&year=선택연도
+  같은 bregion.html에서 선택한 지역 데이터를 표시합니다.
+- 표의 브랜드 이름 → /brands/bview/브랜드식별자/?year=선택연도 → bview.html
+- 비교 담기 / 비교함에서 빼기 → 선택 변경 후 현재 지역 화면으로 복귀
+
+8. bsaved.html (관심 브랜드, /brands/bsaved/)
+- 검색 / 조회 / 업종·지역·연도·정렬 → 저장한 브랜드 중 조건에 맞는 목록 표시
+- 초기화 → /brands/bsaved/ → 관심 목록의 검색 조건 초기화
+- 사진 / 이름 / 자세히 보기 → 해당 브랜드의 bview.html
+- 비교 담기 / 비교함에서 빼기 → 선택 변경 후 관심 목록으로 복귀
+- 하트 ♥ → 관심 해제 후 현재 화면으로 복귀, 해당 카드가 목록에서 사라짐
+- 모든 브랜드 둘러보기 → /brands/blist/ → blist.html
+실제 목록 내용은 includes/list_section.html에 있습니다.
+
+9. guide.html (데이터 안내, /brands/guide/)
+- 화면 본문에는 별도의 이동 버튼이 없습니다.
+- 상단·하단 메뉴로 다른 화면에 이동합니다(base.html 참고).
+
+10. includes/list_section.html (공통 목록 조각)
+사용 화면: index.html, blist.html, bsaved.html
+- 검색 ↵ / 조회 → request.path(현재 주소)로 GET 요청
+- 업종·지역·연도·정렬 변경 → common.js가 자동으로 GET 폼 제출
+- 초기화 → 현재 주소에서 ? 뒤 검색 조건을 제거
+- 모든 브랜드 둘러보기 → /brands/blist/
+- 각 카드 → includes/brand_card.html을 불러옴
+
+11. includes/brand_card.html (공통 브랜드 카드)
+- 사진 / 브랜드 이름 / 자세히 보기 → 해당 브랜드의 bview.html
+- 비교 버튼 → includes/compare_button.html
+- 하트 버튼 → includes/save_button.html
+
+12. includes/compare_button.html (비교 선택 버튼)
+- 비교 담기 / 비교함에서 빼기
+- 처리 주소: POST /brands/compare/toggle/브랜드식별자/
+- views.py의 compare_toggle 함수가 세션의 비교 목록을 변경
+- 숨겨진 next 값에 담긴 현재 화면 주소로 redirect
+- 별도의 결과 HTML은 없습니다.
+
+13. includes/save_button.html (관심 저장 버튼)
+- ♡ → 관심 저장 / ♥ → 관심 해제
+- 처리 주소: POST /brands/saved/toggle/브랜드식별자/
+- views.py의 saved_toggle 함수가 세션의 관심 목록을 변경
+- next에 담긴 현재 화면 주소로 redirect
+- 관심 저장 직후 자동으로 bsaved.html로 이동하지는 않습니다.
+  상단 관심 브랜드 메뉴를 눌러 저장 목록을 확인합니다.
+
+14. includes/year_select.html (연도 선택 조각)
+- 연도 선택 상자이며 독립 페이지가 아닙니다.
+- 선택을 바꾸면 common.js가 해당 폼을 제출하여 현재 화면을 다시 조회합니다.
+- 옆의 조회 버튼으로도 제출할 수 있습니다.
+
+15. includes/badge.html, includes/bars.html
+- badge.html : 데이터 구분 표시, 이동 버튼 없음
+- bars.html : 지역별 막대 표시, 이동 버튼 없음
+
+16. 주소와 코드가 연결되는 순서
+버튼·링크 클릭 → team01/urls.py → home 또는 brands/urls.py
+→ views.py의 함수 → render로 HTML 표시 또는 redirect로 다른 주소 이동
+
+?year=2024 같은 부분은 조회 조건입니다. 다른 HTML 파일을 뜻하지 않습니다.
+#overview 같은 부분은 현재 페이지 안의 위치입니다. 새 페이지가 아닙니다.
+POST 비교·저장은 데이터를 변경한 뒤 현재 화면으로 돌아오는 처리입니다.

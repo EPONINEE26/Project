@@ -1,0 +1,2537 @@
+import pandas as pd
+import numpy as np
+import json
+import re
+from pathlib import Path
+
+
+# ============================================================
+# 0. 기본 설정
+# ============================================================
+
+TARGET_NAME = "편의점"
+
+
+# ============================================================
+# 1. 전국상가정보 파일
+# ============================================================
+
+SHOP_FILE = Path(
+    r"C:\workspace\fcha_data\data\전국상가정보_소매업_202610\records.csv"
+)
+
+
+# ============================================================
+# 2. 공정위 브랜드 기본정보
+# ============================================================
+
+BRAND_FILES = [
+    Path(r"C:\workspace\fcha_data\data\공정거래위원회_브랜드목록_2024\records.csv"),
+    Path(r"C:\workspace\fcha_data\data\공정거래위원회_브랜드목록_2025\records.csv"),
+    Path(r"C:\workspace\fcha_data\data\공정거래위원회_브랜드목록_2026\records.csv"),
+]
+
+
+# ============================================================
+# 3. 브랜드 지역현황
+# ============================================================
+
+REGION_FILE = Path(
+    r"C:\workspace\fcha_data\data\브랜드지역현황_v5\processed\brand_region_raw.json"
+)
+
+
+# ============================================================
+# 4. 출력 경로
+# ============================================================
+
+OUTPUT_DIR = Path(
+    r"C:\workspace\fcha_data\output\project_ready"
+)
+
+OUTPUT_DIR.mkdir(
+    parents=True,
+    exist_ok=True
+)
+
+OUTPUT_FILE = (
+    OUTPUT_DIR
+    / "편의점_프로젝트실제투입본.xlsx"
+)
+
+HOLD_CSV_FILE = (
+    OUTPUT_DIR
+    / "편의점_보류후보.csv"
+)
+
+
+# ============================================================
+# 5. 공정위 업종 필터
+# ============================================================
+
+TARGET_MAJOR_INDUSTRY = "도소매"
+
+TARGET_MIDDLE_INDUSTRIES = [
+    "편의점"
+]
+
+
+# ============================================================
+# 6. CU / GS25 공식 ID 별칭
+# ============================================================
+#
+# 같은 브랜드를 여러 상호 표기로 잡기 위한 안전 별칭
+#
+# ============================================================
+
+SAFE_BRAND_ALIASES = {
+
+    "CU": {
+        "brandMnno": "BRD_20080100020",
+        "official_brand_name": "씨유(CU)",
+    },
+
+    "씨유": {
+        "brandMnno": "BRD_20080100020",
+        "official_brand_name": "씨유(CU)",
+    },
+
+    "GS25": {
+        "brandMnno": "BRD_20080100032",
+        "official_brand_name": "GS25",
+    },
+
+    "지에스25": {
+        "brandMnno": "BRD_20080100032",
+        "official_brand_name": "GS25",
+    },
+}
+
+
+# ============================================================
+# 7. 문자열 정리 함수
+# ============================================================
+
+def clean_name(name):
+
+    if pd.isna(name):
+        return ""
+
+    name = str(name).strip().upper()
+
+    # 공백 제거
+    name = re.sub(
+        r"\s+",
+        "",
+        name
+    )
+
+    # 한글 / 영문 / 숫자만 남김
+    name = re.sub(
+        r"[^가-힣A-Z0-9]",
+        "",
+        name
+    )
+
+    return name
+
+
+# ============================================================
+# 8. 지역명 정규화
+# ============================================================
+
+REGION_MAP = {
+
+    "서울특별시": "서울",
+    "서울": "서울",
+
+    "부산광역시": "부산",
+    "부산": "부산",
+
+    "대구광역시": "대구",
+    "대구": "대구",
+
+    "인천광역시": "인천",
+    "인천": "인천",
+
+    "광주광역시": "광주",
+    "광주": "광주",
+
+    "대전광역시": "대전",
+    "대전": "대전",
+
+    "울산광역시": "울산",
+    "울산": "울산",
+
+    "세종특별자치시": "세종",
+    "세종": "세종",
+
+    "경기도": "경기",
+    "경기": "경기",
+
+    "강원특별자치도": "강원",
+    "강원도": "강원",
+    "강원": "강원",
+
+    "충청북도": "충북",
+    "충북": "충북",
+
+    "충청남도": "충남",
+    "충남": "충남",
+
+    "전북특별자치도": "전북",
+    "전라북도": "전북",
+    "전북": "전북",
+
+    "전라남도": "전남",
+    "전남": "전남",
+
+    "경상북도": "경북",
+    "경북": "경북",
+
+    "경상남도": "경남",
+    "경남": "경남",
+
+    "제주특별자치도": "제주",
+    "제주": "제주",
+}
+
+
+def normalize_region(region):
+
+    if pd.isna(region):
+        return None
+
+    region = str(region).strip()
+
+    if region == "전남광주통합특별시":
+        return "전남광주통합"
+
+    return REGION_MAP.get(
+        region,
+        region
+    )
+
+
+# ============================================================
+# 9. 입력 파일 존재 확인
+# ============================================================
+
+print()
+print("========================================")
+print("입력 파일 확인")
+print("========================================")
+
+if not SHOP_FILE.exists():
+
+    raise FileNotFoundError(
+        f"\n전국상가정보 파일을 찾을 수 없습니다.\n"
+        f"{SHOP_FILE}"
+    )
+
+
+for file in BRAND_FILES:
+
+    if not file.exists():
+
+        raise FileNotFoundError(
+            f"\n공정위 브랜드 파일을 찾을 수 없습니다.\n"
+            f"{file}"
+        )
+
+
+if not REGION_FILE.exists():
+
+    raise FileNotFoundError(
+        f"\n브랜드 지역현황 파일을 찾을 수 없습니다.\n"
+        f"{REGION_FILE}"
+    )
+
+
+print("모든 입력 파일 확인 완료")
+
+
+# ============================================================
+# 10. 전국상가정보 읽기
+# ============================================================
+
+print()
+print("========================================")
+print("1. 전국상가 소매업 읽기")
+print("========================================")
+
+shop_df = pd.read_csv(
+    SHOP_FILE,
+    encoding="utf-8"
+)
+
+
+SHOP_COLUMNS = [
+
+    "bizesId",
+    "bizesNm",
+    "brchNm",
+
+    "indsLclsCd",
+    "indsLclsNm",
+
+    "indsMclsCd",
+    "indsMclsNm",
+
+    "indsSclsCd",
+    "indsSclsNm",
+
+    "ctprvnCd",
+    "ctprvnNm",
+
+    "signguCd",
+    "signguNm",
+
+    "rdnmAdr",
+
+    "lon",
+    "lat"
+]
+
+
+SHOP_COLUMNS = [
+    col
+    for col in SHOP_COLUMNS
+    if col in shop_df.columns
+]
+
+
+shop_df = (
+    shop_df[
+        SHOP_COLUMNS
+    ]
+    .copy()
+)
+
+
+shop_df[
+    "cleaned_store_name"
+] = (
+    shop_df[
+        "bizesNm"
+    ]
+    .apply(
+        clean_name
+    )
+)
+
+
+shop_df[
+    "normalized_region"
+] = (
+    shop_df[
+        "ctprvnNm"
+    ]
+    .apply(
+        normalize_region
+    )
+)
+
+
+print(
+    "전체 소매업 상가 :",
+    len(shop_df)
+)
+
+
+# ============================================================
+# 11. 편의점 관련 상가만 필터
+# ============================================================
+
+if "indsSclsNm" in shop_df.columns:
+
+    convenience_mask = (
+        shop_df[
+            "indsSclsNm"
+        ]
+        .fillna("")
+        .str.contains(
+            "편의점",
+            regex=False
+        )
+    )
+
+    convenience_shop_df = (
+        shop_df[
+            convenience_mask
+        ]
+        .copy()
+    )
+
+else:
+
+    convenience_shop_df = (
+        shop_df.copy()
+    )
+
+
+print(
+    "편의점 관련 상가 :",
+    len(
+        convenience_shop_df
+    )
+)
+
+
+# ============================================================
+# 12. 공정위 브랜드 읽기
+# ============================================================
+
+print()
+print("========================================")
+print("2. 공정위 브랜드 기본정보")
+print("========================================")
+
+brand_list = []
+
+
+for file in BRAND_FILES:
+
+    temp = pd.read_csv(
+        file,
+        encoding="utf-8"
+    )
+
+    print(
+        file.parent.name,
+        ":",
+        len(temp),
+        "건"
+    )
+
+    brand_list.append(
+        temp
+    )
+
+
+brand_df = pd.concat(
+    brand_list,
+    ignore_index=True
+)
+
+
+brand_df = brand_df[
+    [
+        "jngBizCrtraYr",
+        "brandMnno",
+        "brandNm",
+        "indutyLclasNm",
+        "indutyMlsfcNm",
+        "corpNm"
+    ]
+].copy()
+
+
+brand_df = brand_df[
+    brand_df[
+        "brandNm"
+    ].notna()
+].copy()
+
+
+brand_df[
+    "cleaned_brand_name"
+] = (
+    brand_df[
+        "brandNm"
+    ]
+    .apply(
+        clean_name
+    )
+)
+
+
+brand_df[
+    "jngBizCrtraYr_num"
+] = pd.to_numeric(
+    brand_df[
+        "jngBizCrtraYr"
+    ],
+    errors="coerce"
+)
+
+
+# ============================================================
+# 13. 편의점 브랜드 필터
+# ============================================================
+
+target_brand_df = (
+    brand_df[
+        (
+            brand_df[
+                "indutyLclasNm"
+            ]
+            == TARGET_MAJOR_INDUSTRY
+        )
+        &
+        (
+            brand_df[
+                "indutyMlsfcNm"
+            ]
+            .isin(
+                TARGET_MIDDLE_INDUSTRIES
+            )
+        )
+    ]
+    .copy()
+)
+
+
+# ============================================================
+# 14. 브랜드별 최신 기본정보 사용
+# ============================================================
+
+target_brand_df = (
+    target_brand_df
+    .sort_values(
+        "jngBizCrtraYr_num",
+        ascending=False
+    )
+    .drop_duplicates(
+        subset=[
+            "brandMnno"
+        ],
+        keep="first"
+    )
+    .reset_index(
+        drop=True
+    )
+)
+
+
+target_brand_df[
+    "brand_length"
+] = (
+    target_brand_df[
+        "cleaned_brand_name"
+    ]
+    .str.len()
+)
+
+
+print()
+print(
+    "공정위 편의점 브랜드 :",
+    len(
+        target_brand_df
+    )
+)
+
+
+# ============================================================
+# 15. CU / GS25 공식 ID 확인
+# ============================================================
+
+print()
+print("========================================")
+print("CU / GS25 공식 브랜드 확인")
+print("========================================")
+
+
+official_safe_brand_lookup = {}
+
+
+for alias, info in SAFE_BRAND_ALIASES.items():
+
+    official_row = (
+        target_brand_df[
+            target_brand_df[
+                "brandMnno"
+            ]
+            == info[
+                "brandMnno"
+            ]
+        ]
+    )
+
+
+    if official_row.empty:
+
+        print(
+            alias,
+            "-> 공식 브랜드 없음"
+        )
+
+        continue
+
+
+    official_row = official_row.iloc[0]
+
+
+    print(
+        alias,
+        "->",
+        official_row[
+            "brandMnno"
+        ],
+        "/",
+        official_row[
+            "brandNm"
+        ],
+        "/",
+        official_row[
+            "corpNm"
+        ]
+    )
+
+
+    official_safe_brand_lookup[
+        clean_name(alias)
+    ] = {
+
+        "brandMnno":
+        official_row[
+            "brandMnno"
+        ],
+
+        "brandNm":
+        official_row[
+            "brandNm"
+        ],
+
+        "corpNm":
+        official_row[
+            "corpNm"
+        ],
+
+        "industry":
+        official_row[
+            "indutyMlsfcNm"
+        ]
+    }
+
+
+# ============================================================
+# 16. 정규화 후 중복 브랜드명 확인
+# ============================================================
+
+brand_name_counts = (
+    target_brand_df[
+        "cleaned_brand_name"
+    ]
+    .value_counts()
+)
+
+
+duplicate_brand_names = set(
+    brand_name_counts[
+        brand_name_counts > 1
+    ].index
+)
+
+
+# ============================================================
+# 17. 정확 일치 lookup
+# ============================================================
+
+exact_lookup = {}
+
+
+for _, row in target_brand_df.iterrows():
+
+    cleaned = row[
+        "cleaned_brand_name"
+    ]
+
+
+    if not cleaned:
+        continue
+
+
+    if cleaned in duplicate_brand_names:
+        continue
+
+
+    exact_lookup[
+        cleaned
+    ] = {
+
+        "brandMnno":
+        row[
+            "brandMnno"
+        ],
+
+        "brandNm":
+        row[
+            "brandNm"
+        ],
+
+        "corpNm":
+        row[
+            "corpNm"
+        ],
+
+        "industry":
+        row[
+            "indutyMlsfcNm"
+        ]
+    }
+
+
+# ============================================================
+# 18. 결과 컬럼 생성
+# ============================================================
+
+convenience_shop_df[
+    "brandMnno"
+] = None
+
+convenience_shop_df[
+    "matched_brandNm"
+] = None
+
+convenience_shop_df[
+    "matched_corpNm"
+] = None
+
+convenience_shop_df[
+    "matched_brand_industry"
+] = None
+
+convenience_shop_df[
+    "match_type"
+] = None
+
+convenience_shop_df[
+    "matched_alias"
+] = None
+
+
+# ============================================================
+# 19. 공식 브랜드 정확 일치
+# ============================================================
+
+for index, store_name in convenience_shop_df[
+    "cleaned_store_name"
+].items():
+
+
+    if store_name in exact_lookup:
+
+        info = exact_lookup[
+            store_name
+        ]
+
+
+        convenience_shop_df.at[
+            index,
+            "brandMnno"
+        ] = info[
+            "brandMnno"
+        ]
+
+        convenience_shop_df.at[
+            index,
+            "matched_brandNm"
+        ] = info[
+            "brandNm"
+        ]
+
+        convenience_shop_df.at[
+            index,
+            "matched_corpNm"
+        ] = info[
+            "corpNm"
+        ]
+
+        convenience_shop_df.at[
+            index,
+            "matched_brand_industry"
+        ] = info[
+            "industry"
+        ]
+
+        convenience_shop_df.at[
+            index,
+            "match_type"
+        ] = "exact"
+
+
+print(
+    "공식 브랜드 정확 일치 :",
+    (
+        convenience_shop_df[
+            "match_type"
+        ]
+        == "exact"
+    ).sum()
+)
+
+
+# ============================================================
+# 20. CU / 씨유 / GS25 / 지에스25 별칭 매칭
+# ============================================================
+
+no_match_indexes = (
+    convenience_shop_df[
+        convenience_shop_df[
+            "brandMnno"
+        ]
+        .isna()
+    ]
+    .index
+)
+
+
+# 긴 alias부터 검사
+safe_alias_records = sorted(
+    official_safe_brand_lookup.items(),
+    key=lambda x: len(x[0]),
+    reverse=True
+)
+
+
+for index in no_match_indexes:
+
+    store_name = convenience_shop_df.at[
+        index,
+        "cleaned_store_name"
+    ]
+
+
+    if not store_name:
+        continue
+
+
+    for alias, info in safe_alias_records:
+
+        if store_name.startswith(
+            alias
+        ):
+
+            convenience_shop_df.at[
+                index,
+                "brandMnno"
+            ] = info[
+                "brandMnno"
+            ]
+
+            convenience_shop_df.at[
+                index,
+                "matched_brandNm"
+            ] = info[
+                "brandNm"
+            ]
+
+            convenience_shop_df.at[
+                index,
+                "matched_corpNm"
+            ] = info[
+                "corpNm"
+            ]
+
+            convenience_shop_df.at[
+                index,
+                "matched_brand_industry"
+            ] = info[
+                "industry"
+            ]
+
+            convenience_shop_df.at[
+                index,
+                "match_type"
+            ] = "safe_alias_prefix"
+
+            convenience_shop_df.at[
+                index,
+                "matched_alias"
+            ] = alias
+
+            break
+
+
+print(
+    "CU / GS25 공식ID 별칭 PREFIX :",
+    (
+        convenience_shop_df[
+            "match_type"
+        ]
+        == "safe_alias_prefix"
+    ).sum()
+)
+
+
+# ============================================================
+# 21. 일반 PREFIX 브랜드
+# ============================================================
+#
+# 4글자 이상 브랜드만 사용
+# CU / GS25는 여기에서 제외
+#
+# ============================================================
+
+safe_brand_ids = set(
+    info[
+        "brandMnno"
+    ]
+    for info in official_safe_brand_lookup.values()
+)
+
+
+prefix_brand_df = (
+    target_brand_df[
+        (
+            target_brand_df[
+                "brand_length"
+            ]
+            >= 4
+        )
+        &
+        (
+            ~target_brand_df[
+                "brandMnno"
+            ]
+            .isin(
+                safe_brand_ids
+            )
+        )
+    ]
+    .copy()
+)
+
+
+prefix_brand_df = (
+    prefix_brand_df[
+        ~prefix_brand_df[
+            "cleaned_brand_name"
+        ]
+        .isin(
+            duplicate_brand_names
+        )
+    ]
+    .copy()
+)
+
+
+prefix_brand_df = (
+    prefix_brand_df
+    .sort_values(
+        "brand_length",
+        ascending=False
+    )
+)
+
+
+prefix_records = (
+    prefix_brand_df[
+        [
+            "brandMnno",
+            "brandNm",
+            "corpNm",
+            "indutyMlsfcNm",
+            "cleaned_brand_name"
+        ]
+    ]
+    .to_dict(
+        "records"
+    )
+)
+
+
+# ============================================================
+# 22. 일반 PREFIX 매칭
+# ============================================================
+
+no_match_indexes = (
+    convenience_shop_df[
+        convenience_shop_df[
+            "brandMnno"
+        ]
+        .isna()
+    ]
+    .index
+)
+
+
+for index in no_match_indexes:
+
+    store_name = convenience_shop_df.at[
+        index,
+        "cleaned_store_name"
+    ]
+
+
+    if not store_name:
+        continue
+
+
+    for brand in prefix_records:
+
+        brand_name = brand[
+            "cleaned_brand_name"
+        ]
+
+
+        if store_name.startswith(
+            brand_name
+        ):
+
+            convenience_shop_df.at[
+                index,
+                "brandMnno"
+            ] = brand[
+                "brandMnno"
+            ]
+
+            convenience_shop_df.at[
+                index,
+                "matched_brandNm"
+            ] = brand[
+                "brandNm"
+            ]
+
+            convenience_shop_df.at[
+                index,
+                "matched_corpNm"
+            ] = brand[
+                "corpNm"
+            ]
+
+            convenience_shop_df.at[
+                index,
+                "matched_brand_industry"
+            ] = brand[
+                "indutyMlsfcNm"
+            ]
+
+            convenience_shop_df.at[
+                index,
+                "match_type"
+            ] = "prefix"
+
+            break
+
+
+print(
+    "일반 PREFIX :",
+    (
+        convenience_shop_df[
+            "match_type"
+        ]
+        == "prefix"
+    ).sum()
+)
+
+
+print(
+    "전체 브랜드 이름 매칭 :",
+    convenience_shop_df[
+        "brandMnno"
+    ]
+    .notna()
+    .sum()
+)
+
+
+# ============================================================
+# 23. 이름 매칭 브랜드별 건수
+# ============================================================
+
+print()
+print("========================================")
+print("이름 매칭 브랜드별 건수")
+print("========================================")
+
+
+print(
+    convenience_shop_df[
+        convenience_shop_df[
+            "brandMnno"
+        ]
+        .notna()
+    ]
+    [
+        "matched_brandNm"
+    ]
+    .value_counts()
+    .head(30)
+)
+
+
+# ============================================================
+# 24. 브랜드 지역현황 읽기
+# ============================================================
+
+print()
+print("========================================")
+print("3. 브랜드 지역현황")
+print("========================================")
+
+
+with open(
+    REGION_FILE,
+    "r",
+    encoding="utf-8"
+) as f:
+
+    region_df = pd.DataFrame(
+        json.load(f)
+    )
+
+
+for col in [
+    "frcsCnt",
+    "dmsCnt",
+    "allFrcsDmsCnt"
+]:
+
+    region_df[
+        col
+    ] = pd.to_numeric(
+        region_df[
+            col
+        ],
+        errors="coerce"
+    )
+
+
+region_df[
+    "jngBizCrtraYr_num"
+] = pd.to_numeric(
+    region_df[
+        "jngBizCrtraYr"
+    ],
+    errors="coerce"
+)
+
+
+# ============================================================
+# 25. 실제 지역자료가 존재하는 최신 연도 선택
+# ============================================================
+#
+# 무조건 최대연도를 쓰지 않음
+#
+# "전체" 이외의 지역자료가 존재하는 연도 중
+# 가장 최신 연도를 사용
+#
+# ============================================================
+
+region_detail_df = (
+    region_df[
+        region_df[
+            "areaNm"
+        ]
+        .notna()
+        &
+        (
+            region_df[
+                "areaNm"
+            ]
+            != "전체"
+        )
+    ]
+    .copy()
+)
+
+
+region_year_count_df = (
+    region_detail_df
+    .groupby(
+        [
+            "brandMnno",
+            "jngBizCrtraYr_num"
+        ]
+    )
+    .size()
+    .reset_index(
+        name="region_row_count"
+    )
+)
+
+
+region_year_count_df = (
+    region_year_count_df[
+        region_year_count_df[
+            "region_row_count"
+        ]
+        > 0
+    ]
+    .copy()
+)
+
+
+latest_year_df = (
+    region_year_count_df
+    .sort_values(
+        [
+            "brandMnno",
+            "jngBizCrtraYr_num"
+        ],
+        ascending=[
+            True,
+            False
+        ]
+    )
+    .drop_duplicates(
+        subset=[
+            "brandMnno"
+        ],
+        keep="first"
+    )
+    [
+        [
+            "brandMnno",
+            "jngBizCrtraYr_num"
+        ]
+    ]
+    .rename(
+        columns={
+            "jngBizCrtraYr_num":
+            "selected_year"
+        }
+    )
+)
+
+# ============================================================
+# CU 예외
+# 2026 지역자료 불완전 → 2025 사용
+# ============================================================
+
+latest_year_df.loc[
+    latest_year_df["brandMnno"] == "BRD_20080100020",
+    "selected_year"
+] = 2025
+
+
+latest_region_df = (
+    region_df
+    .merge(
+        latest_year_df,
+        on="brandMnno",
+        how="inner"
+    )
+)
+
+
+latest_region_df = (
+    latest_region_df[
+        latest_region_df[
+            "jngBizCrtraYr_num"
+        ]
+        ==
+        latest_region_df[
+            "selected_year"
+        ]
+    ]
+    .copy()
+)
+
+
+regional_df = (
+    latest_region_df[
+        latest_region_df[
+            "areaNm"
+        ]
+        != "전체"
+    ]
+    .copy()
+)
+
+
+regional_df[
+    "normalized_region"
+] = (
+    regional_df[
+        "areaNm"
+    ]
+    .apply(
+        normalize_region
+    )
+)
+
+
+# ============================================================
+# 26. CU / GS25 선택 지역자료 연도 출력
+# ============================================================
+
+print()
+print("========================================")
+print("CU / GS25 지역자료 선택 연도")
+print("========================================")
+
+
+debug_selected_year = (
+    latest_year_df[
+        latest_year_df[
+            "brandMnno"
+        ]
+        .isin(
+            [
+                "BRD_20080100020",
+                "BRD_20080100032",
+            ]
+        )
+    ]
+)
+
+
+print(
+    debug_selected_year.to_string(
+        index=False
+    )
+)
+
+
+# ============================================================
+# 27. 공식 지역자료
+# ============================================================
+
+official_region = (
+    regional_df[
+        [
+            "brandMnno",
+            "normalized_region",
+            "frcsCnt",
+            "dmsCnt",
+            "allFrcsDmsCnt"
+        ]
+    ]
+    .copy()
+)
+
+
+official_region = (
+    official_region
+    .rename(
+        columns={
+
+            "frcsCnt":
+            "official_franchise_count",
+
+            "dmsCnt":
+            "official_direct_count",
+
+            "allFrcsDmsCnt":
+            "official_total_count"
+        }
+    )
+)
+
+
+# ============================================================
+# 28. 광주 + 전남 통합값 추가
+# ============================================================
+
+gwangju_jeonnam = (
+    official_region[
+        official_region[
+            "normalized_region"
+        ]
+        .isin(
+            [
+                "광주",
+                "전남"
+            ]
+        )
+    ]
+    .groupby(
+        "brandMnno",
+        dropna=False
+    )
+    .agg(
+
+        official_franchise_count=(
+            "official_franchise_count",
+            lambda x:
+            x.sum(
+                min_count=1
+            )
+        ),
+
+        official_direct_count=(
+            "official_direct_count",
+            lambda x:
+            x.sum(
+                min_count=1
+            )
+        ),
+
+        official_total_count=(
+            "official_total_count",
+            lambda x:
+            x.sum(
+                min_count=1
+            )
+        )
+
+    )
+    .reset_index()
+)
+
+
+gwangju_jeonnam[
+    "normalized_region"
+] = "전남광주통합"
+
+
+official_region = pd.concat(
+    [
+        official_region,
+        gwangju_jeonnam
+    ],
+    ignore_index=True
+)
+
+
+# ============================================================
+# 29. 매칭 상가 추출
+# ============================================================
+
+matched_df = (
+    convenience_shop_df[
+        convenience_shop_df[
+            "brandMnno"
+        ]
+        .notna()
+    ]
+    .copy()
+)
+
+
+# ============================================================
+# 30. 브랜드 + 지역별 상가 수
+# ============================================================
+
+shop_region_count = (
+    matched_df
+    .groupby(
+        [
+            "brandMnno",
+            "matched_brandNm",
+            "normalized_region"
+        ],
+        dropna=False
+    )
+    .size()
+    .reset_index(
+        name="shop_store_count"
+    )
+)
+
+
+# ============================================================
+# 31. 공식 지역자료 연결
+# ============================================================
+
+validation_df = (
+    shop_region_count
+    .merge(
+        official_region,
+        on=[
+            "brandMnno",
+            "normalized_region"
+        ],
+        how="left"
+    )
+)
+
+
+# ============================================================
+# 32. 상가 / 공식 점포수 비율
+# ============================================================
+
+validation_df[
+    "ratio"
+] = np.where(
+
+    validation_df[
+        "official_total_count"
+    ] > 0,
+
+    (
+        validation_df[
+            "shop_store_count"
+        ]
+        /
+        validation_df[
+            "official_total_count"
+        ]
+    ),
+
+    np.nan
+)
+
+
+# ============================================================
+# 33. 지역 검증
+# ============================================================
+
+def region_validation(row):
+
+    shop_count = row[
+        "shop_store_count"
+    ]
+
+    official = row[
+        "official_total_count"
+    ]
+
+    ratio = row[
+        "ratio"
+    ]
+
+
+    if pd.isna(
+        official
+    ):
+        return "공식지역정보없음"
+
+
+    if official == 0:
+
+        if shop_count <= 2:
+            return "신규가능성"
+
+        if shop_count <= 5:
+            return "검토필요"
+
+        return "강한검토필요"
+
+
+    if 0.5 <= ratio <= 1.5:
+        return "양호"
+
+
+    if 0.2 <= ratio <= 2.0:
+        return "유력"
+
+
+    if ratio > 2.0:
+        return "과다매칭검토"
+
+
+    return "누락가능성"
+
+
+validation_df[
+    "region_validation"
+] = (
+    validation_df.apply(
+        region_validation,
+        axis=1
+    )
+)
+
+
+# ============================================================
+# 34. 지역 점수
+# ============================================================
+
+REGION_SCORE_MAP = {
+
+    "양호": 3,
+    "유력": 2,
+
+    "누락가능성": 1,
+    "신규가능성": 1,
+
+    "공식지역정보없음": 0,
+    "검토필요": 0,
+
+    "과다매칭검토": -2,
+    "강한검토필요": -3
+}
+
+
+validation_df[
+    "region_score"
+] = (
+    validation_df[
+        "region_validation"
+    ]
+    .map(
+        REGION_SCORE_MAP
+    )
+    .fillna(0)
+)
+
+
+# ============================================================
+# 35. 브랜드별 지역 검증 요약
+# ============================================================
+
+brand_validation_df = (
+    validation_df
+    .groupby(
+        [
+            "brandMnno",
+            "matched_brandNm"
+        ],
+        dropna=False
+    )
+    .agg(
+
+        good_region_count=(
+            "region_validation",
+            lambda x:
+            x.isin(
+                [
+                    "양호",
+                    "유력"
+                ]
+            ).sum()
+        ),
+
+        review_region_count=(
+            "region_validation",
+            lambda x:
+            x.isin(
+                [
+                    "검토필요",
+                    "과다매칭검토",
+                    "강한검토필요"
+                ]
+            ).sum()
+        ),
+
+        no_official_info_count=(
+            "region_validation",
+            lambda x:
+            (
+                x
+                == "공식지역정보없음"
+            ).sum()
+        ),
+
+        new_possible_count=(
+            "region_validation",
+            lambda x:
+            (
+                x
+                == "신규가능성"
+            ).sum()
+        ),
+
+        region_score_sum=(
+            "region_score",
+            "sum"
+        )
+
+    )
+    .reset_index()
+)
+
+
+# ============================================================
+# 36. 브랜드 지역 상태
+# ============================================================
+
+def brand_region_status(row):
+
+    good = row[
+        "good_region_count"
+    ]
+
+    review = row[
+        "review_region_count"
+    ]
+
+    no_info = row[
+        "no_official_info_count"
+    ]
+
+    new_count = row[
+        "new_possible_count"
+    ]
+
+    score = row[
+        "region_score_sum"
+    ]
+
+
+    if (
+        good >= 3
+        and
+        review == 0
+        and
+        no_info == 0
+        and
+        score >= 6
+    ):
+        return "지역검증우수"
+
+
+    if review > 0:
+        return "지역검토필요"
+
+
+    if no_info > 0:
+        return "공식정보부족"
+
+
+    if new_count > 0:
+        return "신규가능성포함"
+
+
+    return "지역검증부족"
+
+
+brand_validation_df[
+    "brand_region_status"
+] = (
+    brand_validation_df.apply(
+        brand_region_status,
+        axis=1
+    )
+)
+
+
+# ============================================================
+# 37. CU / GS25 지역검증 결과 확인
+# ============================================================
+
+print()
+print("========================================")
+print("CU / GS25 브랜드 지역검증 결과")
+print("========================================")
+
+
+debug_brand_ids = [
+    "BRD_20080100020",
+    "BRD_20080100032",
+]
+
+
+debug_brand_validation = (
+    brand_validation_df[
+        brand_validation_df[
+            "brandMnno"
+        ]
+        .isin(
+            debug_brand_ids
+        )
+    ]
+)
+
+
+print(
+    debug_brand_validation.to_string(
+        index=False
+    )
+)
+
+
+print()
+print("========================================")
+print("CU / GS25 지역별 상세")
+print("========================================")
+
+
+debug_region = (
+    validation_df[
+        validation_df[
+            "brandMnno"
+        ]
+        .isin(
+            debug_brand_ids
+        )
+    ]
+    [
+        [
+            "brandMnno",
+            "matched_brandNm",
+            "normalized_region",
+            "shop_store_count",
+            "official_total_count",
+            "ratio",
+            "region_validation"
+        ]
+    ]
+    .sort_values(
+        [
+            "brandMnno",
+            "normalized_region"
+        ]
+    )
+)
+
+
+print(
+    debug_region.to_string(
+        index=False
+    )
+)
+
+
+# ============================================================
+# 38. 상가 데이터에 브랜드 지역검증 연결
+# ============================================================
+
+convenience_shop_df = (
+    convenience_shop_df
+    .merge(
+
+        brand_validation_df,
+
+        on=[
+            "brandMnno",
+            "matched_brandNm"
+        ],
+
+        how="left"
+    )
+)
+
+
+# ============================================================
+# 39. 브랜드명 길이
+# ============================================================
+
+convenience_shop_df[
+    "matched_brand_length"
+] = (
+    convenience_shop_df[
+        "matched_brandNm"
+    ]
+    .apply(
+        clean_name
+    )
+    .str.len()
+)
+
+
+# ============================================================
+# 40. 프로젝트 실제 투입 조건
+# ============================================================
+
+exact_condition = (
+
+    (
+        convenience_shop_df[
+            "match_type"
+        ]
+        == "exact"
+    )
+
+    &
+
+    (
+        convenience_shop_df[
+            "brand_region_status"
+        ]
+        == "지역검증우수"
+    )
+
+    &
+
+    (
+        convenience_shop_df[
+            "review_region_count"
+        ]
+        .fillna(0)
+        == 0
+    )
+
+    &
+
+    (
+        convenience_shop_df[
+            "no_official_info_count"
+        ]
+        .fillna(0)
+        == 0
+    )
+)
+
+
+normal_prefix_condition = (
+
+    (
+        convenience_shop_df[
+            "match_type"
+        ]
+        == "prefix"
+    )
+
+    &
+
+    (
+        convenience_shop_df[
+            "matched_brand_length"
+        ]
+        >= 4
+    )
+
+    &
+
+    (
+        convenience_shop_df[
+            "brand_region_status"
+        ]
+        == "지역검증우수"
+    )
+
+    &
+
+    (
+        convenience_shop_df[
+            "review_region_count"
+        ]
+        .fillna(0)
+        == 0
+    )
+
+    &
+
+    (
+        convenience_shop_df[
+            "no_official_info_count"
+        ]
+        .fillna(0)
+        == 0
+    )
+)
+
+
+safe_alias_condition = (
+
+    (
+        convenience_shop_df[
+            "match_type"
+        ]
+        == "safe_alias_prefix"
+    )
+
+    &
+
+    (
+        convenience_shop_df[
+            "brandMnno"
+        ]
+        .isin(
+            [
+                "BRD_20080100020",
+                "BRD_20080100032"
+            ]
+        )
+    )
+
+    &
+
+    (
+        convenience_shop_df[
+            "brand_region_status"
+        ]
+        == "지역검증우수"
+    )
+
+    &
+
+    (
+        convenience_shop_df[
+            "review_region_count"
+        ]
+        .fillna(0)
+        == 0
+    )
+
+    &
+
+    (
+        convenience_shop_df[
+            "no_official_info_count"
+        ]
+        .fillna(0)
+        == 0
+    )
+)
+
+
+convenience_shop_df[
+    "project_ready"
+] = (
+
+    exact_condition
+
+    |
+
+    normal_prefix_condition
+
+    |
+
+    safe_alias_condition
+)
+
+
+# ============================================================
+# 41. 프로젝트 투입 근거
+# ============================================================
+
+def project_reason(row):
+
+    if not row[
+        "project_ready"
+    ]:
+        return None
+
+
+    if row[
+        "match_type"
+    ] == "exact":
+
+        return "공식브랜드정확일치+지역검증우수"
+
+
+    if row[
+        "match_type"
+    ] == "safe_alias_prefix":
+
+        return "공식ID별칭PREFIX+지역검증우수"
+
+
+    return "4글자이상PREFIX+지역검증우수"
+
+
+convenience_shop_df[
+    "project_reason"
+] = (
+    convenience_shop_df.apply(
+        project_reason,
+        axis=1
+    )
+)
+
+
+# ============================================================
+# 42. 보류 사유
+# ============================================================
+
+def hold_reason(row):
+
+    if row[
+        "project_ready"
+    ]:
+        return None
+
+
+    if pd.isna(
+        row[
+            "brandMnno"
+        ]
+    ):
+        return "브랜드미매칭"
+
+
+    if (
+        row[
+            "brand_region_status"
+        ]
+        == "지역검토필요"
+    ):
+        return "지역검토필요"
+
+
+    if (
+        row[
+            "brand_region_status"
+        ]
+        == "공식정보부족"
+    ):
+        return "공식정보부족"
+
+
+    if (
+        row[
+            "brand_region_status"
+        ]
+        == "신규가능성포함"
+    ):
+        return "신규가능성"
+
+
+    if (
+        row[
+            "matched_brand_length"
+        ]
+        <= 3
+        and
+        row[
+            "match_type"
+        ]
+        != "safe_alias_prefix"
+    ):
+        return "브랜드명3글자이하"
+
+
+    if (
+        row[
+            "brand_region_status"
+        ]
+        != "지역검증우수"
+    ):
+        return "지역검증우수아님"
+
+
+    return "보수적기준미충족"
+
+
+convenience_shop_df[
+    "hold_reason"
+] = (
+    convenience_shop_df.apply(
+        hold_reason,
+        axis=1
+    )
+)
+
+
+# ============================================================
+# 43. 실제 투입 / 보류 분리
+# ============================================================
+
+project_df = (
+    convenience_shop_df[
+        convenience_shop_df[
+            "project_ready"
+        ]
+        == True
+    ]
+    .copy()
+)
+
+
+hold_df = (
+    convenience_shop_df[
+        (
+            convenience_shop_df[
+                "brandMnno"
+            ]
+            .notna()
+        )
+        &
+        (
+            convenience_shop_df[
+                "project_ready"
+            ]
+            == False
+        )
+    ]
+    .copy()
+)
+
+
+# ============================================================
+# 44. 프로젝트 실제 투입 핵심 컬럼
+# ============================================================
+
+PROJECT_COLUMNS = [
+
+    "bizesId",
+
+    "brandMnno",
+    "matched_brandNm",
+    "matched_corpNm",
+    "matched_brand_industry",
+
+    "bizesNm",
+    "brchNm",
+
+    "indsLclsCd",
+    "indsLclsNm",
+
+    "indsMclsCd",
+    "indsMclsNm",
+
+    "indsSclsCd",
+    "indsSclsNm",
+
+    "ctprvnCd",
+    "ctprvnNm",
+
+    "signguCd",
+    "signguNm",
+
+    "rdnmAdr",
+
+    "lon",
+    "lat",
+
+    "matched_alias",
+
+    "project_reason"
+]
+
+
+PROJECT_COLUMNS = [
+    col
+    for col in PROJECT_COLUMNS
+    if col in project_df.columns
+]
+
+
+project_clean_df = (
+    project_df[
+        PROJECT_COLUMNS
+    ]
+    .copy()
+)
+
+
+# ============================================================
+# 45. 브랜드별 요약
+# ============================================================
+
+if not project_df.empty:
+
+    brand_summary_df = (
+        project_df
+        .groupby(
+            [
+                "brandMnno",
+                "matched_brandNm"
+            ],
+            dropna=False
+        )
+        .agg(
+
+            store_count=(
+                "bizesId",
+                "count"
+            ),
+
+            province_count=(
+                "ctprvnNm",
+                "nunique"
+            ),
+
+            district_count=(
+                "signguNm",
+                "nunique"
+            ),
+
+            exact_count=(
+                "project_reason",
+                lambda x:
+                (
+                    x
+                    ==
+                    "공식브랜드정확일치+지역검증우수"
+                ).sum()
+            ),
+
+            prefix_count=(
+                "project_reason",
+                lambda x:
+                (
+                    x
+                    ==
+                    "4글자이상PREFIX+지역검증우수"
+                ).sum()
+            ),
+
+            alias_prefix_count=(
+                "project_reason",
+                lambda x:
+                (
+                    x
+                    ==
+                    "공식ID별칭PREFIX+지역검증우수"
+                ).sum()
+            )
+
+        )
+        .reset_index()
+        .sort_values(
+            "store_count",
+            ascending=False
+        )
+    )
+
+else:
+
+    brand_summary_df = pd.DataFrame(
+        columns=[
+            "brandMnno",
+            "matched_brandNm",
+            "store_count",
+            "province_count",
+            "district_count",
+            "exact_count",
+            "prefix_count",
+            "alias_prefix_count"
+        ]
+    )
+
+
+# ============================================================
+# 46. 지역별 요약
+# ============================================================
+
+if not project_df.empty:
+
+    region_summary_df = (
+        project_df
+        .groupby(
+            [
+                "brandMnno",
+                "matched_brandNm",
+                "ctprvnNm",
+                "signguNm"
+            ],
+            dropna=False
+        )
+        .size()
+        .reset_index(
+            name="store_count"
+        )
+    )
+
+else:
+
+    region_summary_df = pd.DataFrame(
+        columns=[
+            "brandMnno",
+            "matched_brandNm",
+            "ctprvnNm",
+            "signguNm",
+            "store_count"
+        ]
+    )
+
+
+# ============================================================
+# 47. 보류 사유 요약
+# ============================================================
+
+if not hold_df.empty:
+
+    hold_summary_df = (
+        hold_df[
+            "hold_reason"
+        ]
+        .value_counts(
+            dropna=False
+        )
+        .reset_index()
+    )
+
+
+    hold_summary_df.columns = [
+        "보류사유",
+        "건수"
+    ]
+
+else:
+
+    hold_summary_df = pd.DataFrame(
+        columns=[
+            "보류사유",
+            "건수"
+        ]
+    )
+
+
+# ============================================================
+# 48. 분석 요약
+# ============================================================
+
+summary_df = pd.DataFrame(
+    {
+
+        "항목": [
+
+            "편의점 관련 전체 상가",
+
+            "공정위 편의점 브랜드",
+
+            "브랜드 이름 매칭",
+
+            "프로젝트 실제 투입",
+
+            "정확일치 투입",
+
+            "4글자이상 PREFIX 투입",
+
+            "CU·GS25 공식ID 별칭 PREFIX 투입",
+
+            "보류 후보",
+
+            "최종 브랜드 수"
+        ],
+
+        "건수": [
+
+            len(
+                convenience_shop_df
+            ),
+
+            len(
+                target_brand_df
+            ),
+
+            convenience_shop_df[
+                "brandMnno"
+            ]
+            .notna()
+            .sum(),
+
+            len(
+                project_df
+            ),
+
+            (
+                project_df[
+                    "project_reason"
+                ]
+                ==
+                "공식브랜드정확일치+지역검증우수"
+            ).sum()
+            if not project_df.empty
+            else 0,
+
+            (
+                project_df[
+                    "project_reason"
+                ]
+                ==
+                "4글자이상PREFIX+지역검증우수"
+            ).sum()
+            if not project_df.empty
+            else 0,
+
+            (
+                project_df[
+                    "project_reason"
+                ]
+                ==
+                "공식ID별칭PREFIX+지역검증우수"
+            ).sum()
+            if not project_df.empty
+            else 0,
+
+            len(
+                hold_df
+            ),
+
+            project_df[
+                "brandMnno"
+            ]
+            .nunique()
+            if not project_df.empty
+            else 0
+        ]
+    }
+)
+
+
+# ============================================================
+# 49. 콘솔 출력
+# ============================================================
+
+print()
+print("========================================")
+print("편의점 프로젝트 실제 투입 결과")
+print("========================================")
+
+print(
+    summary_df.to_string(
+        index=False
+    )
+)
+
+
+print()
+print("========================================")
+print("보류 사유")
+print("========================================")
+
+print(
+    hold_summary_df.to_string(
+        index=False
+    )
+)
+
+
+print()
+print("========================================")
+print("최종 편의점 브랜드")
+print("========================================")
+
+print(
+    brand_summary_df.to_string(
+        index=False
+    )
+)
+
+
+# ============================================================
+# 50. 엑셀 저장
+# ============================================================
+
+with pd.ExcelWriter(
+    OUTPUT_FILE,
+    engine="openpyxl"
+) as writer:
+
+
+    summary_df.to_excel(
+        writer,
+        sheet_name="분석요약",
+        index=False
+    )
+
+
+    project_clean_df.to_excel(
+        writer,
+        sheet_name="프로젝트실제투입",
+        index=False
+    )
+
+
+    brand_summary_df.to_excel(
+        writer,
+        sheet_name="투입브랜드요약",
+        index=False
+    )
+
+
+    region_summary_df.to_excel(
+        writer,
+        sheet_name="투입지역별요약",
+        index=False
+    )
+
+
+    hold_summary_df.to_excel(
+        writer,
+        sheet_name="보류사유요약",
+        index=False
+    )
+
+
+# ============================================================
+# 51. 보류 CSV 저장
+# ============================================================
+
+hold_df.to_csv(
+    HOLD_CSV_FILE,
+    index=False,
+    encoding="utf-8-sig"
+)
+
+
+# ============================================================
+# 52. 완료
+# ============================================================
+
+print()
+print("========================================")
+print("저장 완료")
+print("========================================")
+
+print()
+print("프로젝트 실제 투입본:")
+print(
+    OUTPUT_FILE
+)
+
+print()
+print("보류후보:")
+print(
+    HOLD_CSV_FILE
+)

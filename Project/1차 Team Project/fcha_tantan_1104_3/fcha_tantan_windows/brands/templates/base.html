@@ -1,0 +1,121 @@
+{% load static %}
+{% load static brand_format %}
+{# 필터 추가#} <!doctype html>
+<html lang="{{ site_language|default:'ko' }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="프랜차이즈 브랜드와 지역별 창업 데이터를 비교하세요.">
+        <title>{% block title %}프차 탄탄 — 탄탄한 선택의 기준{% endblock %}</title>
+        <link rel="icon" href="{% static 'images/brand-symbol.svg' %}" type="image/svg+xml">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/django.css' %}">
+        <link rel="stylesheet" href="{% static 'css/renewal.css' %}?v=20261021-3">
+        <link rel="stylesheet" href="{% static 'css/features.css' %}?v=20261027-1">
+        <script src="{% static 'js/common.js' %}?v=20261021-3" defer></script>
+        <script src="{% static 'js/features.js' %}?v=20261026-5" defer></script>
+        <link rel="stylesheet" href="{% static 'css/platform.css' %}?v=20261104-nav-3">
+        <script src="{% static 'js/i18n.js' %}?v=20261102-1" defer></script>
+        <script src="{% static 'js/platform.js' %}?v=20261102-1" defer></script>
+        <script src="{% static 'js/maps.js' %}?v=20261104-nearby-6" defer></script>
+        <script src="{% static 'js/motion.js' %}?v=20261102-2" defer></script>
+        {% block head %}
+        {% endblock %}
+        <link rel="stylesheet" href="{% static 'css/page_titles.css' %}?v=20261104-1">
+    </head>
+    <body data-language="{{ site_language }}">
+        <a class="skip" href="#main">본문으로 건너뛰기</a>
+        <header class="header">
+            <div class="nav-wrap">
+                <a href="{% url 'home:index' %}" class="logo" aria-label="프차 탄탄 홈">{% include 'includes/logo.html' %}</a>
+                <nav class="gnb" aria-label="주 메뉴">
+                    <a href="{% url 'brands:blist' %}?year={{ year }}" {% if page == 'home' or page == 'list' or page == 'detail' %}class="active" aria-current="page"{% endif %}>브랜드 탐색</a>
+                    <a href="{% url 'brands:bregion' %}?year={{ year }}" {% if page == 'regions' %}class="active" aria-current="page"{% endif %}>지역상권분석</a>
+                    <a href="{% url 'brands:bcompare' %}?year={{ year }}" {% if page == 'compare' %}class="active" aria-current="page"{% endif %}>브랜드 비교 <span id="compare-count">{{ compare_ids|length }}</span></a>
+                    <a href="{% url 'brands:guide' %}" {% if page == 'guide' %}class="active" aria-current="page"{% endif %}>데이터 안내</a>
+                    <a href="{% url 'brands:calculator' %}?year={{ year }}" {% if page == 'calculator' %}class="active" aria-current="page"{% endif %}>회수 계산기</a>
+                    <a href="{% url 'market:transfer_list' %}" {% if page == 'transfer' %}class="active" aria-current="page"{% endif %}>양도양수</a>
+                    <a href="{% url 'community:index' %}" {% if page == 'community' %}class="active" aria-current="page"{% endif %}>점주 커뮤니티</a>
+                </nav>
+                <form class="language-switch" method="post" action="{% url 'core:language' %}" aria-label="Language">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                    <button name="language" value="ko" {% if site_language != 'en' %}class="active"{% endif %} aria-label="한국어">KO</button>
+                    <button name="language" value="en" {% if site_language == 'en' %}class="active"{% endif %} aria-label="English">EN</button>
+                </form>
+                <div class="account-menu" data-account-menu>
+                    {% if request.user.is_authenticated %}
+                        <span class="header-nickname"><b>{{ request.user.first_name|default:request.user.username }}</b><span>님</span></span>
+                    {% endif %}
+                    <button class="menu-trigger" type="button" aria-label="회원 메뉴 열기" aria-controls="account-panel" aria-expanded="false"><span></span><span></span><span></span></button>
+                    <div id="account-panel" class="account-panel" inert>
+                        {% if request.user.is_authenticated %}
+                            <p class="member-name">{{ request.user.first_name|default:request.user.username }}님</p>
+                            <a href="{% url 'brands:recommend' %}"><span aria-hidden="true">★</span>맞춤 브랜드 추천</a>
+                            <a href="{% url 'brands:bsaved' %}"><span aria-hidden="true">♡</span>관심 브랜드</a>
+                            <a href="{% url 'partners:inbox' %}"><span aria-hidden="true">✉</span>받은 사업제안</a>
+                            <a href="{% url 'market:store_list' %}"><span aria-hidden="true">⌖</span>내 매장 위치</a>
+                            <a href="{% url 'market:transfer_mine' %}"><span aria-hidden="true">⇄</span>내 양도양수</a>
+                            <a href="{% url 'accounts:profile' %}"><span aria-hidden="true">⚙</span>마이페이지</a>
+                            <a href="{% url 'partners:pricing' %}"><span aria-hidden="true">◆</span>파트너 센터</a>
+                            {% if request.user.is_staff %}
+                                <a href="{% url 'admin:index' %}"><span aria-hidden="true">▣</span>관리자</a>
+                            {% endif %}
+                            <form method="post" action="{% url 'accounts:logout' %}">
+                                {% csrf_token %}
+                                <button type="submit">로그아웃</button>
+                            </form>
+                        {% else %}
+                            <a href="{% url 'accounts:login' %}?next={{ request.get_full_path|urlencode }}"><span aria-hidden="true">♙</span>로그인</a>
+                            <a href="{% url 'accounts:signup' %}?next={{ request.get_full_path|urlencode }}"><span aria-hidden="true">＋</span>회원가입</a>
+                            <a href="{% url 'brands:bsaved' %}"><span aria-hidden="true">♡</span>관심 브랜드</a>
+                            <a href="{% url 'partners:pricing' %}"><span aria-hidden="true">◆</span>파트너 센터</a>
+                        {% endif %}
+                        <div class="account-menu-bottom">
+                            <a href="{% url 'community:index' %}"><span aria-hidden="true">☷</span>점주 커뮤니티</a>
+                            <a href="{% url 'core:help' %}"><span aria-hidden="true">?</span>고객센터</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main id="main" tabindex="-1">
+            {% if messages %}
+                <div class="container" role="status">
+                    {% for message in messages %}
+                        <p class="notice">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer>
+            <div class="footer-inner">
+                <a class="logo" href="{% url 'home:index' %}">{% include 'includes/logo.html' %}</a>
+                <p>고민하는 당신에게, 탄탄한 선택의 기준.<br><small>{% if is_demo %}현재 모든 브랜드·통계는 화면 시연을 위한 가상 데이터입니다.{% else %}데이터 출처: {% if page == 'regions' %}서울시 상권분석 서비스{% else %}{{ source_label }}{% endif %}{% endif %}</small></p>
+                <span class="footer-links"><a href="{% url 'partners:pricing' %}">브랜드 파트너 · 광고 안내 ↗</a><a href="{% url 'brands:guide' %}">데이터 기준 및 이용 안내 ↗</a></span>
+            </div>
+            <div class="copyright">
+                © 2026 FCHA TANTAN. YOUR NEXT CHAPTER, BUILT ON DATA.
+            </div>
+        </footer>
+        {% if page != 'compare' %}
+            <aside class="compare-bar" data-compare-tray data-limit="{{ compare_limit }}" {% if not compare_brands %}hidden{% endif %} aria-label="브랜드 비교함">
+                <strong data-tray-title>브랜드 비교 {{ compare_ids|length }}/{{ compare_limit }}</strong>
+                <div class="tray-items" data-tray-items>
+                    {% for brand in compare_brands %}
+                        <span class="tray-item">{{ brand.name|clean_brand_name }}<form method="post" action="{% url 'brands:compare_toggle' brand.slug %}">{% csrf_token %}<input type="hidden" name="next" value="{{ request.get_full_path }}"><button aria-label="{{ brand.name }} 비교함에서 제거">×</button></form></span>
+                    {% endfor %}
+                </div>
+                <a class="button" href="{% url 'brands:bcompare' %}?year={{ year }}">비교하기 ↗</a>
+            </aside>
+        {% endif %}
+        {{ filter_terms|json_script:'content-filter-terms' }}
+        {% include 'core/chat_widget.html' %}
+        <div class="site-toast" role="status" hidden>
+        </div>
+        {% block scripts %}
+        {% endblock %}
+    </body>
+</html>

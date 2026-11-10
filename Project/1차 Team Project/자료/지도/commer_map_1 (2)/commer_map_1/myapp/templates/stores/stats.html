@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자치구별 소분류 업체 수 현황</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; margin: 40px; }
+        h2 { text-align: center; color: #333; }
+        table { border-collapse: collapse; width: 100%; max-width: 800px; margin: 20px auto; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+        th { background-color: #f8f9fa; color: #333; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <h2>자치구 및 소분류별 업체 수 통계</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>자치구명</th>
+                <th>소분류 업종</th>
+                <th>업체 수</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in stats %}
+            <tr>
+                <td>{{ item.district }}</td>
+                <td>{{ item.small_category }}</td>
+                <td>{{ item.store_count }}개</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3">등록된 상점 데이터가 없습니다.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,444 @@
+[
+  {
+    "filename": "프랜차이즈_이미용_창업비용_매출_분석.xlsx",
+    "industry": "이미용",
+    "patches": [
+      {
+        "sheet": "03_지역집계",
+        "cell": "C3",
+        "brand": "에이바헤어",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=Dh3OGRd5uQni85%2FVKxPl0w%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 서울 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 130,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "D3",
+        "brand": "에이바헤어",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=Dh3OGRd5uQni85%2FVKxPl0w%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 경기 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 110,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "E3",
+        "brand": "에이바헤어",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=Dh3OGRd5uQni85%2FVKxPl0w%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 전체 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 320,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "C4",
+        "brand": "블루클럽",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=j7pG6ne9l9TrFsnrs%2FOMrg%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 서울 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 116,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "D4",
+        "brand": "블루클럽",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=j7pG6ne9l9TrFsnrs%2FOMrg%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 경기 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 99,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "E4",
+        "brand": "블루클럽",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=j7pG6ne9l9TrFsnrs%2FOMrg%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 전체 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 323,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "C5",
+        "brand": "제오헤어",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=ydZkFEMZgNivlTO3vzqisg%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 서울 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 35,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "D5",
+        "brand": "제오헤어",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=ydZkFEMZgNivlTO3vzqisg%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 경기 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 9,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "E5",
+        "brand": "제오헤어",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=ydZkFEMZgNivlTO3vzqisg%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 전체 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 47,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "C6",
+        "brand": "로이드밤",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=rxrHXKfpqwnPoKHMpeU%2FKw%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 서울 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 33,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "D6",
+        "brand": "로이드밤",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=rxrHXKfpqwnPoKHMpeU%2FKw%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 경기 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 55,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "E6",
+        "brand": "로이드밤",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=rxrHXKfpqwnPoKHMpeU%2FKw%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 전체 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 191,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "C7",
+        "brand": "토리헤어",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=8Pe9dd%2F6Z8AAZ7zO6%2BfktQ%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 서울 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 16,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "D7",
+        "brand": "토리헤어",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=8Pe9dd%2F6Z8AAZ7zO6%2BfktQ%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 경기 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 56,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "E7",
+        "brand": "토리헤어",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=8Pe9dd%2F6Z8AAZ7zO6%2BfktQ%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 전체 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 166,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      }
+    ]
+  },
+  {
+    "filename": "프랜차이즈_치킨_창업비용_매출_분석.xlsx",
+    "industry": "치킨",
+    "patches": []
+  },
+  {
+    "filename": "프랜차이즈_커피_창업비용_매출_분석.xlsx",
+    "industry": "커피",
+    "patches": []
+  },
+  {
+    "filename": "프랜차이즈_편의점_창업비용_매출_분석.xlsx",
+    "industry": "편의점",
+    "patches": [
+      {
+        "sheet": "03_지역집계",
+        "cell": "C3",
+        "brand": "CU",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=Hq7OdHz%2B6ROLgZxbpfOyZA%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 서울 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 2861,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "D3",
+        "brand": "CU",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=Hq7OdHz%2B6ROLgZxbpfOyZA%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 경기 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 4961,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "E3",
+        "brand": "CU",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=Hq7OdHz%2B6ROLgZxbpfOyZA%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 전체 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 18255,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "C4",
+        "brand": "GS25",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=ALGrzCSpwWGD7LFD7iPGuw%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 서울 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 3152,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "D4",
+        "brand": "GS25",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=ALGrzCSpwWGD7LFD7iPGuw%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 경기 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 5024,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "E4",
+        "brand": "GS25",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=ALGrzCSpwWGD7LFD7iPGuw%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 전체 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 17989,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "C5",
+        "brand": "세븐일레븐",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=4pJjz60coXrdk12p2yUr9Q%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 서울 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 1973,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "D5",
+        "brand": "세븐일레븐",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=4pJjz60coXrdk12p2yUr9Q%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 경기 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 3319,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "E5",
+        "brand": "세븐일레븐",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=4pJjz60coXrdk12p2yUr9Q%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 전체 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 12081,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "C6",
+        "brand": "이마트24",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=8d%2FC%2FKf8AV%2F3mcEz2uTBdg%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 서울 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 766,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "D6",
+        "brand": "이마트24",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=8d%2FC%2FKf8AV%2F3mcEz2uTBdg%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 경기 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 1605,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "E6",
+        "brand": "이마트24",
+        "year": 2024,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=8d%2FC%2FKf8AV%2F3mcEz2uTBdg%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2024년 / 전체 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 5895,
+        "basis": "2024년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "C8",
+        "brand": "GS25",
+        "year": 2025,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=ALGrzCSpwWGD7LFD7iPGuw%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2025년 / 서울 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 3128,
+        "basis": "2025년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "D8",
+        "brand": "GS25",
+        "year": 2025,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=ALGrzCSpwWGD7LFD7iPGuw%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2025년 / 경기 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 5001,
+        "basis": "2025년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      },
+      {
+        "sheet": "03_지역집계",
+        "cell": "E8",
+        "brand": "GS25",
+        "year": 2025,
+        "source": {
+          "publisher": "공정거래위원회",
+          "url": "https://franchise.ftc.go.kr/mnu/00013/program/userRqst/view.do?encFirMstSn=ALGrzCSpwWGD7LFD7iPGuw%3D%3D",
+          "section": "가맹점 및 직영점 현황 / 2025년 / 전체 / 가맹점수",
+          "retrieved_date": "2026-10-22"
+        },
+        "value": 17888,
+        "basis": "2025년 말 가맹점 수. 직영점 제외. 기존 원본 설명문은 수정하지 않음"
+      }
+    ]
+  }
+]

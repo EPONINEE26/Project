@@ -1,0 +1,284 @@
+[
+  {
+    "id": "brand_20190183",
+    "name": "세월촌",
+    "category": "미분류",
+    "tagline": null,
+    "english_name": null,
+    "image": null,
+    "official_brand_id": "BRD_20190183",
+    "company": "세월촌",
+    "source_category": null,
+    "source_category_major": "외식",
+    "priority_category": false,
+    "is_displayable": true,
+    "is_dummy": false,
+    "history": [
+      {
+        "year": 2024,
+        "source_accounting_year": null,
+        "name": "세월촌",
+        "company": "세월촌",
+        "stores": 1,
+        "direct_stores": null,
+        "total_stores": null,
+        "opened": 0,
+        "closed": 0,
+        "contract_ended": 0,
+        "contract_terminated": 0,
+        "ownership_changed": 0,
+        "annual_sales_krw": null,
+        "monthly_sales_krw": null,
+        "annual_sales_per_3_3sqm_krw": null,
+        "annual_sales_status": "zero_or_unreported",
+        "startup_cost_krw": 196400000,
+        "startup_cost_breakdown": {
+          "franchise_fee_krw": 11000000,
+          "education_fee_krw": 11000000,
+          "guarantee_deposit_krw": 5000000,
+          "other_cost_krw": 169400000
+        },
+        "national_reference": null,
+        "regions": {},
+        "quality_flags": [
+          "national_regional_table_unavailable",
+          "multiple_catalog_variants_preserved_in_quality_report"
+        ],
+        "source_ids": [
+          "catalog_2024",
+          "stats_2024",
+          "costs_2024"
+        ],
+        "source_annual_sales_value": 0
+      }
+    ]
+  },
+  {
+    "id": "brand_20241664",
+    "name": "에그브로",
+    "category": "미분류",
+    "tagline": null,
+    "english_name": null,
+    "image": null,
+    "official_brand_id": "BRD_20241664",
+    "company": null,
+    "source_category": null,
+    "source_category_major": "외식",
+    "priority_category": false,
+    "is_displayable": true,
+    "is_dummy": false,
+    "history": [
+      {
+        "year": 2024,
+        "source_accounting_year": null,
+        "name": "에그브로",
+        "company": null,
+        "stores": 0,
+        "direct_stores": null,
+        "total_stores": null,
+        "opened": 0,
+        "closed": 0,
+        "contract_ended": 0,
+        "contract_terminated": 0,
+        "ownership_changed": 0,
+        "annual_sales_krw": null,
+        "monthly_sales_krw": null,
+        "annual_sales_per_3_3sqm_krw": null,
+        "annual_sales_status": "zero_or_unreported",
+        "startup_cost_krw": 48300000,
+        "startup_cost_breakdown": {
+          "franchise_fee_krw": 5500000,
+          "education_fee_krw": 5500000,
+          "guarantee_deposit_krw": 2000000,
+          "other_cost_krw": 35300000
+        },
+        "national_reference": null,
+        "regions": {},
+        "quality_flags": [
+          "national_regional_table_unavailable",
+          "multiple_catalog_variants_preserved_in_quality_report"
+        ],
+        "source_ids": [
+          "catalog_2024",
+          "stats_2024",
+          "costs_2024"
+        ],
+        "source_annual_sales_value": 0
+      }
+    ]
+  },
+  {
+    "id": "brand_20240482",
+    "name": null,
+    "category": "미분류",
+    "tagline": null,
+    "english_name": null,
+    "image": null,
+    "official_brand_id": "BRD_20240482",
+    "company": null,
+    "source_category": null,
+    "source_category_major": "서비스",
+    "priority_category": false,
+    "is_displayable": false,
+    "is_dummy": false,
+    "history": [
+      {
+        "year": 2024,
+        "source_accounting_year": null,
+        "name": null,
+        "company": null,
+        "stores": 0,
+        "direct_stores": null,
+        "total_stores": null,
+        "opened": 0,
+        "closed": 0,
+        "contract_ended": 0,
+        "contract_terminated": 0,
+        "ownership_changed": 0,
+        "annual_sales_krw": null,
+        "monthly_sales_krw": null,
+        "annual_sales_per_3_3sqm_krw": null,
+        "annual_sales_status": "zero_or_unreported",
+        "startup_cost_krw": 94500000,
+        "startup_cost_breakdown": {
+          "franchise_fee_krw": 5500000,
+          "education_fee_krw": 3300000,
+          "guarantee_deposit_krw": 1000000,
+          "other_cost_krw": 84700000
+        },
+        "national_reference": null,
+        "regions": {},
+        "quality_flags": [
+          "national_regional_table_unavailable",
+          "multiple_catalog_variants_preserved_in_quality_report"
+        ],
+        "source_ids": [
+          "catalog_2024",
+          "stats_2024",
+          "costs_2024"
+        ],
+        "source_annual_sales_value": 0
+      }
+    ],
+    "name_variants": [
+      "데일리노래연습장",
+      "데일리포토프로"
+    ]
+  },
+  {
+    "id": "brand_20240588",
+    "name": null,
+    "category": "미분류",
+    "tagline": null,
+    "english_name": null,
+    "image": null,
+    "official_brand_id": "BRD_20240588",
+    "company": null,
+    "source_category": null,
+    "source_category_major": "외식",
+    "priority_category": false,
+    "is_displayable": false,
+    "is_dummy": false,
+    "history": [
+      {
+        "year": 2024,
+        "source_accounting_year": null,
+        "name": null,
+        "company": null,
+        "stores": 0,
+        "direct_stores": null,
+        "total_stores": null,
+        "opened": 0,
+        "closed": 0,
+        "contract_ended": 0,
+        "contract_terminated": 0,
+        "ownership_changed": 0,
+        "annual_sales_krw": null,
+        "monthly_sales_krw": null,
+        "annual_sales_per_3_3sqm_krw": null,
+        "annual_sales_status": "zero_or_unreported",
+        "startup_cost_krw": 93600000,
+        "startup_cost_breakdown": {
+          "franchise_fee_krw": 11000000,
+          "education_fee_krw": 5500000,
+          "guarantee_deposit_krw": 5000000,
+          "other_cost_krw": 72100000
+        },
+        "national_reference": null,
+        "regions": {},
+        "quality_flags": [
+          "national_regional_table_unavailable",
+          "multiple_catalog_variants_preserved_in_quality_report"
+        ],
+        "source_ids": [
+          "catalog_2024",
+          "stats_2024",
+          "costs_2024"
+        ],
+        "source_annual_sales_value": 0
+      }
+    ],
+    "name_variants": [
+      "THEBEERBAT(더비어배트)",
+      "비어배트"
+    ]
+  },
+  {
+    "id": "brand_20241541",
+    "name": null,
+    "category": "미분류",
+    "tagline": null,
+    "english_name": null,
+    "image": null,
+    "official_brand_id": "BRD_20241541",
+    "company": null,
+    "source_category": null,
+    "source_category_major": "외식",
+    "priority_category": false,
+    "is_displayable": false,
+    "is_dummy": false,
+    "history": [
+      {
+        "year": 2024,
+        "source_accounting_year": null,
+        "name": null,
+        "company": null,
+        "stores": 0,
+        "direct_stores": null,
+        "total_stores": null,
+        "opened": 0,
+        "closed": 0,
+        "contract_ended": 0,
+        "contract_terminated": 0,
+        "ownership_changed": 0,
+        "annual_sales_krw": null,
+        "monthly_sales_krw": null,
+        "annual_sales_per_3_3sqm_krw": null,
+        "annual_sales_status": "zero_or_unreported",
+        "startup_cost_krw": 113900000,
+        "startup_cost_breakdown": {
+          "franchise_fee_krw": 7700000,
+          "education_fee_krw": 8800000,
+          "guarantee_deposit_krw": 5000000,
+          "other_cost_krw": 92400000
+        },
+        "national_reference": null,
+        "regions": {},
+        "quality_flags": [
+          "national_regional_table_unavailable",
+          "multiple_catalog_variants_preserved_in_quality_report"
+        ],
+        "source_ids": [
+          "catalog_2024",
+          "stats_2024",
+          "costs_2024"
+        ],
+        "source_annual_sales_value": 0
+      }
+    ],
+    "name_variants": [
+      "고기주는 면하우스",
+      "싸멍"
+    ]
+  }
+]

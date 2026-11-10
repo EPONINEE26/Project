@@ -1,0 +1,54 @@
+{% load static brand_format %}
+<div class="section-heading">
+    <div>
+        <span class="eyebrow">BRANDS FOR YOUR PLAN</span>
+        <h2>조건에 맞는 브랜드 후보</h2>
+    </div>
+</div>
+<link rel="stylesheet" href="{% static 'css/candidate_compare.css' %}?v=20261105-1">
+<p class="data-note">{{ year }}년 공시 · 예산·업종 및 확인된 운영 조건으로 거른 뒤, 같은 업종 평균과 비교한 추천 점수가 높은 순으로 표시합니다. 지역 적합도 순위는 아닙니다.</p>
+<p class="candidate-formula">{{ candidate_score_note }}</p>
+<div class="dashboard-brand-grid">
+    {% comment %}첫 카드 = 광고 3번 구좌(CPC 경매). 나머지 2칸이 추천 점수 1·2위입니다.{% endcomment %}
+    {% if candidate_ad %}{% include 'includes/candidate_ad_card.html' with ad=candidate_ad %}{% endif %}
+    {% for item in analysis_candidates|slice:':2' %}
+        <article class="panel dashboard-brand">
+            <div class="dashboard-brand-title">
+                {% if item.brand.image %}
+                    {% with image='images/'|add:item.brand.image %}
+                        <img src="{% static image %}" alt="{{ item.brand.name }}" loading="lazy">
+                    {% endwith %}
+                {% else %}
+                    <span class="brand-monogram">{{ item.brand.name|first }}</span>
+                {% endif %}
+                <div>
+                    <span class="category-tag">{{ item.brand.category }}</span>
+                    <h3>{{ item.brand.name|clean_brand_name }}</h3>
+                </div>
+            </div>
+            {% include 'includes/candidate_compare.html' %}
+            <h4>확인된 조건</h4>
+            <ul>
+                {% for reason in item.reasons %}
+                    <li>{{ reason }}</li>
+                {% empty %}
+                    <li>추가 자료 확인 필요</li>
+                {% endfor %}
+            </ul>
+            <details>
+                <summary>자료 부족·확인 사항</summary>
+                <ul>
+                    {% for warning in item.warnings %}
+                        <li>{{ warning }}</li>
+                    {% endfor %}
+                </ul>
+                <small>{{ item.source }}</small>
+            </details>
+            <a class="button small outline" href="{% url 'brands:bview' item.brand.slug %}?year={{ year }}">상세 보기 →</a>
+        </article>
+    {% empty %}
+        <div class="panel dashboard-empty">
+            <p>{% if condition %}이 조건으로 확인된 브랜드 후보가 없습니다.{% else %}왼쪽에서 창업 조건을 저장하면 브랜드 후보가 표시됩니다.{% endif %}</p>
+        </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container narrow-page">
+        <div class="page-header">
+            <a class="back-link" href="{% url 'community:index' %}">← 커뮤니티 목록</a>
+            <span class="eyebrow">SHARE YOUR EXPERIENCE</span>
+            <h1>{% if comment %}댓글 수정{% elif post %}게시글 수정{% else %}새 이야기 작성{% endif %}</h1>
+            <p>브랜드는 닉네임 위에 표시됩니다. 지점명과 증빙서류는 공개되지 않습니다.</p>
+        </div>
+        <section class="panel">
+            <form method="post" class="form-stack">
+                {% csrf_token %}
+                {% include 'includes/form_fields.html' %}
+                <p class="data-note">비속어는 자동 제외됩니다. 검토 중인 글을 수정해도 관리자 확인 전까지 블라인드 상태를 유지합니다.</p>
+                <button class="button">저장</button>
+            </form>
+        </section>
+    </div>
+{% endblock %}

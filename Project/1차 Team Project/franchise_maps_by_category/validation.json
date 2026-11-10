@@ -1,0 +1,107 @@
+{
+  "all_checks_passed": true,
+  "json_files": 45,
+  "preserved_brand_entries": 12498,
+  "cafe_brand_entries": 842,
+  "map_rows": 101010,
+  "regional_sum": 101010,
+  "region_counts": {
+    "경기": 26146,
+    "부산": 6334,
+    "충북": 3291,
+    "서울": 19204,
+    "대구": 4508,
+    "인천": 6073,
+    "울산": 2332,
+    "강원": 3320,
+    "충남": 4593,
+    "전북": 3100,
+    "경북": 5038,
+    "경남": 6521,
+    "대전": 2613,
+    "전남광주통합특별시": 5828,
+    "제주": 1303,
+    "세종": 806
+  },
+  "source_brand_name_null_entries": [
+    [
+      "(건강)식품.json",
+      "brand_20240362"
+    ],
+    [
+      "기타_외식.json",
+      "brand_20211252"
+    ],
+    [
+      "기타도소매.json",
+      "brand_20240300"
+    ],
+    [
+      "기타도소매.json",
+      "brand_20240593"
+    ],
+    [
+      "미분류.json",
+      "brand_20240482"
+    ],
+    [
+      "미분류.json",
+      "brand_20240588"
+    ],
+    [
+      "미분류.json",
+      "brand_20241541"
+    ],
+    [
+      "분식.json",
+      "brand_20190777"
+    ],
+    [
+      "오락.json",
+      "brand_20240167"
+    ],
+    [
+      "카페.json",
+      "coffee_20240319"
+    ],
+    [
+      "한식.json",
+      "brand_20210140"
+    ],
+    [
+      "한식.json",
+      "brand_20210739"
+    ],
+    [
+      "한식.json",
+      "brand_20214028"
+    ],
+    [
+      "한식.json",
+      "brand_20214177"
+    ],
+    [
+      "한식.json",
+      "brand_20231794"
+    ],
+    [
+      "한식.json",
+      "brand_20240409"
+    ],
+    [
+      "한식.json",
+      "brand_20240411"
+    ],
+    [
+      "한식.json",
+      "brand_20240612"
+    ],
+    [
+      "한식.json",
+      "brand_20241270"
+    ]
+  ],
+  "brand_link_check": "Original id/name pairs and selected matching IDs preserved; real franchise relationship not verified",
+  "address_coordinate_geocoding_verified": false,
+  "exhaustive_online_review_completed": false
+}

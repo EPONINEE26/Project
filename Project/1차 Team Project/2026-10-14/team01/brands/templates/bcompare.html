@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static brand_format %}
+{% block title %}브랜드 비교 | 프차 탄탄{% endblock %}
+{% block content %}
+<div class="container comparison-section">
+    <div class="page-header">
+        <span class="eyebrow">SIDE BY SIDE</span>
+        <div class="page-title-row">
+            <div><h1>나란히 놓으면, 선택이 선명해져요.</h1><p>최대 3개 브랜드를 같은 기준으로 비교해 보세요.</p></div>
+            <form class="page-tools year-form" method="get">{% include 'includes/year_select.html' %}<button class="button small">조회</button>{% include 'includes/badge.html' %}</form>
+        </div>
+    </div>
+    {% if rows %}
+        <div class="compare-actions">
+            <span class="muted">{{ rows|length }}개 브랜드 선택 · 전국 기준</span>
+            <div class="page-tools"><a class="button outline small" href="{% url 'brands:compare_csv' %}?year={{ year }}">CSV 내려받기 ↓</a><a class="button small" href="{% url 'brands:blist' %}?year={{ year }}">브랜드 추가 +</a></div>
+        </div>
+        <div class="table-wrap">
+            <table class="compare-table">
+                <thead>
+                    <tr><th>비교 항목</th>
+                        {% for row in rows %}
+                            <th>
+                                {% with image='images/'|add:row.brand.image %}<img src="{% static image %}" alt="{{ row.brand.category }} 참고 사진">{% endwith %}
+                                <h3><a href="{% url 'brands:bview' row.brand.slug %}?year={{ year }}">{{ row.brand.name }} ↗</a></h3>
+                                <p>{{ row.brand.category }}</p>
+                                {% include 'includes/compare_button.html' with brand=row.brand %}
+                            </th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for label,values,unit in comparisons %}
+                        <tr><td>{{ label }}</td>{% for value in values %}<td {% if label == '평균 월 매출' %}class="best"{% endif %}><span class="big-number">{{ value|number }}{% if value != None %}{{ unit }}{% endif %}</span></td>{% endfor %}</tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p class="data-note">평균 월 매출은 연매출 ÷ 12 환산값입니다. 단순 수치 비교이며 수익성·안전성을 보장하지 않습니다.<br>{% if is_demo %}브랜드와 모든 수치는 시연용 가상 데이터입니다.{% else %}출처: {{ source_label }}{% endif %}</p>
+    {% else %}
+        <div class="empty"><h2>어떤 브랜드가 궁금한가요?</h2><p>브랜드 카드에서 ‘비교 담기’를 누르면 나란히 확인할 수 있어요.</p><a class="button" href="{% url 'brands:blist' %}">브랜드 선택하러 가기 ↗</a></div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{# 비교 화면. 브랜드 추가→blist, 브랜드 이름→bview, CSV 버튼→파일 다운로드. #}

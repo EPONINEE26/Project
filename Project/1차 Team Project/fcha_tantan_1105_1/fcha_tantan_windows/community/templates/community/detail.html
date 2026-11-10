@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ post.public_title }} | 점주 커뮤니티
+{% endblock %}
+{% block content %}
+    <div class="container reading-page">
+        <a class="back-link" href="{% url 'community:index' %}">← 커뮤니티 목록</a>
+        <article class="panel article-panel">
+            <div class="post-card-top">
+                <span class="category-tag">{{ post.get_topic_display }}</span>
+                {% if post.is_demo %}
+                    <span class="demo-tag">예시 게시글 · 실제 점주 의견 아님</span>
+                {% endif %}
+            </div>
+            <h1 data-no-translate>{{ post.public_title }}</h1>
+            <div class="article-meta">
+                {% include 'community/author.html' with item=post %}
+                <time>{{ post.created_at|date:'Y.m.d H:i' }}</time>
+            </div>
+            {% if post.moderation_state == 'visible' %}
+                <div class="article-body" data-no-translate>
+                    {{ post.content|linebreaks }}
+                </div>
+            {% else %}
+                <div class="moderation-placeholder">
+                    {{ post.visibility_message }}
+                </div>
+            {% endif %}
+            <div class="article-actions">
+                {% if is_author %}
+                    <a class="button small outline" href="{% url 'community:edit' post.pk %}">수정</a>
+                    <form method="post" action="{% url 'community:delete' post.pk %}" data-confirm="게시글과 댓글을 삭제할까요?">
+                        {% csrf_token %}
+                        <button class="text-button danger">삭제</button>
+                    </form>
+                {% endif %}
+            </div>
+        </article>
+        <section class="panel comments-panel" id="comments">
+            <h2>댓글 {{ comments_list|length }}</h2>
+            {% for comment in comments_list %}
+                <article class="comment-item">
+                    {% include 'community/author.html' with item=comment %}
+                    <time>{{ comment.created_at|date:'m.d H:i' }}</time>
+                    {% if comment.is_demo %}
+                        <small class="demo-tag">예시 댓글</small>
+                    {% endif %}
+                    {% if comment.moderation_state == 'visible' %}
+                        <p data-no-translate>{{ comment.content|linebreaksbr }}</p>
+                    {% else %}
+                        <p class="moderation-placeholder">{{ comment.visibility_message }}</p>
+                    {% endif %}
+                    <div class="comment-actions">
+                        {% if user.pk == comment.author_id %}
+                            <a href="{% url 'community:comment_edit' comment.pk %}">수정</a>
+                            <form method="post" action="{% url 'community:comment_delete' comment.pk %}" data-confirm="댓글을 삭제할까요?">
+                                {% csrf_token %}
+                                <button class="text-button danger">삭제</button>
+                            </form>
+                        {% endif %}
+                    </div>
+                </article>
+            {% empty %}
+                <p class="subtitle">아직 댓글이 없습니다.</p>
+            {% endfor %}
+            {% if post.moderation_state != 'visible' %}
+                <p class="notice">검토 중인 게시글에는 댓글을 남길 수 없습니다.</p>
+            {# 댓글 입력창 표시 조건 #}
+            <!-- 이 회원이 댓글을 작성할 수 있으면, 아래 댓글 입력창을 보여줌-->
+            {% elif can_comment %}
+                <form method="post" action="{% url 'community:comment_create' post.pk %}" class="form-stack comment-form">
+                    {% csrf_token %}
+                    {% include 'includes/form_fields.html' %}
+                    <button class="button">댓글 등록</button>
+                </form>
+            {% elif user.is_authenticated %}
+                <div class="notice">
+                    댓글을 남기려면 점주 인증을 완료해주세요.
+                    <a href="{% url 'community:verify' %}">인증하기 ↗</a>
+                </div>
+            {% else %}
+                <a class="button outline" href="{% url 'accounts:login' %}?next={{ request.path }}">로그인 후 참여하기</a>
+            {% endif %}
+        </section>
+    </div>
+{% endblock %}

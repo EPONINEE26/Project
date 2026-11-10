@@ -1,0 +1,140 @@
+cd C:\workspace\web\aix_web_1007\p1026\project04
+
+
+C:\workspace\Project\1차 Project\fcha_1026_update_20261027\fcha_tantan_renewal
+
+
+
+python manage.py runserver
+
+
+http://127.0.0.1:8000/brands/blist/?query=&group=%EB%B6%84%EC%8B%9D&region=%EC%A0%84%EA%B5%AD&year=2025&sort=stores
+python -m pip install django-allauth 열려면 이 기능을 설치해야함
+
+admin
+id : tantan_admin
+pw : xksxks1234!!
+
+분식 
+이삭토스트
+신전떡볶이
+김가네
+청년다방
+배떡
+우리할매 떡볶이 
+김밥천구
+선비꼬마김밥
+두끼
+국수나무 
+
+패스트푸드 
+맘스터치
+롯데리아
+PC토랑
+프랭크버거
+노브랜드버거(No Brand Burger)
+버거킹(Bruger Kiing)
+맘스피자(Mom's PIZZA)
+버거리(BURGERRY)
+왓더버거
+비스트로피자 
+
+편의점 (추가분)
+씨스페이스14(CSPACE24)
+응응스크르
+이마트24스마트(emart24 SMART)
+新 구멍가게 24
+IGA MART
+SNS무인분식 
+
+도소매
+옵티마
+정관장
+픽미픽미아이스크림할인점
+알파
+다이소
+GS THE FRESH
+아리따움
+풀무원녹즙
+드림디포
+데이롱카페
+
+미용 (추가분)
+리안
+세이프존
+나이스가이
+박승철헤어스투디어
+준오헤어
+구피샵
+
+교육,유아
+스마트해법수학
+뮤엠영어
+아소비
+삼성영어셀레나
+미래엔수학
+스마트해법영어
+미래엔영어
+기탄사고력교실
+링키영어
+3030영어
+
+PC방 
+아이센스블랙라벨PC존
+제로100피씨(ZERO100PC)
+크라우드PC방
+오액스피씨
+아이센스PC방 
+욜로PC방
+제너스 PC 
+더캠프피씨방(더캠프PC방)
+옵티멈존PC카페
+피에스타PC방 
+
+여기.오락 
+골프존파크 (GOLFZONE PARK)
+점핑하이
+세븐스타 코인노래연습장
+커브스(Curvse)
+프렌즈아카데이
+략휴노래연습장
+짱탁구장
+레드버튼(RedButton)
+스트라이크존(STRIKZON)
+판타스틱코인 노래연습장 
+
+세탁,빨래방
+크린토피아
+월드크리닝
+크린에이드
+위니아24크린샵
+크린위드
+새로클린
+워시엔조이 멤버스 
+HOTEL-LAUNDRY 호텔런드리
+신데렐라
+세탁쇼 
+
+생활서비스
+카카오T블루(KakaoTblue) 
+Ubere Taxi (우버택시)
+네모택시(NEMO TAXI)
+카카오T블루
+온누리약국
+블루핸즈(bluehands)
+메디팜
+인천콜
+오토큐(Auto Q)
+휴베이스약국 
+
+기타
+세큐T (SECUT)
+불닭발땡초동대문엽기떡볶이
+Speedmate
+밥스토랑
+봉구스밥버거
+포토이즘박스
+멕시칸치킨
+와플대락
+바다양푼이동태탕찜
+샐러디 

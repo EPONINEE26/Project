@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>우리동네 상권지도</title>
+  <link rel="stylesheet" href="assets/app.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" id="leaflet-css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="./"><span class="logo-mark">상</span><span>우리동네 <b>상권지도</b><small>지역을 살펴보고, 상권을 비교하세요</small></span></a>
+  <nav aria-label="주 메뉴"><button class="nav-active" type="button">상권 살펴보기</button><button id="report" type="button">분석 리포트</button><button id="guide" type="button">이용 안내</button></nav>
+  <span class="header-badge">API 키 없이 사용</span>
+</header>
+<div id="file-warning" class="warning" hidden>지도 차단을 방지하려면 폴더의 <b>지도실행.cmd</b>를 더블클릭하세요. 열린 주소를 Chrome에서 이용하면 됩니다. HTML 직접 열기는 권장하지 않습니다.</div>
+<div class="workspace">
+  <aside class="sidebar">
+    <div class="side-heading"><span class="eyebrow">EXPLORE YOUR NEIGHBORHOOD</span><h1>어떤 상권을 찾으세요?</h1><p>지역과 업종을 선택해 살펴보세요.</p></div>
+    <section class="filter-section"><h2><span class="step">01</span> 지역 선택</h2>
+      <label for="city">도시</label><select id="city"></select>
+      <label for="district">시·군·구</label><select id="district"><option value="">전체</option></select>
+      <label for="search">매장·주소 검색</label><input id="search" type="search" placeholder="예: 성수동, 강남대로, 브랜드명">
+    </section>
+    <section class="filter-section"><h2><span class="step">02</span> 분석 조건</h2>
+      <label for="category">업종</label><select id="category"><option value="">전체 업종</option></select>
+      <label for="brand">브랜드</label><select id="brand"><option value="">전체 브랜드</option></select>
+      <div class="two-col"><div><label for="year">기준 연도</label><select id="year"><option value="">전체</option></select></div><div><label for="quarter">분기</label><select id="quarter"><option value="">전체</option><option value="1">1분기</option><option value="2">2분기</option><option value="3">3분기</option><option value="4">4분기</option></select></div></div>
+      <button id="apply" class="primary" type="button">선택 조건으로 조회 <span>→</span></button>
+      <button id="reset" class="text-button" type="button">조건 초기화</button>
+    </section>
+    <section class="upload-section"><h2>내 데이터 연결</h2><p>매장 JSON · 상권 경계 GeoJSON · 통계 JSON</p><label class="upload" for="files">＋ 파일 불러오기<input id="files" type="file" accept=".json,.geojson,application/json" multiple></label><button id="online" class="demo-button" type="button">온라인 서버 데이터 불러오기</button><button id="demo" class="demo-button" type="button">예시 데이터로 기능 살펴보기</button><p id="data-status" role="status">매장·상권 데이터가 아직 없습니다.</p></section>
+    <a class="reference" href="https://golmok.seoul.go.kr/commercialArea/commercialArea.do" target="_blank" rel="noopener">참고: 서울시 상권분석서비스 ↗</a>
+  </aside>
+  <main class="main">
+    <div class="map-heading"><div><span class="eyebrow">COMMERCIAL AREA EXPLORER</span><h2 id="location-title">서울 · 전체 지역</h2></div><div class="map-heading-actions"><span id="data-badge" class="pill">데이터 미연결</span><button id="fit" class="outline-button" type="button">조회 매장에 맞추기</button></div></div>
+    <div class="map-shell">
+      <div id="map" aria-label="상권과 매장 위치 지도"></div>
+      <div class="map-toolbar" aria-label="지도 표시 설정"><label><input id="show-stores" type="checkbox" checked> 매장</label><label><input id="show-areas" type="checkbox" checked> 상권 경계</label><label><input id="viewport" type="checkbox"> 현재 지도 안만</label></div>
+      <div id="map-status" class="map-status" role="status">도로 지도를 불러오는 중입니다…</div>
+      <div class="legend"><span class="legend-dot"></span> 매장 위치 <span class="legend-area"></span> 불러온 상권 경계</div>
+      <aside class="analysis-panel" aria-label="선택 지역 분석">
+        <div class="panel-heading"><div><span class="eyebrow">AREA INSIGHT</span><h2 id="selection-title">선택 지역 분석</h2></div><button id="clear-area" class="icon-button" aria-label="상권 선택 해제" type="button">×</button></div>
+        <p id="selection-description">지도에서 상권 경계를 클릭하면 해당 상권의 분석을 확인할 수 있습니다.</p>
+        <div class="kpis"><div class="kpi main-kpi"><span>조회 매장</span><strong id="store-count">0<small>개</small></strong></div><div class="kpi"><span>브랜드</span><strong id="brand-count">0<small>개</small></strong></div></div>
+        <div class="tabs" role="tablist" aria-label="분석 지표"><button role="tab" aria-selected="true" data-metric="stores" type="button">점포수</button><button role="tab" aria-selected="false" data-metric="sales" type="button">매출</button><button role="tab" aria-selected="false" data-metric="floating_population" type="button">유동인구</button><button role="tab" aria-selected="false" data-metric="residential_population" type="button">주거인구</button></div>
+        <div id="metric-content" class="metric-content" aria-live="polite"></div>
+        <h3>브랜드별 매장 <span>TOP 10</span></h3><div id="ranking" class="ranking"></div>
+        <div class="panel-footer"><span id="area-count">상권 경계 0개</span><button id="export" type="button">조회 결과 CSV ↓</button></div>
+      </aside>
+      <div id="empty-state" class="empty-state"><span>내 데이터로 시작하기</span><p>도로 지도에서 위치를 살펴보세요.<br>매장 파일을 불러오면 점포와 분석이 표시됩니다.</p><button id="empty-demo" type="button">예시 데이터 보기 →</button></div>
+    </div>
+    <div class="result-strip"><span><i></i> <b id="result-count">0</b>개 매장 조회</span><span id="scope-note">입력된 데이터만 분석합니다. 공식 서울시 통계와 연동되어 있지 않습니다.</span></div>
+  </main>
+</div>
+<dialog id="help-dialog"><button class="dialog-close" data-close type="button" aria-label="닫기">×</button><span class="eyebrow">GET STARTED</span><h2>상권지도 이용 방법</h2><ol><li><b>지도실행.cmd</b>를 더블클릭해 로컬 주소로 접속하세요.</li><li>도시를 선택하면 실제 도로 지도로 이동합니다.</li><li>본인의 매장 JSON, 상권 GeoJSON, 통계 JSON을 불러오세요.</li><li>지역·업종·브랜드를 선택하고 지도 위 상권을 클릭하세요.</li></ol><p>인터넷 연결은 지도 라이브러리와 도로 지도에 사용합니다. 업로드한 파일은 브라우저 메모리에서 분석하며 서버로 전송하거나 영구 저장하지 않습니다. 새로고침하면 다시 불러와야 합니다.</p><p>매출·인구는 해당 통계 파일이 있을 때만 표시합니다. 예시 데이터는 가상의 기능 시연 자료입니다. 상권 경계에는 WGS84 경위도 좌표가 필요합니다.</p><p>데이터 형식은 같은 폴더의 <b>README.md</b>에 정리되어 있습니다.</p></dialog>
+<dialog id="report-dialog"><button class="dialog-close" data-close type="button" aria-label="닫기">×</button><span class="eyebrow">ANALYSIS REPORT</span><h2>선택 지역 분석 리포트</h2><div id="report-content"></div><button id="print" class="primary" type="button">리포트 인쇄 / PDF 저장</button></dialog>
+<script src="assets/config.js"></script>
+<script src="assets/core.js"></script>
+<script src="assets/app.js"></script>
+</body></html>

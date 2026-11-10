@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}브랜드 파트너 신청 | 프차 탄탄{% endblock %}
+{% block content %}
+<div class="container narrow-page">
+    <div class="page-header"><a class="back-link" href="{% url 'partners:pricing' %}">← 파트너 안내</a><span class="eyebrow">PARTNER APPLY</span><h1>브랜드 파트너 신청</h1><p>가맹본부 담당자 확인 후 승인되면 예비창업자 사업제안 기능을 사용할 수 있어요.</p></div>
+    <section class="panel"><form method="post" class="form-stack">{% csrf_token %}{% include 'includes/form_fields.html' %}<button class="button" type="submit">신청하기</button></form></section>
+</div>
+{% endblock %}

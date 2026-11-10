@@ -1,0 +1,27 @@
+{% load brand_format %}
+<section class="panel focus-reference">
+    {% if district_card.stat %}
+        <b>ⓘ {{ district_card.stat.district_name }} 유동인구</b>
+        <span>{{ district_card.period_label }} · <strong>{{ district_card.stat.total|number }}</strong> {{ district_card.stat.unit }}</span>
+        <span>주요 연령대: {% for item in district_card.top_ages %}{{ item.label }} {{ item.width }}%{% if not forloop.last %} · {% endif %}{% empty %}자료 미연결{% endfor %}</span>
+        <span>{% for item in district_card.days %}{{ item.label }} {{ item.width }}%{% if not forloop.last %} · {% endif %}{% endfor %}</span>
+        <details>
+            <summary>자치구 유동인구 상세</summary>
+            <div class="focus-breakdowns">
+                {% for group in district_card.breakdowns %}
+                    <h4>{{ group.label }}</h4>
+                    {% for item in group.items %}
+                        <p>{{ item.label }}: {{ item.value|number }}</p>
+                    {% empty %}
+                        <p>자료 미연결</p>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </details>
+        <small>선택 상권 {{ analysis_area.name }}이 속한 자치구 전체 통계입니다. 반경 내 인구가 아닙니다. 원자료 수치이며 평균·누계 여부는 미확인입니다. 세부 합계는 총계와 다를 수 있습니다.</small>
+        <small>출처: {{ district_card.stat.source.name }} · 수집일 {{ district_card.stat.source.collected_on|date:'Y-m-d' }}</small>
+    {% else %}
+        <b>ⓘ 자치구 유동인구</b>
+        <span>{% if analysis_area %}선택 상권이 속한 자치구의 유동인구 자료가 연결되지 않았습니다.{% else %}위치를 저장해 상권을 선택하면 해당 자치구의 유동인구를 표시합니다.{% endif %}</span>
+    {% endif %}
+</section>

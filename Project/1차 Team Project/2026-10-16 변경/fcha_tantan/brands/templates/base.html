@@ -1,0 +1,80 @@
+{# 각 페이지 상단 메뉴#}
+
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="프랜차이즈 브랜드와 지역별 창업 데이터를 비교하세요.">
+    <title>{% block title %}프차 탄탄 — 탄탄한 선택의 기준{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/django.css' %}">
+    <script src="{% static 'js/common.js' %}" defer></script>
+</head>
+<body>
+    <a class="skip" href="#main">본문으로 건너뛰기</a>
+    <header class="header">
+        <div class="nav-wrap">
+            <a href="{% url 'home:index' %}" class="logo"><img src="/static/images/logo.png" alt="프차 탄탄"></a>
+            <nav aria-label="주 메뉴">
+                <a href="{% url 'brands:blist' %}?year={{ year }}" class="{% if page == 'home' or page == 'list' or page == 'detail' %}active{% endif %}">브랜드 탐색</a>
+                <a href="{% url 'brands:bregion' %}?year={{ year }}" class="{% if page == 'regions' %}active{% endif %}">지역 살펴보기</a>
+                <a href="{% url 'brands:bcompare' %}?year={{ year }}" class="{% if page == 'compare' %}active{% endif %}">브랜드 비교 <span id="compare-count">{{ compare_ids|length }}</span></a>
+                <a href="{% url 'brands:guide' %}" class="{% if page == 'guide' %}active{% endif %}">데이터 안내</a>
+                <a>지원 정보</a>
+            </nav>
+
+            <div class="header-right">
+                <div class="member-links">
+                <!-- 로그인·회원가입 페이지를 만든 뒤 href를 연결 -->
+                <a href="#">로그인</a>
+                <a href="#">회원가입</a>
+                <a class="saved-link" href="{% url 'brands:bsaved' %}?year={{ year }}">
+                    <span>관심 브랜드</span>
+                </a>
+            </div>
+            
+        </div>
+    </header>
+    <main id="main" tabindex="-1">
+        {% if messages %}
+            <div class="container" role="status">
+                {% for message in messages %}<p class="notice">{{ message }}</p>{% endfor %}
+            </div>
+        {% endif %}
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <div class="footer-inner">
+            <a class="logo" href="{% url 'home:index' %}"><img src="/static/images/logo.png" alt="프차 탄탄"></a>
+            <p>고민하는 당신에게, 탄탄한 선택의 기준.<br><small>{% if is_demo %}현재 모든 브랜드·통계는 화면 시연을 위한 가상 데이터입니다.{% else %}데이터 출처: {{ source_label }}{% endif %}</small></p>
+            <a href="{% url 'brands:guide' %}">데이터 기준 및 이용 안내 ↗</a>
+        </div>
+        <div class="copyright">© 2026 FCHA TANTAN. YOUR NEXT CHAPTER, BUILT ON DATA.</div>
+    </footer>
+    {% if compare_brands and page != 'compare' %}
+        <aside class="compare-bar" aria-label="브랜드 비교함">
+            <strong>브랜드 비교 {{ compare_ids|length }}/3</strong>
+            <div class="tray-items">
+                {% for brand in compare_brands %}
+                    <span class="tray-item">
+                        {{ brand.name }}
+                        <form method="post" action="{% url 'brands:compare_toggle' brand.slug %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                            <button aria-label="{{ brand.name }} 비교함에서 제거">×</button>
+                        </form>
+                    </span>
+                {% endfor %}
+            </div>
+            <form method="post" action="{% url 'brands:compare_clear' %}">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                <button class="tray-clear">비우기</button>
+            </form>
+            <a class="button lemon" href="{% url 'brands:bcompare' %}?year={{ year }}">비교하기 ↗</a>
+        </aside>
+    {% endif %}
+</body>
+</html>

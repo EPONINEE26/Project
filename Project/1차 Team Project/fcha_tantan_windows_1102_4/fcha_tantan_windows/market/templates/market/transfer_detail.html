@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load brand_format %}
+{% block title %}{{ listing.title }} | 양도양수 | 프차 탄탄{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="page-header"><a class="back-link" href="{% url 'market:transfer_list' %}">← 양도양수 목록</a><span class="eyebrow">[{{ listing.brand.category }}] {{ listing.brand.name }}</span>
+        <div class="page-title-row"><div><h1>{{ listing.title }}</h1><p>{{ listing.sido }} {{ listing.sigungu }} {{ listing.dong }} · 등록 {{ listing.created_at|date:'Y.m.d' }}</p></div><div class="page-tools"><span class="status-tag status-{{ listing.status }}">{{ listing.get_status_display }}</span>{% if is_owner %}<form method="post" action="{% url 'market:transfer_delete' listing.pk %}" data-confirm="매물을 삭제할까요?">{% csrf_token %}<button class="text-button danger">삭제</button></form><a class="button small outline" href="{% url 'market:transfer_edit' listing.pk %}">수정</a>{% endif %}<a class="button small outline" href="{% url 'brands:bview' listing.brand.slug %}">브랜드 통계 보기 ↗</a></div></div></div>
+    <div class="transfer-detail-layout">
+        <section class="panel">
+            <div class="metrics"><article class="metric highlight"><span class="label">권리금</span><strong>{% if listing.premium_manwon != None %}{{ listing.premium_manwon|number }}<small>만원</small>{% else %}협의{% endif %}</strong></article><article class="metric"><span class="label">보증금</span><strong>{% if listing.deposit_manwon != None %}{{ listing.deposit_manwon|number }}<small>만원</small>{% else %}-{% endif %}</strong></article><article class="metric"><span class="label">월세</span><strong>{% if listing.monthly_rent_manwon != None %}{{ listing.monthly_rent_manwon|number }}<small>만원</small>{% else %}-{% endif %}</strong></article><article class="metric"><span class="label">면적</span><strong>{% if listing.area_pyeong != None %}{{ listing.area_pyeong }}<small>평</small>{% else %}-{% endif %}</strong></article></div>
+            <dl class="info-list"><div><dt>최근 월평균 매출</dt><dd>{% if listing.monthly_sales_manwon != None %}{{ listing.monthly_sales_manwon|number }}만원{% else %}비공개{% endif %}</dd></div><div><dt>최근 월평균 순이익</dt><dd>{% if listing.monthly_profit_manwon != None %}{{ listing.monthly_profit_manwon|number }}만원{% else %}비공개{% endif %}</dd></div><div><dt>가맹계약</dt><dd>{{ listing.get_contract_status_display }}{% if listing.contract_end_date %} · 종료일 {{ listing.contract_end_date|date:'Y.m.d' }}{% endif %}</dd></div></dl>
+            <dl class="info-list"><div><dt>층수</dt><dd>{{ listing.floor|default:'미입력' }}</dd></div><div><dt>월 관리비</dt><dd>{{ listing.management_fee_manwon|default_if_none:'미입력' }} 만원</dd></div><div><dt>주차</dt><dd>{{ listing.parking_spaces|default_if_none:'미입력' }}</dd></div><div><dt>인수 가능일</dt><dd>{{ listing.available_from|date:'Y.m.d'|default:'협의' }}</dd></div><div><dt>포함 시설·집기</dt><dd>{{ listing.facilities|default:'등록자 문의' }}</dd></div></dl>
+            <dl class="info-list"><div><dt>매장 주소</dt><dd>{{ listing.address|default:'미입력' }}</dd></div></dl>
+            {% if transfer_map_points %}<h2>매장 위치</h2><div class="explore-map" data-transfer-map></div><p class="data-note">등록된 매장 위치입니다.</p>{% endif %}
+            <h2>상세 설명</h2><p>{{ listing.description|linebreaksbr }}</p>
+            <p class="data-note">금액은 등록자 입력값입니다. 계약 전 매출 증빙·임대차계약·가맹본부 양도 승인 조건을 꼭 확인하세요.</p>
+        </section>
+        <aside class="panel">
+            {% if is_owner %}<h2>받은 문의 {{ inquiries|length }}건</h2>
+                {% for q in inquiries %}<article class="inquiry-item"><b>{{ q.get_kind_display }}</b> · {{ q.sender.first_name|default:q.sender.username }}님 <small>{{ q.created_at|date:'Y.m.d H:i' }}</small><p>{{ q.message|linebreaksbr }}</p><small>{% if q.phone %}연락처: {{ q.phone }}{% else %}연락처 비공개 · 사이트 문의로만 연락{% endif %}</small></article>{% empty %}<p class="data-note">아직 문의가 없어요.</p>{% endfor %}
+            {% elif user.is_authenticated %}<h2>양수·조건 문의</h2>
+                {% if listing.status == 'closed' %}<p class="notice">거래가 완료된 매물입니다.</p>{% else %}<form method="post" class="form-stack">{% csrf_token %}{% include 'includes/form_fields.html' %}<button class="button" type="submit">문의 보내기</button></form>{% endif %}
+            {% else %}<h2>문의하려면 로그인하세요</h2><p class="subtitle">등록자에게 양수 희망·조건 문의를 보낼 수 있어요.</p><a class="button" href="{% url 'accounts:login' %}?next={{ request.get_full_path|urlencode }}">로그인</a>{% endif %}
+        </aside>
+    </div>
+</div>
+{{ transfer_map_points|json_script:'transfer-map-data' }}{% endblock %}
+{% block scripts %}{% if kakao_js_key %}<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey={{ kakao_js_key|urlencode }}&libraries=services&autoload=false"></script>{% endif %}{% endblock %}

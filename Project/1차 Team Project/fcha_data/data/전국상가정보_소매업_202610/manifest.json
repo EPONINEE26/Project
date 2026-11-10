@@ -1,0 +1,20 @@
+{
+  "mode": "api",
+  "source_url": "https://apis.data.go.kr/B553077/api/open/sdsc2/storeListInUpjong",
+  "query": {
+    "pageNo": "1",
+    "numOfRows": "1000",
+    "divId": "indsLclsCd",
+    "key": "G2",
+    "type": "json"
+  },
+  "started_at": "2026-10-24T21:53:51+09:00",
+  "complete": true,
+  "row_count": 648126,
+  "expected_total": 648126,
+  "pages_saved": 649,
+  "is_dummy": false,
+  "finished_at": "2026-10-24T22:13:49+09:00",
+  "exported_rows": 648126,
+  "duplicates_removed": 0
+}

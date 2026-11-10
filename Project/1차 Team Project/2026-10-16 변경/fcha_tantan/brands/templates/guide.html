@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}데이터 안내 | 프차 탄탄{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="page-header"><span class="eyebrow">OUR DATA, YOUR CONFIDENCE</span><h1>숫자의 기준부터, 탄탄하게.</h1><p>무엇을 비교하고 있는지 알면 더 나은 질문을 할 수 있어요.</p></div>
+    <div class="notice">{% include 'includes/badge.html' %} {% if is_demo %}현재 화면은 가상 브랜드 8개와 2024·2025년 예시 통계로 구성되어 있습니다. 실제 창업 판단에 사용할 수 없습니다.{% else %}{{ source_label }}{% endif %}<br>갱신일: {{ updated_at }} · 금액 표시: 만원 · 내부 금액 단위: 원</div>
+    <div class="guide-grid">
+        <article class="panel"><span class="eyebrow">01 / OPENINGS</span><h2>총 창업 개수는 어떻게 보나요?</h2><p>신규 개업 수는 선택한 1년 동안 전국에서 발생한 개업 건수의 합계입니다. 브랜드 설립 이후 누적 창업 수가 아닙니다. 신규 계약 건수를 실제 개업 수로 바꾸어 표시하면 안 됩니다.</p></article>
+        <article class="panel"><span class="eyebrow">02 / CLOSURES</span><h2>폐업과 계약 종료는 달라요.</h2><p>폐업 수는 선택 연도에 영업을 종료한 매장 수입니다. 계약종료·계약해지를 단순 합산해 실제 폐업으로 간주하지 않습니다. 실제 폐업 자료가 없으면 미제공으로 남깁니다.</p></article>
+        <article class="panel"><span class="eyebrow">03 / REVENUE</span><h2>평균 월 매출은 예상 수익인가요?</h2><p>가맹점 평균 연매출을 12로 나눈 참고값입니다. 신규 창업점의 예상 매출이나 순이익이 아닙니다. 임대료·인건비·원재료비 등이 차감되지 않았습니다.</p></article>
+        <article class="panel"><span class="eyebrow">04 / STORES</span><h2>매장 수는 어떤 시점인가요?</h2><p>선택 연도 말의 가맹점 수를 사용합니다. 직영점 포함 여부와 집계 시점을 통일해야 비교할 수 있습니다. 지역 화면의 합계는 등록된 브랜드만 합산한 값입니다.</p></article>
+        <article class="panel"><span class="eyebrow">05 / COSTS</span><h2>창업비용에 무엇이 포함되나요?</h2><p>예시 비용은 가맹비·교육비·보증금·인테리어·설비 및 기타 비용입니다. 임대보증금·권리금·부가세·별도 공사는 제외했습니다. 실제 도입 시 기준 면적과 포함 항목, 견적 시점을 확인해야 합니다.</p></article>
+        <article class="panel"><span class="eyebrow">06 / SOURCES</span><h2>실제 데이터를 연결할 때</h2><p>브랜드별 공시와 지역 자료를 같은 연도·브랜드 식별자로 연결합니다. 원문 정의와 출처, 기준연도, 갱신일을 보존합니다. 미수집 값은 0이 아닌 ‘미제공’으로 표시합니다.</p></article>
+    </div>
+</div>
+{% endblock %}

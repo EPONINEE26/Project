@@ -1,0 +1,12 @@
+{% load brand_format %}
+<div class="bar-list">
+    {% for r in bars %}
+        <div class="bar-row">
+            <span>{{ r.name }}</span>
+            <div class="bar-track"><div class="bar-fill" style="width:{{ r.width }}%"></div></div>
+            <span class="bar-value">{{ r.count|number }}{% if r.count != None %}개{% endif %}</span>
+        </div>
+    {% endfor %}
+</div>
+
+{# 공통 HTML 조각. 버튼 동작과 사용 화면은 HTML_버튼이동안내.txt의 해당 파일 항목 참고. #}

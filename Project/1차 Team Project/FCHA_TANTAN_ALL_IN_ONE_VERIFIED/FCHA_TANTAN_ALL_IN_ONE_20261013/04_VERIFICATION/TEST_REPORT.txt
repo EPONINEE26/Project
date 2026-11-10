@@ -1,0 +1,16 @@
+최종 문서 재작성 이후 구조 검사
+DOCX 01_SITEMAP_MENU.docx: 1341 chars, 3 tables, 0 images
+DOCX 02_SCREEN_SPEC.docx: 7863 chars, 15 tables, 8 images
+DOCX 03_DATABASE_ERD.docx: 1276 chars, 2 tables, 1 images
+DOCX 04_SYSTEM_ARCHITECTURE.docx: 1256 chars, 2 tables, 1 images
+DOCX 05_API_SPEC.docx: 1792 chars, 4 tables, 0 images
+DOCX 06_QA_CHECKLIST.docx: 1192 chars, 3 tables, 0 images
+PDF 01_SITEMAP_MENU.pdf: 1 pages, 1545 chars
+PDF 02_SCREEN_SPEC.pdf: 5 pages, 8906 chars
+PDF 03_DATABASE_ERD.pdf: 1 pages, 1416 chars
+PDF 04_SYSTEM_ARCHITECTURE.pdf: 1 pages, 1410 chars
+PDF 05_API_SPEC.pdf: 1 pages, 1976 chars
+PDF 06_QA_CHECKLIST.pdf: 1 pages, 1400 chars
+
+원본 소스 체크 결과
+최종 문서 재작성 이후 구조 검사

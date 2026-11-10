@@ -1,0 +1,62 @@
+{
+  "sources_ready": 2,
+  "areas_candidate": 1643,
+  "population_candidate": 4070,
+  "counts": {
+    "unmatched": 32211,
+    "unique_candidate_metadata_pending": 4070
+  },
+  "geometry_errors": [
+    [
+      219,
+      "3110137",
+      [
+        "Ring Self-intersection[127.062471453782 37.5441275995035]"
+      ]
+    ],
+    [
+      415,
+      "3110270",
+      [
+        "Ring Self-intersection[127.096901278491 37.5921630449385]"
+      ]
+    ],
+    [
+      453,
+      "3110234",
+      [
+        "Ring Self-intersection[127.074959922852 37.5945318971667]"
+      ]
+    ],
+    [
+      493,
+      "3110281",
+      [
+        "사용자 지정 제외: 잘린 geometry"
+      ]
+    ],
+    [
+      608,
+      "3110407",
+      [
+        "Ring Self-intersection[127.040455464654 37.6783990382712]"
+      ]
+    ],
+    [
+      775,
+      "3110515",
+      [
+        "Ring Self-intersection[126.933075754837 37.592676151326]"
+      ]
+    ],
+    [
+      886,
+      "3110542",
+      [
+        "Ring Self-intersection[126.900510995267 37.5608643215878]"
+      ]
+    ]
+  ],
+  "numeric_coordinate_values": 439892,
+  "rejected_rows": 32218
+}

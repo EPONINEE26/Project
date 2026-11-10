@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}다시 만나 반가워요. | 프차 탄탄{% endblock %}
+{% block content %}<div class="auth-shell"><section class="auth-card">
+<span class="eyebrow">FCHA TANTAN MEMBERS</span><h1>다시 만나 반가워요.</h1><p>로그인하고 브랜드의 자세한 데이터를 확인하세요.</p>
+<form method="post" class="form-stack">{% csrf_token %}<input type="hidden" name="next" value="{{ next }}">
+{{ form.non_field_errors }}{% for field in form %}<div class="form-field"><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{{ field.errors }}{% if field.help_text %}<div class="help-text">{{ field.help_text|safe }}</div>{% endif %}</div>{% endfor %}
+<button class="button" type="submit">로그인</button></form>
+<p class="auth-bottom">아직 회원이 아니신가요? <a href="{% url 'accounts:signup' %}?next={{ next|urlencode }}">회원가입</a></p></section><div class="auth-art"><span class="eyebrow">BUILD YOUR NEXT.</span><h2>시작의 기준을,<br>탄탄하게.</h2><p>고민하는 당신에게, 탄탄한 선택의 기준.</p></div></div>{% endblock %}

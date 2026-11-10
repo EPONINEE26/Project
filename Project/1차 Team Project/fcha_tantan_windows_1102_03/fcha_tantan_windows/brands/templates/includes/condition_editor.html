@@ -1,0 +1,9 @@
+<section class="analysis-input panel" id="condition-editor">
+<span class="eyebrow">START YOUR NEXT CHAPTER</span><h2>어디에서 시작하고 싶으세요?</h2><p>위치와 예산부터 알려주세요. 상세 조건은 나중에 추가하거나 비울 수 있습니다.</p>
+<div class="analysis-hero-grid"><form method="post" class="analysis-condition-form">{% csrf_token %}{{ condition_form.non_field_errors }}
+<div class="analysis-basic">{% for field in condition_form.basic_fields %}<div class="analysis-field">{{ field.label_tag }}{{ field }}{{ field.errors }}{% if field.help_text %}<small>{{ field.help_text }}</small>{% endif %}{% if field.name == 'location' %}<button class="button small outline" type="button" id="analysis-address">주소 검색</button>{% endif %}</div>{% endfor %}</div>
+<div class="budget-chips"><span>예산 빠른 입력</span><button type="button" data-budget="5000">5천만원</button><button type="button" data-budget="10000">1억원</button><button type="button" data-budget="20000">2억원</button></div>
+<details {% if condition_form.errors %}open{% endif %}><summary>상세 조건 추가·수정 (선택)</summary><div class="analysis-details">{% for field in condition_form.detail_fields %}{% if hide_location_details and field.name == 'latitude' or hide_location_details and field.name == 'longitude' or hide_location_details and field.name == 'location_scope' %}{{ field.as_hidden }}{% else %}<div class="analysis-field">{{ field.label_tag }}{{ field }}{{ field.errors }}{% if field.help_text %}<small>{{ field.help_text }}</small>{% endif %}</div>{% endif %}{% endfor %}</div></details>
+<p class="data-note">선택 항목은 비워서 삭제할 수 있습니다. 빈 금액은 미확인, 0은 실제 0원입니다. 입력한 시간은 본인이 일할 수 있는 시간입니다.</p><button name="condition_action" value="save" class="button">조건 저장하고 분석하기 →</button>
+{% if condition %}<button name="condition_action" value="delete" class="button outline" formnovalidate>저장 조건 전체 삭제</button>{% endif %}
+<p class="data-note">저장한 조건은 맞춤 브랜드 추천과 지역상권분석에서 함께 사용합니다.</p></form></div></section>

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load brand_format %}
+{% block title %}지역 살펴보기 | 프차 탄탄{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <span class="eyebrow">LOCATION INSIGHT</span>
+        <div class="page-title-row">
+            <div><h1>내가 시작하고 싶은 지역은?</h1><p>지역을 선택하고, 브랜드별 매장 분포를 확인하세요.</p></div>
+            <form class="page-tools year-form" method="get"><input type="hidden" name="region" value="{{ region }}">{% include 'includes/year_select.html' %}<button class="button small">조회</button>{% include 'includes/badge.html' %}</form>
+        </div>
+    </div>
+    <div class="region-layout">
+        <aside class="panel">
+            <h2>지역 선택</h2><p class="subtitle">전국 17개 시·도</p>
+            <div class="region-tiles">
+                {% for tile in tiles %}<a class="region-tile {% if tile.name == region %}active{% endif %}" href="{% url 'brands:bregion' %}?region={{ tile.name|urlencode }}&year={{ year }}" {% if tile.name == region %}aria-current="true"{% endif %}>{{ tile.name }}<b>{{ tile.total|number }}개</b></a>{% endfor %}
+            </div>
+            <p class="data-note">표시된 브랜드의 매장 수를 합산했습니다. 해당 지역 전체 프랜차이즈 매장 수는 아닙니다.</p>
+        </aside>
+        <section>
+            <div class="region-summary"><span>{{ region }} · 등록 브랜드 매장 합계</span><strong>{{ total|number }}<small> 개</small></strong><small>{{ year }}년 말 기준 · {{ active_count }}개 브랜드 {% if is_demo %}· 예시 데이터{% endif %}</small></div>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>브랜드</th><th>{{ region }} 매장</th><th>전국 중 비중</th><th>비교</th></tr></thead>
+                    <tbody>
+                        {% for row in rows %}
+                            <tr>
+                                <td><a class="brand-cell" href="{% url 'brands:bview' row.brand.slug %}?year={{ year }}"><span class="table-icon">{{ row.brand.name|slice:':1' }}</span>{{ row.brand.name }}</a></td>
+                                <td><b>{{ row.stores|number }}{% if row.stores != None %}개{% endif %}</b></td>
+                                <td>{% if row.share != None %}{{ row.share }}%{% else %}미제공{% endif %}</td>
+                                <td>{% include 'includes/compare_button.html' with brand=row.brand %}</td>
+                            </tr>
+                        {% empty %}<tr><td colspan="4">등록된 브랜드가 없습니다. 예시 데이터 입력 또는 CSV 가져오기를 진행하세요.</td></tr>{% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <p class="data-note">매장 수만으로 상권의 수요나 경쟁 강도를 판단할 수 없습니다. 유동인구·임대료·주변 업종 등 추가 분석이 필요합니다.</p>
+        </section>
+    </div>
+</div>
+{% endblock %}

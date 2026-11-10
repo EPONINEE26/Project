@@ -1,0 +1,12 @@
+127.0.0.1 - - [04/Nov/2026 12:40:10] "HEAD /fcha_tantan_windows_standalone_20261104_122733.zip HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2026 12:40:24] "GET /fcha_tantan_windows_standalone_20261104_122733.zip HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2026 12:40:34] "GET /fcha_tantan_windows_standalone_20261104_122733.zip HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2026 12:40:41] "GET /fcha_tantan_windows_integrated_20261104.zip HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2026 13:00:20] code 404, message File not found
+127.0.0.1 - - [04/Nov/2026 13:00:20] "GET /fcha_tantan_windows_integrated_20261104_125711.zip HTTP/1.1" 404 -
+127.0.0.1 - - [04/Nov/2026 13:00:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Nov/2026 13:45:26] code 404, message File not found
+127.0.0.1 - - [04/Nov/2026 13:45:26] "HEAD /fcha_tantan_windows_integrated_20261104_spacing.zip HTTP/1.1" 404 -
+127.0.0.1 - - [04/Nov/2026 17:37:06] code 404, message File not found
+127.0.0.1 - - [04/Nov/2026 17:37:06] "HEAD /fcha_tantan_windows_integrated_20261104_173009.zip HTTP/1.1" 404 -
+127.0.0.1 - - [04/Nov/2026 17:37:13] "GET / HTTP/1.1" 200 -

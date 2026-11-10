@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static brand_format %}
+{% block title %}{{ brand.name }} | 프차 탄탄{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <div class="breadcrumb"><a href="{% url 'brands:blist' %}">브랜드 탐색</a> / {{ brand.category }} / {{ brand.name }}</div>
+        <div class="page-title-row">
+            <a class="back-link" href="{% url 'brands:blist' %}?year={{ year }}">← 브랜드 목록으로</a>
+            <div class="page-tools">
+                {% include 'includes/badge.html' %}
+                <form class="page-tools year-form" method="get">
+                    {% include 'includes/year_select.html' %}
+                    <button class="button small">조회</button>
+                </form>
+                {% include 'includes/compare_button.html' %}
+                <div class="detail-save">{% include 'includes/save_button.html' %}</div>
+            </div>
+        </div>
+        <section class="detail-hero">
+            <div class="detail-intro">
+                <span class="brand-monogram">{{ brand.name|slice:':1' }}</span>
+                <span class="eyebrow">{{ brand.english_name }}</span>
+                <h1>{{ brand.name }}</h1>
+                <p>{{ brand.tagline }}</p>
+            </div>
+            {% with image='images/'|add:brand.image %}<img class="detail-photo" src="{% static image %}" alt="{{ brand.category }} 참고 사진">{% endwith %}
+        </section>
+    </div>
+    <nav class="detail-tabs" aria-label="브랜드 상세 목차">
+        <a href="#overview">브랜드 한눈에</a><a href="#trend">개·폐업 현황</a><a href="#distribution">지역별 매장</a><a href="#cost">창업비용</a>
+    </nav>
+    <section class="section" id="overview">
+        <div class="section-head"><div><h2>숫자로 살펴보는 {{ brand.name }}</h2><p>{{ year }}년 · 전국 가맹점 기준</p></div>{% include 'includes/badge.html' %}</div>
+        <div class="metrics">
+            <article class="metric"><span class="label">연말 전체 매장</span><strong>{{ row.stores|number }}{% if row.stores != None %}<small>개</small>{% endif %}</strong><p>선택 연도 말 영업 매장 수</p></article>
+            <article class="metric"><span class="label">연간 신규 개업</span><strong class="up">{{ row.stat.opened|default_if_none:''|number }}{% if row.stat and row.stat.opened != None %}<small>개</small>{% endif %}</strong><p>선택 연도 내 신규 개업 합계</p></article>
+            <article class="metric"><span class="label">연간 폐업</span><strong>{{ row.stat.closed|default_if_none:''|number }}{% if row.stat and row.stat.closed != None %}<small>개</small>{% endif %}</strong><p>선택 연도 내 폐업 합계</p></article>
+            <article class="metric highlight"><span class="label">가맹점 평균 월 매출</span><strong>{{ row.monthly|number }}{% if row.monthly != None %}<small>만원</small>{% endif %}</strong><p>평균 연매출 ÷ 12 · 전국 기준</p></article>
+        </div>
+        <div class="notice">{{ brand.description }}<br>※ 매출은 수익을 보장하지 않으며, 폐업 건수만으로 브랜드의 위험도를 판단할 수 없습니다.</div>
+    </section>
+    <div class="detail-grid">
+        <section class="panel" id="trend">
+            <h2>개업과 폐업, 흐름을 확인하세요</h2><p class="subtitle">연도별 신규 개업·폐업 건수 · 단위: 개</p>
+            <div class="legend"><span>신규 개업</span><span>폐업</span></div>
+            <div class="chart" role="img" aria-label="연도별 신규 개업과 폐업 현황">
+                {% for s in chart %}
+                    <div class="chart-group">
+                        <div class="chart-bar" style="height:{{ s.opened_height }}%"><span>{{ s.opened|number }}</span></div>
+                        <div class="chart-bar secondary" style="height:{{ s.closed_height }}%"><span>{{ s.closed|number }}</span></div>
+                        <span class="chart-year">{{ s.year }}년</span>
+                    </div>
+                {% endfor %}
+            </div>
+            <p class="data-note">개업·폐업은 각 연도 발생 건수입니다. 운영 매장 총수와는 다른 지표입니다.</p>
+        </section>
+        <section class="panel" id="distribution">
+            <h2>어느 지역에 많을까요?</h2><p class="subtitle">{{ year }}년 매장 수 상위 7개 지역</p>
+            {% include 'includes/bars.html' with bars=top_regions %}
+            <a class="text-link" href="{% url 'brands:bregion' %}?year={{ year }}">전체 지역 브랜드 비교하기 ↗</a>
+        </section>
+    </div>
+    <details class="panel all-regions"><summary>전체 17개 지역 매장 수 확인</summary>{% include 'includes/bars.html' with bars=regional_rows %}</details>
+    <div class="detail-grid" id="cost">
+        <section class="panel">
+            <h2>창업비용을 꼼꼼하게</h2><p class="subtitle">{{ brand.area_sqm }}㎡ 기준 · {% if brand.is_demo %}예시 {% endif %}견적 · 단위: 만원</p>
+            <div class="cost-list">{% for name,value in costs %}<div class="cost-line"><span>{{ name }}</span><b>{{ value|money }}</b></div>{% empty %}<p>비용 세부 항목 미제공</p>{% endfor %}</div>
+            <div class="cost-total"><span>{% if brand.is_demo %}예시 {% endif %}초기 비용 합계</span><strong>{{ brand.initial_cost_krw|money }}</strong></div>
+        </section>
+        <section class="panel">
+            <span class="eyebrow">CHECK BEFORE YOU START</span><h2>숫자 뒤의 조건도 살펴보세요</h2>
+            <p class="subtitle">같은 브랜드라도 실제 창업비용과 매출은 달라질 수 있어요.</p>
+            <div class="notice">• 임대보증금·권리금·부가세·별도 공사비는 예시 비용에서 제외했습니다.<br>• 상권, 매장 면적, 운영 방식에 따라 비용이 달라집니다.<br>• 평균 월 매출은 기존 가맹점의 연매출 환산값으로, 신규 매장의 예상 매출이 아닙니다.<br>• 실제 계약 전에는 정보공개서와 본사 견적을 확인하세요.</div>
+            <p class="data-note">{% if row.stat %}{{ row.stat.source_label }} · 갱신일 {{ row.stat.updated_at }}{% else %}선택 연도 통계 미제공{% endif %}</p>
+            <a class="text-link" href="{% url 'brands:guide' %}">지표 정의 자세히 보기 ↗</a>
+        </section>
+    </div>
+</div>
+{% endblock %}

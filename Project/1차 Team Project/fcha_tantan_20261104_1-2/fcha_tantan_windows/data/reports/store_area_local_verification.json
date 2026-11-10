@@ -1,0 +1,16 @@
+{
+  "checked_at_utc": "2026-11-03T06:45:13.386669+00:00",
+  "committed": true,
+  "stores_verified": 554092,
+  "areas_verified": 1643,
+  "status_counts": {
+    "outside": 114023,
+    "matched": 422123,
+    "overlap": 17946
+  },
+  "linked": 422123,
+  "mapping_sha256": "4136b2d402626ff63a83bf43a97ef3855c61e984ac3479b5af4bde32e877338b",
+  "shapely": "2.2.0",
+  "geos": "3.14.1",
+  "scope": "Project preview; CRS equivalence assumed, no buffer or coordinate correction"
+}

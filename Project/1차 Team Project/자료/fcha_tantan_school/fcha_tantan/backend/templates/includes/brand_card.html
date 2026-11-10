@@ -1,0 +1,24 @@
+{% load static brand_format %}
+<article class="brand-card">
+    {% include 'includes/save_button.html' with brand=row.brand %}
+    <a class="card-cover" href="{% url 'brands:bview' row.brand.slug %}?year={{ year }}">
+        {% with image='brands/assets/'|add:row.brand.image %}
+            <img src="{% static image %}" alt="{{ row.brand.category }} 분위기 참고 사진" loading="lazy">
+        {% endwith %}
+        <span class="cover-brand">{{ row.brand.english_name }}</span>
+    </a>
+    <div class="card-body">
+        <div class="card-subtitle">{{ row.brand.category }} · {% if row.brand.is_demo %}가상 브랜드{% else %}{{ source_label }}{% endif %}</div>
+        <h3><a href="{% url 'brands:bview' row.brand.slug %}?year={{ year }}">{{ row.brand.name }}</a></h3>
+        <dl class="card-data">
+            <div><dt>평균 월 매출</dt><dd>{{ row.monthly|number }}{% if row.monthly != None %}<small>만원</small>{% endif %}</dd></div>
+            <div><dt>{{ region }} 매장 수</dt><dd>{{ row.stores|number }}{% if row.stores != None %}<small>개</small>{% endif %}</dd></div>
+            <div><dt>연간 개업</dt><dd class="up">{{ row.stat.opened|default_if_none:''|number }}{% if row.stat and row.stat.opened != None %}<small>개</small>{% endif %}</dd></div>
+            <div><dt>연간 폐업</dt><dd>{{ row.stat.closed|default_if_none:''|number }}{% if row.stat and row.stat.closed != None %}<small>개</small>{% endif %}</dd></div>
+        </dl>
+    </div>
+    <div class="card-footer">
+        {% include 'includes/compare_button.html' with brand=row.brand %}
+        <a href="{% url 'brands:bview' row.brand.slug %}?year={{ year }}">자세히 보기 ↗</a>
+    </div>
+</article>

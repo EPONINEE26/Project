@@ -1,0 +1,199 @@
+{
+  "sources": {
+    "교육서비스업": {
+      "counts": {
+        "source_rows": 181775,
+        "candidate_rows": 68012,
+        "pending": 62476,
+        "map": 5536,
+        "no_candidate": 113763
+      },
+      "source_regions": {
+        "전남광주통합특별시": 7879,
+        "대전광역시": 5399,
+        "서울특별시": 44215,
+        "충청남도": 6502,
+        "경기도": 55954,
+        "부산광역시": 7997,
+        "인천광역시": 9681,
+        "강원특별자치도": 6147,
+        "충청북도": 5224,
+        "경상북도": 5785,
+        "대구광역시": 7001,
+        "세종특별자치시": 1623,
+        "전북특별자치도": 4572,
+        "제주특별자치도": 2845,
+        "경상남도": 7927,
+        "울산광역시": 3024
+      }
+    },
+    "수리개인서비스업": {
+      "counts": {
+        "source_rows": 329825,
+        "candidate_rows": 32149,
+        "pending": 24661,
+        "map": 7488,
+        "no_candidate": 297676
+      },
+      "source_regions": {
+        "전남광주통합특별시": 23491,
+        "서울특별시": 53716,
+        "울산광역시": 7668,
+        "경기도": 80954,
+        "부산광역시": 21085,
+        "전북특별자치도": 12693,
+        "제주특별자치도": 5111,
+        "충청남도": 14894,
+        "충청북도": 11588,
+        "대구광역시": 16381,
+        "경상남도": 22327,
+        "대전광역시": 10989,
+        "경상북도": 18321,
+        "인천광역시": 17154,
+        "강원특별자치도": 11809,
+        "세종특별자치시": 1644
+      }
+    },
+    "소매업": {
+      "counts": {
+        "source_rows": 648126,
+        "candidate_rows": 107639,
+        "pending": 58364,
+        "map": 49275,
+        "no_candidate": 540487
+      },
+      "source_regions": {
+        "서울특별시": 111306,
+        "경기도": 149766,
+        "인천광역시": 31534,
+        "충청북도": 23829,
+        "제주특별자치도": 12330,
+        "강원특별자치도": 26417,
+        "전남광주통합특별시": 46230,
+        "부산광역시": 38899,
+        "전북특별자치도": 28387,
+        "충청남도": 32973,
+        "대구광역시": 30514,
+        "대전광역시": 20214,
+        "경상남도": 42285,
+        "울산광역시": 12591,
+        "경상북도": 37779,
+        "세종특별자치시": 3072
+      }
+    },
+    "숙박업": {
+      "counts": {
+        "source_rows": 80482,
+        "candidate_rows": 9424,
+        "pending": 9297,
+        "map": 127,
+        "no_candidate": 71058
+      },
+      "source_regions": {
+        "경기도": 11161,
+        "서울특별시": 12409,
+        "전남광주통합특별시": 5840,
+        "강원특별자치도": 8930,
+        "부산광역시": 3233,
+        "경상북도": 6953,
+        "경상남도": 6875,
+        "충청남도": 4928,
+        "충청북도": 2690,
+        "제주특별자치도": 7525,
+        "인천광역시": 3423,
+        "전북특별자치도": 3246,
+        "울산광역시": 1081,
+        "대구광역시": 1161,
+        "대전광역시": 904,
+        "세종특별자치시": 123
+      }
+    },
+    "예술스포츠여가서비스업": {
+      "counts": {
+        "source_rows": 116010,
+        "candidate_rows": 13309,
+        "map": 3926,
+        "pending": 9383,
+        "no_candidate": 102701
+      },
+      "source_regions": {
+        "전북특별자치도": 4014,
+        "경기도": 30708,
+        "인천광역시": 6996,
+        "전남광주통합특별시": 7152,
+        "서울특별시": 21059,
+        "세종특별자치시": 766,
+        "부산광역시": 6121,
+        "대구광역시": 5104,
+        "충청북도": 4302,
+        "강원특별자치도": 4262,
+        "충청남도": 5203,
+        "경상남도": 6569,
+        "울산광역시": 2549,
+        "경상북도": 5623,
+        "대전광역시": 3689,
+        "제주특별자치도": 1893
+      }
+    }
+  },
+  "category_count": 45,
+  "brand_count": 12498,
+  "brands_with_map_rows": 1318,
+  "map_rows": 66352,
+  "pending_rows": 164181,
+  "pending_with_link_basis": 17470,
+  "source_rows": 1356218,
+  "category_map_counts": {
+    "교육_(외국어)": 2496,
+    "스포츠_관련": 1247,
+    "교육_(교과)": 1262,
+    "기타_교육": 1424,
+    "기타_서비스": 2310,
+    "유아_관련_(교육_외)": 193,
+    "유아관련": 43,
+    "자동차_관련": 1111,
+    "미용실": 2986,
+    "세탁": 3076,
+    "반려동물_관련": 406,
+    "편의점": 40932,
+    "화장품": 1022,
+    "기타도소매": 3972,
+    "안경": 1428,
+    "의류_패션": 280,
+    "종합소매점": 617,
+    "약국": 15,
+    "농수산물": 114,
+    "(건강)식품": 167,
+    "숙박": 120,
+    "오락": 805,
+    "PC방": 317,
+    "임대": 9
+  },
+  "pending_reasons_nonexclusive": {
+    "substring_historical_or_unverified_alias": 146263,
+    "multiple_brand_ids": 448,
+    "cross_sector_review": 6900,
+    "short_or_generic_name": 11104,
+    "same_brand_address_store_identity_unresolved": 4408,
+    "compound_name_review": 222
+  },
+  "duplicate_groups": 2126,
+  "same_four_field_groups": 1457,
+  "repeated_bizesId_count": 0,
+  "removed_rows": 0,
+  "validation": {
+    "all_category_json_parse": "PASS",
+    "all_catalog_id_name_order_preserved": "PASS",
+    "category_region_totals": "PASS",
+    "source_disposition_totals": "PASS",
+    "map_unique_bizesId": "PASS",
+    "map_coordinates_numeric_finite": "PASS",
+    "five_source_map_totals": "PASS"
+  },
+  "limitations": [
+    "name_based_not_verified_franchise_or_live_status",
+    "no_full_address_coordinate_geocoding",
+    "pending_not_all_individually_web_searched",
+    "only_five_new_source_archives_no_previous_cafe_results_merged"
+  ]
+}

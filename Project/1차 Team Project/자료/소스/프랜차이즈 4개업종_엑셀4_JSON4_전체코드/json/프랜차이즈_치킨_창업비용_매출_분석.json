@@ -1,0 +1,3801 @@
+{
+  "schema_version": "original-preserved-1.0",
+  "source_filename": "프랜차이즈_치킨_창업비용_매출_분석.xlsx",
+  "description": {
+    "cells": "각 시트의 cells는 A1 좌표 인덱스. value는 원본 값 또는 수식 문자열 그대로",
+    "preservation": "기존 숫자(0 포함)·문자·수식·시트 순서 유지. changes 목록의 원래 빈 셀만 입력",
+    "years": "2024·2025 요청 범위. 원본 범위연도·2026 표기는 변경하지 않고 별도 오류 내역에 기록",
+    "formula_cache": "서울비중은 서울/전국 값이 있는 모든 행의 저장 계산결과까지 확인·갱신. 다른 수식 캐시는 보존.",
+    "units": "01 시트 비용과05 시트 매출은 원. 02 시트는 원본 단위 열을 유지하므로 이미용 보완값은 천원"
+  },
+  "sheets": [
+    {
+      "name": "00_가정",
+      "dimension": "A1:F5",
+      "cells": {
+        "A1": {
+          "value": "업종별 운영비 가정 비율 (사용자 수정 가능 · 공시자료 아님)",
+          "type": "s",
+          "style_id": "1"
+        },
+        "A2": {
+          "value": "※ 아래 비율은 시뮬레이션용 기본 가정치입니다. 실제 값은 06/07 시트에서 덮어쓰세요.",
+          "type": "s",
+          "style_id": "5"
+        },
+        "A4": {
+          "value": "업종",
+          "type": "s",
+          "style_id": "15"
+        },
+        "B4": {
+          "value": "재료비율",
+          "type": "s",
+          "style_id": "16"
+        },
+        "C4": {
+          "value": "인건비율",
+          "type": "s",
+          "style_id": "16"
+        },
+        "D4": {
+          "value": "임차료율",
+          "type": "s",
+          "style_id": "16"
+        },
+        "E4": {
+          "value": "기타운영비율",
+          "type": "s",
+          "style_id": "16"
+        },
+        "F4": {
+          "value": "비율합계",
+          "type": "s",
+          "style_id": "17"
+        },
+        "A5": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "18"
+        },
+        "B5": {
+          "value": 0.38,
+          "type": "n",
+          "style_id": "14"
+        },
+        "C5": {
+          "value": 0.18,
+          "type": "n",
+          "style_id": "14"
+        },
+        "D5": {
+          "value": 0.09,
+          "type": "n",
+          "style_id": "14"
+        },
+        "E5": {
+          "value": 0.12,
+          "type": "n",
+          "style_id": "14"
+        },
+        "F5": {
+          "value": "=SUM(B5:E5)",
+          "type": "formula",
+          "style_id": "19",
+          "original_cached_value": 0.77
+        }
+      }
+    },
+    {
+      "name": "01_창업비용",
+      "dimension": "A1:K8",
+      "cells": {
+        "A1": {
+          "value": "브랜드별 창업비용 (index=브랜드 / columns=가맹비·교육비·보증금·인테리어·설비·기타 · 단위 원)",
+          "type": "s",
+          "style_id": "1"
+        },
+        "A2": {
+          "value": "브랜드(Index)",
+          "type": "s",
+          "style_id": "38"
+        },
+        "B2": {
+          "value": "업종",
+          "type": "s",
+          "style_id": "39"
+        },
+        "C2": {
+          "value": "가맹비",
+          "type": "s",
+          "style_id": "39"
+        },
+        "D2": {
+          "value": "교육비",
+          "type": "s",
+          "style_id": "39"
+        },
+        "E2": {
+          "value": "보증금",
+          "type": "s",
+          "style_id": "39"
+        },
+        "F2": {
+          "value": "인테리어",
+          "type": "s",
+          "style_id": "39"
+        },
+        "G2": {
+          "value": "설비 & 기타",
+          "type": "s",
+          "style_id": "39"
+        },
+        "H2": {
+          "value": "합계(계산)",
+          "type": "s",
+          "style_id": "39"
+        },
+        "I2": {
+          "value": "공시합계",
+          "type": "s",
+          "style_id": "39"
+        },
+        "J2": {
+          "value": "차이(공시-계산)",
+          "type": "s",
+          "style_id": "39"
+        },
+        "K2": {
+          "value": "비고",
+          "type": "s",
+          "style_id": "40"
+        },
+        "A3": {
+          "value": "교촌치킨",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B3": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C3": {
+          "value": 6760000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D3": {
+          "value": 3900000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E3": {
+          "value": 10000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F3": {
+          "value": 69000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "G3": {
+          "value": 66860000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "H3": {
+          "value": "=SUM(C3:G3)",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 156520000
+        },
+        "I3": {
+          "value": 156530000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "J3": {
+          "value": "=I3-H3",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 10000
+        },
+        "K3": {
+          "value": "원본 표시 전체 156,530,000 ≠ 세부합계 156,520,000 (1만원 차, 원본 보존)",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A4": {
+          "value": "BHC",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B4": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C4": {
+          "value": 10000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D4": {
+          "value": 2200000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E4": {
+          "value": 10000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F4": {
+          "value": 42000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "G4": {
+          "value": 23720000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "H4": {
+          "value": "=SUM(C4:G4)",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 87920000
+        },
+        "I4": {
+          "value": 87920000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "J4": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 0
+        },
+        "K4": {
+          "value": "BEER ZONE(20평) 기준. 설비=간판700+주방집기1,300+의자탁자372(만원). DELIVERY ZONE 별도",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A5": {
+          "value": "굽네치킨",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B5": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C5": {
+          "value": 5500000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D5": {
+          "value": 2200000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E5": {
+          "value": 0,
+          "type": "n",
+          "style_id": "35"
+        },
+        "F5": {
+          "value": 30250000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "G5": {
+          "value": 45320000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "H5": {
+          "value": "=SUM(C5:G5)",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 83270000
+        },
+        "I5": {
+          "value": 83270000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "J5": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 0
+        },
+        "K5": {
+          "value": "보증금 원본 '-' 표시(0으로 단정 안 함). 인테리어 33㎡(10평) 기준",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A6": {
+          "value": "비비큐(BBQ)",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B6": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C6": {
+          "value": 11000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D6": {
+          "value": 4180000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E6": {
+          "value": 5000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F6": {
+          "value": 50600000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "G6": {
+          "value": 20000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "H6": {
+          "value": "=SUM(C6:G6)",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 90780000
+        },
+        "I6": {
+          "value": 90780000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "J6": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 0
+        },
+        "K6": {
+          "value": "설비 미구분(기타에 포함). 인테리어 66㎡(20평) 기준",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A7": {
+          "value": "처갓집양념치킨",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B7": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C7": {
+          "value": 5500000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D7": {
+          "value": 1100000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E7": {
+          "value": 1000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F7": {
+          "value": 13200000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "G7": {
+          "value": 8250000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "H7": {
+          "value": "=SUM(C7:G7)",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 29050000
+        },
+        "I7": {
+          "value": 29050000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "J7": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 0
+        },
+        "K7": {
+          "value": "설비 미구분. 인테리어 33㎡(10평) 기준",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A8": {
+          "value": "전체 합계",
+          "type": "s",
+          "style_id": "43"
+        },
+        "B8": {
+          "value": null,
+          "type": "n",
+          "style_id": "44"
+        },
+        "C8": {
+          "value": "=SUM(C3:C7)",
+          "type": "formula",
+          "style_id": "45",
+          "original_cached_value": 38760000
+        },
+        "D8": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "45",
+          "original_cached_value": 13580000
+        },
+        "E8": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "45",
+          "original_cached_value": 26000000
+        },
+        "F8": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "45",
+          "original_cached_value": 205050000
+        },
+        "G8": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "45",
+          "original_cached_value": 164150000
+        },
+        "H8": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "45",
+          "original_cached_value": 447540000
+        },
+        "I8": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "45",
+          "original_cached_value": 447550000
+        },
+        "J8": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "45",
+          "original_cached_value": 10000
+        },
+        "K8": {
+          "value": null,
+          "type": "n",
+          "style_id": "46"
+        }
+      }
+    },
+    {
+      "name": "02_원본값_단위",
+      "dimension": "A1:J7",
+      "cells": {
+        "A1": {
+          "value": "원본 단위·출처 (자료.zip 각 브랜드 파일의 표기를 그대로 보존)",
+          "type": "s",
+          "style_id": "1"
+        },
+        "A2": {
+          "value": "업종",
+          "type": "s",
+          "style_id": "47"
+        },
+        "B2": {
+          "value": "브랜드",
+          "type": "s",
+          "style_id": "48"
+        },
+        "C2": {
+          "value": "원본 단위",
+          "type": "s",
+          "style_id": "48"
+        },
+        "D2": {
+          "value": "가맹비",
+          "type": "s",
+          "style_id": "48"
+        },
+        "E2": {
+          "value": "교육비",
+          "type": "s",
+          "style_id": "48"
+        },
+        "F2": {
+          "value": "보증금",
+          "type": "s",
+          "style_id": "48"
+        },
+        "G2": {
+          "value": "인테리어",
+          "type": "s",
+          "style_id": "48"
+        },
+        "H2": {
+          "value": "기타",
+          "type": "s",
+          "style_id": "48"
+        },
+        "I2": {
+          "value": "원본 합계",
+          "type": "s",
+          "style_id": "48"
+        },
+        "J2": {
+          "value": "원본 파일",
+          "type": "s",
+          "style_id": "49"
+        },
+        "A3": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "50"
+        },
+        "B3": {
+          "value": "교촌치킨",
+          "type": "s",
+          "style_id": "21"
+        },
+        "C3": {
+          "value": "만원",
+          "type": "s",
+          "style_id": "22"
+        },
+        "D3": {
+          "value": 6760000,
+          "type": "n",
+          "style_id": "21"
+        },
+        "E3": {
+          "value": 3900000,
+          "type": "n",
+          "style_id": "21"
+        },
+        "F3": {
+          "value": 10000000,
+          "type": "n",
+          "style_id": "21"
+        },
+        "G3": {
+          "value": 69000000,
+          "type": "n",
+          "style_id": "21"
+        },
+        "H3": {
+          "value": 66860000,
+          "type": "n",
+          "style_id": "21"
+        },
+        "I3": {
+          "value": 156530000,
+          "type": "n",
+          "style_id": "21"
+        },
+        "J3": {
+          "value": "치킨/교촌치킨_창업정보.xlsx",
+          "type": "s",
+          "style_id": "51"
+        },
+        "A4": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "52"
+        },
+        "B4": {
+          "value": "BHC",
+          "type": "s",
+          "style_id": "7"
+        },
+        "C4": {
+          "value": "만원",
+          "type": "s",
+          "style_id": "6"
+        },
+        "D4": {
+          "value": 10000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E4": {
+          "value": 2200000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F4": {
+          "value": 10000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "G4": {
+          "value": 42000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "H4": {
+          "value": 23720000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "I4": {
+          "value": 87920000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "J4": {
+          "value": "치킨/BHC_창업정보.xlsx",
+          "type": "s",
+          "style_id": "53"
+        },
+        "A5": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "52"
+        },
+        "B5": {
+          "value": "굽네치킨",
+          "type": "s",
+          "style_id": "7"
+        },
+        "C5": {
+          "value": "만원",
+          "type": "s",
+          "style_id": "6"
+        },
+        "D5": {
+          "value": 5500000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E5": {
+          "value": 2200000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F5": {
+          "value": 0,
+          "type": "n",
+          "style_id": "36"
+        },
+        "G5": {
+          "value": 30250000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "H5": {
+          "value": 45320000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "I5": {
+          "value": 83270000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "J5": {
+          "value": "치킨/굽네치킨_창업정보.xlsx",
+          "type": "s",
+          "style_id": "53"
+        },
+        "A6": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "52"
+        },
+        "B6": {
+          "value": "비비큐(BBQ)",
+          "type": "s",
+          "style_id": "7"
+        },
+        "C6": {
+          "value": "만원",
+          "type": "s",
+          "style_id": "6"
+        },
+        "D6": {
+          "value": 11000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E6": {
+          "value": 4180000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F6": {
+          "value": 5000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "G6": {
+          "value": 50600000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "H6": {
+          "value": 20000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "I6": {
+          "value": 90780000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "J6": {
+          "value": "치킨/비비큐_창업정보.xlsx",
+          "type": "s",
+          "style_id": "53"
+        },
+        "A7": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "54"
+        },
+        "B7": {
+          "value": "처갓집양념치킨",
+          "type": "s",
+          "style_id": "44"
+        },
+        "C7": {
+          "value": "만원",
+          "type": "s",
+          "style_id": "55"
+        },
+        "D7": {
+          "value": 5500000,
+          "type": "n",
+          "style_id": "44"
+        },
+        "E7": {
+          "value": 1100000,
+          "type": "n",
+          "style_id": "44"
+        },
+        "F7": {
+          "value": 1000000,
+          "type": "n",
+          "style_id": "44"
+        },
+        "G7": {
+          "value": 13200000,
+          "type": "n",
+          "style_id": "44"
+        },
+        "H7": {
+          "value": 8250000,
+          "type": "n",
+          "style_id": "44"
+        },
+        "I7": {
+          "value": 29050000,
+          "type": "n",
+          "style_id": "44"
+        },
+        "J7": {
+          "value": "치킨/처갓집양념치킨_창업정보.xlsx",
+          "type": "s",
+          "style_id": "56"
+        }
+      }
+    },
+    {
+      "name": "03_지역집계",
+      "dimension": "A1:H12",
+      "cells": {
+        "A1": {
+          "value": "지역·브랜드별 집계 (서울/경기/전국) · 집계기준 열 필독",
+          "type": "s",
+          "style_id": "1"
+        },
+        "A2": {
+          "value": "브랜드",
+          "type": "s",
+          "style_id": "38"
+        },
+        "B2": {
+          "value": "업종",
+          "type": "s",
+          "style_id": "39"
+        },
+        "C2": {
+          "value": "서울",
+          "type": "s",
+          "style_id": "39"
+        },
+        "D2": {
+          "value": "경기",
+          "type": "s",
+          "style_id": "39"
+        },
+        "E2": {
+          "value": "전국",
+          "type": "s",
+          "style_id": "39"
+        },
+        "F2": {
+          "value": "기준연도",
+          "type": "s",
+          "style_id": "39"
+        },
+        "G2": {
+          "value": "서울 비중",
+          "type": "s",
+          "style_id": "39"
+        },
+        "H2": {
+          "value": "집계기준",
+          "type": "s",
+          "style_id": "40"
+        },
+        "A3": {
+          "value": "교촌치킨",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B3": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C3": {
+          "value": 228,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D3": {
+          "value": 301,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E3": {
+          "value": 1361,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F3": {
+          "value": 2024,
+          "type": "n",
+          "style_id": "6"
+        },
+        "G3": {
+          "value": "=IFERROR(C3/E3,\"\")",
+          "type": "formula",
+          "style_id": "9",
+          "original_cached_value": 0.16752387950036737
+        },
+        "H3": {
+          "value": "서울=공식 매장찾기 구별 합계 / 전국=가맹점 수(정보공개서)",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A4": {
+          "value": "BHC",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B4": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C4": {
+          "value": 258,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D4": {
+          "value": 473,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E4": {
+          "value": 2250,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F4": {
+          "value": 2024,
+          "type": "n",
+          "style_id": "6"
+        },
+        "G4": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "9",
+          "original_cached_value": 0.11466666666666667
+        },
+        "H4": {
+          "value": "서울=공식 매장찾기 구별 합계 / 전국=가맹점 수",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A5": {
+          "value": "굽네치킨",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B5": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C5": {
+          "value": 178,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D5": {
+          "value": 279,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E5": {
+          "value": 1251,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F5": {
+          "value": 2024,
+          "type": "n",
+          "style_id": "6"
+        },
+        "G5": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "9",
+          "original_cached_value": 0.14228617106314947
+        },
+        "H5": {
+          "value": "서울=공식 매장찾기 구별 합계 / 전국=가맹점 수(2026.10)",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A6": {
+          "value": "비비큐(BBQ)",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B6": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C6": {
+          "value": 332,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D6": {
+          "value": 539,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E6": {
+          "value": 2124,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F6": {
+          "value": 2024,
+          "type": "n",
+          "style_id": "6"
+        },
+        "G6": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "9",
+          "original_cached_value": 0.15630885122410546
+        },
+        "H6": {
+          "value": "서울=공식 매장찾기 구별 합계 / 전국=가맹점 수(2026.10)",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A7": {
+          "value": "처갓집양념치킨",
+          "type": "s",
+          "style_id": "57"
+        },
+        "B7": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "13"
+        },
+        "C7": {
+          "value": 139,
+          "type": "n",
+          "style_id": "23"
+        },
+        "D7": {
+          "value": 282,
+          "type": "n",
+          "style_id": "23"
+        },
+        "E7": {
+          "value": 1251,
+          "type": "n",
+          "style_id": "23"
+        },
+        "F7": {
+          "value": 2024,
+          "type": "n",
+          "style_id": "13"
+        },
+        "G7": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "24",
+          "original_cached_value": 0.1111111111111111
+        },
+        "H7": {
+          "value": "서울=공식 매장찾기 구별 합계 / 전국=가맹점 수(2026.10)",
+          "type": "s",
+          "style_id": "58"
+        },
+        "A8": {
+          "value": "교촌치킨",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B8": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C8": {
+          "value": 228,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D8": {
+          "value": 299,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E8": {
+          "value": 1361,
+          "type": "n",
+          "style_id": "27"
+        },
+        "F8": {
+          "value": 2025,
+          "type": "n",
+          "style_id": "26"
+        },
+        "G8": {
+          "value": "=IFERROR(C8/E8,\"\")",
+          "type": "formula",
+          "style_id": "37",
+          "original_cached_value": 0.16752387950036737
+        },
+        "H8": {
+          "value": "서울=공식 매장찾기 구별 합계 / 전국=가맹점 수(정보공개서)",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A9": {
+          "value": "BHC",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B9": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C9": {
+          "value": 258,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D9": {
+          "value": 471,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E9": {
+          "value": 2250,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F9": {
+          "value": 2025,
+          "type": "n",
+          "style_id": "6"
+        },
+        "G9": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "9",
+          "original_cached_value": 0.11466666666666667
+        },
+        "H9": {
+          "value": "서울=공식 매장찾기 구별 합계 / 전국=가맹점 수",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A10": {
+          "value": "굽네치킨",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B10": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C10": {
+          "value": 178,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D10": {
+          "value": 277,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E10": {
+          "value": 1251,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F10": {
+          "value": 2025,
+          "type": "n",
+          "style_id": "6"
+        },
+        "G10": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "9",
+          "original_cached_value": 0.14228617106314947
+        },
+        "H10": {
+          "value": "서울=공식 매장찾기 구별 합계 / 전국=가맹점 수(2026.10)",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A11": {
+          "value": "비비큐(BBQ)",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B11": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C11": {
+          "value": 332,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D11": {
+          "value": 541,
+          "type": "n",
+          "style_id": "59"
+        },
+        "E11": {
+          "value": 2124,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F11": {
+          "value": 2025,
+          "type": "n",
+          "style_id": "6"
+        },
+        "G11": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "9",
+          "original_cached_value": 0.15630885122410546
+        },
+        "H11": {
+          "value": "서울=공식 매장찾기 구별 합계 / 전국=가맹점 수(2026.10)",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A12": {
+          "value": "처갓집양념치킨",
+          "type": "s",
+          "style_id": "60"
+        },
+        "B12": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "55"
+        },
+        "C12": {
+          "value": 139,
+          "type": "n",
+          "style_id": "44"
+        },
+        "D12": {
+          "value": 283,
+          "type": "n",
+          "style_id": "44"
+        },
+        "E12": {
+          "value": 1251,
+          "type": "n",
+          "style_id": "44"
+        },
+        "F12": {
+          "value": 2025,
+          "type": "n",
+          "style_id": "55"
+        },
+        "G12": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "61",
+          "original_cached_value": 0.1111111111111111
+        },
+        "H12": {
+          "value": "서울=공식 매장찾기 구별 합계 / 전국=가맹점 수(2026.10)",
+          "type": "s",
+          "style_id": "62"
+        }
+      }
+    },
+    {
+      "name": "04_업종집계",
+      "dimension": "A1:J4",
+      "cells": {
+        "A1": {
+          "value": "업종별 집계 (COUNTIF / AVERAGEIF / SUMIF 수식)",
+          "type": "s",
+          "style_id": "1"
+        },
+        "A2": {
+          "value": "업종",
+          "type": "s",
+          "style_id": "38"
+        },
+        "B2": {
+          "value": "브랜드 수",
+          "type": "s",
+          "style_id": "39"
+        },
+        "C2": {
+          "value": "평균 창업비용",
+          "type": "s",
+          "style_id": "39"
+        },
+        "D2": {
+          "value": "최대 창업비용",
+          "type": "s",
+          "style_id": "39"
+        },
+        "E2": {
+          "value": "최소 창업비용",
+          "type": "s",
+          "style_id": "39"
+        },
+        "F2": {
+          "value": "평균 연매출",
+          "type": "s",
+          "style_id": "39"
+        },
+        "G2": {
+          "value": "매출 보유 브랜드",
+          "type": "s",
+          "style_id": "39"
+        },
+        "H2": {
+          "value": "평균 영업이익률",
+          "type": "s",
+          "style_id": "39"
+        },
+        "I2": {
+          "value": "서울 매장 합계",
+          "type": "s",
+          "style_id": "39"
+        },
+        "J2": {
+          "value": "전국 매장 합계",
+          "type": "s",
+          "style_id": "40"
+        },
+        "A3": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "63"
+        },
+        "B3": {
+          "value": "=COUNTIF('01_창업비용'!$B$3:$B$7,A3)",
+          "type": "formula",
+          "style_id": "6",
+          "original_cached_value": 5
+        },
+        "C3": {
+          "value": "=AVERAGEIF('01_창업비용'!$B$3:$B$7,A3,'01_창업비용'!$H$3:$H$7)",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 89508000
+        },
+        "D3": {
+          "value": "=SUMPRODUCT(MAX(('01_창업비용'!$B$3:$B$7=A3)*'01_창업비용'!$H$3:$H$7))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 156520000
+        },
+        "E3": {
+          "value": "=SUMPRODUCT(MIN(('01_창업비용'!$B$3:$B$7=A3)*'01_창업비용'!$H$3:$H$7+('01_창업비용'!$B$3:$B$7<>A3)*1000000000000000))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 29050000
+        },
+        "F3": {
+          "value": "=IFERROR(AVERAGEIF('05_매출비교'!$B$3:$B$7,A3,'05_매출비교'!$C$3:$C$7),\"\")",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 554952000
+        },
+        "G3": {
+          "value": "=COUNTIFS('05_매출비교'!$B$3:$B$7,A3,'05_매출비교'!$C$3:$C$7,\">0\")",
+          "type": "formula",
+          "style_id": "6",
+          "original_cached_value": 5
+        },
+        "H3": {
+          "value": "=IFERROR(AVERAGEIF('06_운영이익'!$B$3:$B$7,A3,'06_운영이익'!$K$3:$K$7),\"\")",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 0.23000000000000004
+        },
+        "I3": {
+          "value": "=SUMIF('03_지역집계'!$B$3:$B$7,A3,'03_지역집계'!$C$3:$C$7)",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 1135
+        },
+        "J3": {
+          "value": "=SUMIF('03_지역집계'!$B$3:$B$7,A3,'03_지역집계'!$E$3:$E$7)",
+          "type": "formula",
+          "style_id": "64",
+          "original_cached_value": 8237
+        },
+        "A4": {
+          "value": "합계 / 전체",
+          "type": "s",
+          "style_id": "43"
+        },
+        "B4": {
+          "value": "=SUM(B3:B3)",
+          "type": "formula",
+          "style_id": "55",
+          "original_cached_value": 5
+        },
+        "C4": {
+          "value": "=AVERAGE('01_창업비용'!H3:H7)",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 89508000
+        },
+        "D4": {
+          "value": "=MAX('01_창업비용'!H3:H7)",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 156520000
+        },
+        "E4": {
+          "value": "=MIN('01_창업비용'!H3:H7)",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 29050000
+        },
+        "F4": {
+          "value": "=AVERAGE('05_매출비교'!C3:C7)",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 554952000
+        },
+        "G4": {
+          "value": "=SUM(G3:G3)",
+          "type": "formula",
+          "style_id": "55",
+          "original_cached_value": 5
+        },
+        "H4": {
+          "value": null,
+          "type": "n",
+          "style_id": "44"
+        },
+        "I4": {
+          "value": "=SUM(I3:I3)",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 1135
+        },
+        "J4": {
+          "value": "=SUM(J3:J3)",
+          "type": "formula",
+          "style_id": "46",
+          "original_cached_value": 8237
+        }
+      }
+    },
+    {
+      "name": "05_매출비교",
+      "dimension": "A1:J8",
+      "cells": {
+        "A1": {
+          "value": "매출 비교 (연매출 환산, 단위 원)",
+          "type": "s",
+          "style_id": "1"
+        },
+        "A2": {
+          "value": "브랜드",
+          "type": "s",
+          "style_id": "38"
+        },
+        "B2": {
+          "value": "업종",
+          "type": "s",
+          "style_id": "39"
+        },
+        "C2": {
+          "value": "연매출(전국)",
+          "type": "s",
+          "style_id": "39"
+        },
+        "D2": {
+          "value": "서울",
+          "type": "s",
+          "style_id": "39"
+        },
+        "E2": {
+          "value": "경기",
+          "type": "s",
+          "style_id": "39"
+        },
+        "F2": {
+          "value": "기준연도",
+          "type": "s",
+          "style_id": "39"
+        },
+        "G2": {
+          "value": "업종내 순위",
+          "type": "s",
+          "style_id": "39"
+        },
+        "H2": {
+          "value": "전체 순위",
+          "type": "s",
+          "style_id": "39"
+        },
+        "I2": {
+          "value": "서울-경기 차이",
+          "type": "s",
+          "style_id": "39"
+        },
+        "J2": {
+          "value": "산출근거",
+          "type": "s",
+          "style_id": "40"
+        },
+        "A3": {
+          "value": "교촌치킨",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B3": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C3": {
+          "value": 787680000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D3": {
+          "value": 1075718000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E3": {
+          "value": 919348000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F3": {
+          "value": 2025,
+          "type": "n",
+          "style_id": "6"
+        },
+        "G3": {
+          "value": "=IF(C3=\"\",\"\",COUNTIFS($B$3:$B$7,B3,$C$3:$C$7,\">\"&C3)+1)",
+          "type": "formula",
+          "style_id": "6",
+          "original_cached_value": 1
+        },
+        "H3": {
+          "value": "=IF(C3=\"\",\"\",RANK(C3,$C$3:$C$7,0))",
+          "type": "formula",
+          "style_id": "6",
+          "original_cached_value": 1
+        },
+        "I3": {
+          "value": "=IF(OR(D3=\"\",E3=\"\"),\"\",D3-E3)",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": null
+        },
+        "J3": {
+          "value": "월평균 65,640,000원 × 12 (VAT 미포함)",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A4": {
+          "value": "BHC",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B4": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C4": {
+          "value": 636960000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D4": {
+          "value": 933648000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E4": {
+          "value": 728554000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F4": {
+          "value": 2025,
+          "type": "n",
+          "style_id": "6"
+        },
+        "G4": {
+          "value": "=IF(C4=\"\",\"\",COUNTIFS($B$3:$B$7,B4,$C$3:$C$7,\">\"&C4)+1)",
+          "type": "formula",
+          "style_id": "6",
+          "original_cached_value": 2
+        },
+        "H4": {
+          "value": "=IF(C4=\"\",\"\",RANK(C4,$C$3:$C$7,0))",
+          "type": "formula",
+          "style_id": "6",
+          "original_cached_value": 2
+        },
+        "I4": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": null
+        },
+        "J4": {
+          "value": "월평균 53,080,000원 × 12",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A5": {
+          "value": "굽네치킨",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B5": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C5": {
+          "value": 498600000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D5": {
+          "value": 665000000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E5": {
+          "value": 537216000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F5": {
+          "value": 2024,
+          "type": "n",
+          "style_id": "6"
+        },
+        "G5": {
+          "value": "=IF(C5=\"\",\"\",COUNTIFS($B$3:$B$7,B5,$C$3:$C$7,\">\"&C5)+1)",
+          "type": "formula",
+          "style_id": "6",
+          "original_cached_value": 4
+        },
+        "H5": {
+          "value": "=IF(C5=\"\",\"\",RANK(C5,$C$3:$C$7,0))",
+          "type": "formula",
+          "style_id": "6",
+          "original_cached_value": 4
+        },
+        "I5": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": null
+        },
+        "J5": {
+          "value": "월평균 41,550,000원 × 12 (2025년 값 미수집)",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A6": {
+          "value": "비비큐(BBQ)",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B6": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C6": {
+          "value": 508680000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D6": {
+          "value": 682304000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E6": {
+          "value": 539914000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F6": {
+          "value": 2024,
+          "type": "n",
+          "style_id": "6"
+        },
+        "G6": {
+          "value": "=IF(C6=\"\",\"\",COUNTIFS($B$3:$B$7,B6,$C$3:$C$7,\">\"&C6)+1)",
+          "type": "formula",
+          "style_id": "6",
+          "original_cached_value": 3
+        },
+        "H6": {
+          "value": "=IF(C6=\"\",\"\",RANK(C6,$C$3:$C$7,0))",
+          "type": "formula",
+          "style_id": "6",
+          "original_cached_value": 3
+        },
+        "I6": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": null
+        },
+        "J6": {
+          "value": "월평균 42,390,000원 × 12",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A7": {
+          "value": "처갓집양념치킨",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B7": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C7": {
+          "value": 342840000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D7": {
+          "value": 524472000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E7": {
+          "value": 404758000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "F7": {
+          "value": 2025,
+          "type": "n",
+          "style_id": "6"
+        },
+        "G7": {
+          "value": "=IF(C7=\"\",\"\",COUNTIFS($B$3:$B$7,B7,$C$3:$C$7,\">\"&C7)+1)",
+          "type": "formula",
+          "style_id": "6",
+          "original_cached_value": 5
+        },
+        "H7": {
+          "value": "=IF(C7=\"\",\"\",RANK(C7,$C$3:$C$7,0))",
+          "type": "formula",
+          "style_id": "6",
+          "original_cached_value": 5
+        },
+        "I7": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": null
+        },
+        "J7": {
+          "value": "월평균 28,570,000원 × 12",
+          "type": "s",
+          "style_id": "42"
+        },
+        "A8": {
+          "value": "전체 평균",
+          "type": "s",
+          "style_id": "43"
+        },
+        "B8": {
+          "value": null,
+          "type": "n",
+          "style_id": "44"
+        },
+        "C8": {
+          "value": "=AVERAGE(C3:C7)",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 554952000
+        },
+        "D8": {
+          "value": null,
+          "type": "n",
+          "style_id": "44"
+        },
+        "E8": {
+          "value": null,
+          "type": "n",
+          "style_id": "44"
+        },
+        "F8": {
+          "value": null,
+          "type": "n",
+          "style_id": "44"
+        },
+        "G8": {
+          "value": null,
+          "type": "n",
+          "style_id": "44"
+        },
+        "H8": {
+          "value": null,
+          "type": "n",
+          "style_id": "44"
+        },
+        "I8": {
+          "value": null,
+          "type": "n",
+          "style_id": "44"
+        },
+        "J8": {
+          "value": null,
+          "type": "n",
+          "style_id": "46"
+        }
+      }
+    },
+    {
+      "name": "06_운영이익",
+      "dimension": "A1:L8",
+      "cells": {
+        "A1": {
+          "value": "브랜드별 운영이익 (수식: 매출 × 00_가정 비율 → 운영이익 → 이익률 → 회수기간)",
+          "type": "s",
+          "style_id": "1"
+        },
+        "A2": {
+          "value": "브랜드",
+          "type": "s",
+          "style_id": "38"
+        },
+        "B2": {
+          "value": "업종",
+          "type": "s",
+          "style_id": "39"
+        },
+        "C2": {
+          "value": "연매출",
+          "type": "s",
+          "style_id": "39"
+        },
+        "D2": {
+          "value": "창업비용",
+          "type": "s",
+          "style_id": "39"
+        },
+        "E2": {
+          "value": "재료비",
+          "type": "s",
+          "style_id": "39"
+        },
+        "F2": {
+          "value": "인건비",
+          "type": "s",
+          "style_id": "39"
+        },
+        "G2": {
+          "value": "임차료",
+          "type": "s",
+          "style_id": "39"
+        },
+        "H2": {
+          "value": "기타운영비",
+          "type": "s",
+          "style_id": "39"
+        },
+        "I2": {
+          "value": "운영비 합계",
+          "type": "s",
+          "style_id": "39"
+        },
+        "J2": {
+          "value": "운영이익",
+          "type": "s",
+          "style_id": "39"
+        },
+        "K2": {
+          "value": "영업이익률",
+          "type": "s",
+          "style_id": "39"
+        },
+        "L2": {
+          "value": "창업비용 회수기간(년)",
+          "type": "s",
+          "style_id": "40"
+        },
+        "A3": {
+          "value": "교촌치킨",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B3": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C3": {
+          "value": "='05_매출비교'!C3",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 787680000
+        },
+        "D3": {
+          "value": "='01_창업비용'!H3",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 156520000
+        },
+        "E3": {
+          "value": "=IF($C3=\"\",\"\",$C3*VLOOKUP($B3,'00_가정'!$A$5:$F$5,2,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 299318400
+        },
+        "F3": {
+          "value": "=IF($C3=\"\",\"\",$C3*VLOOKUP($B3,'00_가정'!$A$5:$F$5,3,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 141782400
+        },
+        "G3": {
+          "value": "=IF($C3=\"\",\"\",$C3*VLOOKUP($B3,'00_가정'!$A$5:$F$5,4,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 70891200
+        },
+        "H3": {
+          "value": "=IF($C3=\"\",\"\",$C3*VLOOKUP($B3,'00_가정'!$A$5:$F$5,5,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 94521600
+        },
+        "I3": {
+          "value": "=IF($C3=\"\",\"\",SUM(E3:H3))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 606513600
+        },
+        "J3": {
+          "value": "=IF($C3=\"\",\"\",$C3-$I3)",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 181166400
+        },
+        "K3": {
+          "value": "=IF(OR($C3=\"\",$C3=0),\"\",$J3/$C3)",
+          "type": "formula",
+          "style_id": "11",
+          "original_cached_value": 0.23
+        },
+        "L3": {
+          "value": "=IF(OR($J3=\"\",$J3<=0),\"\",$D3/$J3)",
+          "type": "formula",
+          "style_id": "65",
+          "original_cached_value": 0.8639571134603325
+        },
+        "A4": {
+          "value": "BHC",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B4": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C4": {
+          "value": "='05_매출비교'!C4",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 636960000
+        },
+        "D4": {
+          "value": "='01_창업비용'!H4",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 87920000
+        },
+        "E4": {
+          "value": "=IF($C4=\"\",\"\",$C4*VLOOKUP($B4,'00_가정'!$A$5:$F$5,2,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 242044800
+        },
+        "F4": {
+          "value": "=IF($C4=\"\",\"\",$C4*VLOOKUP($B4,'00_가정'!$A$5:$F$5,3,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 114652800
+        },
+        "G4": {
+          "value": "=IF($C4=\"\",\"\",$C4*VLOOKUP($B4,'00_가정'!$A$5:$F$5,4,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 57326400
+        },
+        "H4": {
+          "value": "=IF($C4=\"\",\"\",$C4*VLOOKUP($B4,'00_가정'!$A$5:$F$5,5,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 76435200
+        },
+        "I4": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 490459200
+        },
+        "J4": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 146500800
+        },
+        "K4": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "11",
+          "original_cached_value": 0.23
+        },
+        "L4": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "65",
+          "original_cached_value": 0.60013324159322
+        },
+        "A5": {
+          "value": "굽네치킨",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B5": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C5": {
+          "value": "='05_매출비교'!C5",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 498600000
+        },
+        "D5": {
+          "value": "='01_창업비용'!H5",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 83270000
+        },
+        "E5": {
+          "value": "=IF($C5=\"\",\"\",$C5*VLOOKUP($B5,'00_가정'!$A$5:$F$5,2,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 189468000
+        },
+        "F5": {
+          "value": "=IF($C5=\"\",\"\",$C5*VLOOKUP($B5,'00_가정'!$A$5:$F$5,3,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 89748000
+        },
+        "G5": {
+          "value": "=IF($C5=\"\",\"\",$C5*VLOOKUP($B5,'00_가정'!$A$5:$F$5,4,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 44874000
+        },
+        "H5": {
+          "value": "=IF($C5=\"\",\"\",$C5*VLOOKUP($B5,'00_가정'!$A$5:$F$5,5,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 59832000
+        },
+        "I5": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 383922000
+        },
+        "J5": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 114678000
+        },
+        "K5": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "11",
+          "original_cached_value": 0.23
+        },
+        "L5": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "65",
+          "original_cached_value": 0.7261200927815274
+        },
+        "A6": {
+          "value": "비비큐(BBQ)",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B6": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C6": {
+          "value": "='05_매출비교'!C6",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 508680000
+        },
+        "D6": {
+          "value": "='01_창업비용'!H6",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 90780000
+        },
+        "E6": {
+          "value": "=IF($C6=\"\",\"\",$C6*VLOOKUP($B6,'00_가정'!$A$5:$F$5,2,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 193298400
+        },
+        "F6": {
+          "value": "=IF($C6=\"\",\"\",$C6*VLOOKUP($B6,'00_가정'!$A$5:$F$5,3,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 91562400
+        },
+        "G6": {
+          "value": "=IF($C6=\"\",\"\",$C6*VLOOKUP($B6,'00_가정'!$A$5:$F$5,4,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 45781200
+        },
+        "H6": {
+          "value": "=IF($C6=\"\",\"\",$C6*VLOOKUP($B6,'00_가정'!$A$5:$F$5,5,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 61041600
+        },
+        "I6": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 391683600
+        },
+        "J6": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 116996400
+        },
+        "K6": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "11",
+          "original_cached_value": 0.23
+        },
+        "L6": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "65",
+          "original_cached_value": 0.7759213103992944
+        },
+        "A7": {
+          "value": "처갓집양념치킨",
+          "type": "s",
+          "style_id": "41"
+        },
+        "B7": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "6"
+        },
+        "C7": {
+          "value": "='05_매출비교'!C7",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 342840000
+        },
+        "D7": {
+          "value": "='01_창업비용'!H7",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 29050000
+        },
+        "E7": {
+          "value": "=IF($C7=\"\",\"\",$C7*VLOOKUP($B7,'00_가정'!$A$5:$F$5,2,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 130279200
+        },
+        "F7": {
+          "value": "=IF($C7=\"\",\"\",$C7*VLOOKUP($B7,'00_가정'!$A$5:$F$5,3,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 61711200
+        },
+        "G7": {
+          "value": "=IF($C7=\"\",\"\",$C7*VLOOKUP($B7,'00_가정'!$A$5:$F$5,4,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 30855600
+        },
+        "H7": {
+          "value": "=IF($C7=\"\",\"\",$C7*VLOOKUP($B7,'00_가정'!$A$5:$F$5,5,FALSE))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 41140800
+        },
+        "I7": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 263986800
+        },
+        "J7": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 78853200
+        },
+        "K7": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "11",
+          "original_cached_value": 0.23
+        },
+        "L7": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "65",
+          "original_cached_value": 0.36840610146449354
+        },
+        "A8": {
+          "value": "합계/평균",
+          "type": "s",
+          "style_id": "43"
+        },
+        "B8": {
+          "value": null,
+          "type": "n",
+          "style_id": "44"
+        },
+        "C8": {
+          "value": "=SUM(C3:C7)",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 2774760000
+        },
+        "D8": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 447540000
+        },
+        "E8": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 1054408800
+        },
+        "F8": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 499456800
+        },
+        "G8": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 249728400
+        },
+        "H8": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 332971200
+        },
+        "I8": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 2136565200
+        },
+        "J8": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 638194800
+        },
+        "K8": {
+          "value": "=IFERROR(J8/C8,\"\")",
+          "type": "formula",
+          "style_id": "61",
+          "original_cached_value": 0.23
+        },
+        "L8": {
+          "value": null,
+          "type": "n",
+          "style_id": "46"
+        }
+      }
+    },
+    {
+      "name": "07_예산",
+      "dimension": "A1:K16",
+      "cells": {
+        "A1": {
+          "value": "① 업종별 평균 매출 (AVERAGEIF 자동계산)",
+          "type": "s",
+          "style_id": "1"
+        },
+        "A2": {
+          "value": "업종",
+          "type": "s",
+          "style_id": "2"
+        },
+        "B2": {
+          "value": "브랜드 수",
+          "type": "s",
+          "style_id": "2"
+        },
+        "C2": {
+          "value": "업종 평균매출",
+          "type": "s",
+          "style_id": "2"
+        },
+        "D2": {
+          "value": "업종 평균 창업비용",
+          "type": "s",
+          "style_id": "2"
+        },
+        "E2": {
+          "value": "매출 보유 브랜드",
+          "type": "s",
+          "style_id": "2"
+        },
+        "A3": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "28"
+        },
+        "B3": {
+          "value": "=COUNTIF('05_매출비교'!$B$3:$B$7,A3)",
+          "type": "formula",
+          "style_id": "13",
+          "original_cached_value": 5
+        },
+        "C3": {
+          "value": "=IFERROR(AVERAGEIF('05_매출비교'!$B$3:$B$7,A3,'05_매출비교'!$C$3:$C$7),\"\")",
+          "type": "formula",
+          "style_id": "23",
+          "original_cached_value": 554952000
+        },
+        "D3": {
+          "value": "=AVERAGEIF('01_창업비용'!$B$3:$B$7,A3,'01_창업비용'!$H$3:$H$7)",
+          "type": "formula",
+          "style_id": "23",
+          "original_cached_value": 89508000
+        },
+        "E3": {
+          "value": "=COUNTIFS('05_매출비교'!$B$3:$B$7,A3,'05_매출비교'!$C$3:$C$7,\">0\")",
+          "type": "formula",
+          "style_id": "13",
+          "original_cached_value": 5
+        },
+        "A4": {
+          "value": null,
+          "type": "n",
+          "style_id": "25"
+        },
+        "B4": {
+          "value": null,
+          "type": "n",
+          "style_id": "26"
+        },
+        "C4": {
+          "value": null,
+          "type": "n",
+          "style_id": "27"
+        },
+        "D4": {
+          "value": null,
+          "type": "n",
+          "style_id": "27"
+        },
+        "E4": {
+          "value": null,
+          "type": "n",
+          "style_id": "26"
+        },
+        "A5": {
+          "value": null,
+          "type": "n",
+          "style_id": "10"
+        },
+        "B5": {
+          "value": null,
+          "type": "n",
+          "style_id": "6"
+        },
+        "C5": {
+          "value": null,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D5": {
+          "value": null,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E5": {
+          "value": null,
+          "type": "n",
+          "style_id": "6"
+        },
+        "A6": {
+          "value": null,
+          "type": "n",
+          "style_id": "10"
+        },
+        "B6": {
+          "value": null,
+          "type": "n",
+          "style_id": "6"
+        },
+        "C6": {
+          "value": null,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D6": {
+          "value": null,
+          "type": "n",
+          "style_id": "7"
+        },
+        "E6": {
+          "value": null,
+          "type": "n",
+          "style_id": "6"
+        },
+        "A8": {
+          "value": "② 예산 시뮬레이션 — 노란 칸을 실제 값으로 수정하면 운영이익이 자동 재계산됩니다",
+          "type": "s",
+          "style_id": "1"
+        },
+        "A9": {
+          "value": "※ 노란 칸 = 입력값. 기본값은 ①의 업종 평균매출 × 00_가정 비율로 채워져 있습니다.",
+          "type": "s",
+          "style_id": "5"
+        },
+        "A10": {
+          "value": "업종",
+          "type": "s",
+          "style_id": "38"
+        },
+        "B10": {
+          "value": "적용 연매출(입력)",
+          "type": "s",
+          "style_id": "39"
+        },
+        "C10": {
+          "value": "재료비(입력)",
+          "type": "s",
+          "style_id": "39"
+        },
+        "D10": {
+          "value": "인건비(입력)",
+          "type": "s",
+          "style_id": "39"
+        },
+        "E10": {
+          "value": "임차료(입력)",
+          "type": "s",
+          "style_id": "39"
+        },
+        "F10": {
+          "value": "기타운영비(입력)",
+          "type": "s",
+          "style_id": "39"
+        },
+        "G10": {
+          "value": "창업비용(입력)",
+          "type": "s",
+          "style_id": "39"
+        },
+        "H10": {
+          "value": "운영비 합계",
+          "type": "s",
+          "style_id": "39"
+        },
+        "I10": {
+          "value": "예상 운영이익",
+          "type": "s",
+          "style_id": "39"
+        },
+        "J10": {
+          "value": "영업이익률",
+          "type": "s",
+          "style_id": "39"
+        },
+        "K10": {
+          "value": "회수기간(년)",
+          "type": "s",
+          "style_id": "40"
+        },
+        "A11": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "63"
+        },
+        "B11": {
+          "value": "=C3",
+          "type": "formula",
+          "style_id": "8",
+          "original_cached_value": 554952000
+        },
+        "C11": {
+          "value": "=IF($B11=\"\",\"\",$B11*VLOOKUP($A11,'00_가정'!$A$5:$F$5,2,FALSE))",
+          "type": "formula",
+          "style_id": "8",
+          "original_cached_value": 210881760
+        },
+        "D11": {
+          "value": "=IF($B11=\"\",\"\",$B11*VLOOKUP($A11,'00_가정'!$A$5:$F$5,3,FALSE))",
+          "type": "formula",
+          "style_id": "8",
+          "original_cached_value": 99891360
+        },
+        "E11": {
+          "value": "=IF($B11=\"\",\"\",$B11*VLOOKUP($A11,'00_가정'!$A$5:$F$5,4,FALSE))",
+          "type": "formula",
+          "style_id": "8",
+          "original_cached_value": 49945680
+        },
+        "F11": {
+          "value": "=IF($B11=\"\",\"\",$B11*VLOOKUP($A11,'00_가정'!$A$5:$F$5,5,FALSE))",
+          "type": "formula",
+          "style_id": "8",
+          "original_cached_value": 66594240
+        },
+        "G11": {
+          "value": "=D3",
+          "type": "formula",
+          "style_id": "8",
+          "original_cached_value": 89508000
+        },
+        "H11": {
+          "value": "=IF($B11=\"\",\"\",SUM(C11:F11))",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 427313040
+        },
+        "I11": {
+          "value": "=IF($B11=\"\",\"\",$B11-$H11)",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 127638960
+        },
+        "J11": {
+          "value": "=IFERROR($I11/$B11,\"\")",
+          "type": "formula",
+          "style_id": "11",
+          "original_cached_value": 0.23
+        },
+        "K11": {
+          "value": "=IFERROR($G11/$I11,\"\")",
+          "type": "formula",
+          "style_id": "65",
+          "original_cached_value": 0.701259239341969
+        },
+        "A12": {
+          "value": "합계",
+          "type": "s",
+          "style_id": "43"
+        },
+        "B12": {
+          "value": "=SUM(B11:B11)",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 554952000
+        },
+        "C12": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 210881760
+        },
+        "D12": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 99891360
+        },
+        "E12": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 49945680
+        },
+        "F12": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 66594240
+        },
+        "G12": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 89508000
+        },
+        "H12": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 427313040
+        },
+        "I12": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 127638960
+        },
+        "J12": {
+          "value": null,
+          "type": "n",
+          "style_id": "44"
+        },
+        "K12": {
+          "value": null,
+          "type": "n",
+          "style_id": "46"
+        },
+        "A14": {
+          "value": "③ 손익분기 — 예상 운영이익이 0이 되는 매출 (고정비를 운영비 비율로 근사)",
+          "type": "s",
+          "style_id": "1"
+        },
+        "A15": {
+          "value": "업종",
+          "type": "s",
+          "style_id": "38"
+        },
+        "B15": {
+          "value": "운영이익(②기준)",
+          "type": "s",
+          "style_id": "39"
+        },
+        "C15": {
+          "value": "영업이익률",
+          "type": "s",
+          "style_id": "39"
+        },
+        "D15": {
+          "value": "손익분기 매출(참고)",
+          "type": "s",
+          "style_id": "40"
+        },
+        "A16": {
+          "value": "치킨",
+          "type": "s",
+          "style_id": "66"
+        },
+        "B16": {
+          "value": "=I11",
+          "type": "formula",
+          "style_id": "44",
+          "original_cached_value": 127638960
+        },
+        "C16": {
+          "value": "=J11",
+          "type": "formula",
+          "style_id": "67",
+          "original_cached_value": 0.23
+        },
+        "D16": {
+          "value": "=IFERROR(IF((1-(SUM(C11:D11)+F11)/$B11)<=0,\"계산불가\",E11/(1-(SUM(C11:D11)+F11)/$B11)),\"-\")",
+          "type": "formula",
+          "style_id": "68",
+          "original_cached_value": 156080250.00000003
+        }
+      }
+    },
+    {
+      "name": "08_검증",
+      "dimension": "A1:E10",
+      "cells": {
+        "A1": {
+          "value": "분석 결과 검증 — 엑셀 수식 결과 vs 파이썬 재계산 (판정 OK/NG)",
+          "type": "s",
+          "style_id": "1"
+        },
+        "A2": {
+          "value": "검증 항목",
+          "type": "s",
+          "style_id": "20"
+        },
+        "B2": {
+          "value": "엑셀 수식 결과",
+          "type": "s",
+          "style_id": "20"
+        },
+        "C2": {
+          "value": "파이썬 재계산",
+          "type": "s",
+          "style_id": "20"
+        },
+        "D2": {
+          "value": "차이(절대)",
+          "type": "s",
+          "style_id": "20"
+        },
+        "E2": {
+          "value": "비고",
+          "type": "s",
+          "style_id": "20"
+        },
+        "A3": {
+          "value": "브랜드 수",
+          "type": "s",
+          "style_id": "29"
+        },
+        "B3": {
+          "value": "=COUNTA('01_창업비용'!A3:A7)",
+          "type": "formula",
+          "style_id": "21",
+          "original_cached_value": 5
+        },
+        "C3": {
+          "value": 19,
+          "type": "n",
+          "style_id": "21"
+        },
+        "D3": {
+          "value": "=ABS(B3-C3)",
+          "type": "formula",
+          "style_id": "21",
+          "original_cached_value": 14
+        },
+        "E3": {
+          "value": "19개 브랜드",
+          "type": "s",
+          "style_id": "30"
+        },
+        "A4": {
+          "value": "창업비용 총합(원)",
+          "type": "s",
+          "style_id": "31"
+        },
+        "B4": {
+          "value": "=SUM('01_창업비용'!H3:H7)",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 447540000
+        },
+        "C4": {
+          "value": 2175302000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D4": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 1727762000
+        },
+        "E4": {
+          "value": "SUM(합계(계산)) vs 파이썬 합",
+          "type": "s",
+          "style_id": "32"
+        },
+        "A5": {
+          "value": "[치킨] 업종 평균매출",
+          "type": "s",
+          "style_id": "31"
+        },
+        "B5": {
+          "value": "='07_예산'!C3",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 554952000
+        },
+        "C5": {
+          "value": 554952000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D5": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 0
+        },
+        "E5": {
+          "value": "AVERAGEIF · 매출보유 5개 브랜드",
+          "type": "s",
+          "style_id": "32"
+        },
+        "A6": {
+          "value": "교촌치킨 운영이익",
+          "type": "s",
+          "style_id": "31"
+        },
+        "B6": {
+          "value": "=IF('06_운영이익'!J3=\"\",0,'06_운영이익'!J3)",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 181166400
+        },
+        "C6": {
+          "value": 181166400,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D6": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 0
+        },
+        "E6": {
+          "value": "매출 × (1-비율합)",
+          "type": "s",
+          "style_id": "32"
+        },
+        "A7": {
+          "value": "BHC 운영이익",
+          "type": "s",
+          "style_id": "31"
+        },
+        "B7": {
+          "value": "=IF('06_운영이익'!J4=\"\",0,'06_운영이익'!J4)",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 146500800
+        },
+        "C7": {
+          "value": 146500800,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D7": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 0
+        },
+        "E7": {
+          "value": "매출 × (1-비율합)",
+          "type": "s",
+          "style_id": "32"
+        },
+        "A8": {
+          "value": "굽네치킨 운영이익",
+          "type": "s",
+          "style_id": "31"
+        },
+        "B8": {
+          "value": "=IF('06_운영이익'!J5=\"\",0,'06_운영이익'!J5)",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 114678000
+        },
+        "C8": {
+          "value": 114678000,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D8": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 0
+        },
+        "E8": {
+          "value": "매출 × (1-비율합)",
+          "type": "s",
+          "style_id": "32"
+        },
+        "A9": {
+          "value": "비비큐(BBQ) 운영이익",
+          "type": "s",
+          "style_id": "31"
+        },
+        "B9": {
+          "value": "=IF('06_운영이익'!J6=\"\",0,'06_운영이익'!J6)",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 116996400
+        },
+        "C9": {
+          "value": 116996400,
+          "type": "n",
+          "style_id": "7"
+        },
+        "D9": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "7",
+          "original_cached_value": 0
+        },
+        "E9": {
+          "value": "매출 × (1-비율합)",
+          "type": "s",
+          "style_id": "32"
+        },
+        "A10": {
+          "value": "처갓집양념치킨 운영이익",
+          "type": "s",
+          "style_id": "33"
+        },
+        "B10": {
+          "value": "=IF('06_운영이익'!J7=\"\",0,'06_운영이익'!J7)",
+          "type": "formula",
+          "style_id": "23",
+          "original_cached_value": 78853200
+        },
+        "C10": {
+          "value": 78853200,
+          "type": "n",
+          "style_id": "23"
+        },
+        "D10": {
+          "value": "=",
+          "type": "formula",
+          "style_id": "23",
+          "original_cached_value": 0
+        },
+        "E10": {
+          "value": "매출 × (1-비율합)",
+          "type": "s",
+          "style_id": "34"
+        }
+      }
+    },
+    {
+      "name": "09_API_분석함수",
+      "dimension": "A1:A115",
+      "cells": {
+        "A1": {
+          "value": "API용 분석 함수 (파이썬) — franchise_analytics.py 로도 저장",
+          "type": "s",
+          "style_id": "1"
+        },
+        "A3": {
+          "value": "# -*- coding: utf-8 -*-",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A4": {
+          "value": "\"\"\"",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A5": {
+          "value": "franchise_analytics.py — 자료.zip(4개 업종 19개 브랜드) 분석 API 함수 모음",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A6": {
+          "value": "단위: 원(창업비용·매출), 비율: 0~1",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A7": {
+          "value": "\"\"\"",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A8": {
+          "value": "from statistics import mean",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A9": {
+          "value": null,
+          "type": "n",
+          "style_id": "12"
+        },
+        "A10": {
+          "value": "BRANDS = [",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A11": {
+          "value": "    {\"brand\":'교촌치킨',\"industry\":'치킨',\"fee\":6760000,\"edu\":3900000,\"deposit\":10000000,\"interior\":69000000,\"equip\":None,\"etc\":66860000,\"revenue\":787680000,\"seoul\":None,\"gyeonggi\":None,\"stores_seoul\":228,\"stores_total\":1361},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A12": {
+          "value": "    {\"brand\":'BHC',\"industry\":'치킨',\"fee\":10000000,\"edu\":2200000,\"deposit\":10000000,\"interior\":42000000,\"equip\":23720000,\"etc\":0,\"revenue\":636960000,\"seoul\":None,\"gyeonggi\":None,\"stores_seoul\":258,\"stores_total\":2250},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A13": {
+          "value": "    {\"brand\":'굽네치킨',\"industry\":'치킨',\"fee\":5500000,\"edu\":2200000,\"deposit\":None,\"interior\":30250000,\"equip\":None,\"etc\":45320000,\"revenue\":498600000,\"seoul\":None,\"gyeonggi\":None,\"stores_seoul\":178,\"stores_total\":1251},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A14": {
+          "value": "    {\"brand\":'비비큐(BBQ)',\"industry\":'치킨',\"fee\":11000000,\"edu\":4180000,\"deposit\":5000000,\"interior\":50600000,\"equip\":None,\"etc\":20000000,\"revenue\":508680000,\"seoul\":None,\"gyeonggi\":None,\"stores_seoul\":332,\"stores_total\":2124},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A15": {
+          "value": "    {\"brand\":'처갓집양념치킨',\"industry\":'치킨',\"fee\":5500000,\"edu\":1100000,\"deposit\":1000000,\"interior\":13200000,\"equip\":None,\"etc\":8250000,\"revenue\":342840000,\"seoul\":None,\"gyeonggi\":None,\"stores_seoul\":139,\"stores_total\":1251},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A16": {
+          "value": "    {\"brand\":'메가커피',\"industry\":'커피',\"fee\":11000000,\"edu\":5500000,\"deposit\":2000000,\"interior\":16500000,\"equip\":None,\"etc\":61638000,\"revenue\":412874000,\"seoul\":461869000,\"gyeonggi\":415601000,\"stores_seoul\":931,\"stores_total\":3969},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A17": {
+          "value": "    {\"brand\":'컴포즈커피',\"industry\":'커피',\"fee\":5500000,\"edu\":2200000,\"deposit\":5000000,\"interior\":29150000,\"equip\":None,\"etc\":70782000,\"revenue\":271883000,\"seoul\":288065000,\"gyeonggi\":266421000,\"stores_seoul\":456,\"stores_total\":2649},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A18": {
+          "value": "    {\"brand\":'이디야커피',\"industry\":'커피',\"fee\":9900000,\"edu\":3300000,\"deposit\":5000000,\"interior\":41800000,\"equip\":None,\"etc\":114120000,\"revenue\":194818000,\"seoul\":211174000,\"gyeonggi\":191400000,\"stores_seoul\":510,\"stores_total\":2562},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A19": {
+          "value": "    {\"brand\":'빽다방',\"industry\":'커피',\"fee\":0,\"edu\":3300000,\"deposit\":1500000,\"interior\":16720000,\"equip\":None,\"etc\":68272000,\"revenue\":324486000,\"seoul\":352053000,\"gyeonggi\":307523000,\"stores_seoul\":359,\"stores_total\":1712},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A20": {
+          "value": "    {\"brand\":'투썸플레이스',\"industry\":'커피',\"fee\":25000000,\"edu\":1500000,\"deposit\":10000000,\"interior\":86500000,\"equip\":None,\"etc\":273300000,\"revenue\":571726000,\"seoul\":685620000,\"gyeonggi\":599388000,\"stores_seoul\":279,\"stores_total\":1510},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A21": {
+          "value": "    {\"brand\":'CU',\"industry\":'편의점',\"fee\":8700000,\"edu\":None,\"deposit\":None,\"interior\":1520000,\"equip\":None,\"etc\":14000000,\"revenue\":None,\"seoul\":None,\"gyeonggi\":None,\"stores_seoul\":2972,\"stores_total\":18468},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A22": {
+          "value": "    {\"brand\":'GS25',\"industry\":'편의점',\"fee\":22700000,\"edu\":None,\"deposit\":None,\"interior\":None,\"equip\":None,\"etc\":None,\"revenue\":None,\"seoul\":None,\"gyeonggi\":None,\"stores_seoul\":3242,\"stores_total\":17888},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A23": {
+          "value": "    {\"brand\":'세븐일레븐',\"industry\":'편의점',\"fee\":22700000,\"edu\":None,\"deposit\":50000000,\"interior\":1310000,\"equip\":None,\"etc\":None,\"revenue\":511200000,\"seoul\":None,\"gyeonggi\":None,\"stores_seoul\":1813,\"stores_total\":7568},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A24": {
+          "value": "    {\"brand\":'이마트24',\"industry\":'편의점',\"fee\":24200000,\"edu\":None,\"deposit\":50000000,\"interior\":None,\"equip\":None,\"etc\":None,\"revenue\":451440000,\"seoul\":None,\"gyeonggi\":None,\"stores_seoul\":784,\"stores_total\":5595},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A25": {
+          "value": "    {\"brand\":'에이바헤어',\"industry\":'이미용',\"fee\":11000000,\"edu\":0,\"deposit\":0,\"interior\":None,\"equip\":None,\"etc\":72600000,\"revenue\":347757000,\"seoul\":399943000,\"gyeonggi\":325626000,\"stores_seoul\":139,\"stores_total\":342},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A26": {
+          "value": "    {\"brand\":'블루클럽',\"industry\":'이미용',\"fee\":14630000,\"edu\":1100000,\"deposit\":5000000,\"interior\":None,\"equip\":None,\"etc\":38650000,\"revenue\":82526000,\"seoul\":87541000,\"gyeonggi\":0,\"stores_seoul\":116,\"stores_total\":334},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A27": {
+          "value": "    {\"brand\":'제오헤어',\"industry\":'이미용',\"fee\":16500000,\"edu\":0,\"deposit\":10000000,\"interior\":None,\"equip\":None,\"etc\":139970000,\"revenue\":439027000,\"seoul\":440374000,\"gyeonggi\":407287000,\"stores_seoul\":36,\"stores_total\":46},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A28": {
+          "value": "    {\"brand\":'로이드밤',\"industry\":'이미용',\"fee\":6600000,\"edu\":3300000,\"deposit\":0,\"interior\":None,\"equip\":None,\"etc\":119900000,\"revenue\":407715000,\"seoul\":438994000,\"gyeonggi\":412480000,\"stores_seoul\":29,\"stores_total\":169},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A29": {
+          "value": "    {\"brand\":'토리헤어',\"industry\":'이미용',\"fee\":7700000,\"edu\":1100000,\"deposit\":5000000,\"interior\":None,\"equip\":None,\"etc\":210100000,\"revenue\":300648000,\"seoul\":283614000,\"gyeonggi\":313678000,\"stores_seoul\":12,\"stores_total\":153},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A30": {
+          "value": "]",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A31": {
+          "value": null,
+          "type": "n",
+          "style_id": "12"
+        },
+        "A32": {
+          "value": "RATIO = {\"치킨\":(0.38,0.18,0.09,0.12),\"커피\":(0.30,0.20,0.12,0.10),",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A33": {
+          "value": "         \"편의점\":(0.65,0.08,0.05,0.05),\"이미용\":(0.08,0.35,0.12,0.10)}",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A34": {
+          "value": null,
+          "type": "n",
+          "style_id": "12"
+        },
+        "A35": {
+          "value": null,
+          "type": "n",
+          "style_id": "12"
+        },
+        "A36": {
+          "value": "def startup_cost(b):",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A37": {
+          "value": "    \"\"\"창업비용 6항목 합계 (None은 0으로 계산하되 missing에 기록)\"\"\"",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A38": {
+          "value": "    keys = (\"fee\",\"edu\",\"deposit\",\"interior\",\"equip\",\"etc\")",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A39": {
+          "value": "    return sum(b.get(k) or 0 for k in keys)",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A40": {
+          "value": null,
+          "type": "n",
+          "style_id": "12"
+        },
+        "A41": {
+          "value": "def missing_items(b):",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A42": {
+          "value": "    \"\"\"원본에서 확인되지 않은 항목 목록\"\"\"",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A43": {
+          "value": "    name = {\"fee\":\"가맹비\",\"edu\":\"교육비\",\"deposit\":\"보증금\",",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A44": {
+          "value": "            \"interior\":\"인테리어\",\"equip\":\"설비\",\"etc\":\"기타\"}",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A45": {
+          "value": "    return [name[k] for k in (\"fee\",\"edu\",\"deposit\",\"interior\",\"equip\",\"etc\")",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A46": {
+          "value": "            if b.get(k) is None]",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A47": {
+          "value": null,
+          "type": "n",
+          "style_id": "12"
+        },
+        "A48": {
+          "value": "def operating_profit(b, ratio=None):",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A49": {
+          "value": "    \"\"\"운영이익 = 매출 - (재료비+인건비+임차료+기타운영비), 매출 없으면 None\"\"\"",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A50": {
+          "value": "    if not b.get(\"revenue\"):",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A51": {
+          "value": "        return None",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A52": {
+          "value": "    r = ratio or RATIO[b[\"industry\"]]",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A53": {
+          "value": "    return b[\"revenue\"] * (1 - sum(r))",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A54": {
+          "value": null,
+          "type": "n",
+          "style_id": "12"
+        },
+        "A55": {
+          "value": "def margin(b, ratio=None):",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A56": {
+          "value": "    p = operating_profit(b, ratio)",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A57": {
+          "value": "    return None if p is None else p / b[\"revenue\"]",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A58": {
+          "value": null,
+          "type": "n",
+          "style_id": "12"
+        },
+        "A59": {
+          "value": "def payback_years(b, ratio=None):",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A60": {
+          "value": "    \"\"\"창업비용 회수기간(년) = 창업비용 / 운영이익\"\"\"",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A61": {
+          "value": "    p = operating_profit(b, ratio)",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A62": {
+          "value": "    if not p or p <= 0:",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A63": {
+          "value": "        return None",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A64": {
+          "value": "    return startup_cost(b) / p",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A65": {
+          "value": null,
+          "type": "n",
+          "style_id": "12"
+        },
+        "A66": {
+          "value": "def industry_avg_revenue(brands, industry):",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A67": {
+          "value": "    vals = [b[\"revenue\"] for b in brands",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A68": {
+          "value": "            if b[\"industry\"] == industry and b.get(\"revenue\")]",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A69": {
+          "value": "    return mean(vals) if vals else None",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A70": {
+          "value": null,
+          "type": "n",
+          "style_id": "12"
+        },
+        "A71": {
+          "value": "def industry_avg_cost(brands, industry):",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A72": {
+          "value": "    vals = [startup_cost(b) for b in brands if b[\"industry\"] == industry]",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A73": {
+          "value": "    return mean(vals) if vals else None",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A74": {
+          "value": null,
+          "type": "n",
+          "style_id": "12"
+        },
+        "A75": {
+          "value": "def region_summary(brands, industry=None):",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A76": {
+          "value": "    \"\"\"지역(서울/경기) 매장·매출 집계\"\"\"",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A77": {
+          "value": "    rows = [b for b in brands if industry is None or b[\"industry\"] == industry]",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A78": {
+          "value": "    return {",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A79": {
+          "value": "        \"stores_seoul\": sum(b.get(\"stores_seoul\") or 0 for b in rows),",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A80": {
+          "value": "        \"stores_total\": sum(b.get(\"stores_total\") or 0 for b in rows),",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A81": {
+          "value": "        \"revenue_seoul\": sum(b.get(\"seoul\") or 0 for b in rows),",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A82": {
+          "value": "        \"revenue_gyeonggi\": sum(b.get(\"gyeonggi\") or 0 for b in rows),",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A83": {
+          "value": "    }",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A84": {
+          "value": null,
+          "type": "n",
+          "style_id": "12"
+        },
+        "A85": {
+          "value": "def rank_by_revenue(brands, industry=None):",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A86": {
+          "value": "    rows = [b for b in brands if (industry is None or b[\"industry\"] == industry)",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A87": {
+          "value": "            and b.get(\"revenue\")]",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A88": {
+          "value": "    return sorted(rows, key=lambda b: b[\"revenue\"], reverse=True)",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A89": {
+          "value": null,
+          "type": "n",
+          "style_id": "12"
+        },
+        "A90": {
+          "value": "def budget_profit(revenue, costs, startup_cost_value=None):",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A91": {
+          "value": "    \"\"\"입력한 비용으로 예산 운영이익 계산",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A92": {
+          "value": "    revenue: 연매출, costs: dict(material, labor, rent, other) 절대금액\"\"\"",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A93": {
+          "value": "    total = sum(costs.get(k) or 0 for k in (\"material\",\"labor\",\"rent\",\"other\"))",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A94": {
+          "value": "    profit = revenue - total",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A95": {
+          "value": "    return {\"revenue\":revenue,\"cost_total\":total,\"profit\":profit,",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A96": {
+          "value": "            \"margin\":profit / revenue if revenue else None,",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A97": {
+          "value": "            \"payback_years\":(startup_cost_value / profit)",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A98": {
+          "value": "                            if startup_cost_value and profit > 0 else None}",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A99": {
+          "value": null,
+          "type": "n",
+          "style_id": "12"
+        },
+        "A100": {
+          "value": "def validate(brands):",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A101": {
+          "value": "    \"\"\"분석 결과 자체 검증: 항목 누락·합계 일치 여부\"\"\"",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A102": {
+          "value": "    out = []",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A103": {
+          "value": "    for b in brands:",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A104": {
+          "value": "        miss = missing_items(b)",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A105": {
+          "value": "        out.append({\"brand\":b[\"brand\"],\"startup_cost\":startup_cost(b),",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A106": {
+          "value": "                    \"missing\":miss,\"ok\":not miss})",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A107": {
+          "value": "    return out",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A108": {
+          "value": null,
+          "type": "n",
+          "style_id": "12"
+        },
+        "A109": {
+          "value": "if __name__ == \"__main__\":",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A110": {
+          "value": "    import json",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A111": {
+          "value": "    print(json.dumps({",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A112": {
+          "value": "        \"industry_avg_revenue\":{i:industry_avg_revenue(BRANDS,i) for i in RATIO},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A113": {
+          "value": "        \"industry_avg_cost\":{i:industry_avg_cost(BRANDS,i) for i in RATIO},",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A114": {
+          "value": "        \"top5\":[(b[\"brand\"],b[\"revenue\"]) for b in rank_by_revenue(BRANDS)[:5]],",
+          "type": "s",
+          "style_id": "12"
+        },
+        "A115": {
+          "value": "    }, ensure_ascii=False, indent=1))",
+          "type": "s",
+          "style_id": "12"
+        }
+      }
+    },
+    {
+      "name": "10_README",
+      "dimension": "A1:B14",
+      "cells": {
+        "A1": {
+          "value": "작업 기준과 주의사항",
+          "type": "s",
+          "style_id": "1"
+        },
+        "A2": {
+          "value": "항목",
+          "type": "s",
+          "style_id": "2"
+        },
+        "B2": {
+          "value": "내용",
+          "type": "s",
+          "style_id": "2"
+        },
+        "A3": {
+          "value": "자료 출처",
+          "type": "s",
+          "style_id": "3"
+        },
+        "B3": {
+          "value": "자료.zip (4개 업종 19개 브랜드 창업비용·매출·지역 자료)",
+          "type": "s",
+          "style_id": "4"
+        },
+        "A4": {
+          "value": "업종/브랜드",
+          "type": "s",
+          "style_id": "3"
+        },
+        "B4": {
+          "value": "치킨 5 · 커피 5 · 편의점 4 · 이미용 5 = 19개 (편의점은 압축파일에 4개 브랜드만 존재)",
+          "type": "s",
+          "style_id": "4"
+        },
+        "A5": {
+          "value": "창업비용 6항목",
+          "type": "s",
+          "style_id": "3"
+        },
+        "B5": {
+          "value": "가맹비 · 교육비 · 보증금 · 인테리어 · 설비 · 기타",
+          "type": "s",
+          "style_id": "4"
+        },
+        "A6": {
+          "value": "통일 단위",
+          "type": "s",
+          "style_id": "3"
+        },
+        "B6": {
+          "value": "원(KRW). 원본이 천원(커피·이미용) 또는 만원(치킨·편의점)이므로 02_원본값_단위 시트에 원본 표기를 그대로 보존",
+          "type": "s",
+          "style_id": "4"
+        },
+        "A7": {
+          "value": "설비 항목",
+          "type": "s",
+          "style_id": "3"
+        },
+        "B7": {
+          "value": "BHC만 원본에 설비 성격 항목(간판·주방집기·의자탁자)이 분리 표기 → 설비로 배분. 나머지 브랜드는 설비 미구분(공란 + 01시트 '미확인 항목' 표기)",
+          "type": "s",
+          "style_id": "4"
+        },
+        "A8": {
+          "value": "공란 처리",
+          "type": "s",
+          "style_id": "3"
+        },
+        "B8": {
+          "value": "원본 '-' 또는 미제공은 0으로 단정하지 않고 공란 유지. 합계 계산 시 0으로만 반영",
+          "type": "s",
+          "style_id": "4"
+        },
+        "A9": {
+          "value": "연매출 환산",
+          "type": "s",
+          "style_id": "3"
+        },
+        "B9": {
+          "value": "치킨·편의점은 월평균 매출 × 12, 커피·이미용은 정보공개서 연간 평균매출액 그대로",
+          "type": "s",
+          "style_id": "4"
+        },
+        "A10": {
+          "value": "매출 미확인",
+          "type": "s",
+          "style_id": "3"
+        },
+        "B10": {
+          "value": "CU · GS25는 월평균 매출 캡처 미제공 → 매출 관련 순위·이익 계산에서 제외(공란)",
+          "type": "s",
+          "style_id": "4"
+        },
+        "A11": {
+          "value": "지역 집계 기준",
+          "type": "s",
+          "style_id": "3"
+        },
+        "B11": {
+          "value": "서울은 공식 매장찾기 구별 합계, 전국은 정보공개서 가맹점 수 → 기준이 달라 단순 비율 비교 주의 (03시트 '집계기준' 열)",
+          "type": "s",
+          "style_id": "4"
+        },
+        "A12": {
+          "value": "운영비 비율",
+          "type": "s",
+          "style_id": "3"
+        },
+        "B12": {
+          "value": "00_가정 시트의 4개 비율은 시뮬레이션 기본 가정치이며 공시자료가 아님. 06/07 시트에서 실제 값으로 수정",
+          "type": "s",
+          "style_id": "4"
+        },
+        "A13": {
+          "value": "수식 구조",
+          "type": "s",
+          "style_id": "3"
+        },
+        "B13": {
+          "value": "01: SUM / 03: IFERROR 비중 / 04: COUNTIF·AVERAGEIF·SUMIF·MAX(IF) / 05: COUNTIFS·RANK / 06: VLOOKUP·SUM / 07: AVERAGEIF·VLOOKUP / 08: ABS·COUNTIF 검증",
+          "type": "s",
+          "style_id": "4"
+        },
+        "A14": {
+          "value": "검증",
+          "type": "s",
+          "style_id": "3"
+        },
+        "B14": {
+          "value": "08_검증 시트에서 엑셀 수식 결과와 파이썬 재계산을 25개 항목으로 대조(OK/NG)",
+          "type": "s",
+          "style_id": "4"
+        }
+      }
+    }
+  ],
+  "changes": [],
+  "regional_aggregation": {
+    "index_names": [
+      "year",
+      "industry",
+      "brand"
+    ],
+    "index": [
+      [
+        2024,
+        "치킨",
+        "교촌치킨"
+      ],
+      [
+        2024,
+        "치킨",
+        "BHC"
+      ],
+      [
+        2024,
+        "치킨",
+        "굽네치킨"
+      ],
+      [
+        2024,
+        "치킨",
+        "비비큐(BBQ)"
+      ],
+      [
+        2024,
+        "치킨",
+        "처갓집양념치킨"
+      ],
+      [
+        2025,
+        "치킨",
+        "교촌치킨"
+      ],
+      [
+        2025,
+        "치킨",
+        "BHC"
+      ],
+      [
+        2025,
+        "치킨",
+        "굽네치킨"
+      ],
+      [
+        2025,
+        "치킨",
+        "비비큐(BBQ)"
+      ],
+      [
+        2025,
+        "치킨",
+        "처갓집양념치킨"
+      ]
+    ],
+    "columns": [
+      "seoul_franchise_stores",
+      "gyeonggi_franchise_stores",
+      "national_franchise_stores",
+      "seoul_share"
+    ],
+    "data": [
+      [
+        228,
+        301,
+        1361,
+        0.16752387950036737
+      ],
+      [
+        258,
+        473,
+        2250,
+        0.11466666666666667
+      ],
+      [
+        178,
+        279,
+        1251,
+        0.14228617106314947
+      ],
+      [
+        332,
+        539,
+        2124,
+        0.15630885122410546
+      ],
+      [
+        139,
+        282,
+        1251,
+        0.1111111111111111
+      ],
+      [
+        228,
+        299,
+        1361,
+        0.16752387950036737
+      ],
+      [
+        258,
+        471,
+        2250,
+        0.11466666666666667
+      ],
+      [
+        178,
+        277,
+        1251,
+        0.14228617106314947
+      ],
+      [
+        332,
+        541,
+        2124,
+        0.15630885122410546
+      ],
+      [
+        139,
+        283,
+        1251,
+        0.1111111111111111
+      ]
+    ],
+    "description": "원본 지역집계의 값 그대로. 기존 숫자는 수정하지 않음. 신규 공시값은 가맹점 수이며 직영 제외. null은 아래 missing에서 사유와 출처 확인",
+    "missing": []
+  }
+}

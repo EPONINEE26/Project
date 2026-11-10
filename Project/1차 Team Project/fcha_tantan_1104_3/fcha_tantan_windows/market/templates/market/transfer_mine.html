@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load brand_format %}
+{% block title %}
+    내 양도양수 | 프차 탄탄
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="page-header">
+            <span class="eyebrow">MY TRANSFER</span>
+            <div class="page-title-row">
+                <div>
+                    <h1>내 양도양수</h1>
+                    <p>등록한 매물과 내가 보낸 문의를 확인하세요.</p>
+                </div>
+                <a class="button" href="{% url 'market:transfer_new' %}">＋ 매물 등록</a>
+            </div>
+        </div>
+        <section class="panel">
+            <h2>등록한 매물</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>제목</th>
+                            <th>브랜드</th>
+                            <th>상태</th>
+                            <th>문의</th>
+                            <th>등록일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in listings %}
+                            <tr>
+                                <td><a href="{% url 'market:transfer_detail' item.pk %}">{{ item.title }}</a></td>
+                                <td>{{ item.brand.name }}</td>
+                                <td>{{ item.get_status_display }}</td>
+                                <td>{{ item.inquiry_count }}건{% if item.unread %} <b class="unread">새 문의 {{ item.unread }}</b>{% endif %}</td>
+                                <td>{{ item.created_at|date:'Y.m.d' }}</td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="5">등록한 매물이 없어요.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="panel">
+            <h2>보낸 문의</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>매물</th>
+                            <th>유형</th>
+                            <th>내용</th>
+                            <th>보낸 날</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for q in sent %}
+                            <tr>
+                                <td><a href="{% url 'market:transfer_detail' q.listing.pk %}">{{ q.listing.title }}</a></td>
+                                <td>{{ q.get_kind_display }}</td>
+                                <td>{{ q.message|truncatechars:40 }}</td>
+                                <td>{{ q.created_at|date:'Y.m.d' }}</td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="4">보낸 문의가 없어요.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+{% endblock %}

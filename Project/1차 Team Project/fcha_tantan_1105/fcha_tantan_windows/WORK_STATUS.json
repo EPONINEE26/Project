@@ -1,0 +1,42 @@
+{
+  "status": "completed",
+  "updated_at": "2026-10-30T13:53:57.294318+00:00",
+  "task": "Complete brand catalogue and contains search, 10-brand comparison, menu order, site-wide gradient and JS motion",
+  "completed": [
+    "comparison checkbox first sticky column and idempotent AJAX",
+    "empty searchable calculator brand selection",
+    "community CRUD, verified owners, 10 sample posts and 10 comments",
+    "moderation policy, sanitization, blind/remove/restore",
+    "private evidence submission and local precheck, no paid AI",
+    "help center 20 bilingual FAQs and support tickets",
+    "region and transfer maps, address/pin integration, opt-in locations",
+    "359 offline UI translations",
+    "free local-search chatbot and subtle animation",
+    "All 12,479 real brands in 45 category optgroups; case-insensitive substring search and suggestions",
+    "10-brand comparison across cards, region table, tray, charts and CSV",
+    "Hamburger final two entries: owner community, help center",
+    "Site-wide blue gradients, light accents, JS banner/card entrance and button ripple",
+    "Assistant launcher redesigned with matching light treatment"
+  ],
+  "remaining": [],
+  "constraints": [
+    "No paid AI or LLM chatbot",
+    "KAKAO_JS_KEY currently blank; real map network verification needs user key",
+    "Preserve original user data; no invented local store counts",
+    "Sample authors inactive with unusable passwords; never fabricate owner verification",
+    "Current workspace root /workspace/scratch/6fdf299eacaf/feature_update/fcha_tantan_windows"
+  ],
+  "source_library_id": "libfile_b015b6563e4c81919aae784575f79fad",
+  "validation": {
+    "django_tests": 75,
+    "django_check": "passed",
+    "migration_check": "no changes detected",
+    "javascript_syntax": "passed",
+    "preserved_original_rows": 411967,
+    "browser": "Desktop and 390px rendered page interaction: 12,479 options; 메가 12 results; selected slug preserved after clearing search; 10-column comparison scroll and fixed metric column; menu order and chat open verified"
+  },
+  "external_prerequisites": [
+    "Kakao JavaScript key and registered domain needed for actual map",
+    "User Windows BAT/PowerShell execution remains to be confirmed"
+  ]
+}

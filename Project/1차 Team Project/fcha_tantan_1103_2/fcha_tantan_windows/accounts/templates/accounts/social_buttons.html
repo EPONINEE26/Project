@@ -1,0 +1,6 @@
+{% load socialaccount %}<div class="social-login" aria-label="간편로그인">
+<p class="social-title"><span>간편하게 시작하기</span></p>
+<div class="social-buttons">{% if social_providers %}{% for p in social_providers %}<form method="post" action="{% provider_login_url p.id process='login' next=next %}">{% csrf_token %}<button class="social-btn social-{{ p.id }}" type="submit"><span class="social-icon" aria-hidden="true">{% if p.id == 'naver' %}N{% elif p.id == 'kakao' %}K{% else %}G{% endif %}</span>{{ p.label }}로 계속하기</button></form>{% endfor %}
+{% else %}<button class="social-btn social-naver" type="button" disabled><span class="social-icon" aria-hidden="true">N</span>네이버</button><button class="social-btn social-kakao" type="button" disabled><span class="social-icon" aria-hidden="true">K</span>카카오</button><button class="social-btn social-google" type="button" disabled><span class="social-icon" aria-hidden="true">G</span>구글</button>{% endif %}</div>
+{% if not social_providers %}<p class="help-text">간편로그인은 관리자가 네이버·카카오·구글 개발자 앱 키를 등록하면 사용할 수 있어요.</p>{% endif %}
+</div>

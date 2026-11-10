@@ -1,0 +1,17 @@
+{
+  "mode": "api",
+  "source_url": "https://apis.data.go.kr/1130000/FftcBrandRlsInfo2_Service/getBrandinfo",
+  "query": {
+    "pageNo": "1",
+    "numOfRows": "100",
+    "resultType": "json",
+    "jngBizCrtraYr": "2024"
+  },
+  "started_at": "2026-10-24T18:57:32+09:00",
+  "complete": true,
+  "row_count": 11683,
+  "expected_total": 11683,
+  "pages_saved": 117,
+  "is_dummy": false,
+  "finished_at": "2026-10-24T19:00:15+09:00"
+}

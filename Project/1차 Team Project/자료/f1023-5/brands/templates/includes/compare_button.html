@@ -1,0 +1,8 @@
+<form class="inline-form" method="post" action="{% url 'brands:compare_toggle' brand.slug %}">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+    <button class="compare-toggle {% if brand.slug in compare_ids %}on{% endif %}" aria-pressed="{% if brand.slug in compare_ids %}true{% else %}false{% endif %}">
+        <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path d="m3 8 3 3 7-7"/></svg></span>
+        {% if brand.slug in compare_ids %}비교함에서 빼기{% else %}비교 담기{% endif %}
+    </button>
+</form>

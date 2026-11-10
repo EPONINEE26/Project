@@ -1,0 +1,41 @@
+{{ form.non_field_errors }}
+{% for field in form %}
+    {% if field.name in form.startup_names %}
+    {% elif field.name == 'wants_startup' %}
+        <div class="startup-question">
+            {% include 'includes/one_field.html' %}
+        </div>
+        <div class="startup-fields" data-startup-fields {% if field.value != 'yes' %}hidden{% endif %}>
+            <p class="startup-fields-title">창업 조건을 알려주시면 맞는 브랜드를 추천해드려요.</p>
+            {% for f in form.startup_fields %}
+                {% include 'includes/one_field.html' with field=f %}
+            {% endfor %}
+            {% if signup_details_only %}
+                {% include 'includes/one_field.html' with field=form.startup_purpose %}
+                {% include 'includes/one_field.html' with field=form.plan_target_profit_manwon %}
+                {% include 'includes/one_field.html' with field=form.plan_staff_count %}
+            {% endif %}
+            {% include 'includes/one_field.html' with field=form.agree_proposal %}
+            {% if not signup_details_only %}
+                <details>
+                    <summary>상세 조건 (선택·모름 허용)</summary>
+                    {% for f in form.startup_detail_fields %}
+                        {% include 'includes/one_field.html' with field=f %}
+                    {% endfor %}
+                </details>
+            {% endif %}
+        </div>
+    {% else %}
+        {% include 'includes/one_field.html' %}
+        {% if field.name == 'email' %}
+            <div class="email-verify" data-email-verify data-send-url="{% url 'accounts:email_send' %}" data-check-url="{% url 'accounts:email_check' %}" data-verified="{% if verified_email %}{{ verified_email }}{% else %}{{ email_on_file }}{% endif %}">
+                <button type="button" class="button small outline" data-send>인증번호 받기</button>
+                <div class="verify-row" data-code-row hidden>
+                    <input type="text" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="인증번호 6자리" data-code aria-label="이메일 인증번호">
+                    <button type="button" class="button small" data-check>인증 확인</button>
+                </div>
+                <p class="verify-status" role="status" aria-live="polite" data-status></p>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,53 @@
+{
+    "period":  "2026Q2",
+    "imported":  1641,
+    "excluded":  [
+                     {
+                         "code":  "3110407",
+                         "name":  "도봉역 2번"
+                     },
+                     {
+                         "code":  "3110515",
+                         "name":  "홍은중학교"
+                     },
+                     {
+                         "code":  "3110542",
+                         "name":  "마포구청역 7번"
+                     },
+                     {
+                         "code":  "3110137",
+                         "name":  "성수초등학교"
+                     },
+                     {
+                         "code":  "3110234",
+                         "name":  "중랑역 4번"
+                     },
+                     {
+                         "code":  "3110270",
+                         "name":  "혜원여고"
+                     },
+                     {
+                         "code":  "3110281",
+                         "name":  "길상사"
+                     }
+                 ],
+    "renamed":  [
+                    {
+                        "code":  "3110379",
+                        "boundary_name":  "KT\u0026G 북부지사",
+                        "csv_name":  "KTNG 북부지사"
+                    },
+                    {
+                        "code":  "3001494",
+                        "boundary_name":  "종로·청계 관광특구",
+                        "csv_name":  "종로?청계 관광특구"
+                    },
+                    {
+                        "code":  "3110024",
+                        "boundary_name":  "혜회동주민센터",
+                        "csv_name":  "혜화동주민센터"
+                    }
+                ],
+    "backup":  "C:\\workspace\\project\\fcha_tantan_windows\\data\\backups\\before_latest_population_20261104_121006_984587.sqlite3",
+    "backup_status":  "deleted_at_user_request_2026-11-04"
+}

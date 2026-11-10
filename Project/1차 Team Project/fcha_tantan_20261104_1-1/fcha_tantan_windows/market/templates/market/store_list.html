@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load brand_format %}
+{% block title %}내 매장 위치 | 프차 탄탄{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="page-header"><span class="eyebrow">MY LOCATIONS</span>
+        <div class="page-title-row"><div><h1>내 매장·후보지 위치</h1><p>운영 중인 매장이나 창업 후보지를 등록하고 유동인구를 기록하세요.</p></div></div></div>
+    <div class="store-grid">
+        {% for store in stores %}
+            <a class="panel store-card" href="{% url 'market:store_detail' store.pk %}">
+                <span class="status-tag status-{{ store.status }}">{{ store.get_status_display }}</span>
+                <h2>{{ store.store_name }}</h2>
+                <p>{{ store.address }} {{ store.address_detail }}</p>
+                <dl><div><dt>브랜드</dt><dd>{{ store.brand.name|default:'미정' }}</dd></div><div><dt>유동인구 기록</dt><dd>{{ store.population_count }}건</dd></div><div><dt>일 평균(하루 전체)</dt><dd>{% if store.population_avg != None %}{{ store.population_avg|floatformat:'0g' }}명{% else %}미입력{% endif %}</dd></div></dl>
+            </a>
+        {% empty %}<section class="panel empty"><h2>등록된 위치가 없어요</h2><p>주소 검색으로 매장 위치를 설정해보세요.</p><a class="button" href="{% url 'market:store_new' %}">위치 등록하기</a></section>{% endfor %}
+    </div>
+</div>
+{% endblock %}

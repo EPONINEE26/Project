@@ -1,0 +1,17 @@
+{
+  "mode": "api",
+  "source_url": "https://apis.data.go.kr/1130000/FftcBrandFrcsStatsService/getBrandFrcsStats",
+  "query": {
+    "pageNo": "1",
+    "numOfRows": "100",
+    "resultType": "json",
+    "yr": "2024"
+  },
+  "started_at": "2026-10-24T19:21:11+09:00",
+  "complete": true,
+  "row_count": 11834,
+  "expected_total": 11834,
+  "pages_saved": 119,
+  "is_dummy": false,
+  "finished_at": "2026-10-24T19:23:56+09:00"
+}

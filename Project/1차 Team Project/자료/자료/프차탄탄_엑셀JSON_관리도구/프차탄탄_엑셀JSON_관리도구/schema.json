@@ -1,0 +1,80 @@
+{
+  "brand_fields": [
+    "id",
+    "name",
+    "category",
+    "tagline",
+    "english_name",
+    "image",
+    "official_brand_id",
+    "company",
+    "source_category",
+    "source_category_major",
+    "priority_category",
+    "is_displayable",
+    "is_dummy"
+  ],
+  "annual_fields": [
+    "year",
+    "source_accounting_year",
+    "name",
+    "company",
+    "stores",
+    "direct_stores",
+    "total_stores",
+    "opened",
+    "closed",
+    "contract_ended",
+    "contract_terminated",
+    "ownership_changed",
+    "annual_sales_krw",
+    "monthly_sales_krw",
+    "annual_sales_per_3_3sqm_krw",
+    "annual_sales_status",
+    "startup_cost_krw"
+  ],
+  "region_fields": [
+    "stores",
+    "direct_stores",
+    "total_stores",
+    "annual_sales_krw",
+    "annual_sales_min_krw",
+    "annual_sales_max_krw",
+    "monthly_sales_min_krw",
+    "monthly_sales_max_krw",
+    "annual_sales_per_3_3sqm_min_krw",
+    "annual_sales_per_3_3sqm_max_krw",
+    "sales_status",
+    "is_dummy",
+    "source_sales_range",
+    "source_sales_per_3_3sqm_range"
+  ],
+  "national_fields": [
+    "stores",
+    "direct_stores",
+    "total_stores",
+    "annual_sales_krw",
+    "annual_sales_min_krw",
+    "annual_sales_max_krw",
+    "monthly_sales_min_krw",
+    "monthly_sales_max_krw",
+    "annual_sales_per_3_3sqm_min_krw",
+    "annual_sales_per_3_3sqm_max_krw",
+    "sales_status",
+    "is_dummy",
+    "source_sales_range",
+    "source_sales_per_3_3sqm_range"
+  ],
+  "cost_fields": [
+    "franchise_fee_krw",
+    "education_fee_krw",
+    "guarantee_deposit_krw",
+    "other_cost_krw"
+  ],
+  "category_counts": {
+    "카페": 5,
+    "치킨": 5,
+    "편의점": 4,
+    "미용실": 5
+  }
+}

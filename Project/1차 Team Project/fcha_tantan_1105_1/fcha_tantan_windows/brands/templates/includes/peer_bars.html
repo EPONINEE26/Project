@@ -1,0 +1,9 @@
+{% load brand_format %}{% comment %}브랜드 상세 카드 아래 칸: 이 브랜드 vs 같은 업종 평균 막대{% endcomment %}
+{% if item %}
+<div class="peer-bottom">
+    <div class="peer-bar"><span>{{ short_name }}</span><div class="peer-track"><i class="mine" style="width:{{ item.mine_width }}%"></i></div><b>{{ item.mine|number }}{{ unit }}</b></div>
+    <div class="peer-bar"><span>업계 평균</span><div class="peer-track"><i class="average" style="width:{{ item.average_width }}%"></i></div><b>{{ item.average|number }}{{ unit }}</b></div>
+</div>
+{% else %}
+<div class="peer-bottom empty"><span>업계 평균 비교 자료 없음</span></div>
+{% endif %}

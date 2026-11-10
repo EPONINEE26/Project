@@ -1,0 +1,239 @@
+{
+  "mode": "READ_ONLY",
+  "json_file": "C:\\workspce\\team\\fcha_tantan_renewal\\output\\priority_brands_updated.json",
+  "db_file": "C:\\workspce\\team\\fcha_tantan_renewal\\db.sqlite3",
+  "target_brands": 19,
+  "checked_fields": 1102,
+  "differences_count": 22,
+  "status_counts": {
+    "변경 필요": 22
+  },
+  "differences": [
+    {
+      "status": "변경 필요",
+      "brand_id": "beauty_20160174",
+      "year": 2025,
+      "section": "annual",
+      "region": null,
+      "field": "stores",
+      "json_value": 192,
+      "db_value": 191
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "beauty_20160174",
+      "year": 2025,
+      "section": "annual",
+      "region": null,
+      "field": "total_stores",
+      "json_value": 192,
+      "db_value": 191
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "beauty_20160174",
+      "year": 2025,
+      "section": "annual",
+      "region": null,
+      "field": "closed",
+      "json_value": 30,
+      "db_value": 31
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "chicken_20080100655",
+      "year": 2025,
+      "section": "annual",
+      "region": null,
+      "field": "annual_sales_krw",
+      "json_value": 529724000,
+      "db_value": 529680000
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "chicken_20080200030",
+      "year": 2025,
+      "section": "annual",
+      "region": null,
+      "field": "annual_sales_krw",
+      "json_value": 498677000,
+      "db_value": 498600000
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "chicken_20161241",
+      "year": 2025,
+      "section": "annual",
+      "region": null,
+      "field": "annual_sales_krw",
+      "json_value": 508791000,
+      "db_value": 508680000
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "coffee_20080100618",
+      "year": 2024,
+      "section": "regional",
+      "region": "서울",
+      "field": "stores",
+      "json_value": 277,
+      "db_value": 106
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "coffee_20141250",
+      "year": 2024,
+      "section": "annual",
+      "region": null,
+      "field": "stores",
+      "json_value": 2360,
+      "db_value": 2370
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "coffee_20141250",
+      "year": 2024,
+      "section": "annual",
+      "region": null,
+      "field": "total_stores",
+      "json_value": 2361,
+      "db_value": 2371
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "coffee_20141250",
+      "year": 2024,
+      "section": "annual",
+      "region": null,
+      "field": "opened",
+      "json_value": 474,
+      "db_value": 484
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "coffee_20141250",
+      "year": 2024,
+      "section": "regional",
+      "region": "서울",
+      "field": "stores",
+      "json_value": 410,
+      "db_value": 413
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "coffee_20141250",
+      "year": 2024,
+      "section": "regional",
+      "region": "인천",
+      "field": "stores",
+      "json_value": 218,
+      "db_value": 219
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "coffee_20141250",
+      "year": 2024,
+      "section": "regional",
+      "region": "대전",
+      "field": "stores",
+      "json_value": 39,
+      "db_value": 40
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "coffee_20141250",
+      "year": 2024,
+      "section": "regional",
+      "region": "경기",
+      "field": "stores",
+      "json_value": 595,
+      "db_value": 598
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "coffee_20141250",
+      "year": 2024,
+      "section": "regional",
+      "region": "충북",
+      "field": "stores",
+      "json_value": 32,
+      "db_value": 33
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "coffee_20141250",
+      "year": 2024,
+      "section": "regional",
+      "region": "경남",
+      "field": "stores",
+      "json_value": 239,
+      "db_value": 240
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "coffee_20160628",
+      "year": 2024,
+      "section": "regional",
+      "region": "서울",
+      "field": "stores",
+      "json_value": 639,
+      "db_value": 638
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "coffee_20160628",
+      "year": 2024,
+      "section": "regional",
+      "region": "대구",
+      "field": "stores",
+      "json_value": 41,
+      "db_value": 42
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "coffee_20160628",
+      "year": 2024,
+      "section": "regional",
+      "region": "대전",
+      "field": "stores",
+      "json_value": 67,
+      "db_value": 66
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "coffee_20160628",
+      "year": 2024,
+      "section": "regional",
+      "region": "경기",
+      "field": "stores",
+      "json_value": 893,
+      "db_value": 894
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "convenience_20080100064",
+      "year": 2025,
+      "section": "annual",
+      "region": null,
+      "field": "annual_sales_krw",
+      "json_value": 511210000,
+      "db_value": 511200000
+    },
+    {
+      "status": "변경 필요",
+      "brand_id": "convenience_20080100729",
+      "year": 2025,
+      "section": "annual",
+      "region": null,
+      "field": "annual_sales_krw",
+      "json_value": 451496000,
+      "db_value": 451440000
+    }
+  ],
+  "notes": [
+    "비교 전용: DB 변경 없음",
+    "DB에 없는 JSON 필드는 비교 대상에서 제외",
+    "연도별 통계는 2024/2025년만 비교",
+    "출처·검증 상태는 별도 검증 필요"
+  ]
+}

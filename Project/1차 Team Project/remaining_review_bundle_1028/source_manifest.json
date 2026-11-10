@@ -1,0 +1,132 @@
+[
+  {
+    "source": "전국상가정보_교육서비스업_202610.zip",
+    "member": "records.csv",
+    "csv_sha256": "bf04480b5061dc7cb95d96d50e4e8359f26c4be7d2cd95453a1df7b4c908c218",
+    "bytes": 88582536,
+    "manifest": {
+      "mode": "api",
+      "source_url": "https://apis.data.go.kr/B553077/api/open/sdsc2/storeListInUpjong",
+      "query": {
+        "pageNo": "1",
+        "numOfRows": "1000",
+        "divId": "indsLclsCd",
+        "key": "P1",
+        "type": "json"
+      },
+      "started_at": "2026-10-24T22:36:48+09:00",
+      "complete": true,
+      "row_count": 181775,
+      "expected_total": 181775,
+      "pages_saved": 182,
+      "is_dummy": false,
+      "finished_at": "2026-10-24T22:40:43+09:00",
+      "exported_rows": 181775,
+      "duplicates_removed": 0
+    }
+  },
+  {
+    "source": "전국상가정보_수리개인서비스업_202610.zip",
+    "member": "records.csv",
+    "csv_sha256": "bd3ba009bfa53b613f894ad791f4c5816ef463d2b836d50ad7a341f19b48dbb8",
+    "bytes": 158630575,
+    "manifest": {
+      "mode": "api",
+      "source_url": "https://apis.data.go.kr/B553077/api/open/sdsc2/storeListInUpjong",
+      "query": {
+        "pageNo": "1",
+        "numOfRows": "1000",
+        "divId": "indsLclsCd",
+        "key": "S2",
+        "type": "json"
+      },
+      "started_at": "2026-10-24T22:24:13+09:00",
+      "complete": true,
+      "row_count": 329825,
+      "expected_total": 329825,
+      "pages_saved": 330,
+      "is_dummy": false,
+      "finished_at": "2026-10-24T22:32:14+09:00",
+      "exported_rows": 329825,
+      "duplicates_removed": 0
+    }
+  },
+  {
+    "source": "전국상가정보_소매업_202610.zip",
+    "member": "records.csv",
+    "csv_sha256": "6e4fcf54cc9fb42ead1035b72b876accbd5b82d7a4bbf8ab6f99e8b1b26755fa",
+    "bytes": 320480655,
+    "manifest": {
+      "mode": "api",
+      "source_url": "https://apis.data.go.kr/B553077/api/open/sdsc2/storeListInUpjong",
+      "query": {
+        "pageNo": "1",
+        "numOfRows": "1000",
+        "divId": "indsLclsCd",
+        "key": "G2",
+        "type": "json"
+      },
+      "started_at": "2026-10-24T21:53:51+09:00",
+      "complete": true,
+      "row_count": 648126,
+      "expected_total": 648126,
+      "pages_saved": 649,
+      "is_dummy": false,
+      "finished_at": "2026-10-24T22:13:49+09:00",
+      "exported_rows": 648126,
+      "duplicates_removed": 0
+    }
+  },
+  {
+    "source": "전국상가정보_숙박업_202610.zip",
+    "member": "records.csv",
+    "csv_sha256": "07f147307ae4ea3d01011cd18c421b2a9ecbb8923115b49cb93b9e7b110f2dbc",
+    "bytes": 37863567,
+    "manifest": {
+      "mode": "api",
+      "source_url": "https://apis.data.go.kr/B553077/api/open/sdsc2/storeListInUpjong",
+      "query": {
+        "pageNo": "1",
+        "numOfRows": "1000",
+        "divId": "indsLclsCd",
+        "key": "I1",
+        "type": "json"
+      },
+      "started_at": "2026-10-24T22:52:24+09:00",
+      "complete": true,
+      "row_count": 80482,
+      "expected_total": 80482,
+      "pages_saved": 81,
+      "is_dummy": false,
+      "finished_at": "2026-10-24T22:54:02+09:00",
+      "exported_rows": 80482,
+      "duplicates_removed": 0
+    }
+  },
+  {
+    "source": "전국상가정보_예술스포츠여가서비스업_202610.zip",
+    "member": "전국상가정보_예술스포츠여가서비스업_202610/records.csv",
+    "csv_sha256": "97ed9c85922374ff08d4eb83abae7b9dcbc0ea6c98c4934809cd2254b28a1823",
+    "bytes": 57314135,
+    "manifest": {
+      "mode": "api",
+      "source_url": "https://apis.data.go.kr/B553077/api/open/sdsc2/storeListInUpjong",
+      "query": {
+        "pageNo": "1",
+        "numOfRows": "1000",
+        "divId": "indsLclsCd",
+        "key": "R1",
+        "type": "json"
+      },
+      "started_at": "2026-10-24T22:44:29+09:00",
+      "complete": true,
+      "row_count": 116010,
+      "expected_total": 116010,
+      "pages_saved": 117,
+      "is_dummy": false,
+      "finished_at": "2026-10-24T22:46:56+09:00",
+      "exported_rows": 116010,
+      "duplicates_removed": 0
+    }
+  }
+]

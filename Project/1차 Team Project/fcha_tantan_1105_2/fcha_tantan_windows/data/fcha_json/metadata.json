@@ -1,0 +1,81 @@
+{
+  "project": "프차탄탄",
+  "schema_version": "1.0",
+  "generated_at": "2026-10-19T21:24:41+09:00",
+  "input_archive": "data (2).zip",
+  "input_sha256": "915c25bffd2634e3c9aa5c7db0372f4d1ac8df6fbbe39b18f38b093ae4e0e8cf",
+  "display_years": [
+    2024,
+    2025
+  ],
+  "year_policy": "사용자 요청에 따라 year=공시/조회기준연도(2024,2025). 원본 회계연도는 source_accounting_year에 보존.",
+  "source_accounting_years": {
+    "2024": 2023,
+    "2025": 2024
+  },
+  "currency": "KRW",
+  "source_currency_unit": "천원",
+  "currency_multiplier": 1000,
+  "unit_evidence_urls": [
+    "https://franchise.ftc.go.kr/firHope/comparePopup.do",
+    "https://fair.gg.go.kr/fran/search/unifiedSearchBrand.do"
+  ],
+  "regions": [
+    "서울",
+    "부산",
+    "대구",
+    "인천",
+    "광주",
+    "대전",
+    "울산",
+    "세종",
+    "경기",
+    "강원",
+    "충북",
+    "충남",
+    "전북",
+    "전남",
+    "경북",
+    "경남",
+    "제주"
+  ],
+  "regional_data_policy": "17개 시도 실제 수집 데이터. 더미·지역별 비율 배분·미공개값 추정 없음.",
+  "brand_count": 12498,
+  "priority_brand_count": 1821,
+  "priority_category_counts": {
+    "미용실": 311,
+    "치킨": 632,
+    "카페": 841,
+    "편의점": 37
+  },
+  "null_policy": "원본이 없거나 연결이 불확실하거나 0 매출의 의미를 확인할 수 없으면 null. 0개 점포는 실제 숫자 0 보존.",
+  "definitions": {
+    "id": "업종접두어_브랜드관리번호. 같은 브랜드는 연도에 관계없이 같은 id이며 모든 id는 유일.",
+    "name": "브랜드목록의 브랜드명. 최신 공시연도 우선. 여러 후보가 충돌하면 null 및 품질보고서 보존.",
+    "category": "커피→카페, 이미용→미용실(원본 이미용에는 미용 관련 업종도 포함 가능). 다른 업종은 원본명 유지.",
+    "english_name": "공식 브랜드명 괄호 안에 명시된 영문만 추출. 별도 영문명을 창작하지 않음.",
+    "image": "수집자료에 이미지 없음. null이며 프런트엔드 기본 이미지 사용 필요.",
+    "tagline": "원본에 소개문구 없음. null.",
+    "history": "공시/화면용 연도별 통계 배열. year=2024 또는 2025.",
+    "stores": "전국 가맹점 수(직영점 제외). 브랜드ID가 있는 지역별 점포 API의 전체 행을 우선 사용.",
+    "total_stores": "전국 가맹점+직영점. 별도 점포 API 값이며 stores와 구분.",
+    "opened": "전국 신규가맹점 등록 수. 서울 등 지역별 개업 수로 사용하지 않음.",
+    "closed": "전국 계약종료+계약해지 건수의 편의 필드. 화면 명칭은 계약종료·해지 권장. 실제 폐업의 확정 집계가 아님.",
+    "annual_sales_krw": "전국 가맹점당 연간 평균매출. 브랜드 전체 매출/순이익이 아님. 전국 브랜드현황 API의 금액×1000.",
+    "monthly_sales_krw": "연간 평균매출÷12의 원 단위 반올림 환산값. 실제 월별 관측매출 아님.",
+    "regions": "지역명→해당 지역 통계. 합계는 national_reference에 별도 보관해 중복 합산 방지.",
+    "regions.*.annual_sales_krw": "지역 API는 범위값을 제공하므로 확정 단일값은 null. min/max를 사용.",
+    "annual_sales_min_krw / annual_sales_max_krw": "원본 범위값의 하한/상한×1000. 중간값을 확정 매출로 만들지 않음.",
+    "sales_status": "range:공개 범위 / zero_or_unreported:0의 의미 불확실 / missing:자료 없음 / invalid_range:파싱불가.",
+    "startup_cost_krw": "해당 공시연도 창업 부담금 합계. 상가 임대보증금·권리금 등 총 사업비를 뜻하지 않음.",
+    "startup_cost_breakdown": "가맹비·교육비·계약보증금·기타비용. 실제 0인 개별 항목은 0 유지.",
+    "source_ids": "data_quality.json의 sources 목록과 연결.",
+    "is_displayable": "브랜드명이 확정되지 않은 ID는 false. 메인 목록에서 제외 권장."
+  },
+  "page_usage": {
+    "main": "priority_brands.json 또는 brands.json에서 category, name, 최신 history 사용.",
+    "bview": "brands.json에서 id로 찾고 history 연도별 national_reference·regions·창업비용 사용.",
+    "bcompare": "같은 history.year와 같은 범위(전국 또는 동일 시도)끼리 비교. 지역 범위매출은 min/max로 표시."
+  },
+  "matching_policy": "공식 브랜드관리번호로 지역 자료 결합. ID 없는 전국통계/비용은 같은 공시연도의 회사명·브랜드명·업종대분류·업종중분류 완전일치 및 유일성 확인. 모호한 값은 연결하지 않고 품질보고서에 원본 보존."
+}
