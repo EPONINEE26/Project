@@ -258,9 +258,6 @@
 "/Project/1차 Team Project/fcha_tantan_1103_3_1/fcha_tantan_windows/data/review/seoul_store_area_mapping_20261103/store_area_mapping.csv" filter=lfs diff=lfs merge=lfs -text
 "/Project/1차 Team Project/fcha_tantan_1103_3_1/fcha_tantan_windows/data/review/seoul_store_area_mapping_20261103/store_area_review.csv" filter=lfs diff=lfs merge=lfs -text
 "/Project/1차 Team Project/fcha_tantan_1103_3_1/fcha_tantan_windows/data/서울지역 영업점 갯수.xlsx" filter=lfs diff=lfs merge=lfs -text
-"/.large-file-parts/5cc8ef5eb4cd5263a4458949d0a037b901a0992a/part-0000" filter=lfs diff=lfs merge=lfs -text
-"/.large-file-parts/5cc8ef5eb4cd5263a4458949d0a037b901a0992a/part-0001" filter=lfs diff=lfs merge=lfs -text
-"/.large-file-parts/5cc8ef5eb4cd5263a4458949d0a037b901a0992a/part-0002" filter=lfs diff=lfs merge=lfs -text
 "/Project/1차 Team Project/fcha_tantan_1104 _1/fcha_tantan_windows/artifacts/fcha_tantan_windows_community_fixed_20261104_122455.zip" filter=lfs diff=lfs merge=lfs -text
 "/Project/1차 Team Project/fcha_tantan_1104 _1/fcha_tantan_windows/artifacts/fcha_tantan_windows_integrated_20261104.zip" filter=lfs diff=lfs merge=lfs -text
 "/Project/1차 Team Project/fcha_tantan_1104 _1/fcha_tantan_windows/artifacts/fcha_tantan_windows_standalone_20261104_122733.zip" filter=lfs diff=lfs merge=lfs -text
