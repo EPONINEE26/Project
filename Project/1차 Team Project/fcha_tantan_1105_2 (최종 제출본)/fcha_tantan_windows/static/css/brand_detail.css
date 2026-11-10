@@ -1,0 +1,59 @@
+/* 브랜드 상세(bview): 상담신청 버튼 · 업계 평균 비교 카드 · 창업비용 업종 내 위치 (2026-11-04) */
+.detail-tabs{align-items:center}
+#overview.section{padding-bottom:0}
+.reviews-panel>.section-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 24px;align-items:start}
+.reviews-panel>.section-head>.review-cta{grid-column:1;margin:0}
+.reviews-panel>.section-head>.review-score{grid-column:2;grid-row:1 / span 2}
+@media(max-width:720px){.reviews-panel>.section-head{grid-template-columns:minmax(0,1fr)}.reviews-panel>.section-head>.review-score{grid-column:1;grid-row:auto;margin-top:16px}}
+
+/* Match sibling panels to the tallest content without a fixed height. */
+.detail-grid{align-items:stretch}
+.detail-grid>.panel{display:flex;flex-direction:column;min-width:0;height:auto;max-height:none;margin:0;overflow-wrap:anywhere}
+.detail-grid>.panel+.panel{margin-top:0}
+.detail-grid>.panel> *{flex-shrink:0;min-width:0}
+.detail-grid>.panel>.text-link:last-child{margin-top:auto;padding-top:16px;align-self:flex-start}
+.detail-grid .chart-bar span{white-space:nowrap}
+.detail-tabs a.detail-cta{margin-left:auto;padding:9px 20px;border:2px solid var(--blue,#1677ff);border-radius:12px;color:var(--blue,#1677ff);font-weight:700;background:#fff;white-space:nowrap;transition:background .2s,color .2s}
+.detail-tabs a.detail-cta:hover,.detail-tabs a.detail-cta:focus-visible{background:var(--blue,#1677ff);color:#fff}
+
+.peer-metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:25px 0 10px}
+.peer-card{display:flex;flex-direction:column;border:1px solid #dbe6f3;border-radius:16px;background:#fff;overflow:hidden}
+.peer-card.highlight{background:#f2f8ff;border-color:#cfe2fb}
+.peer-top{padding:18px 16px 14px}
+.peer-top .label{display:block;font-size:13px;font-weight:600;color:#3b4a63;margin-bottom:10px}
+.peer-top strong{font-size:26px;font-weight:800;letter-spacing:-.5px;color:#10234b}.peer-top strong.up{color:var(--blue,#1677ff)}
+.peer-top strong small{font-size:13px;font-weight:600;margin-left:3px}
+.peer-bottom{flex:1;background:#f5f8fc;border-top:1px dashed #cfdbea;padding:12px 16px}
+.peer-card.highlight .peer-bottom{background:#eaf3ff}
+.peer-bottom.empty span{font-size:12px;color:#7d8ca3}
+.peer-bar{display:grid;grid-template-columns:52px minmax(0,1fr) auto;align-items:center;gap:6px;font-size:11.5px;color:#5d6f88;margin-top:7px}
+.peer-bar:first-child{margin-top:0}.peer-bar>span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.peer-bar b{font-size:12.5px;color:#26354f;text-align:right;white-space:nowrap}
+.peer-track{height:8px;background:#e1e9f4;border-radius:9px;overflow:hidden}
+.peer-track i{display:block;height:100%;border-radius:9px}.peer-track i.mine{background:var(--blue,#1677ff)}.peer-track i.average{background:#9fb3cc}
+.peer-rate{display:flex;justify-content:space-between;align-items:baseline;gap:6px;margin:0 16px;padding:10px 0 12px;border-top:1px solid #e3eaf3;font-size:12px;color:#5d6f88;background:transparent}
+.peer-card .peer-bottom+.peer-rate{margin:0;padding:10px 16px 12px;background:#f5f8fc}
+.peer-rate b{font-size:14px}.peer-rate small{font-size:11px;color:#5d6f88;font-weight:500}
+.peer-rate b.good,.cost-peer .good{color:#1a8a5a}.peer-rate b.bad,.cost-peer .bad{color:#c2412d}
+
+.cost-peer{margin-top:10px;border:1px solid #dbe6f3;border-radius:12px;background:#fff;overflow:hidden}
+.cost-peer-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:16px 16px 0}
+.cost-peer-head h3{font-size:15px;margin:0}
+.cost-peer-chip{font-size:12px;font-weight:700;border-radius:999px;padding:3px 9px;background:#fdecea;color:#b33a2a}.cost-peer-chip.good{background:#e7f6ee;color:#16784d}
+.cost-peer>p{margin:4px 16px 0;font-size:13px;color:#5d6f88}
+.cost-range{position:relative;height:12px;margin:48px 20px 0;border-radius:9px;background:linear-gradient(90deg,#d9f0e4,#eef2f7 50%,#f9dedb)}
+.cost-range i{position:absolute;top:-6px;width:4px;height:24px;border-radius:3px;transform:translateX(-2px)}
+.cost-range em{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;font-style:normal;font-size:12px;font-weight:700;border-radius:8px;padding:4px 8px}
+.cost-range i.mine{background:var(--blue,#1677ff)}.cost-range i.mine em{bottom:30px;background:var(--blue,#1677ff);color:#fff}
+.cost-range i.average{background:#5f7898}.cost-range i.average em{top:30px;background:#eef2f7;color:#334861}
+.cost-range i.median{background:#a3b3c8;width:3px}.cost-range i.median em{bottom:26px;color:#7d8ca3;font-weight:600}
+.cost-range-ends{display:flex;justify-content:space-between;margin:44px 16px 12px;font-size:12px;color:#7d8ca3}
+.cost-peer-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #e3eaf3}
+.cost-peer-stats div{padding:14px 16px;font-size:13px;color:#5d6f88}.cost-peer-stats div+div{border-left:1px solid #e3eaf3}
+.cost-peer-stats b{display:block;font-size:17px;color:#10234b;margin-top:4px}
+
+/* 중간 너비: 위 3개 · 아래 2개가 줄을 꽉 채우도록 6칸 그리드를 나눠 씁니다. */
+@media(max-width:1100px){.peer-metrics{grid-template-columns:repeat(6,minmax(0,1fr))}.peer-card{grid-column:span 2}.peer-card:nth-child(n+4){grid-column:span 3}}
+@media(max-width:720px){.peer-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.peer-card,.peer-card:nth-child(n+4){grid-column:span 1}.peer-card:last-child{grid-column:span 2}.peer-top strong{font-size:22px}
+  .cost-peer-stats{grid-template-columns:1fr}.cost-peer-stats div+div{border-left:0;border-top:1px solid #e3eaf3}}
+@media(max-width:420px){.peer-metrics{grid-template-columns:1fr}.peer-card:last-child{grid-column:auto}}

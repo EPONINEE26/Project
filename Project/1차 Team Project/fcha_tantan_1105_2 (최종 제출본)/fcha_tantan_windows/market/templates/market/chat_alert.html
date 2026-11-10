@@ -1,0 +1,12 @@
+{% load static %}{% comment %}오른쪽 아래 새 채팅 알림: 안 읽은 1:1 채팅이 있을 때만 버튼 표시 · 누르면 최근 대화 패널 펼침 (market/chat.py chat_summary){% endcomment %}
+<link rel="stylesheet" href="{% static 'css/chat_alert.css' %}?v=20261105-2">
+<div class="chat-alert" data-chat-alert data-summary-url="{% url 'market:chat_summary' %}" hidden>
+    <section class="chat-alert-panel" id="chat-alert-panel" aria-label="최근 대화" hidden>
+        <header><div><b>문의 채팅</b><small data-chat-alert-people aria-live="polite"></small></div><a href="{% url 'market:chat_list' %}">전체 대화 보기 →</a></header>
+        <ul data-chat-alert-list></ul>
+    </section>
+    <button type="button" class="chat-alert-button" aria-controls="chat-alert-panel" aria-expanded="false">
+        <span class="chat-alert-icon" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 32 32" fill="none"><path d="M7 5h18a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H14l-7 5v-5a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4Z" fill="currentColor"/><path d="M10 12h12M10 18h8" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span><span class="chat-alert-copy"><small>새로운 문의를 확인하세요</small><strong>문의 채팅</strong></span><b data-chat-alert-count hidden>0</b><span aria-hidden="true">⌃</span>
+    </button>
+</div>
+<script src="{% static 'js/chat_alert.js' %}?v=20261105-2" defer></script>

@@ -1,0 +1,24 @@
+{% load brand_format %}
+<aside class="transfer-widget" data-transfer-widget aria-label="양도양수 바로가기">
+    <button class="transfer-tab" type="button" aria-expanded="false" aria-controls="transfer-panel"><span aria-hidden="true">⇄</span><b>양도양수</b>{% if total %}<em>{{ total }}</em>{% endif %}</button>
+    <div class="transfer-panel" id="transfer-panel">
+        <div class="transfer-head">
+            <span class="eyebrow">TRANSFER</span>
+            <strong>가맹점 양도양수</strong>
+            <button class="transfer-close" type="button" aria-label="양도양수 패널 닫기">×</button>
+        </div>
+        <p class="transfer-desc">계약 기간 중인 가맹점도 양도·양수 제안과 문의를 주고받을 수 있어요.</p>
+        <ul class="transfer-items">
+            {% for item in listings %}
+                <li><a href="{% url 'market:transfer_detail' item.pk %}"><span class="transfer-brand">[{{ item.brand.category }}] {{ item.brand.name }}</span><b>{{ item.title }}</b><small>{{ item.sido }} {{ item.sigungu }} · 권리금 {% if item.premium_manwon != None %}{{ item.premium_manwon|number }}만원{% else %}협의{% endif %}</small></a></li>
+            {% empty %}
+                <li class="transfer-empty">등록된 매물이 아직 없어요.</li>
+            {% endfor %}
+        </ul>
+        <div class="transfer-actions">
+            <a class="button small" href="{% url 'market:transfer_new' %}">매물 등록</a>
+            <a class="button small outline" href="{% url 'market:transfer_list' %}">전체 보기 ↗</a>
+        </div>
+        <p class="transfer-note">금액은 등록자가 입력한 값입니다.</p>
+    </div>
+</aside>

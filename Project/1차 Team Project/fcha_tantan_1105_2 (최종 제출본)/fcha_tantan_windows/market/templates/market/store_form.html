@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load l10n %}
+{% block title %}
+    매장 위치 설정 | 프차 탄탄
+{% endblock %}
+{% block head %}
+    <style>.store-coordinates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.store-coordinates .form-field{min-width:0}.store-coordinates input[readonly]{background:#f1f5f9;color:#526175;cursor:default}</style>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="page-header">
+            <a class="back-link" href="{% url 'market:store_list' %}">← 내 매장 위치</a>
+            <span class="eyebrow">SET LOCATION</span>
+            <h1>{% if store %}{{ store.store_name }} 위치 수정{% else %}매장 위치 설정{% endif %}</h1>
+            <p>지도에서 핀을 옮겨 주소가 자동으로 입력되고 좌표를 맞출 수 있어요.</p>
+        </div>
+        <div class="store-form-layout">
+            <section class="panel">
+                <form method="post" class="form-stack store-form">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    {% for field in form %}
+                        {% if field.name != 'latitude' and field.name != 'longitude' %}
+                            {% include 'includes/one_field.html' %}
+                            {% if field.name == 'address_detail' %}
+                                <div class="store-coordinates">
+                                    {% include 'includes/one_field.html' with field=form.latitude %}
+                                    {% include 'includes/one_field.html' with field=form.longitude %}
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    <button class="button" type="submit">저장</button>
+                </form>
+            </section>
+            <aside class="panel map-panel">
+                <h2>지도</h2>
+                {% if kakao_js_key %}
+                    <div id="store-map" class="store-map" data-kakao-map data-lat="{{ form.latitude.value|default_if_none:''|unlocalize }}" data-lng="{{ form.longitude.value|default_if_none:''|unlocalize }}" data-editable="1">
+                    </div>
+                    <p class="data-note">지도를 클릭하거나 핀을 옮기면 주소·우편번호·위도·경도가 자동 입력됩니다. 우편번호가 없는 위치는 주소 검색으로 확인해주세요.</p>
+                {% else %}
+                    <div class="map-placeholder">
+                        <span aria-hidden="true">⌖</span>
+                        <p>지도를 불러올 수 없습니다.<br>주소 검색으로 매장 주소와 우편번호를 입력해주세요.</p>
+                    </div>
+                {% endif %}
+            </aside>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {% include 'includes/postcode_script.html' %}
+    {% if kakao_js_key %}
+        <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey={{ kakao_js_key|urlencode }}&libraries=services&autoload=false" defer></script>
+    {% endif %}
+{% endblock %}

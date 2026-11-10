@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container narrow-page">
+        <section class="panel empty">
+            <h1>매물 검토 안내</h1>
+            <p>{{ notice }}</p>
+            <a class="button" href="{% url 'market:transfer_list' %}">양도양수 목록</a>
+        </section>
+    </div>
+{% endblock %}

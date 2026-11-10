@@ -1,0 +1,52 @@
+{% load brand_format %}
+<section class="panel" aria-labelledby="area-stores-heading">
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">AREA STORE SNAPSHOT</span>
+            <h2 id="area-stores-heading">선택 상권의 공공 매장</h2>
+        </div>
+        <span class="soft-badge">상권 경계 기준</span>
+    </div>
+    {% if public_store_summary.available %}
+        <p>{{ analysis_area.name }} · 저장된 희망 업종: {{ public_store_summary.category|default:'전체' }}</p>
+        <div class="analysis-metrics">
+            <article>
+                <h3>전체 공공 매장</h3>
+                <strong>{{ public_store_summary.total|number }}개</strong>
+            </article>
+            <article>
+                <h3>희망 업종 매장</h3>
+                {% if public_store_summary.category_total != None %}
+                    <strong>{{ public_store_summary.category_total|number }}개</strong>
+                {% else %}
+                    <strong>업종 대응 미연결</strong>
+                    <p>선택 업종의 공공 코드 대응이 없어 집계하지 않습니다.</p>
+                {% endif %}
+            </article>
+        </div>
+        <details>
+            <summary>업종별 매장 분포 보기</summary>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">공공 업종</th>
+                            <th scope="col">매장 수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in public_store_summary.industries %}
+                            <tr>
+                                <td>{{ item.industry__name|default:'업종 미등록' }}</td>
+                                <td>{{ item.total|number }}개</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </details>
+        <p class="data-note">프로젝트 스냅샷 {{ public_store_summary.reference_on|date:'Y-m-d' }} · {% for source in public_store_summary.sources %}{{ source }}{% if not forloop.last %}, {% endif %}{% endfor %}<br>상권에 유일하게 연결된 매장만 집계합니다. 중첩·경계 밖 매장은 제외되며 현재 영업 여부를 보장하지 않습니다. 지도에 표시하는 반경 내 매장 수와 범위가 다릅니다.{% if public_store_summary.category_status == 'preview' %}<br>희망 업종은 프로젝트 미리보기 대응표 기준이며 공공 분류와 범위가 다를 수 있습니다.{% endif %}<br>위치·희망 업종을 바꾼 뒤 조건을 저장하면 집계가 갱신됩니다. 매장 수만으로 경쟁 강도나 수익성을 판단하지 않습니다.</p>
+    {% else %}
+        <p>{{ public_store_summary.note }}</p>
+    {% endif %}
+</section>

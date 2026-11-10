@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+    마이페이지 | 프차 탄탄
+{% endblock %}
+{% block content %}
+    <div class="container narrow-page">
+        <div class="page-header">
+            <span class="eyebrow">MY PROFILE</span>
+            <h1>{% if completing %}추가 정보를 입력해주세요{% else %}마이페이지{% endif %}</h1>
+            <p>{% if completing %}간편로그인으로 가입하셨어요. 서비스 이용을 위해 아래 정보와 동의가 필요합니다.{% else %}창업 조건을 바꾸면 맞춤 추천도 함께 바뀌어요.{% endif %}</p>
+        </div>
+        <section class="panel">
+            <form method="post" class="form-stack signup-form">
+                {% csrf_token %}
+                {% include 'accounts/member_fields.html' %}
+                <button class="button" type="submit">저장</button>
+            </form>
+        </section>
+        <section class="panel account-danger">
+            <h2>회원탈퇴</h2>
+            <p>탈퇴하면 계정과 연결된 프로필·문의·등록 정보가 삭제되며 복구할 수 없습니다.</p>
+            <a class="button danger-button" data-no-motion href="{% url 'accounts:withdraw' %}">회원탈퇴 진행</a>
+        </section>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {% include 'includes/postcode_script.html' %}
+{% endblock %}
