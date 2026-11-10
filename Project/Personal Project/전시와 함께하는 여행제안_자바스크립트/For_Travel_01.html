@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전시로 즐기는 서울 - 외국인 방문객 여행 코스</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    background: #f7f2e9; color: #2a2521; line-height: 1.6;
+  }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+
+  /* 헤더 — 배경이미지는 표시용 (링크 없음) */
+  .hero {
+    position: relative;
+    background: linear-gradient(rgba(30,25,20,0.55), rgba(30,25,20,0.75)),
+                url("https://sspark.genspark.ai/i/tam9FdbplFR1jnxx?width=2560") center/cover no-repeat;
+    color: #fff; padding: 90px 20px 70px; text-align: center;
+  }
+  .hero h1 { font-size: 34px; letter-spacing: -1px; margin-bottom: 12px; }
+  .hero p { font-size: 16px; opacity: 0.9; max-width: 620px; margin: 0 auto; }
+  .hero .badge-top {
+    display: inline-block; background: #c8452d; color: #fff;
+    padding: 4px 14px; border-radius: 20px; font-size: 13px; margin-bottom: 16px;
+  }
+
+  /* 이용 안내 */
+  .howto { display: flex; gap: 12px; flex-wrap: wrap; margin: -35px auto 40px; max-width: 900px; padding: 0 16px; }
+  .howto div {
+    flex: 1; min-width: 220px; background: #fff; border-radius: 12px;
+    padding: 18px; box-shadow: 0 6px 18px rgba(60,40,20,0.12); font-size: 14px;
+  }
+  .howto b { display: block; color: #b5432c; margin-bottom: 4px; }
+
+  /* 필터 버튼 */
+  .filters { text-align: center; margin-bottom: 28px; }
+  .filters button {
+    border: 2px solid #b5432c; background: #fff; color: #b5432c;
+    padding: 10px 22px; margin: 0 6px; border-radius: 30px;
+    font-size: 15px; font-weight: bold; cursor: pointer;
+  }
+  .filters button.on { background: #b5432c; color: #fff; }
+
+  /* 카드 */
+  .grid { display: flex; flex-wrap: wrap; gap: 22px; justify-content: center; margin-bottom: 50px; }
+  .card {
+    width: 300px; background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 4px 14px rgba(60,40,20,0.12); display: flex; flex-direction: column;
+  }
+  .card-img-link {
+    display: block; width: 100%; height: 170px; position: relative; cursor: pointer;
+    text-decoration: none; color: inherit;
+  }
+  .card-img { width: 100%; height: 170px; object-fit: cover; display: block; }
+  .ph {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #e8ddc9, #d8c6a8); color: #6b5c48; height: 100%;
+    text-decoration: none;
+  }
+  .ph span { font-size: 42px; }
+  .ph em { display: none; }
+
+  .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+  .tag { display: inline-block; font-size: 12px; font-weight: bold; color: #fff;
+         padding: 3px 10px; border-radius: 12px; margin-bottom: 8px; align-self: flex-start; }
+  .tag-free { background: #1e7a5a; }
+  .tag-paid { background: #b5432c; }
+  .card-body h3 { font-size: 18px; margin-bottom: 4px; }
+  .card-body .area { font-size: 13px; color: #8a7f70; margin-bottom: 8px; }
+  .card-body .short { font-size: 14px; color: #4c443b; flex: 1; }
+  .fee-line { font-size: 13px; color: #b5432c; font-weight: bold; margin: 10px 0; }
+  .card-body .official-link {
+    font-size: 13px; color: #fff; background: #1e7a5a;
+    text-decoration: none; padding: 7px 11px; border-radius: 6px;
+    display: inline-block; margin-bottom: 10px;
+  }
+  .card-body .official-link:hover { background: #155d44; }
+  .card-body button { border: none; border-radius: 8px; padding: 10px; font-size: 14px; cursor: pointer; margin-top: 4px; }
+  .btn-detail { background: #2a2521; color: #fff; }
+  .btn-add { background: #f3e3d3; color: #7a4a1d; margin-bottom: 10px; }
+
+  /* 상세 팝업 */
+  #detail {
+    display: none; position: fixed; inset: 0; background: rgba(20,15,10,0.6);
+    z-index: 50; align-items: center; justify-content: center; padding: 16px;
+  }
+  .detail-box {
+    background: #fff; border-radius: 16px; max-width: 560px; width: 100%;
+    max-height: 85vh; overflow-y: auto; padding: 28px;
+  }
+  .detail-box h2 { font-size: 22px; margin-bottom: 4px; }
+  .detail-box .sub { color: #8a7f70; font-size: 14px; margin-bottom: 18px; }
+  .step { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px dashed #e0d5c2; }
+  .step-num {
+    width: 34px; height: 34px; border-radius: 50%; background: #b5432c; color: #fff;
+    display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;
+  }
+  .step b { display: block; }
+  .step .time { font-size: 12px; color: #b5432c; font-weight: bold; }
+  .step p { font-size: 14px; color: #4c443b; }
+  .detail-tip {
+    background: #f7f2e9; border-radius: 10px; padding: 14px; font-size: 13px; margin: 18px 0;
+  }
+  .detail-tip a { color: #b5432c; font-weight: bold; }
+  .detail-actions { text-align: center; }
+  .detail-actions button {
+    padding: 12px 22px; border: none; border-radius: 8px; font-size: 15px; cursor: pointer; margin: 0 5px;
+  }
+
+  /* 내 코스 */
+  .mycourse { background: #fff; border: 3px dashed #b5432c; border-radius: 16px; padding: 26px; margin-bottom: 60px; }
+  .mycourse h2 { font-size: 22px; margin-bottom: 6px; }
+  .mycourse .hint { font-size: 13px; color: #8a7f70; margin-bottom: 16px; }
+  .my-item {
+    display: flex; align-items: center; gap: 10px; padding: 12px;
+    background: #faf6ef; border-radius: 10px; margin-bottom: 8px; font-size: 14px;
+  }
+  .my-item .del {
+    margin-left: auto; background: #e8d3cd; color: #8c2f1b; border: none;
+    border-radius: 6px; padding: 6px 12px; cursor: pointer; font-size: 12px;
+  }
+  .my-total { text-align: right; font-size: 18px; font-weight: bold; color: #b5432c; margin-top: 12px; }
+  .price-note { font-size: 12px; color: #8a7f70; text-align: right; margin-top: 4px; }
+  .empty-msg { text-align: center; color: #a3968a; font-size: 14px; padding: 20px 0; }
+
+  /* 푸터 : 공식 홈페이지와 기사 출처 분리 */
+  footer { background: #2a2521; color: #cfc4b5; padding: 34px 0 44px; font-size: 13px; }
+  footer a { color: #e8b988; }
+  footer h4 { color: #fff; margin-bottom: 10px; }
+  footer li { list-style: none; margin-bottom: 6px; }
+  footer .section + .section { margin-top: 22px; padding-top: 16px; border-top: 1px solid #4c443b; }
+</style>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <div class="hero">
+    <span class="badge-top">서울 전시 중심 여행 코스</span>
+    <h1>전시로 즐기는 서울</h1>
+    <p>무료 전시부터 유료 전시 메인까지, 전시 보고 맛집 → 쇼핑/한강 피크닉으로 이어지는 코스.<br>
+    카드의 사진을 클릭하면 그 전시 장소의 공식 홈페이지가 새 탭으로 열립니다. 사진 위에는 별도 문구가 표시되지 않습니다.</p>
+  </div>
+
+  <!-- 이용 안내 -->
+  <div class="howto">
+    <div><b>STEP 1. 코스 고르기</b>사진 자체를 누르면 그 전시 장소의 공식 홈페이지가 새 탭으로 열려요. '자세히 보기' 버튼은 같은 페이지에서 코스 흐름 팝업을 띄워요.</div>
+    <div><b>STEP 2. 무료 / 유료 골라 보기</b>상단의 무료/유료 버튼으로 보고 싶은 코스만 골라서 볼 수 있어요.</div>
+    <div><b>STEP 3. 내 코스 만들기</b>마음에 드는 코스를 '내 코스에 담기'하면 하단에서 총 예상 관람 비용까지 자동으로 계산돼요.</div>
+  </div>
+
+  <div class="wrap">
+    <!-- 무료/유료 필터 -->
+    <div class="filters">
+      <button id="btn-all" class="on" onclick="setFilter('all')">전체 보기</button>
+      <button id="btn-free" onclick="setFilter('free')">무료 전시부터 🎫</button>
+      <button id="btn-paid" onclick="setFilter('paid')">유료 전시 메인 💎</button>
+    </div>
+
+    <!-- 코스 카드 목록 (JS로 자동 생성) -->
+    <div class="grid" id="course-list"></div>
+
+    <!-- 내 코스 -->
+    <div class="mycourse" id="mycourse">
+      <h2>🎒 나의 전시 코스</h2>
+      <p class="hint">위에서 담은 코스들이 여기에 모여요. 총 예상 관람 비용도 자동으로 계산됩니다.</p>
+      <div id="my-list"></div>
+      <div class="my-total" id="my-total"></div>
+      <div class="price-note">※ 비용은 1인 기준 예상 관람료이며 전시·시즌에 따라 달라질 수 있어요. 식사·쇼핑 비용은 별도입니다.</div>
+    </div>
+  </div>
+
+  <!-- 상세 팝업 -->
+  <div id="detail" onclick="closeDetail(event)">
+    <div class="detail-box" id="detail-box"></div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="wrap">
+
+      <!-- 공식 홈페이지 -->
+      <div class="section">
+        <h4>🎯 카드별 공식 홈페이지 (사진을 누르면 여기로 이동합니다)</h4>
+        <ul>
+          <li>1️⃣ 국립중앙박물관 + 이촌한강 — <a href="https://museum.go.kr/MUSEUM" target="_blank" rel="noopener noreferrer">museum.go.kr/MUSEUM</a></li>
+          <li>2️⃣ 경복궁 · 국립고궁박물관 + 서촌·인사동 — <a href="https://www.gogung.go.kr/" target="_blank" rel="noopener noreferrer">gogung.go.kr</a></li>
+          <li>3️⃣ 반포한강공원 야외 전시 + 노을 피크닉 — <a href="https://hangang.seoul.go.kr/www/contents/663.do?mid=463" target="_blank" rel="noopener noreferrer">hangang.seoul.go.kr (반포 소개)</a></li>
+          <li>4️⃣ 리움미술관 + 한남동·이태원 — <a href="https://www.leeumhoam.org/leeum" target="_blank" rel="noopener noreferrer">leeumhoam.org/leeum</a></li>
+          <li>5️⃣ 아모레퍼시픽미술관(APMA) + 명동 — <a href="https://apma.amorepacific.com/" target="_blank" rel="noopener noreferrer">apma.amorepacific.com</a></li>
+        </ul>
+      </div>
+
+      <!-- 참고용 출처 (기사·블로그) -->
+      <div class="section">
+        <h4>📰 참고용 출처 (보도 자료·블로그, 카드 클릭과는 무관)</h4>
+        <ul>
+          <li>국립중앙박물관 2027년 유료화 검토 — <a href="https://www.khan.co.kr/article/202510281515021" target="_blank" rel="noopener noreferrer">경향신문</a></li>
+          <li>서울시립미술관(SeMA) 무료관람 안내 — <a href="https://sema.seoul.go.kr/kr/visit/webaccess" target="_blank" rel="noopener noreferrer">sema.seoul.go.kr</a></li>
+          <li>반포한강공원 피크닉 운영 안내 — <a href="https://www.thetrippick.com/news/articleView.html?idxno=70" target="_blank" rel="noopener noreferrer">더트립픽 블로그</a></li>
+          <li>명동 쇼핑 안내 — <a href="https://korean.visitseoul.net/area/%EB%AA%85%EB%8F%99-%EC%87%BC%ED%95%91/KOP000067" target="_blank" rel="noopener noreferrer">Visit Seoul</a></li>
+          <li>청담·압구정 명품거리 — <a href="https://www.chosun.com/economy/market_trend/2024/09/12/A5XBFP37RJB25LKDKG5TKTDKEU/" target="_blank" rel="noopener noreferrer">조선일보</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+<script>
+/* ================================================
+   초급 자바스크립트로 만든 전시 여행 코스
+   - var, 배열(객체), for, if, function, onclick 만 사용
+   - 카드 사진은 각 전시 장소의 공식 홈페이지로 새 탭 이동
+================================================ */
+
+// 1. 전체 코스 데이터
+var courses = [
+  {
+    id: 0,
+    name: "국립중앙박물관 + 이촌한강 피크닉",
+    type: "free",
+    tag: "무료 전시 시작 코스",
+    area: "서울 용산구 이촌동",
+    fee: "상설전시 무료 (유료 기획전은 별도)",
+    feeNum: 0,
+    img: "",
+    link: "https://museum.go.kr/MUSEUM",
+    linkName: "국립중앙박물관 공식 홈페이지",
+    short: "한국 고전미술을 무료로 관람한 뒤, 연결된 산책로로 공원과 한강까지! 라면·피자 배달 피크닉으로 마무리해요.",
+    emoji: "🏛️",
+    tip: "2008년부터 상설전시는 무료였지만, 2027년부터 유료화가 검토된다는 보도가 있어요. 무료로 즐길 수 있는 마지막 기회!",
+    steps: [
+      { time: "10:00", title: "① 국립중앙박물관 관람", desc: "상설전시관이 무료! 금속공예·불교미술·회화를 한 번에. 외국인용 영어 오디오 가이드도 있어요." },
+      { time: "13:00", title: "② 용산가족공원 산책", desc: "박물관 뒤편 산책로로 이어진 서구풍 공원에서 점심 후 여유롭게 산책해요." },
+      { time: "15:30", title: "③ 이촌한강공원 피크닉", desc: "걸어서 한강까지! 지정 배달존에서 라면·피자를 시켜 먹어요." }
+    ]
+  },
+  {
+    id: 1,
+    name: "경복궁 · 국립고궁박물관 + 서촌 맛집 · 인사동 쇼핑",
+    type: "free",
+    tag: "무료 전시 + 궁에서 하는 전시",
+    area: "서울 종로구",
+    fee: "고궁박물관 무료 / 경복궁 성인 3,000원, 한복 착용 시 무료",
+    feeNum: 3000,
+    img: "https://sspark.genspark.ai/i/YjxokDpHRbYxFFGj?width=2560",
+    link: "https://www.gogung.go.kr/",
+    linkName: "국립고궁박물관 공식 홈페이지 (경복궁 안내)",
+    short: "궁궐 안 왕실 전시(무료) → 서촌 한식 맛집 → 인사동 전통공예 쇼핑 코스.",
+    emoji: "🏯",
+    tip: "국립고궁박물관은 별도 안내 전까지 무료관람. 경복궁은 한복 착용 시 무료 입장이에요.",
+    steps: [
+      { time: "09:30", title: "① 경복궁 + 국립고궁박물관", desc: "수문장 교대식 직후, 왕실 문화 전시(무료)를 관람해요." },
+      { time: "12:30", title: "② 서촌 점심", desc: "토속촌 삼계탕, 체부동 잔치집 등 전통 한식 골목을 즐겨요." },
+      { time: "14:30", title: "③ 인사동 쇼핑", desc: "전통공예·도자기·엽서 가득한 거리에서 기념품을 골라요." }
+    ]
+  },
+  {
+    id: 2,
+    name: "반포한강공원 야외 전시 산책 + 노을 피크닉",
+    type: "free",
+    tag: "자연 속에서 즐기는 전시",
+    area: "서울 서초구 반포동",
+    fee: "무료 (돗자리·의자 대여는 유료)",
+    feeNum: 0,
+    img: "",
+    link: "https://hangang.seoul.go.kr/www/contents/663.do?mid=463",
+    linkName: "반포한강공원 표준 안내 (미래한강본부)",
+    short: "공공미술 조형물을 '야외 전시'처럼 산책 → 무지개분수·노을 → 배달 피크닉.",
+    emoji: "🌅",
+    tip: "매트·캠핑의자·조명 대여(피크닉109)와 지정 배달존이 있어 한강 피크닉이 매우 편리해요.",
+    steps: [
+      { time: "15:00", title: "① 공공미술 조형물 산책", desc: "'열린 전시관'처럼 만들어진 한강 조형물과 작품을 둘러봐요." },
+      { time: "17:30", title: "② 무지개분수 · 노을", desc: "반포대교 분수쇼와 한강 노을이 함께하는 시간." },
+      { time: "18:30", title: "③ 배달 피크닉", desc: "돗자리 대여 + 치킨·피자·라면 배달로 마무리!" }
+    ]
+  },
+  {
+    id: 3,
+    name: "리움미술관 + 한남동 카페거리 · 이태원 쇼핑",
+    type: "paid",
+    tag: "유료 전시 메인 코스",
+    area: "서울 용산구 한남동 · 이태원",
+    fee: "유료 (전시별 상이, 사전 예매 필수)",
+    feeNum: 20000,
+    img: "",
+    link: "https://www.leeumhoam.org/leeum",
+    linkName: "리움미술관 (Leeum Museum) 공식 홈페이지",
+    short: "한국을 대표하는 프라이빗 미술관 리움에서 전통·현대 미술 → 한남 카페 → 이태원 편집숍.",
+    emoji: "🎨",
+    tip: "사전 예매제로 운영돼요. 월요일 휴관이니 주말 방문 추천.",
+    steps: [
+      { time: "10:30", title: "① 리움미술관 관람", desc: "도자·불교미술 + 세계 현대미술을 함께 보는 융합 미술관." },
+      { time: "13:00", title: "② 한남동 점심 · 카페", desc: "미술관에서 걸어내려가면 한남동 골목 식당과 감성 카페." },
+      { time: "15:00", title: "③ 이태원 쇼핑", desc: "앤틱숍, 세계 각국 소품샵, 패션 편집숍이 모인 골목 구경." }
+    ]
+  },
+  {
+    id: 4,
+    name: "아모레퍼시픽미술관(APMA) + 명동 쇼핑거리",
+    type: "paid",
+    tag: "유료 전시 메인 코스",
+    area: "서울 용산구 · 중구 명동",
+    fee: "성인 18,000원 (사전 예약제)",
+    feeNum: 18000,
+    img: "",
+    link: "https://apma.amorepacific.com/",
+    linkName: "아모레퍼시픽미술관 (APMA) 공식 홈페이지",
+    short: "전시 → 명동 K-뷰티·패션 쇼핑 → 남산·한강 야경으로 마무리.",
+    emoji: "🛍️",
+    tip: "공식 홈페이지 예약 필수. 명동까지 지하철 약 10분 거리.",
+    steps: [
+      { time: "11:00", title: "① 아모레퍼시픽미술관 관람", desc: "한국 미학 건축과 소장품, 조선·병풍 특별전 등 한국적 주제 전시가 많아요." },
+      { time: "13:30", title: "② 명동 점심", desc: "칼국수·만두·길거리 토스트를 쇼핑 전에 맛봐요." },
+      { time: "15:00", title: "③ 명동 쇼핑", desc: "K-뷰티 화장품부터 패션까지 약 1km 거리 가볍게!" },
+      { time: "18:00", title: "④ 한강 or 남산 야경 (선택)", desc: "남산 야경이나 한강 라면으로 하루를 닫아요." }
+    ]
+  }
+];
+
+// 2. 내가 담은 코스 번호 저장 배열
+var myCourse = [];
+
+// 3. 사진(또는 준비 중 박스)은 클릭 시 해당 전시 장소 공식 홈페이지로 새 탭 오픈
+function photoHTML(c) {
+  var html = "";
+  if (c.img !== "") {
+    html = "<a class='card-img-link' href='" + c.link + "' target='_blank' rel='noopener noreferrer' title='" + c.linkName + "(으)로 이동'>";
+    html = html + "<img class='card-img' src='" + c.img + "' alt='" + c.name + "'></a>";
+  } else {
+    html = "<a class='card-img-link ph' href='" + c.link + "' target='_blank' rel='noopener noreferrer' title='" + c.linkName + "(으)로 이동'>";
+    html = html + "<span>" + c.emoji + "</span><em>" + c.linkName + " ↗</em></a>";
+  }
+  return html;
+}
+
+// 4. 코스 카드 전체를 화면에 그리는 함수
+function renderList() {
+  var html = "";
+  for (var i = 0; i < courses.length; i++) {
+    var c = courses[i];
+    var tagClass = "";
+    if (c.type === "free") { tagClass = "tag-free"; } else { tagClass = "tag-paid"; }
+
+    html = html + "<div class='card' id='card" + c.id + "'>";
+    html = html + photoHTML(c);
+    html = html + "<div class='card-body'>";
+    html = html + "<span class='tag " + tagClass + "'>" + c.tag + "</span>";
+    html = html + "<h3>" + c.name + "</h3>";
+    html = html + "<div class='area'>📍 " + c.area + "</div>";
+    html = html + "<div class='short'>" + c.short + "</div>";
+    html = html + "<div class='fee-line'>🎫 " + c.fee + "</div>";
+    // 본문 안에도 같은 공식 홈페이지를 새 탭으로 여는 텍스트 링크
+    html = html + "<a class='official-link' href='" + c.link + "' target='_blank' rel='noopener noreferrer'>🔗 " + c.linkName + " 새 탭</a>";
+    html = html + "<button class='btn-detail' onclick='showDetail(" + c.id + ")'>자세히 보기 · 코스 흐름</button>";
+    html = html + "<button class='btn-add' onclick='addCourse(" + c.id + ")'>내 코스에 담기 🎒</button>";
+    html = html + "</div></div>";
+  }
+  document.getElementById("course-list").innerHTML = html;
+}
+
+// 5. 무료/유료 필터 버튼
+function setFilter(type) {
+  var allBtn = document.getElementById("btn-all");
+  var freeBtn = document.getElementById("btn-free");
+  var paidBtn = document.getElementById("btn-paid");
+  allBtn.className = ""; freeBtn.className = ""; paidBtn.className = "";
+
+  for (var i = 0; i < courses.length; i++) {
+    var card = document.getElementById("card" + courses[i].id);
+    if (type === "all") {
+      allBtn.className = "on"; card.style.display = "block";
+    } else if (type === "free") {
+      freeBtn.className = "on";
+      if (courses[i].type === "free") { card.style.display = "block"; } else { card.style.display = "none"; }
+    } else {
+      paidBtn.className = "on";
+      if (courses[i].type === "paid") { card.style.display = "block"; } else { card.style.display = "none"; }
+    }
+  }
+}
+
+// 6. 상세 팝업 열기 (코스 흐름)
+function showDetail(id) {
+  var c = null;
+  for (var i = 0; i < courses.length; i++) {
+    if (courses[i].id === id) { c = courses[i]; }
+  }
+
+  var html = "";
+  html = html + "<span class='tag tag-" + c.type + "'>" + c.tag + "</span>";
+  html = html + "<h2>" + c.name + "</h2>";
+  html = html + "<div class='sub'>📍 " + c.area + " · 🎫 " + c.fee + "</div>";
+
+  for (var j = 0; j < c.steps.length; j++) {
+    var s = c.steps[j];
+    html = html + "<div class='step'><div class='step-num'>" + (j + 1) + "</div><div>";
+    html = html + "<span class='time'>" + s.time + "</span>";
+    html = html + "<b>" + s.title + "</b>";
+    html = html + "<p>" + s.desc + "</p></div></div>";
+  }
+
+  html = html + "<div class='detail-tip'>💡 <b>알아두면 좋아요</b><br>" + c.tip + "</div>";
+  // 팝업에서도 공식 홈페이지를 새 탭으로 열 수 있게
+  html = html + "<div class='detail-tip'>🔗 <a href='" + c.link + "' target='_blank' rel='noopener noreferrer'>" + c.linkName + " 새 탭으로 열기</a></div>";
+  html = html + "<div class='detail-actions'>";
+  html = html + "<button class='btn-detail' onclick='addCourse(" + c.id + ")'>이 코스 담기 🎒</button>";
+  html = html + "<button onclick='closeDetail()' style='background:#eee2cf;color:#6b5c48'>닫기</button>";
+  html = html + "</div>";
+
+  document.getElementById("detail-box").innerHTML = html;
+  document.getElementById("detail").style.display = "flex";
+}
+
+// 7. 상세 팝업 닫기 (배경 직접 클릭 시만)
+function closeDetail(event) {
+  if (event === undefined || event.target.id === "detail") {
+    document.getElementById("detail").style.display = "none";
+  }
+}
+
+// 8. 내 코스에 담기 (중복 방지)
+function addCourse(id) {
+  var already = false;
+  for (var i = 0; i < myCourse.length; i++) {
+    if (myCourse[i] === id) { already = true; }
+  }
+  if (already === false) { myCourse.push(id); }
+  closeDetail();
+  renderMyCourse();
+}
+
+// 9. 내 코스에서 빼기
+function removeCourse(id) {
+  var newList = [];
+  for (var i = 0; i < myCourse.length; i++) {
+    if (myCourse[i] !== id) { newList.push(myCourse[i]); }
+  }
+  myCourse = newList;
+  renderMyCourse();
+}
+
+// 10. 내 코스 목록 + 총 예상 비용 그리기
+function renderMyCourse() {
+  var html = "";
+  var total = 0;
+
+  if (myCourse.length === 0) {
+    html = "<div class='empty-msg'>아직 담은 코스가 없어요. 위 카드에서 '내 코스에 담기'를 눌러 보세요!</div>";
+    document.getElementById("my-total").innerHTML = "";
+  } else {
+    for (var i = 0; i < myCourse.length; i++) {
+      var c = courses[myCourse[i]];
+      total = total + c.feeNum;
+      html = html + "<div class='my-item'>";
+      html = html + "<span>" + c.emoji + " <b>" + c.name + "</b></span>";
+      html = html + "<span style='color:#8a7f70'>" + (c.feeNum === 0 ? "무료" : c.feeNum.toLocaleString() + "원") + "</span>";
+      html = html + "<button class='del' onclick='removeCourse(" + c.id + ")'>빼기</button>";
+      html = html + "</div>";
+    }
+    document.getElementById("my-total").innerHTML = "총 예상 관람 비용 (1인) : " + total.toLocaleString() + "원";
+  }
+  document.getElementById("my-list").innerHTML = html;
+}
+
+// 11. 처음 화면이 뜰 때 목록 그리기
+renderList();
+renderMyCourse();
+</script>
+</body>
+</html>
